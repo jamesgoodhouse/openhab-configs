@@ -1,0 +1,19 @@
+Group Home "Home"
+
+Group House "House" (Home)
+
+Group Floors "Floors" (House)
+Group HVAC   "HVAC"   (House)
+Group Rooms  "Rooms"  (House)
+
+Group AirQuality "Air Quality" <flow> (Home)
+
+// floors
+Group Floor_Ground "Ground Floor" (House)
+Group Floor_First  "First Floor"  (House)
+Group Floor_Second "Second Floor" (House)
+
+// rooms
+Group Room_Bedroom_Main "Main Bedroom" (House)
+Group Room_Garage       "Garage"       (House)
+Group Room_Great        "Great Room"   (House)

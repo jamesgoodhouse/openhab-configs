@@ -1,0 +1,16 @@
+################### EPHEMERIS ###################
+
+# This parameter defines the default list of usual non workable days for the Ephemeris service.
+# The value has to be surrounded by square brackets ('[' and ']') and optionally contain value delimiters - a comma ',' to be interpreted as a list of values.
+# Example: [SATURDAY,SUNDAY]
+#
+org.openhab.ephemeris:dayset-weekend = [SATURDAY,SUNDAY]
+
+# This parameter defines the default list of usual workable days for the Ephemeris service.
+# The value has to be surrounded by square brackets ('[' and ']') and optionally contain value delimiters - a comma ',' to be interpreted as a list of values.
+#
+org.openhab.ephemeris:dayset-school = [MONDAY,TUESDAY,WEDNESDAY,THURSDAY,FRIDAY]
+
+org.openhab.ephemeris:dayset-trash = {{ (ds "configs").settings.ephemeris.dayset.trash }}
+org.openhab.ephemeris:country = {{ (ds "configs").settings.ephemeris.country }}
+org.openhab.ephemeris:region = {{ (ds "configs").settings.ephemeris.region }}

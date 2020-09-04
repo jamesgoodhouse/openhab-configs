@@ -1,0 +1,25 @@
+##################### LOCALE ####################
+
+# The default language that should be used. If not specified, the system default locale is used.
+# The ISO 639 alpha-2 or alpha-3 language code (if there is no alpha-2 one).
+# Example: "en" (English), "de" (German), "ja" (Japanese), "kok" (Konkani)
+#
+org.eclipse.smarthome.i18n:language = {{ (ds "configs").settings.i18n.language }}
+
+# The region that should be used.
+# ISO 3166 alpha-2 country code or UN M.49 numeric-3 area code.
+# Example: "US" (United States), "DE" (Germany), "FR" (France), "029" (Caribbean)
+#
+org.eclipse.smarthome.i18n:region = {{ (ds "configs").settings.i18n.region }}
+
+# The location that should be used.
+#
+org.eclipse.smarthome.i18n:location = {{ (ds "secrets").home_coordinates }}
+
+# The timezone that should be used.
+#
+org.eclipse.smarthome.i18n:timezone = {{ (ds "configs").settings.i18n.timezone }}
+
+# The measurement system that should be used.
+#
+org.eclipse.smarthome.i18n:measurementSystem = {{ (ds "configs").settings.i18n.measurement_system }}

@@ -1,0 +1,37 @@
+---
+settings:
+  package: minimal
+  binding: airquality,daikin,telegram,zwave
+  ui: paper
+  ephemeris:
+    country: us
+    region: os
+    dayset:
+      trash: Friday
+  i18n:
+    language: en
+    region: US
+    timezone: US/Pacific
+    measurement_system: US
+
+groups:
+  house:
+    name: House
+  floor_ground:
+    name: Floor_Ground
+  floor_first:
+    name: Floor_First
+  floor_second:
+    name: Floor_Second
+  room_bedroom_main:
+    name: Room_Bedroom_main
+things:
+  daikin_great_room:
+    thing_id: great_room
+    host: great-room.hvac.home.goodhouse.io
+  daikin_main_bedroom:
+    thing_id: main_bedroom
+    host: main-bedroom.hvac.home.goodhouse.io
+  zwave_great_room:
+    thing_id: controller
+    port: /dev/ttyUSB0

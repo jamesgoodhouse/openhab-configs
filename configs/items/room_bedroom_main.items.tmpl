@@ -1,0 +1,8 @@
+// HVAC
+Number:Temperature HVAC_MainBedroom_IndoorTemperature  "Indoor Temperature"  (HVAC,Room_Bedroom_Main) { channel="daikin:ac_unit:{{ (ds "configs").things.daikin_main_bedroom.thing_id }}:indoortemp" }
+Number:Temperature HVAC_MainBedroom_OutdoorTemperature "Outdoor Temperature" (HVAC,Room_Bedroom_Main) { channel="daikin:ac_unit:{{ (ds "configs").things.daikin_main_bedroom.thing_id }}:outdoortemp" }
+Number:Temperature HVAC_MainBedroom_SetPoint           "Set Point"           (HVAC,Room_Bedroom_Main) { channel="daikin:ac_unit:{{ (ds "configs").things.daikin_main_bedroom.thing_id }}:settemp" }
+String             HVAC_MainBedroom_Fan                "Fan"                 (HVAC,Room_Bedroom_Main) { channel="daikin:ac_unit:{{ (ds "configs").things.daikin_main_bedroom.thing_id }}:fanspeed" }
+String             HVAC_MainBedroom_FanSwing           "Fan Swing"           (HVAC,Room_Bedroom_Main) { channel="daikin:ac_unit:{{ (ds "configs").things.daikin_main_bedroom.thing_id }}:fandir" }
+String             HVAC_MainBedroom_Mode               "Mode"                (HVAC,Room_Bedroom_Main) { channel="daikin:ac_unit:{{ (ds "configs").things.daikin_main_bedroom.thing_id }}:mode" }
+Switch             HVAC_MainBedroom_Power              "Power"               (HVAC,Room_Bedroom_Main) { channel="daikin:ac_unit:{{ (ds "configs").things.daikin_main_bedroom.thing_id }}:power" }
