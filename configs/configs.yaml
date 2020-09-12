@@ -28,10 +28,8 @@ groups:
 things:
   daikin_great_room:
     thing_id: great_room
-    host: great-room.hvac.home.goodhouse.io
   daikin_main_bedroom:
     thing_id: main_bedroom
-    host: main-bedroom.hvac.home.goodhouse.io
   zwave_great_room:
     thing_id: controller
     port: /dev/ttyUSB0
