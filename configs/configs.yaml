@@ -5,7 +5,7 @@ settings:
   ui: paper
   ephemeris:
     country: us
-    region: os
+    region: or
     dayset:
       trash: Friday
   i18n:
