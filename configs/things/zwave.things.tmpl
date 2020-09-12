@@ -1,5 +1,6 @@
 Bridge zwave:serial_zstick:controller "Z-Wave Controller" @ "Great Room" [
   port="{{ (ds "configs").things.zwave_great_room.port }}",
+  controller_master="true",
   security_networkkey="{{ (ds "secrets").things.zwave_great_room.security_network_key }}"
 ] {
 
