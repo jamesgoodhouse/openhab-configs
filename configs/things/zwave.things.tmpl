@@ -5,6 +5,6 @@ Bridge zwave:serial_zstick:controller "Z-Wave Controller" @ "Great Room" [
   heal_enable="true",
   security_networkkey="{{ (ds "secrets").things.zwave_great_room.security_network_key }}"
 ] {
-  Thing eco_dwzwave25_00_000   node2 "Door Sensor" @ "Entryway" [ node_id=2 ]
-  Thing eco_tiltzwave25_00_000 node3 "Tilt Sensor" @ "Garage"   [ node_id=3 ]
+  Thing eco_dwzwave25_00_000   front_door_sensor  "Door Sensor" @ "Entryway" [ node_id=2 ]
+  Thing eco_tiltzwave25_00_000 garage_tilt_sensor "Tilt Sensor" @ "Garage"   [ node_id=3 ]
 }
