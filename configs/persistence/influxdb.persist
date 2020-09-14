@@ -8,7 +8,7 @@ Strategies {
 
 Items {
   Temperatures* : strategy = everyChange
-  Aqi_Level : strategy = everyChange
-
-  Doors* : strategy = everyChange
+  Aqi_Level:         strategy = everyChange
+  Door_Garage_State: strategy = everyChange, restoreOnStartup
+  Doors*:            strategy = everyChange
 }
