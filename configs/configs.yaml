@@ -3,6 +3,7 @@ settings:
   addons:
     package: minimal
     binding: airquality,daikin,systeminfo,telegram,zwave
+    persistence: influxdb
     ui: basic,habmin,paper
   ephemeris:
     country: us
