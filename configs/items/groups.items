@@ -9,6 +9,7 @@ Group Rooms  "Rooms"  (House)
 
 Group AirQuality "Air Quality" <flow> (Home)
 Group Batteries "Batteries" (House)
+Group Temperatures "Temperatures" (House)
 
 // floors
 Group Floor_Ground "Ground Floor" (House)
