@@ -1,0 +1,1 @@
+Thing zwave:eco_tiltzwave25_00_000:controller:garage_tilt_sensor "Tilt Sensor" (zwave:serial_zstick:controller) @ "Garage" [ node_id=3 ]
