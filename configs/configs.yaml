@@ -3,7 +3,7 @@ settings:
   addons:
     package: minimal
     binding: airquality,daikin,systeminfo,telegram,zwave
-    ui: paper,basic
+    ui: basic,habmin,paper
   ephemeris:
     country: us
     region: or
