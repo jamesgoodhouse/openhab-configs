@@ -1,0 +1,67 @@
+/* Network information*/
+String RPi_Network_AdapterName        "Adapter name"         <network>       { channel="systeminfo:computer:rpi:network#networkDisplayName" }
+String RPi_Network_Name               "Name"                 <network>       { channel="systeminfo:computer:rpi:network#networkName" }
+String RPi_Network_IP                 "IP address"           <network>       { channel="systeminfo:computer:rpi:network#ip" }
+String RPi_Network_Mac                "Mac address"          <network>       { channel="systeminfo:computer:rpi:network#mac" }
+Number RPi_Network_DataSent           "Data sent"            <flowpipe>      { channel="systeminfo:computer:rpi:network#dataSent" }
+Number RPi_Network_DataReceived       "Data received"        <returnpipe>    { channel="systeminfo:computer:rpi:network#dataReceived" }
+Number RPi_Network_PacketsSent        "Packets sent"         <flowpipe>      { channel="systeminfo:computer:rpi:network#packetsSent" }
+Number RPi_Network_PacketsReceived    "Packets received"     <returnpipe>    { channel="systeminfo:computer:rpi:network#packetsReceived" }
+
+/* CPU information*/
+String RPi_CPU_Name                   "Name"                 <none>          { channel="systeminfo:computer:rpi:cpu#name" }
+String RPi_CPU_Description            "Description"          <none>          { channel="systeminfo:computer:rpi:cpu#description" }
+Number RPi_CPU_Load1                  "Load (1 min)"         <none>          { channel="systeminfo:computer:rpi:cpu#load1" }
+Number RPi_CPU_Load5                  "Load (5 min)"         <none>          { channel="systeminfo:computer:rpi:cpu#load5" }
+Number RPi_CPU_Load15                 "Load (15 min)"        <none>          { channel="systeminfo:computer:rpi:cpu#load15" }
+Number RPi_CPU_Threads                "Threads"              <none>          { channel="systeminfo:computer:rpi:cpu#threads" }
+Number RPi_CPU_Uptime                 "Uptime"               <time>          { channel="systeminfo:computer:rpi:cpu#uptime" }
+
+/* Drive information*/
+String RPi_Drive_Name                 "Name"                 <none>          { channel="systeminfo:computer:rpi:drive#name" }
+String RPi_Drive_Model                "Model"                <none>          { channel="systeminfo:computer:rpi:drive#model" }
+String RPi_Drive_Serial               "Serial"               <none>          { channel="systeminfo:computer:rpi:drive#serial" }
+
+/* Storage information*/
+String RPi_Storage_Name               "Name"                 <none>          { channel="systeminfo:computer:rpi:storage#name" }
+String RPi_Storage_Type               "Type"                 <none>          { channel="systeminfo:computer:rpi:storage#type" }
+String RPi_Storage_Description        "Description"          <none>          { channel="systeminfo:computer:rpi:storage#description" }
+Number RPi_Storage_Available          "Available"            <none>          { channel="systeminfo:computer:rpi:storage#available" }
+Number RPi_Storage_Used               "Used"                 <none>          { channel="systeminfo:computer:rpi:storage#used" }
+Number RPi_Storage_Total              "Total"                <none>          { channel="systeminfo:computer:rpi:storage#total" }
+Number RPi_Storage_Available_Percent  "Available (%)"        <none>          { channel="systeminfo:computer:rpi:storage#availablePercent" }
+Number RPi_Storage_Used_Percent       "Used (%)"             <none>          { channel="systeminfo:computer:rpi:storage#usedPercent" }
+
+/* Memory information*/
+Number RPi_Memory_Available           "Available"            <none>          { channel="systeminfo:computer:rpi:memory#available" }
+Number RPi_Memory_Used                "Used"                 <none>          { channel="systeminfo:computer:rpi:memory#used" }
+Number RPi_Memory_Total               "Total"                <none>          { channel="systeminfo:computer:rpi:memory#total" }
+Number RPi_Memory_Available_Percent   "Available (%)"        <none>          { channel="systeminfo:computer:rpi:memory#availablePercent" }
+Number RPi_Memory_Used_Percent        "Used (%)"             <none>          { channel="systeminfo:computer:rpi:memory#usedPercent" }
+
+/* Swap memory information*/
+Number RPi_Swap_Available             "Available"            <none>          { channel="systeminfo:computer:rpi:swap#available" }
+Number RPi_Swap_Used                  "Used"                 <none>          { channel="systeminfo:computer:rpi:swap#used" }
+Number RPi_Swap_Total                 "Total"                <none>          { channel="systeminfo:computer:rpi:swap#total" }
+Number RPi_Swap_Available_Percent     "Available (%)"        <none>          { channel="systeminfo:computer:rpi:swap#availablePercent" }
+Number RPi_Swap_Used_Percent          "Used (%)"             <none>          { channel="systeminfo:computer:rpi:swap#usedPercent" }
+
+/* Battery information*/
+String RPi_Battery_Name               "Name"                 <batterylevel>  { channel="systeminfo:computer:rpi:battery#name" }
+Number RPi_Battery_RemainingCapacity  "Remaining Capacity"   <batterylevel>  { channel="systeminfo:computer:rpi:battery#remainingCapacity" }
+Number RPi_Battery_RemainingTime      "Remaining Time"       <batterylevel>  { channel="systeminfo:computer:rpi:battery#remainingTime" }
+
+/* Display information*/
+String RPi_Display_Description        "Display description"  <screen>        { channel="systeminfo:computer:rpi:display#information" }
+
+/* Sensors information*/
+Number RPi_Sensor_CPUTemp             "CPU Temperature"      <temperature>   { channel="systeminfo:computer:rpi:sensors#cpuTemp" }
+Number RPi_Sensor_CPUVoltage          "CPU Voltage"          <energy>        { channel="systeminfo:computer:rpi:sensors#cpuVoltage" }
+Number RPi_Sensor_FanSpeed            "Fan speed"            <fan>           { channel="systeminfo:computer:rpi:sensors#fanSpeed" }
+
+/* Process information*/
+Number RPi_Process_load               "Load"                 <none>          { channel="systeminfo:computer:rpi:process#load" }
+Number RPi_Process_used               "Used"                 <none>          { channel="systeminfo:computer:rpi:process#used" }
+String RPi_Process_name               "Name"                 <none>          { channel="systeminfo:computer:rpi:process#name" }
+Number RPi_Process_threads            "Threads"              <none>          { channel="systeminfo:computer:rpi:process#threads" }
+String RPi_Process_path               "Path"                 <none>          { channel="systeminfo:computer:rpi:process#path" }
