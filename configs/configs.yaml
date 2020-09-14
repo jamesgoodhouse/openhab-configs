@@ -4,7 +4,7 @@ settings:
     package: minimal
     binding: airquality,daikin,systeminfo,telegram,zwave
     persistence: influxdb
-    ui: basic,habmin,paper
+    ui: basic,habmin,paper,restdocs
   ephemeris:
     country: us
     region: or
