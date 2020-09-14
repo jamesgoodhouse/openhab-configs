@@ -1,2 +1,0 @@
-Number Door_Front_Battery "Battery [%d %%]" (Batteries) { channel = "zwave:device:controller:node2:battery-level" }
-Switch Door_Front_State   "State"           (Doors)     { channel = "zwave:device:controller:node2:sensor_binary" }
