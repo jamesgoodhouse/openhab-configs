@@ -1,2 +1,2 @@
 Number Door_Garage_Battery "Battery [%d %%]" (Batteries) { channel = "zwave:eco_tiltzwave25_00_000:controller:garage_tilt_sensor:battery-level" }
-Switch Door_Garage_State   "State"           (Doors)     { channel = "zwave:eco_tiltzwave25_00_000:controller:garage_tilt_sensor:sensor_door" }
+String Door_Garage_State   "State"           (Doors)     { channel = "zwave:eco_tiltzwave25_00_000:controller:garage_tilt_sensor:sensor_door" }
