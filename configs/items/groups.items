@@ -1,12 +1,14 @@
 Group Home "Home"
 
 Group House "House" (Home)
+Group Doors "Doors" (House)
 
 Group Floors "Floors" (House)
 Group HVAC   "HVAC"   (House)
 Group Rooms  "Rooms"  (House)
 
 Group AirQuality "Air Quality" <flow> (Home)
+Group Batteries "Batteries" (House)
 
 // floors
 Group Floor_Ground "Ground Floor" (House)
