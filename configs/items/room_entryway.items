@@ -1,2 +1,2 @@
-Number Door_Front_Battery "Battery [%d %%]" (Batteries) { channel = "zwave:eco_dwzwave25_00_000:controller:front_door_sensor:battery-level" }
-String Door_Front_State   "State"           (Doors)     { channel = "zwave:eco_dwzwave25_00_000:controller:front_door_sensor:sensor_binary" }
+Number  Door_Front_Battery "Battery [%d %%]" (Batteries) { channel = "zwave:eco_dwzwave25_00_000:controller:front_door_sensor:battery-level" }
+Contact Door_Front_State   "State"           (Doors)     { channel = "zwave:eco_dwzwave25_00_000:controller:front_door_sensor:sensor_binary" }
