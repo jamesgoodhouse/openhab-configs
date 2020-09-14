@@ -1,4 +1,4 @@
-sitemap demo label="Home" {
+sitemap home label="Home" {
   Frame {
     Text label="HVAC" icon="heating" {
       Frame {
