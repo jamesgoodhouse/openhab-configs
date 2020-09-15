@@ -7,9 +7,9 @@ Strategies {
 }
 
 Items {
-  Aqi_Level:         strategy = everyMinute
+  Aqi_Level:         strategy = everyChange
 
   Batteries*:        strategy = everyChange, restoreOnStartup
   Doors*:            strategy = everyChange, restoreOnStartup
-  Temperatures*:     strategy = everyMinute
+  Temperatures*:     strategy = everyChange
 }
