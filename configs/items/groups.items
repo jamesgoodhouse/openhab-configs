@@ -3,20 +3,20 @@ Group Home "Home"
 Group House "House" (Home)
 Group Doors "Doors" (House)
 
-Group Floors "Floors" (House)
 Group HVAC   "HVAC"   (House)
-Group Rooms  "Rooms"  (House)
 
 Group AirQuality   "Air Quality" <flow> (Home)
 Group Batteries    "Batteries" (House)
 Group Temperatures "Temperatures" (House)
 
 // floors
+Group Floors       "Floors"       (House)
 Group Floor_Ground "Ground Floor" (House)
 Group Floor_First  "First Floor"  (House)
 Group Floor_Second "Second Floor" (House)
 
 // rooms
+Group Rooms             "Rooms"        (House)
 Group Room_Bedroom_Main "Main Bedroom" (House)
 Group Room_Garage       "Garage"       (House)
 Group Room_Great        "Great Room"   (House)
