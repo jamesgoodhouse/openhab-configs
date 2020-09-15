@@ -1,0 +1,60 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: openhab-deployment
+  labels:
+    app: openhab
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: openhab
+  template:
+    metadata:
+      labels:
+        app: openhab
+    spec:
+      volumes:
+      - name: openhab-conf
+        persistentVolumeClaim:
+          claimName: openhab-conf-pvc
+      - name: openhab-userdata
+        persistentVolumeClaim:
+          claimName: openhab-userdata-pvc
+      - name: openhab-conf-repo
+        persistentVolumeClaim:
+          claimName: openhab-conf-repo-pvc
+      - name: zstick
+        hostPath:
+          path: /dev/ttyUSB0
+
+      initContainers:
+      - name: init-openhab
+        image: busybox:1.28
+        command:
+        - 'sh'
+        - '-c'
+        - |
+          echo pulling configs
+          echo building configs
+        volumeMounts:
+        - name: openhab-conf
+          mountPath: /conf
+        - name: openhab-conf-repo
+          mountPath: /conf-repo
+
+      containers:
+      - name: openhab
+        image: openhab/openhab:2.5.8
+        ports:
+        - containerPort: 8080
+        securityContext:
+          privileged: true
+        volumeMounts:
+        - name: zstick
+          mountPath: /dev/ttyUSB0
+        - name: openhab-conf
+          mountPath: /openhab/conf
+        - name: openhab-userdata
+          mountPath: /openhab/userdata
