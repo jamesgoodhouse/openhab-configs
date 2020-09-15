@@ -6,7 +6,6 @@ build_configs=false
 built_configs_path=${BUILT_CONFIGS_PATH-/built_configs}
 final_configs_path=${FINAL_CONFIGS_PATH-/final_configs}
 configs_repo_path=${CONFIGS_REPO_PATH-/configs_repo}
-configs_repo_url=${CONFIGS_REPO_URL-https://github.com/jamesgoodhouse/openhab-configs.git}
 config_yaml_path=${CONFIG_YAML_PATH-/yamls/config/config.yaml}
 secrets_yaml_path=${SECRETS_YAML_PATH-/yamls/secrets/secrets.yaml}
 
@@ -14,7 +13,7 @@ clone_repo () {
   echo cloning configs repo
   echo ================================================================================
 
-  git clone "$configs_repo_url" --depth 1 "$configs_repo_path"
+  git clone "$CONFIGS_REPO_URL" --depth 1 "$configs_repo_path"
 }
 
 pull_latest () {
@@ -61,6 +60,11 @@ copy_configs () {
 
   rsync --verbose --checksum --recursive --delete "$src" "$final_configs_path"
 }
+
+if [ -z ${CONFIGS_REPO_URL+x} ]; then
+  echo ''\''CONFIGS_REPO_URL'\'' environment variable required'
+  exit 1
+fi
 
 if [ ! -d "$configs_repo_path"/.git ]; then
   clone_repo
