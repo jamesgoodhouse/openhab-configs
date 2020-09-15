@@ -75,6 +75,7 @@ fi
 if [ "$build_configs" = true ]; then
   build_configs
   copy_configs
+  success 'done'
 else
   warn 'no need to build configs'
 fi
