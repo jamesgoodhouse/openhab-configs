@@ -2,14 +2,11 @@ Strategies {
   everyMinute: "0 * * * * ?"
   everyHour:   "0 0 * * * ?"
   everyDay:    "0 0 0 * * ?"
-
-  default = everyChange
 }
 
 Items {
-  Aqi_Level:         strategy = everyChange
-
-  Batteries*:        strategy = everyChange, restoreOnStartup
-  Doors*:            strategy = everyChange, restoreOnStartup
-  Temperatures*:     strategy = everyChange
+  AirQuality*:   strategy = everyChange
+  Batteries*:    strategy = everyChange, restoreOnStartup
+  Doors*:        strategy = everyChange, restoreOnStartup
+  Temperatures*: strategy = everyChange
 }
