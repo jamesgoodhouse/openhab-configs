@@ -9,7 +9,8 @@ FROM hairyhenderson/gomplate:v${GOMPLATE_VERSION}-slim as gomplate
 ################################################################################
 
 FROM alpine:${ALPINE_VERSION}
-RUN apk add --no-cache bash git less openssh rsync
+RUN apk add --no-cache bash git less openssh rsync && \
+    wget -O /usr/local/lib/color-logger.bash https://raw.githubusercontent.com/swyckoff/color-logger-bash/master/color-logger.bash
 COPY entrypoint.sh /entrypoint.sh
 COPY --from=gomplate /gomplate /usr/local/bin/gomplate
 ENTRYPOINT ["/entrypoint.sh"]

@@ -2,6 +2,9 @@
 
 set -euo pipefail
 
+. /usr/local/lib/color-logger.bash
+export COLOR_INFO=$COLOR_BLUE
+
 build_configs=false
 built_configs_path=${BUILT_CONFIGS_PATH-/built_configs}
 final_configs_path=${FINAL_CONFIGS_PATH-/final_configs}
@@ -10,15 +13,13 @@ config_yaml_path=${CONFIG_YAML_PATH-/yamls/config/config.yaml}
 secrets_yaml_path=${SECRETS_YAML_PATH-/yamls/secrets/secrets.yaml}
 
 clone_repo () {
-  echo cloning configs repo
-  echo ================================================================================
+  info 'cloning configs repo'
 
   git clone "$CONFIGS_REPO_URL" --depth 1 "$configs_repo_path"
 }
 
 pull_latest () {
-  echo pulling latest changes
-  echo ================================================================================
+  info 'pulling latest changes'
 
   pushd "$configs_repo_path" > /dev/null
 
@@ -33,8 +34,7 @@ pull_latest () {
 }
 
 build_configs () {
-  echo building configs
-  echo ================================================================================
+  info 'building configs'
 
   gomplate --input-dir="/$configs_repo_path/configs" \
            --output-map="/$built_configs_path/{{ .in | strings.ReplaceAll \".tmpl\" \" \" }}" \
@@ -52,8 +52,7 @@ build_configs () {
 }
 
 copy_configs () {
-  echo copying built configs to final destination
-  echo ================================================================================
+  info 'copying built configs to final destination'
 
   # ensure src dir has trailing slash so we only copy its contents
   [[ "${built_configs_path}" != */ ]] && src="${built_configs_path}/"
@@ -62,7 +61,7 @@ copy_configs () {
 }
 
 if [ -z ${CONFIGS_REPO_URL+x} ]; then
-  echo ''\''CONFIGS_REPO_URL'\'' environment variable required'
+  error ''\''CONFIGS_REPO_URL'\'' environment variable required'
   exit 1
 fi
 
@@ -76,4 +75,6 @@ fi
 if [ "$build_configs" = true ]; then
   build_configs
   copy_configs
+else
+  warn 'no need to build configs'
 fi
