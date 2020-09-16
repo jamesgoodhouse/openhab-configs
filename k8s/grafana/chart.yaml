@@ -1,0 +1,16 @@
+---
+apiVersion: helm.cattle.io/v1
+kind: HelmChart
+metadata:
+  name: grafana
+  namespace: kube-system
+spec:
+  chart: grafana
+  repo: https://grafana.github.io/helm-charts
+  targetNamespace: openhab
+  valuesContent: |-
+    admin:
+      existingSecret: grafana-auth
+    ingress:
+      enabled: true
+      hosts: [grafana.home.goodhouse.io]

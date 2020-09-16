@@ -1,0 +1,25 @@
+---
+apiVersion: helm.cattle.io/v1
+kind: HelmChart
+metadata:
+  name: influxdb
+  namespace: kube-system
+spec:
+  chart: influxdb
+  repo: https://helm.influxdata.com
+  targetNamespace: openhab
+  valuesContent: |-
+    image:
+      tag: 1.8.2
+    env:
+    - name: INFLUXDB_DB
+      value: openhab
+    persistence:
+      enabled: true
+      storageClass: local-path
+      size: 4Gi
+    setDefaultUser:
+      enabled: true
+      image: manorrock/curl:arm # default wasn't arm compatible, so found this
+      user:
+        existingSecret: influxdb-auth
