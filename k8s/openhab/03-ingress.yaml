@@ -4,6 +4,9 @@ apiVersion: extensions/v1beta1
 metadata:
   name: openhab
   namespace: openhab
+  annotations:
+    ingress.kubernetes.io/auth-type: basic
+    ingress.kubernetes.io/auth-secret: openhab-basic-auth
 spec:
   rules:
   - host: openhab.home.goodhouse.io
