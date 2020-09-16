@@ -26,7 +26,7 @@ pull_latest () {
 
   git fetch
 
-  if [ "$(git rev-parse HEAD)" != "$(git rev-parse '$configs_repo_branch@{upstream}')" ]; then
+  if [ "$(git rev-parse HEAD)" != "$(git rev-parse "$configs_repo_branch@{upstream}")" ]; then
     git pull
     build_configs=true
   fi
