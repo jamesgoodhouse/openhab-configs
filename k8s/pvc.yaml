@@ -3,6 +3,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: openhab-conf-pvc
+  namespace: openhab
 spec:
   storageClassName: local-path
   accessModes:
@@ -15,6 +16,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: openhab-conf-repo-pvc
+  namespace: openhab
 spec:
   storageClassName: local-path
   accessModes:
@@ -27,6 +29,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: openhab-userdata-pvc
+  namespace: openhab
 spec:
   storageClassName: local-path
   accessModes:

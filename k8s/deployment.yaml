@@ -3,6 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: openhab-deployment
+  namespace: openhab
   labels:
     app: openhab
 spec:
@@ -31,18 +32,21 @@ spec:
 
       initContainers:
       - name: init-openhab
-        image: busybox:1.28
+        image: busybox:latest
+        imagePullPolicy: Always
         command:
-        - 'sh'
-        - '-c'
+        - sh
+        - -c
         - |
-          echo pulling configs
-          echo building configs
+          while [ ! $(ls /final_configs | wc -l) -gt 0 ]; do
+            echo 'no configs found; waiting 5s'
+            sleep 5
+          done
+          echo 'configs found; starting'
         volumeMounts:
         - name: openhab-conf
-          mountPath: /conf
-        - name: openhab-conf-repo
-          mountPath: /conf-repo
+          mountPath: /final_configs
+          readOnly: true
 
       containers:
       - name: openhab

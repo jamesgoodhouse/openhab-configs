@@ -1,0 +1,46 @@
+---
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: build-openhab-configs
+  namespace: openhab
+spec:
+  schedule: "* * * * *"
+  concurrencyPolicy: Forbid
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          volumes:
+          - name: openhab-conf
+            persistentVolumeClaim:
+              claimName: openhab-conf-pvc
+          - name: openhab-conf-repo
+            persistentVolumeClaim:
+              claimName: openhab-conf-repo-pvc
+          - name: config-yaml
+            configMap:
+              name: openhab-config
+          - name: secrets-yaml
+            secret:
+              secretName: openhab-secrets
+
+          containers:
+          - name: build-openhab-configs
+            image: jgoodhouse/openhab-configs-builder:latest
+            imagePullPolicy: Always
+            volumeMounts:
+            - name: config-yaml
+              mountPath: /yamls/config
+              readOnly: true
+            - name: secrets-yaml
+              mountPath: /yamls/secrets
+              readOnly: true
+            - name: openhab-conf
+              mountPath: /final_configs
+            - name: openhab-conf-repo
+              mountPath: /configs_repo
+            env:
+            - name: CONFIGS_REPO_URL
+              value: https://github.com/jamesgoodhouse/openhab-configs.git
+          restartPolicy: Never
