@@ -8,6 +8,7 @@ export COLOR_INFO=$COLOR_BLUE
 build_configs=false
 built_configs_path=${BUILT_CONFIGS_PATH-/built_configs}
 final_configs_path=${FINAL_CONFIGS_PATH-/final_configs}
+configs_repo_branch=${CONFIGS_REPO_BRANCH-master}
 configs_repo_path=${CONFIGS_REPO_PATH-/configs_repo}
 config_yaml_path=${CONFIG_YAML_PATH-/yamls/config/config.yaml}
 secrets_yaml_path=${SECRETS_YAML_PATH-/yamls/secrets/secrets.yaml}
@@ -15,7 +16,7 @@ secrets_yaml_path=${SECRETS_YAML_PATH-/yamls/secrets/secrets.yaml}
 clone_repo () {
   info 'cloning configs repo'
 
-  git clone "$CONFIGS_REPO_URL" --depth 1 "$configs_repo_path"
+  git clone "$CONFIGS_REPO_URL" --depth 1 --single-branch --branch "$configs_repo_branch" "$configs_repo_path"
 }
 
 pull_latest () {
@@ -25,7 +26,7 @@ pull_latest () {
 
   git fetch
 
-  if [ "$(git rev-parse HEAD)" != "$(git rev-parse 'master@{upstream}')" ]; then
+  if [ "$(git rev-parse HEAD)" != "$(git rev-parse '$configs_repo_branch@{upstream}')" ]; then
     git pull
     build_configs=true
   fi
