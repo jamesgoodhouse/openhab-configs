@@ -57,6 +57,9 @@ pull_configs () {
 
   git --git-dir="$configs_repo_git_path" fetch
 
+  cat "$secrets_yaml_path"
+  cat "/configs_repo/configs/things/zwave.things.tmpl"
+
   if [ "$(_get_configs_git_sha HEAD)" != "$(_get_configs_git_sha "$configs_repo_branch@{upstream}")" ]; then
     git --git-dir="$configs_repo_git_path" pull
 
