@@ -71,11 +71,11 @@ yamls_changed () {
 
   _create_yaml_checksums
 
-  if _config_yaml_updated; then
+  if _has_config_yaml_changed; then
     changed=true
   fi
 
-  if _secrets_yaml_updated; then
+  if _has_secrets_yaml_changed; then
     changed=true
   fi
 
@@ -95,6 +95,16 @@ _create_yaml_checksums () {
 
   _checksum "$config_yaml_path" > "$new_config_yaml_checksum_path"
   _checksum "$secrets_yaml_path" > "$new_secrets_yaml_checksum_path"
+
+  if [ ! -f "$existing_config_yaml_checksum_path" ]; then
+    debug "'$existing_config_yaml_checksum_path' not found; creating it"
+    touch "$existing_config_yaml_checksum_path"
+  fi
+
+  if [ ! -f "$existing_secrets_yaml_checksum_path" ]; then
+    debug "'$existing_secrets_yaml_checksum_path' not found; creating it"
+    touch "$existing_secrets_yaml_checksum_path"
+  fi
 }
 
 _checksum () {
@@ -105,28 +115,17 @@ _get_configs_git_sha () {
   git --git-dir="$configs_repo_git_path" rev-parse "$1"
 }
 
-_config_yaml_updated () {
-  if [ ! -f "$new_config_yaml_checksum_path" ]; then
-    error "'$new_config_yaml_checksum_path' must exist prior to calling 'config_yaml_updated'"
-    exit 1
-  fi
-
-  if [ "$(cat "$new_config_yaml_checksum_path")" != "$(cat "$existing_config_yaml_checksum_path" 2>/dev/null || echo '')" ]; then
-    info 'config.yaml changed'
-    return 0
-  fi
-
-  return 1
+_has_config_yaml_changed () {
+  _has_yaml_changed "$new_config_yaml_checksum_path" "$existing_config_yaml_checksum_path" 'config.yaml changed'
 }
 
-_secrets_yaml_updated () {
-  if [ ! -f "$new_secrets_yaml_checksum_path" ]; then
-    error "'$new_secrets_yaml_checksum_path' must exist prior to calling 'secrets_yaml_updated'"
-    exit 1
-  fi
+_has_secrets_yaml_changed () {
+  _has_yaml_changed "$new_secrets_yaml_checksum_path" "$existing_secrets_yaml_checksum_path" 'secrets.yaml changed'
+}
 
-  if [ "$(cat "$new_secrets_yaml_checksum_path")" != "$(cat "$existing_secrets_yaml_checksum_path" 2>/dev/null || echo '')" ]; then
-    info 'secrets.yaml changed'
+_has_yaml_changed () {
+  if [ "$(cat "$1")" != "$(cat "$2")" ]; then
+    info "$3"
     return 0
   fi
 
