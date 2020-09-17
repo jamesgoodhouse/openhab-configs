@@ -1,0 +1,6 @@
+Thing network:speedtest:local "Speed Test" @ "Internet" [
+  refreshInterval=20,
+  uploadSize=1000000,
+  url="https://bouygues.testdebit.info/",
+  fileName="50M.iso"
+]
