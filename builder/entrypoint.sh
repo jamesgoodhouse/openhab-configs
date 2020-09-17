@@ -6,10 +6,12 @@ set -euo pipefail
 export COLOR_INFO=$COLOR_BLUE
 
 build_configs=false
+
 built_configs_path=${BUILT_CONFIGS_PATH-/built_configs}
 final_configs_path=${FINAL_CONFIGS_PATH-/final_configs}
 configs_repo_branch=${CONFIGS_REPO_BRANCH-master}
 configs_repo_path=${CONFIGS_REPO_PATH-/configs_repo}
+configs_repo_git_path="$configs_repo_path/.git"
 config_yaml_path=${CONFIG_YAML_PATH-/yamls/config/config.yaml}
 secrets_yaml_path=${SECRETS_YAML_PATH-/yamls/secrets/secrets.yaml}
 
@@ -19,19 +21,22 @@ clone_repo () {
   git clone "$CONFIGS_REPO_URL" --depth 1 --single-branch --branch "$configs_repo_branch" "$configs_repo_path"
 }
 
-pull_latest () {
+get_configs_git_sha () {
+  git --git-dir="$configs_repo_git_path" rev-parse "$1"
+}
+
+pull_configs () {
   info 'pulling latest changes'
 
-  pushd "$configs_repo_path" > /dev/null
+  git --git-dir="$configs_repo_git_path" fetch
 
-  git fetch
+  if [ "$(get_configs_git_sha HEAD)" != "$(get_configs_git_sha "$configs_repo_branch@{upstream}")" ]; then
+    git --git-dir="$configs_repo_git_path" pull
 
-  if [ "$(git rev-parse HEAD)" != "$(git rev-parse "$configs_repo_branch@{upstream}")" ]; then
-    git pull
-    build_configs=true
+    return 0
   fi
 
-  popd > /dev/null
+  return 1
 }
 
 build_configs () {
@@ -70,7 +75,9 @@ if [ ! -d "$configs_repo_path"/.git ]; then
   clone_repo
   build_configs=true
 else
-  pull_latest
+  if pull_configs; then
+    build_configs=true
+  fi
 fi
 
 if [ "$build_configs" = true ]; then
