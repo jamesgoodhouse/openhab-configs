@@ -19,26 +19,6 @@ existing_secrets_yaml_checksum_path="$final_configs_path/.secrets.yaml.sha256sum
 new_config_yaml_checksum_path="$built_configs_path/.configs.yaml.sha256sum"
 new_secrets_yaml_checksum_path="$built_configs_path/.secrets.yaml.sha256sum"
 
-clone_repo () {
-  info 'cloning configs repo'
-
-  git clone "$CONFIGS_REPO_URL" --depth 1 --single-branch --branch "$configs_repo_branch" "$configs_repo_path"
-}
-
-pull_configs () {
-  info 'pulling latest changes'
-
-  git --git-dir="$configs_repo_git_path" fetch
-
-  if [ "$(_get_configs_git_sha HEAD)" != "$(_get_configs_git_sha "$configs_repo_branch@{upstream}")" ]; then
-    git --git-dir="$configs_repo_git_path" pull
-
-    return 0
-  fi
-
-  return 1
-}
-
 build_configs () {
   info 'building configs'
 
@@ -57,6 +37,12 @@ build_configs () {
   done
 }
 
+clone_repo () {
+  info 'cloning configs repo'
+
+  git clone "$CONFIGS_REPO_URL" --depth 1 --single-branch --branch "$configs_repo_branch" "$configs_repo_path"
+}
+
 copy_configs () {
   info 'copying built configs to final destination'
 
@@ -64,6 +50,34 @@ copy_configs () {
   [[ "${built_configs_path}" != */ ]] && src="${built_configs_path}/"
 
   rsync --verbose --checksum --recursive --delete "$src" "$final_configs_path"
+}
+
+pull_configs () {
+  info 'pulling latest changes'
+
+  git --git-dir="$configs_repo_git_path" fetch
+
+  if [ "$(_get_configs_git_sha HEAD)" != "$(_get_configs_git_sha "$configs_repo_branch@{upstream}")" ]; then
+    git --git-dir="$configs_repo_git_path" pull
+
+    return 0
+  fi
+
+  return 1
+}
+
+setup () {
+  mkdir -p "$built_configs_path"
+
+  if [ ! -f "$existing_config_yaml_checksum_path" ]; then
+    debug "'$existing_config_yaml_checksum_path' not found; creating it"
+    touch "$existing_config_yaml_checksum_path"
+  fi
+
+  if [ ! -f "$existing_secrets_yaml_checksum_path" ]; then
+    debug "'$existing_secrets_yaml_checksum_path' not found; creating it"
+    touch "$existing_secrets_yaml_checksum_path"
+  fi
 }
 
 yamls_changed () {
@@ -86,25 +100,11 @@ yamls_changed () {
   return 1
 }
 
-setup () {
-  mkdir -p "$built_configs_path"
-}
-
 _create_yaml_checksums () {
   info 'creating checksums for yamls'
 
   _checksum "$config_yaml_path" > "$new_config_yaml_checksum_path"
   _checksum "$secrets_yaml_path" > "$new_secrets_yaml_checksum_path"
-
-  if [ ! -f "$existing_config_yaml_checksum_path" ]; then
-    debug "'$existing_config_yaml_checksum_path' not found; creating it"
-    touch "$existing_config_yaml_checksum_path"
-  fi
-
-  if [ ! -f "$existing_secrets_yaml_checksum_path" ]; then
-    debug "'$existing_secrets_yaml_checksum_path' not found; creating it"
-    touch "$existing_secrets_yaml_checksum_path"
-  fi
 }
 
 _checksum () {
