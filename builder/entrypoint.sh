@@ -5,15 +5,19 @@ set -euo pipefail
 . /usr/local/lib/color-logger.bash
 export COLOR_INFO=$COLOR_BLUE
 
-build_configs=false
-
 built_configs_path=${BUILT_CONFIGS_PATH-/built_configs}
 final_configs_path=${FINAL_CONFIGS_PATH-/final_configs}
 configs_repo_branch=${CONFIGS_REPO_BRANCH-master}
 configs_repo_path=${CONFIGS_REPO_PATH-/configs_repo}
-configs_repo_git_path="$configs_repo_path/.git"
 config_yaml_path=${CONFIG_YAML_PATH-/yamls/config/config.yaml}
 secrets_yaml_path=${SECRETS_YAML_PATH-/yamls/secrets/secrets.yaml}
+
+configs_need_building=false
+configs_repo_git_path="$configs_repo_path/.git"
+existing_config_yaml_checksum_path="$final_configs_path/.configs.yaml.sha256sum"
+existing_secrets_yaml_checksum_path="$final_configs_path/.secrets.yaml.sha256sum"
+new_config_yaml_checksum_path="$built_configs_path/.configs.yaml.sha256sum"
+new_secrets_yaml_checksum_path="$built_configs_path/.secrets.yaml.sha256sum"
 
 clone_repo () {
   info 'cloning configs repo'
@@ -21,16 +25,12 @@ clone_repo () {
   git clone "$CONFIGS_REPO_URL" --depth 1 --single-branch --branch "$configs_repo_branch" "$configs_repo_path"
 }
 
-get_configs_git_sha () {
-  git --git-dir="$configs_repo_git_path" rev-parse "$1"
-}
-
 pull_configs () {
   info 'pulling latest changes'
 
   git --git-dir="$configs_repo_git_path" fetch
 
-  if [ "$(get_configs_git_sha HEAD)" != "$(get_configs_git_sha "$configs_repo_branch@{upstream}")" ]; then
+  if [ "$(_get_configs_git_sha HEAD)" != "$(_get_configs_git_sha "$configs_repo_branch@{upstream}")" ]; then
     git --git-dir="$configs_repo_git_path" pull
 
     return 0
@@ -66,21 +66,96 @@ copy_configs () {
   rsync --verbose --checksum --recursive --delete "$src" "$final_configs_path"
 }
 
+yamls_changed () {
+  local changed=false
+
+  _create_yaml_checksums
+
+  if _config_yaml_updated; then
+    changed=true
+  fi
+
+  if _secrets_yaml_updated; then
+    changed=true
+  fi
+
+  if [ "$changed" = true ]; then
+    return 0
+  fi
+
+  return 1
+}
+
+setup () {
+  mkdir -p "$built_configs_path"
+}
+
+_create_yaml_checksums () {
+  info 'creating checksums for yamls'
+
+  _checksum "$config_yaml_path" > "$new_config_yaml_checksum_path"
+  _checksum "$secrets_yaml_path" > "$new_secrets_yaml_checksum_path"
+}
+
+_checksum () {
+  sha256sum "$1" | awk '{print $1}'
+}
+
+_get_configs_git_sha () {
+  git --git-dir="$configs_repo_git_path" rev-parse "$1"
+}
+
+_config_yaml_updated () {
+  if [ ! -f "$new_config_yaml_checksum_path" ]; then
+    error "'$new_config_yaml_checksum_path' must exist prior to calling 'config_yaml_updated'"
+    exit 1
+  fi
+
+  if [ "$(cat "$new_config_yaml_checksum_path")" != "$(cat "$existing_config_yaml_checksum_path" 2>/dev/null || echo '')" ]; then
+    info 'config.yaml changed'
+    return 0
+  fi
+
+  return 1
+}
+
+_secrets_yaml_updated () {
+  if [ ! -f "$new_secrets_yaml_checksum_path" ]; then
+    error "'$new_secrets_yaml_checksum_path' must exist prior to calling 'secrets_yaml_updated'"
+    exit 1
+  fi
+
+  if [ "$(cat "$new_secrets_yaml_checksum_path")" != "$(cat "$existing_secrets_yaml_checksum_path" 2>/dev/null || echo '')" ]; then
+    info 'secrets.yaml changed'
+    return 0
+  fi
+
+  return 1
+}
+
+################################################################################
+
 if [ -z ${CONFIGS_REPO_URL+x} ]; then
   error ''\''CONFIGS_REPO_URL'\'' environment variable required'
   exit 1
 fi
 
+setup
+
 if [ ! -d "$configs_repo_path"/.git ]; then
   clone_repo
-  build_configs=true
+  configs_need_building=true
 else
   if pull_configs; then
-    build_configs=true
+    configs_need_building=true
   fi
 fi
 
-if [ "$build_configs" = true ]; then
+if yamls_changed; then
+  configs_need_building=true
+fi
+
+if [ "$configs_need_building" = true ]; then
   build_configs
   copy_configs
   success 'done'
