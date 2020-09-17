@@ -21,8 +21,10 @@ data:
       airquality:
         station_id: 86
       daikin_great_room:
+        host: great-room.hvac.home.lan
         thing_id: great_room
       daikin_main_bedroom:
+        host: main-bedroom.hvac.home.lan
         thing_id: main_bedroom
       zwave_great_room:
         port: /dev/ttyUSB0

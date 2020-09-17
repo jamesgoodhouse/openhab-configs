@@ -13,4 +13,4 @@ spec:
       existingSecret: grafana-auth
     ingress:
       enabled: true
-      hosts: [grafana.home.goodhouse.io]
+      hosts: [grafana.openhab.home.lan]
