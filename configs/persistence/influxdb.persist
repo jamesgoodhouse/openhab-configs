@@ -9,4 +9,5 @@ Items {
   Batteries*:    strategy = everyChange, restoreOnStartup
   Doors*:        strategy = everyChange, restoreOnStartup
   Temperatures*: strategy = everyChange
+  Network*:      strategy = everyChange
 }

@@ -12,4 +12,4 @@ Number               AQI_Home_StationId       "Station ID"                      
 DateTime             AQI_Home_ObservationTime "Time of observation [%1$tH:%1$tM]"  <clock>       (AirQuality) { channel="airquality:aqi:home:observationTime" }
 Number:Temperature   AQI_Home_Temperature     "Temperature"                        <temperature> (AirQuality) { channel="airquality:aqi:home:temperature" }
 Number:Pressure      AQI_Home_Pressure        "Pressure"                           <pressure>    (AirQuality) { channel="airquality:aqi:home:pressure" }
-Number:DimensionLess AQI_Home_Humidity        "Humidity"                           <humidity>    (AirQuality) { channel="airquality:aqi:home:humidity" }
+Number:Dimensionless AQI_Home_Humidity        "Humidity"                           <humidity>    (AirQuality) { channel="airquality:aqi:home:humidity" }
