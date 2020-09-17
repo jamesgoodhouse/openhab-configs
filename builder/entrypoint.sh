@@ -91,7 +91,7 @@ yamls_changed () {
   fi
 
   if _has_secrets_yaml_changed; then
-    info "'config.yaml' has changed"
+    info "'secrets.yaml' has changed"
     changed=true
   fi
 
