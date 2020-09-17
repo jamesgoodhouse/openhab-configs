@@ -86,10 +86,12 @@ yamls_changed () {
   _create_yaml_checksums
 
   if _has_config_yaml_changed; then
+    info "'config.yaml' has changed"
     changed=true
   fi
 
   if _has_secrets_yaml_changed; then
+    info "'config.yaml' has changed"
     changed=true
   fi
 
@@ -100,15 +102,15 @@ yamls_changed () {
   return 1
 }
 
-_create_yaml_checksums () {
-  info 'creating checksums for yamls'
-
-  _checksum "$config_yaml_path" > "$new_config_yaml_checksum_path"
-  _checksum "$secrets_yaml_path" > "$new_secrets_yaml_checksum_path"
-}
+#-------------------------------------------------------------------------------
 
 _checksum () {
   sha256sum "$1" | awk '{print $1}'
+}
+
+_create_yaml_checksums () {
+  _checksum "$config_yaml_path" > "$new_config_yaml_checksum_path"
+  _checksum "$secrets_yaml_path" > "$new_secrets_yaml_checksum_path"
 }
 
 _get_configs_git_sha () {
