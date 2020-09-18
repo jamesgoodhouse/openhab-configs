@@ -63,6 +63,7 @@ copy_configs () {
 had_previous_error () {
   if [ -f "$previous_error_flag_file" ]; then
     warn 'found previous error state'
+    rm -f "$previous_error_flag_file" # will get recreated if errors again
     return 0
   fi
 
