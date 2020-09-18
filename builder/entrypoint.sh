@@ -54,11 +54,13 @@ copy_configs () {
 pull_configs () {
   info 'pulling latest changes'
 
-  git -C "$configs_repo_path" status
-  git -C "$configs_repo_path" fetch
-  git -C "$configs_repo_path" status
+  local head_hash
+  local upstream_hash
 
-  if [ "$(_get_configs_git_sha HEAD)" != "$(_get_configs_git_sha "$configs_repo_branch@{upstream}")" ]; then
+  head_hash=$(_get_configs_git_sha HEAD)
+  upstream_hash=$(_get_configs_git_sha "$configs_repo_branch@{upstream}")
+
+  if [ "$head_hash" != "$upstream_hash" ]; then
     git -C "$configs_repo_path" pull
     git -C "$configs_repo_path" status
 
