@@ -76,9 +76,8 @@ pull_configs () {
   upstream_hash=$(_get_configs_git_sha "$configs_repo_branch@{upstream}")
 
   if [ "$head_hash" != "$upstream_hash" ]; then
+    debug 'found changes'
     git -C "$configs_repo_path" pull
-    git -C "$configs_repo_path" status
-
     return 0
   fi
 
