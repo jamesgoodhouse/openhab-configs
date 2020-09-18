@@ -92,6 +92,13 @@ remove_previous_error_state () {
 }
 
 setup () {
+  if [ -z ${CONFIGS_REPO_URL+x} ]; then
+    error ''\''CONFIGS_REPO_URL'\'' environment variable required'
+    exit 1
+  fi
+
+  trap 'catch_error' ERR
+
   mkdir -p "$built_configs_path"
 
   if [ ! -f "$existing_config_yaml_checksum_path" ]; then
@@ -103,8 +110,6 @@ setup () {
     debug "'$existing_secrets_yaml_checksum_path' not found; creating it"
     touch "$existing_secrets_yaml_checksum_path"
   fi
-
-  trap 'catch_error' ERR
 }
 
 yamls_changed () {
@@ -161,11 +166,6 @@ _has_yaml_changed () {
 }
 
 ################################################################################
-
-if [ -z ${CONFIGS_REPO_URL+x} ]; then
-  error ''\''CONFIGS_REPO_URL'\'' environment variable required'
-  exit 1
-fi
 
 setup
 
