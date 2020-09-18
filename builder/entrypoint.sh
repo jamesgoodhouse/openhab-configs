@@ -57,11 +57,8 @@ pull_configs () {
 
   git --git-dir="$configs_repo_git_path" fetch
 
-  cat "$secrets_yaml_path"
-  cat "/configs_repo/configs/things/zwave.things.tmpl"
-
   if [ "$(_get_configs_git_sha HEAD)" != "$(_get_configs_git_sha "$configs_repo_branch@{upstream}")" ]; then
-    git --git-dir="$configs_repo_git_path" pull
+    git --git-dir="$configs_repo_git_path" reset --hard "origin/$configs_repo_branch"
 
     return 0
   fi
@@ -121,16 +118,15 @@ _get_configs_git_sha () {
 }
 
 _has_config_yaml_changed () {
-  _has_yaml_changed "$new_config_yaml_checksum_path" "$existing_config_yaml_checksum_path" 'config.yaml changed'
+  _has_yaml_changed "$new_config_yaml_checksum_path" "$existing_config_yaml_checksum_path"
 }
 
 _has_secrets_yaml_changed () {
-  _has_yaml_changed "$new_secrets_yaml_checksum_path" "$existing_secrets_yaml_checksum_path" 'secrets.yaml changed'
+  _has_yaml_changed "$new_secrets_yaml_checksum_path" "$existing_secrets_yaml_checksum_path"
 }
 
 _has_yaml_changed () {
   if [ "$(cat "$1")" != "$(cat "$2")" ]; then
-    info "$3"
     return 0
   fi
 
