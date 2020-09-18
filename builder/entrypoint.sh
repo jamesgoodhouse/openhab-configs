@@ -37,10 +37,12 @@ build_configs () {
   done
 }
 
-catch_error () {
-  rc=$?
-  touch "$previous_error_flag_file"
-  exit $rc
+# https://medium.com/@dirk.avery/the-bash-trap-trap-ce6083f36700
+catch () {
+  if [ "$1" != "0" ]; then
+    error 'creating error state file'
+    touch "$previous_error_flag_file"
+  fi
 }
 
 clone_repo () {
@@ -60,6 +62,7 @@ copy_configs () {
 
 had_previous_error () {
   if [ -f "$previous_error_flag_file" ]; then
+    warn 'found previous error state'
     return 0
   fi
 
@@ -67,10 +70,12 @@ had_previous_error () {
 }
 
 pull_configs () {
-  info 'pulling latest changes'
-
   local head_hash
   local upstream_hash
+
+  info 'pulling latest changes'
+
+  git -C "$configs_repo_path" fetch
 
   head_hash=$(_get_configs_git_sha HEAD)
   upstream_hash=$(_get_configs_git_sha "$configs_repo_branch@{upstream}")
@@ -84,19 +89,13 @@ pull_configs () {
   return 1
 }
 
-remove_previous_error_state () {
-  if [ -f "$previous_error_flag_file" ]; then
-    rm -f "$previous_error_flag_file"
-  fi
-}
-
 setup () {
   if [ -z ${CONFIGS_REPO_URL+x} ]; then
     error ''\''CONFIGS_REPO_URL'\'' environment variable required'
     exit 1
   fi
 
-  trap 'catch_error' ERR
+  trap 'catch $?' EXIT
 
   mkdir -p "$built_configs_path"
 
@@ -188,7 +187,6 @@ fi
 if [ "$configs_need_building" = true ]; then
   build_configs
   copy_configs
-  remove_previous_error_state
   success 'done'
 else
   warn 'no need to build configs'
