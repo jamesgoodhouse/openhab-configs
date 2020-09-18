@@ -13,7 +13,6 @@ config_yaml_path=${CONFIG_YAML_PATH-/yamls/config/config.yaml}
 secrets_yaml_path=${SECRETS_YAML_PATH-/yamls/secrets/secrets.yaml}
 
 configs_need_building=false
-configs_repo_git_path="$configs_repo_path/.git"
 existing_config_yaml_checksum_path="$final_configs_path/.configs.yaml.sha256sum"
 existing_secrets_yaml_checksum_path="$final_configs_path/.secrets.yaml.sha256sum"
 new_config_yaml_checksum_path="$built_configs_path/.configs.yaml.sha256sum"
@@ -55,10 +54,13 @@ copy_configs () {
 pull_configs () {
   info 'pulling latest changes'
 
-  git --git-dir="$configs_repo_git_path" fetch
+  git -C "$configs_repo_path" status
+  git -C "$configs_repo_path" fetch
+  git -C "$configs_repo_path" status
 
   if [ "$(_get_configs_git_sha HEAD)" != "$(_get_configs_git_sha "$configs_repo_branch@{upstream}")" ]; then
-    git --git-dir="$configs_repo_git_path" reset --hard "origin/$configs_repo_branch"
+    git -C "$configs_repo_path" pull
+    git -C "$configs_repo_path" status
 
     return 0
   fi
@@ -114,7 +116,7 @@ _create_yaml_checksums () {
 }
 
 _get_configs_git_sha () {
-  git --git-dir="$configs_repo_git_path" rev-parse "$1"
+  git -C "$configs_repo_path" rev-parse "$1"
 }
 
 _has_config_yaml_changed () {
