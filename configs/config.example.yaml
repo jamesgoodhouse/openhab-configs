@@ -1,0 +1,42 @@
+---
+groups:
+  house:
+    name: null
+  floor_ground:
+    name: null
+  floor_first:
+    name: null
+  floor_second:
+    name: null
+  room_bedroom_main:
+    name: null
+things:
+  airquality:
+    station_id: null
+  daikin_great_room:
+    host: null
+    thing_id: null
+  daikin_main_bedroom:
+    host: null
+    thing_id: null
+  zwave_controller:
+    port: null
+settings:
+  addons:
+    package: null
+    binding: null
+    persistence: null
+    ui: null
+  ephemeris:
+    country: null
+    region: null
+    dayset:
+      trash: null
+  influxdb:
+    db: null
+    url: null
+  i18n:
+    language: null
+    region: null
+    timezone: null
+    measurement_system: null
