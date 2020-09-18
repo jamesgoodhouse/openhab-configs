@@ -13,6 +13,7 @@ config_yaml_path=${CONFIG_YAML_PATH-/yamls/config/config.yaml}
 secrets_yaml_path=${SECRETS_YAML_PATH-/yamls/secrets/secrets.yaml}
 
 configs_need_building=false
+previous_error_flag_file="$final_configs_path/.previous_error"
 existing_config_yaml_checksum_path="$final_configs_path/.configs.yaml.sha256sum"
 existing_secrets_yaml_checksum_path="$final_configs_path/.secrets.yaml.sha256sum"
 new_config_yaml_checksum_path="$built_configs_path/.configs.yaml.sha256sum"
@@ -36,6 +37,12 @@ build_configs () {
   done
 }
 
+catch_error () {
+  rc=$?
+  touch "$previous_error_flag_file"
+  exit $rc
+}
+
 clone_repo () {
   info 'cloning configs repo'
 
@@ -49,6 +56,14 @@ copy_configs () {
   [[ "${built_configs_path}" != */ ]] && src="${built_configs_path}/"
 
   rsync --verbose --checksum --recursive --delete "$src" "$final_configs_path"
+}
+
+had_previous_error () {
+  if [ -f "$previous_error_flag_file" ]; then
+    return 0
+  fi
+
+  return 1
 }
 
 pull_configs () {
@@ -70,6 +85,12 @@ pull_configs () {
   return 1
 }
 
+remove_previous_error_state () {
+  if [ -f "$previous_error_flag_file" ]; then
+    rm -f "$previous_error_flag_file"
+  fi
+}
+
 setup () {
   mkdir -p "$built_configs_path"
 
@@ -82,6 +103,8 @@ setup () {
     debug "'$existing_secrets_yaml_checksum_path' not found; creating it"
     touch "$existing_secrets_yaml_checksum_path"
   fi
+
+  trap 'catch_error' ERR
 }
 
 yamls_changed () {
@@ -159,9 +182,14 @@ if yamls_changed; then
   configs_need_building=true
 fi
 
+if had_previous_error; then
+  configs_need_building=true
+fi
+
 if [ "$configs_need_building" = true ]; then
   build_configs
   copy_configs
+  remove_previous_error_state
   success 'done'
 else
   warn 'no need to build configs'
