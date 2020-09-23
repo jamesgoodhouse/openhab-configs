@@ -25,9 +25,11 @@ things:
       port: null
     sensors:
       front_door:
+        node_id: null
         thing_id: null
         type_id: null
       garage_door:
+        node_id: null
         thing_id: null
         type_id: null
 settings:
