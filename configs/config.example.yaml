@@ -13,14 +13,21 @@ groups:
 things:
   airquality:
     station_id: null
-  daikin_great_room:
-    host: null
-    thing_id: null
-  daikin_main_bedroom:
-    host: null
-    thing_id: null
-  zwave_controller:
-    port: null
+  daikin:
+    great_room:
+      host: null
+      thing_id: null
+    main_bedroom:
+      host: null
+      thing_id: null
+  zwave:
+    controller:
+      port: null
+    sensors:
+      front_door:
+        thing_id: null
+      garage_door:
+        thing_id: null
 settings:
   addons:
     package: null

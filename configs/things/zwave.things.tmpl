@@ -1,10 +1,10 @@
 Bridge zwave:serial_zstick:controller "Z-Wave Controller" @ "Great Room" [
-  port="{{ (ds "configs").things.zwave_controller.port }}",
+  port="{{ (ds "configs").things.zwave.controller.port }}",
   controller_master="true",
   controller_softreset="false",
   heal_enable="true",
-  security_networkkey="{{ (ds "secrets").things.zwave_controller.security_network_key }}"
+  security_networkkey="{{ (ds "secrets").things.zwave.controller.security_network_key }}"
 ] {
-  Thing eco_dwzwave25_00_000   front_door_sensor  "Door Sensor" @ "Entryway" [ node_id=2 ]
-  Thing eco_tiltzwave25_00_000 garage_tilt_sensor "Tilt Sensor" @ "Garage"   [ node_id=3 ]
+  Thing eco_dwzwave25_00_000   {{ (ds "configs").things.zwave.sensors.front_door.thing_id }}  "Door Sensor" @ "Entryway" [ node_id=2 ]
+  Thing eco_tiltzwave25_00_000 {{ (ds "configs").things.zwave.sensors.garage_door.thing_id }} "Tilt Sensor" @ "Garage"   [ node_id=3 ]
 }

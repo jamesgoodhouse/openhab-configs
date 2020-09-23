@@ -1,8 +1,8 @@
 // HVAC
-Number:Temperature HVAC_GreatRoom_IndoorTemperature  "Indoor Temperature"  (HVAC,Temperatures,Room_Great) { channel="daikin:ac_unit:{{ (ds "configs").things.daikin_great_room.thing_id }}:indoortemp" }
-Number:Temperature HVAC_GreatRoom_OutdoorTemperature "Outdoor Temperature" (HVAC,Temperatures,Room_Great) { channel="daikin:ac_unit:{{ (ds "configs").things.daikin_great_room.thing_id }}:outdoortemp" }
-Number:Temperature HVAC_GreatRoom_SetPoint           "Set Point"           (HVAC,Temperatures,Room_Great) { channel="daikin:ac_unit:{{ (ds "configs").things.daikin_great_room.thing_id }}:settemp" }
-String             HVAC_GreatRoom_Fan                "Fan"                 (HVAC,Room_Great)              { channel="daikin:ac_unit:{{ (ds "configs").things.daikin_great_room.thing_id }}:fanspeed" }
-String             HVAC_GreatRoom_FanSwing           "Fan Swing"           (HVAC,Room_Great)              { channel="daikin:ac_unit:{{ (ds "configs").things.daikin_great_room.thing_id }}:fandir" }
-String             HVAC_GreatRoom_Mode               "Mode"                (HVAC,Room_Great)              { channel="daikin:ac_unit:{{ (ds "configs").things.daikin_great_room.thing_id }}:mode" }
-Switch             HVAC_GreatRoom_Power              "Power"               (HVAC,Room_Great)              { channel="daikin:ac_unit:{{ (ds "configs").things.daikin_great_room.thing_id }}:power" }
+Number:Temperature HVAC_GreatRoom_IndoorTemperature  "Indoor Temperature"  (HVAC,Temperatures,Room_Great) { channel="daikin:ac_unit:{{ (ds "configs").things.daikin.great_room.thing_id }}:indoortemp" }
+Number:Temperature HVAC_GreatRoom_OutdoorTemperature "Outdoor Temperature" (HVAC,Temperatures,Room_Great) { channel="daikin:ac_unit:{{ (ds "configs").things.daikin.great_room.thing_id }}:outdoortemp" }
+Number:Temperature HVAC_GreatRoom_SetPoint           "Set Point"           (HVAC,Temperatures,Room_Great) { channel="daikin:ac_unit:{{ (ds "configs").things.daikin.great_room.thing_id }}:settemp" }
+String             HVAC_GreatRoom_Fan                "Fan"                 (HVAC,Room_Great)              { channel="daikin:ac_unit:{{ (ds "configs").things.daikin.great_room.thing_id }}:fanspeed" }
+String             HVAC_GreatRoom_FanSwing           "Fan Swing"           (HVAC,Room_Great)              { channel="daikin:ac_unit:{{ (ds "configs").things.daikin.great_room.thing_id }}:fandir" }
+String             HVAC_GreatRoom_Mode               "Mode"                (HVAC,Room_Great)              { channel="daikin:ac_unit:{{ (ds "configs").things.daikin.great_room.thing_id }}:mode" }
+Switch             HVAC_GreatRoom_Power              "Power"               (HVAC,Room_Great)              { channel="daikin:ac_unit:{{ (ds "configs").things.daikin.great_room.thing_id }}:power" }
