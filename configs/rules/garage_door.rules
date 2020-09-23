@@ -1,0 +1,5 @@
+rule "Garage door opened while away"
+when
+  Item Door_Garage_State changed from CLOSED to OPEN
+then
+end
