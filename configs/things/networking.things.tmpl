@@ -5,7 +5,7 @@ Thing network:speedtest:local "Speed Test" @ "Internet" [
   fileName="50M.iso"
 ]
 
-{{- range (ds "secrets").things.networking -}}
+{{ range (ds "secrets").things.networking -}}
 Thing network:{{ .type_id }}:{{ .thing_id }} [
   hostname="{{ .hostname }}",
   macAddress="{{ .mac_address }}"
