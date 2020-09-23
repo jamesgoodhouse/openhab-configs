@@ -26,8 +26,10 @@ things:
     sensors:
       front_door:
         thing_id: null
+        type_id: null
       garage_door:
         thing_id: null
+        type_id: null
 settings:
   addons:
     package: null
