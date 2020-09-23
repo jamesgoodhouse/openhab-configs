@@ -1,7 +1,5 @@
-Thing daikin:ac_unit:{{ (ds "configs").things.daikin.great_room.thing_id }} "HVAC" @ "Great Room" [
-  host="{{ (ds "configs").things.daikin.great_room.host }}"
+{{- range (ds "configs").things.daikin -}}
+Thing daikin:{{ .type_id }}:{{ .thing_id }} "{{ .label }}" @ "{{ .location }}" [
+  host="{{ .host }}"
 ]
-
-Thing daikin:ac_unit:{{ (ds "configs").things.daikin.main_bedroom.thing_id }} "HVAC" @ "Main Bedroom" [
-  host="{{ (ds "configs").things.daikin.main_bedroom.host }}"
-]
+{{ end -}}

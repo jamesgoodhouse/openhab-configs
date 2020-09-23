@@ -16,10 +16,16 @@ things:
   daikin:
     great_room:
       host: null
+      label: null
+      location: null
       thing_id: null
+      type_id: null
     main_bedroom:
       host: null
+      label: null
+      location: null
       thing_id: null
+      type_id: null
   zwave:
     controller:
       port: null
