@@ -43,9 +43,10 @@ settings:
     region: null
     dayset:
       trash: null
-  influxdb:
-    db: null
-    url: null
+  persistence:
+    influxdb:
+      db: null
+      url: null
   i18n:
     language: null
     region: null

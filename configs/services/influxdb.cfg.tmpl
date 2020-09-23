@@ -1,6 +1,6 @@
 # The database URL, e.g. http://127.0.0.1:8086 or https://127.0.0.1:8084 .
 # Defaults to: http://127.0.0.1:8086
-url = {{ (ds "configs").settings.influxdb.url }}
+url = {{ (ds "configs").settings.persistence.influxdb.url }}
 
 # The name of the database user, e.g. openhab.
 # Defaults to: openhab
@@ -11,7 +11,7 @@ password = {{ env.Getenv "INFLUXDB_PASSWORD" }}
 
 # The name of the database, e.g. openhab.
 # Defaults to: openhab
-db = {{ (ds "configs").settings.influxdb.db }}
+db = {{ (ds "configs").settings.persistence.influxdb.db }}
 
 # The retention policy to be used, needs to configured in InfluxDB
 # Till v0.13: 'default', since v1.0: 'autogen'
