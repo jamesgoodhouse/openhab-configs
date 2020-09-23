@@ -1,0 +1,13 @@
+Thing network:speedtest:local "Speed Test" @ "Internet" [
+  refreshInterval=20,
+  uploadSize=1000000,
+  url="https://bouygues.testdebit.info/",
+  fileName="50M.iso"
+]
+
+{{- range (ds "secrets").things.networking -}}
+Thing network:{{ .type_id }}:{{ .thing_id }} [
+  hostname="{{ .hostname }}",
+  macAddress="{{ .mac_address }}"
+]
+{{ end -}}
