@@ -10,6 +10,4 @@ Items {
   Doors*:          strategy = everyChange, restoreOnStartup
   Temperatures*:   strategy = everyChange
   Network*:        strategy = everyChange
-  JamesMobile*:    strategy = everyChange
-  OfflineDevices*: strategy = everyChange
 }
