@@ -11,7 +11,6 @@ Group Temperatures "Temperatures" (House)
 
 Group Network "Network"
 Group:Switch:OR(ON,OFF) JamesMobile "James Mobile" (Network)
-
 Group:String:COUNT("OFFLINE") OfflineDevices "Offline Devices [%d]"
 
 // floors
