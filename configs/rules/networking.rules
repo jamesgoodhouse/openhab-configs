@@ -1,6 +1,6 @@
 rule "Set state of James' iPhone"
 when
-  Member of JamesMobile changed to
+  Item JamesMobile changed to ON
 then
   NetworkDevice_JamesiPhone_Online.postUpdate(ON)
 end
