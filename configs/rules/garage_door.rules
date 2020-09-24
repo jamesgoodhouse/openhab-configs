@@ -2,6 +2,5 @@ rule "Garage door opened while away"
 when
   Item Door_Garage_State changed from CLOSED to OPEN
 then
-  val telegramAction = getActions("telegram","telegram:telegramBot:botty_mcbotface")
-  telegramAction.sendTelegram("garage door opened")
+  sendTelegram("boty_mcbotface", u"⚠️ The garage door has been opened \U26A0")
 end
