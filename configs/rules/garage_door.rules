@@ -2,5 +2,5 @@ rule "Garage door opened while away"
 when
   Item Door_Garage_State changed from CLOSED to OPEN
 then
-  sendTelegram("boty_mcbotface", u"⚠️ The garage door has been opened \U26A0")
+  sendTelegram("boty_mcbotface", "⚠️ The garage door has been opened")
 end
