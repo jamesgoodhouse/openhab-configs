@@ -4,3 +4,7 @@ Number:DataTransferRate Speedtest_ResultDown "Downlink [%.2f %unit%]"           
 Number:DataTransferRate Speedtest_ResultUp   "Uplink [%.2f %unit%]"             (Network) { channel="network:speedtest:local:rateUp" }
 DateTime                Speedtest_Start      "Test Start [%1$tH:%1$tM]"  <time> (Network) { channel="network:speedtest:local:testStart" }
 DateTime                Speedtest_LUD        "Timestamp [%1$tH:%1$tM]"   <time> (Network) { channel="network:speedtest:local:testEnd" }
+
+Switch      NetworkDevice_Online       { channel="network:pingdevice:james_iphone_1:online" }
+Number:Time NetworkDevice_ResponseTime { channel="network:pingdevice:james_iphone_1:latency" }
+DateTime    NetworkDevice_LastSeen     { channel="network:pingdevice:james_iphone_1:lastseen" }
