@@ -9,9 +9,8 @@ Group AirQuality   "Air Quality" <flow> (Home)
 Group Batteries    "Batteries" (House)
 Group Temperatures "Temperatures" (House)
 
-Group JamesMobile "James Mobile"
-
 Group Network "Network"
+Group:Switch:OR(ON,OFF) JamesMobile "James Mobile" (Network)
 
 // floors
 Group Floors       "Floors"       (House)
