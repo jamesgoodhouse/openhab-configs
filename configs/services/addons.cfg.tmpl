@@ -38,7 +38,7 @@ ui = {{ (ds "configs").settings.addons.ui }}
 persistence = {{ (ds "configs").settings.addons.persistence }}
 
 # A comma-separated list of actions to install (e.g. "action = mail,pushover")
-#action = 
+action = {{ (ds "configs" ).settings.addons.action }}
 
 # A comma-separated list of transformation services to install (e.g. "transformation = map,jsonpath")
 transformation = {{ (ds "configs").settings.addons.transformation }}

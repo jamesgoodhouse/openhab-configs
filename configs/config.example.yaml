@@ -44,6 +44,7 @@ things:
         type_id: null
 settings:
   addons:
+    action: null
     package: null
     binding: null
     persistence: null
