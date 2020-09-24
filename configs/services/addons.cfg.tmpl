@@ -41,7 +41,7 @@ persistence = {{ (ds "configs").settings.addons.persistence }}
 #action = 
 
 # A comma-separated list of transformation services to install (e.g. "transformation = map,jsonpath")
-#transformation = 
+transformation = {{ (ds "configs").settings.addons.transformation }}
 
 # A comma-separated list of voice services to install (e.g. "voice = marytts,freetts")
 #voice = 
