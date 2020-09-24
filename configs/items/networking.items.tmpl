@@ -5,6 +5,8 @@ Number:DataTransferRate Speedtest_ResultUp   "Uplink [%.2f %unit%]"             
 DateTime                Speedtest_Start      "Test Start [%1$tH:%1$tM]"  <time> (Network) { channel="network:speedtest:local:testStart" }
 DateTime                Speedtest_LUD        "Timestamp [%1$tH:%1$tM]"   <time> (Network) { channel="network:speedtest:local:testEnd" }
 
-Switch      NetworkDevice_Online       { channel="network:pingdevice:james_iphone_1:online" }
-Number:Time NetworkDevice_ResponseTime { channel="network:pingdevice:james_iphone_1:latency" }
-DateTime    NetworkDevice_LastSeen     { channel="network:pingdevice:james_iphone_1:lastseen" }
+{{ range $n := (ds "secrets").things.networking -}}
+{{ range $n.items -}}
+{{ .type }} {{ $n.name }}_{{ .name }} {{ "{" }} channel="network:{{ $n.type_id }}:{{ $n.thing_id }}:{{ .channel }}" {{ "}" }}
+{{ end }}
+{{ end -}}
