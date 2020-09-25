@@ -1,1 +1,5 @@
-Bridge bluetooth:bluez:hci0 [ address="{{ (ds "secrets").things.bluetooth.address }}", backgroundDiscovery=false ]
+Bridge bluetooth:bluez:hci0 [
+  address="{{ (ds "secrets").things.bluetooth.address }}",
+  backgroundDiscovery=false
+] {
+}
