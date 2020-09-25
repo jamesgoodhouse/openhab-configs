@@ -1,6 +1,5 @@
-rule "Set state of James' iPhone"
+rule "Set state of James' Presence"
 when
-  Item JamesMobile changed to ON
+  Item JamesPresence changed to ON
 then
-  NetworkDevice_JamesiPhone_Online.postUpdate(ON)
 end

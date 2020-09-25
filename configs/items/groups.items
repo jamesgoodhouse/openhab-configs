@@ -10,8 +10,7 @@ Group Batteries    "Batteries" (House)
 Group Temperatures "Temperatures" (House)
 
 Group Network "Network"
-Group:Switch:OR(ON,OFF) JamesMobile "James Mobile" (Network)
-Group:String:COUNT("OFFLINE") OfflineDevices "Offline Devices [%d]"
+Group:Switch:OR(ON,OFF) JamesPresence "James Presence" (Network)
 
 // floors
 Group Floors       "Floors"       (House)
