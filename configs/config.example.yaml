@@ -47,6 +47,7 @@ settings:
     action: null
     package: null
     binding: null
+    misc: null
     persistence: null
     transformation: null
     ui: null
