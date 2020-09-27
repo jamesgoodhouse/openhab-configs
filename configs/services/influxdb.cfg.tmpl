@@ -1,6 +1,6 @@
 # The database URL, e.g. http://127.0.0.1:8086 or https://127.0.0.1:8084 .
 # Defaults to: http://127.0.0.1:8086
-url = http://{{ env.Getenv "INFLUXDB_SERVICE_HOST" }}:{{ env.Getenv "INFLUXDB_SERVICE_PORT" }}
+url = {{ (ds "configs").settings.persistence.influxdb.url }}
 
 # The name of the database user, e.g. openhab.
 # Defaults to: openhab
