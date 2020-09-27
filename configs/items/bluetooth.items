@@ -1,1 +1,1 @@
-Number Beacon_RSSI "James' Phone [%.0f] dBm" { channel="bluetooth:beacon:hci0:james_phone:rssi" }
+Number BluetoothBeacon_JamesPhone_RSSI "James' Phone [%.0f] dBm" { channel="bluetooth:beacon:hci0:james_phone:rssi" }
