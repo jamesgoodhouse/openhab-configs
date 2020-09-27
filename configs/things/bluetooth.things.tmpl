@@ -2,5 +2,5 @@ Bridge bluetooth:bluez:hci0 [
   address="{{ (ds "secrets").things.bluetooth.address }}",
   backgroundDiscovery=false
 ] {
-  Thing hci0 james_phone "James' Phone" (bluetooth:bluez:hci0) [ address="{{ (ds "secrets").things.bluetooth.devices.james_phone.address }}" ]
+  Thing beacon james_phone "James' Phone" [ address="{{ (ds "secrets").things.bluetooth.devices.james_phone.address }}" ]
 }
