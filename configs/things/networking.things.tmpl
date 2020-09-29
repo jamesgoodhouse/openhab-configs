@@ -8,6 +8,9 @@ Thing network:speedtest:local "Speed Test" @ "Internet" [
 {{ range (ds "secrets").things.networking -}}
 Thing network:{{ .type_id }}:{{ .thing_id }} [
   hostname="{{ .hostname }}",
-  macAddress="{{ .mac_address }}"
+  macAddress="{{ .mac_address }}",
+  retry=4,
+  timeout=5000,
+  refreshInterval=30000
 ]
 {{ end -}}
