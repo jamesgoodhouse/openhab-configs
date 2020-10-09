@@ -1,1 +1,6 @@
-Bridge mqtt:broker:mosquitto [ host="mosquitto.data" ] { }
+Bridge mqtt:broker:mosquitto [ host="mosquitto.data" ] {
+  Thing mqtt:topic:james_mobile {
+  Channels:
+    Type Number Bluetooth_JamesMobile_State "James Mobile" [ stateTopic="home/bluetooth/{{ (ds "secrets").things.bluetooth.james_mobile.mac_address }}/rssi" ]
+  }
+}
