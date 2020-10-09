@@ -1,2 +1,2 @@
-Number Bluetooth_JamesMobile_RSSI    "RSSI"    (Home,Bluetooth) { channel="mqtt:mosquitto:topic:james_mobile:rssi" }
-String Bluetooth_JamesMobile_Present "Present" (Home,Bluetooth) { channel="mqtt:mosquitto:topic:james_mobile:present" }
+Number Bluetooth_JamesMobile_RSSI    "RSSI"    (Home,Bluetooth) { channel="mqtt:topic:mosquitto:james_mobile:rssi" }
+String Bluetooth_JamesMobile_Present "Present" (Home,Bluetooth) { channel="mqtt:topic:mosquitto:james_mobile:present" }
