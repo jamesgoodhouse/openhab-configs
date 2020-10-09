@@ -1,0 +1,2 @@
+Number Bluetooth_JamesMobile_RSSI  "RSSI"  { channel="mqtt:mosquitto:topic:james_mobile:rssi" }
+String Bluetooth_JamesMobile_State "State" { channel="mqtt:mosquitto:topic:james_mobile:state" }
