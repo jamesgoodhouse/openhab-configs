@@ -11,4 +11,5 @@ Items {
   Temperatures*:                   strategy = everyChange
   Network*:                        strategy = everyChange
   Bluetooth*:                      strategy = everyChange
+  Bluetooth_JamesMobile_RSSI:      strategy = everyChange
 }
