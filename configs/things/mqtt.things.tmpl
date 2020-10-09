@@ -1,5 +1,5 @@
 Bridge mqtt:broker:mosquitto [ host="mosquitto.data" ] {
-  Thing topic james_mobile "James' Mobile" @ "Home" {
+  Thing mqtt:topic:james_mobile "James' Mobile" @ "Home" {
     Channels:
       Type number : rssi "RSSI" [
         stateTopic="home/bluetooth/{{ (ds "secrets").things.bluetooth.james_mobile.mac_address }}/rssi",
