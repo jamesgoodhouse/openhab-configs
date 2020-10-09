@@ -10,7 +10,4 @@ Items {
   Doors*:                          strategy = everyChange, restoreOnStartup
   Temperatures*:                   strategy = everyChange
   Network*:                        strategy = everyChange
-  Bluetooth*:                      strategy = everyChange
-  Bluetooth_JamesMobile_RSSI:      strategy = everyChange
-  mqtt_topic_james_mobile_rssi:    strategy = everyChange
 }
