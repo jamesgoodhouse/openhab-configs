@@ -13,6 +13,8 @@ Group Network "Network"
 Group Bluetooth "Bluetooth" (Network)
 Group:Switch:OR(ON,OFF) JamesPresence "James Presence" (Network)
 
+Group:Integer:COUNT("True|ON") IsHome_James
+
 // floors
 Group Floors       "Floors"       (House)
 Group Floor_Ground "Ground Floor" (House)
