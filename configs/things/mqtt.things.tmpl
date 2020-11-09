@@ -2,14 +2,11 @@ Bridge mqtt:broker:mosquitto [ host="mosquitto.data" ] {
   Thing topic james_mobile_bluetooth "James' Mobile Bluetooth" @ "Home" {
     Channels:
       Type number : rssi "RSSI" [
-        stateTopic="home/bluetooth/{{ (ds "secrets").things.bluetooth.james_mobile.mac_address }}/rssi",
+        stateTopic="home/bluetooth/raspberrypi/james_mobile/rssi",
         unit="dBm"
       ]
-      Type string : present "Present" [
-        stateTopic="home/bluetooth/{{ (ds "secrets").things.bluetooth.james_mobile.mac_address }}/present"
-      ]
       Type string : confidence "Confidence" [
-        stateTopic="home/bluetooth/james_mobile",
+        stateTopic="home/bluetooth/raspberrypi/james_mobile",
         transformationPattern="JSONPATH:$.confidence"
       ]
   }
