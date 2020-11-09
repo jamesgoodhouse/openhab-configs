@@ -5,6 +5,12 @@ Bridge mqtt:broker:mosquitto [ host="mosquitto.data" ] {
         stateTopic="home/bluetooth/{{ (ds "secrets").things.bluetooth.james_mobile.mac_address }}/rssi",
         unit="dBm"
       ]
-      Type string : present "Present" [ stateTopic="home/bluetooth/{{ (ds "secrets").things.bluetooth.james_mobile.mac_address }}/present" ]
+      Type string : present "Present" [
+        stateTopic="home/bluetooth/{{ (ds "secrets").things.bluetooth.james_mobile.mac_address }}/present"
+      ]
+      Type string : confidence "Confidence" [
+        stateTopic="home/bluetooth/james_mobile",
+        transformationPattern="JSONPATH:$.confidence"
+      ]
   }
 }
