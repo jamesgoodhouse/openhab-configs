@@ -7,6 +7,6 @@ DateTime                Speedtest_LUD        "Timestamp [%1$tH:%1$tM]"   <time> 
 
 {{ range $n := (ds "secrets").things.networking -}}
 {{ range $n.items -}}
-{{ .type }} {{ $n.name }}_{{ .name }} (Home,JamesPresence,Network) {{ "{" }} channel="network:{{ $n.type_id }}:{{ $n.thing_id }}:{{ .channel }}" {{ "}" }}
+{{ .type }} {{ $n.name }}_{{ .name }} (Home,IsHome_James,JamesPresence,Network) {{ "{" }} channel="network:{{ $n.type_id }}:{{ $n.thing_id }}:{{ .channel }}" {{ "}" }}
 {{ end }}
 {{ end -}}
