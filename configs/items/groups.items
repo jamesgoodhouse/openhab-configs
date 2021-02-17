@@ -11,7 +11,8 @@ Group Floor_Second "Second Floor"               (Indoor) ["SecondFloor"]
 // ROOMS
 // =============================================================================
 // ground floor
-Group Room_Garage "Garage" <garage> (Floor_Ground) ["Garage"]
+Group Room_Garage   "Garage"   <garage> (Floor_Ground) ["Garage"]
+Group Room_Entryway "Entryway"          (Floor_Ground) ["Entry"]
 
 // first floor
 Group Room_Bathroom_Kitchen "Kitchen Bathroom" <bath>    (Floor_First) ["Bathroom"]
@@ -33,13 +34,12 @@ Group Outoor "Outdoor" <garden> (House) ["Outdoor"]
 
 
 
+Group Doors "Doors"
+Group HVAC "HVAC"
 
 
 
 
-Group Doors "Doors" (House)
-
-Group HVAC   "HVAC"   (House)
 
 Group AirQuality   "Air Quality" <flow> (Home)
 Group Batteries    "Batteries" (House)
