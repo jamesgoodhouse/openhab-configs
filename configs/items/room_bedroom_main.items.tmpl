@@ -1,4 +1,6 @@
 // HVAC
+Group HVACMainBedroom "HVAC" (RoomBedroomMain) ["HVAC"]
+
 Number:Dimensionless HVAC_MainBedroom_CompressorFrequency "Compressor Frequency" (HVAC,Room_Bedroom_Main)              { channel="daikin:ac_unit:{{ (ds "configs").things.daikin.main_bedroom.thing_id }}:cmpfrequency" }
 Number:Dimensionless HVAC_MainBedroom_IndoorHumidity      "Indoor Humidity"      (HVAC,Room_Bedroom_Main)              { channel="daikin:ac_unit:{{ (ds "configs").things.daikin.main_bedroom.thing_id }}:humidity" }
 Number:Temperature   HVAC_MainBedroom_IndoorTemperature   "Indoor Temperature"   (HVAC,Temperatures,Room_Bedroom_Main) { channel="daikin:ac_unit:{{ (ds "configs").things.daikin.main_bedroom.thing_id }}:indoortemp" }

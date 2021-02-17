@@ -1,4 +1,4 @@
-Group House "House" ["House"]
+Group House "House" <house> ["House"]
 
 Group Indoor "Indoor" (House) ["Indoor"]
 
