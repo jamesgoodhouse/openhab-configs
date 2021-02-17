@@ -1,12 +1,20 @@
-Group Home "Home"
+Group House "House" ["House"]
 
-Group gIndoor      "Indoor"                 ["Indoor"]
-Group gOutoor      "Outdoor"                ["Outdoor"]
-Group gFloorBottom "Bottom Floor" (gIndoor) ["FloorBottom"]
-Group gFloorMain   "Main Floor"   (gIndoor) ["FloorMain"]
-Group gFloorTop    "Top Floor"    (gIndoor) ["FloorTop"]
+Group Indoor "Indoor" (House) ["Indoor"]
 
-Group House "House" (Home)
+// floors
+Group FloorGround "Ground Floor" <groundfloor> (Indoor) ["GroundFloor"]
+Group FloorFirst  "First Floor"  <firstfloor>  (Indoor) ["FirstFloor"]
+Group FloorSecond "Second Floor"               (Indoor) ["SecondFloor"]
+
+// rooms
+Group RoomBedroomMain "Main Bedroom" <bedroom> (FloorSecond) ["Bedroom"]
+Group RoomGarage      "Garage"       <garage>  (FloorBottom) ["Garage"]
+Group RoomGreat       "Great Room"             (FloorMain)   ["Room"]
+Group RoomMedia       "Media Room"             (FloorSecond) ["Room"]
+
+Group Outoor "Outdoor" ["Outdoor"]
+
 Group Doors "Doors" (House)
 
 Group HVAC   "HVAC"   (House)
@@ -22,15 +30,3 @@ Group:Switch:OR(ON,OFF) JamesPresence "James Presence" (Network)
 Group Presence "Presence" (Home)
 
 Group:Number:COUNT("True|ON|home") IsHome_James (Presence)
-
-// floors
-Group Floors       "Floors"       (House)
-Group Floor_Ground "Ground Floor" (House)
-Group Floor_First  "First Floor"  (House)
-Group Floor_Second "Second Floor" (House)
-
-// rooms
-Group Rooms             "Rooms"        (House)
-Group Room_Bedroom_Main "Main Bedroom" (House, gFloorMain)   ["Room_Bedroom_Main"]
-Group Room_Garage       "Garage"       (House, gFloorBottom) ["Room_Garage"]
-Group Room_Great        "Great Room"   (House)
