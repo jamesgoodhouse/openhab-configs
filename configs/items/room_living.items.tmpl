@@ -1,5 +1,5 @@
 // HVAC
-Group HVAC_LivingRoom "HVAC" (Room_Living) ["HVAC"]
+Group HVAC_LivingRoom "HVAC" <heating> (Room_Living) ["HVAC"]
 
 Number:Dimensionless HVAC_LivingRoom_CompressorFrequency   "Compressor Frequency" (HVAC,HVAC_LivingRoom)              ["Measurement"] { channel="daikin:ac_unit:{{ (ds "configs").things.daikin.great_room.thing_id }}:cmpfrequency" }
 Number:Dimensionless HVAC_LivingRoom_IndoorHumidity        "Indoor Humidity"      (HVAC,HVAC_LivingRoom)              ["Measurement"] { channel="daikin:ac_unit:{{ (ds "configs").things.daikin.great_room.thing_id }}:humidity" }
