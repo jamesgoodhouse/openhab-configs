@@ -1,11 +1,11 @@
 // HVAC
 Group HVAC_LivingRoom "HVAC" <heating> (Room_Living) ["HVAC"]
 
-Number:Dimensionless HVAC_LivingRoom_CompressorFrequency   "Compressor Frequency" (HVAC,HVAC_LivingRoom)              ["Measurement"] { channel="daikin:ac_unit:{{ (ds "configs").things.daikin.great_room.thing_id }}:cmpfrequency" }
-Number:Dimensionless HVAC_LivingRoom_IndoorHumidity        "Indoor Humidity"      (HVAC,HVAC_LivingRoom)              ["Measurement"] { channel="daikin:ac_unit:{{ (ds "configs").things.daikin.great_room.thing_id }}:humidity" }
-Number:Temperature   HVAC_LivingRoom_IndoorTemperature     "Indoor Temperature"   (HVAC,Temperatures,HVAC_LivingRoom) ["Measurement"] { channel="daikin:ac_unit:{{ (ds "configs").things.daikin.great_room.thing_id }}:indoortemp" }
-Number:Temperature   HVAC_LivingRoom_OutdoorTemperature    "Outdoor Temperature"  (HVAC,Temperatures,HVAC_LivingRoom) ["Measurement"] { channel="daikin:ac_unit:{{ (ds "configs").things.daikin.great_room.thing_id }}:outdoortemp" }
-Number:Temperature   HVAC_LivingRoom_SetPoint              "Set Point"            (HVAC,Temperatures,HVAC_LivingRoom) ["SetPoint"]    { channel="daikin:ac_unit:{{ (ds "configs").things.daikin.great_room.thing_id }}:settemp" }
+Number:Dimensionless HVAC_LivingRoom_CompressorFrequency   "Compressor Frequency" (HVAC,HVAC_LivingRoom)              ["Measurement","Frequency"]   { channel="daikin:ac_unit:{{ (ds "configs").things.daikin.great_room.thing_id }}:cmpfrequency" }
+Number:Dimensionless HVAC_LivingRoom_IndoorHumidity        "Indoor Humidity"      (HVAC,HVAC_LivingRoom)              ["Measurement","Humidity"]    { channel="daikin:ac_unit:{{ (ds "configs").things.daikin.great_room.thing_id }}:humidity" }
+Number:Temperature   HVAC_LivingRoom_IndoorTemperature     "Indoor Temperature"   (HVAC,Temperatures,HVAC_LivingRoom) ["Measurement","Temperature"] { channel="daikin:ac_unit:{{ (ds "configs").things.daikin.great_room.thing_id }}:indoortemp" }
+Number:Temperature   HVAC_LivingRoom_OutdoorTemperature    "Outdoor Temperature"  (HVAC,Temperatures,HVAC_LivingRoom) ["Measurement","Temperature"] { channel="daikin:ac_unit:{{ (ds "configs").things.daikin.great_room.thing_id }}:outdoortemp" }
+Number:Temperature   HVAC_LivingRoom_SetPoint              "Set Point"            (HVAC,Temperatures,HVAC_LivingRoom) ["SetPoint","Temperature"]    { channel="daikin:ac_unit:{{ (ds "configs").things.daikin.great_room.thing_id }}:settemp" }
 String               HVAC_LivingRoom_Fan                   "Fan"                  (HVAC,HVAC_LivingRoom)              ["Control"]     { channel="daikin:ac_unit:{{ (ds "configs").things.daikin.great_room.thing_id }}:fanspeed" }
 String               HVAC_LivingRoom_FanSwing              "Fan Swing"            (HVAC,HVAC_LivingRoom)              ["Control"]     { channel="daikin:ac_unit:{{ (ds "configs").things.daikin.great_room.thing_id }}:fandir" }
 String               HVAC_LivingRoom_Mode                  "Mode"                 (HVAC,HVAC_LivingRoom)              ["Control"]     { channel="daikin:ac_unit:{{ (ds "configs").things.daikin.great_room.thing_id }}:mode" }
