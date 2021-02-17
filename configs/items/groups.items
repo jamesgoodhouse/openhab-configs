@@ -1,5 +1,11 @@
 Group Home "Home"
 
+Group gIndoor      "Indoor"                 ["Indoor"]
+Group gOutoor      "Outdoor"                ["Outdoor"]
+Group gFloorBottom "Bottom Floor" (gIndoor) ["FloorBottom"]
+Group gFloorMain   "Main Floor"   (gIndoor) ["FloorMain"]
+Group gFloorTop    "Top Floor"    (gIndoor) ["FloorTop"]
+
 Group House "House" (Home)
 Group Doors "Doors" (House)
 
@@ -25,6 +31,6 @@ Group Floor_Second "Second Floor" (House)
 
 // rooms
 Group Rooms             "Rooms"        (House)
-Group Room_Bedroom_Main "Main Bedroom" (House)
-Group Room_Garage       "Garage"       (House)
+Group Room_Bedroom_Main "Main Bedroom" (House, gFloorMain)   ["Room_Bedroom_Main"]
+Group Room_Garage       "Garage"       (House, gFloorBottom) ["Room_Garage"]
 Group Room_Great        "Great Room"   (House)
