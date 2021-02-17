@@ -1,13 +1,13 @@
 // HVAC
-Group HVACMainBedroom "HVAC" (RoomBedroomMain) ["HVAC"]
+Group HVAC_MainBedroom "HVAC" (Room_Bedroom_Main) ["HVAC"]
 
-Number:Dimensionless HVAC_MainBedroom_CompressorFrequency "Compressor Frequency" (HVAC,HVACMainBedroom)              ["Measurement"] { channel="daikin:ac_unit:{{ (ds "configs").things.daikin.main_bedroom.thing_id }}:cmpfrequency" }
-Number:Dimensionless HVAC_MainBedroom_IndoorHumidity      "Indoor Humidity"      (HVAC,HVACMainBedroom)              ["Measurement"] { channel="daikin:ac_unit:{{ (ds "configs").things.daikin.main_bedroom.thing_id }}:humidity" }
-Number:Temperature   HVAC_MainBedroom_IndoorTemperature   "Indoor Temperature"   (HVAC,Temperatures,HVACMainBedroom) ["Measurement"] { channel="daikin:ac_unit:{{ (ds "configs").things.daikin.main_bedroom.thing_id }}:indoortemp" }
-Number:Temperature   HVAC_MainBedroom_OutdoorTemperature  "Outdoor Temperature"  (HVAC,Temperatures,HVACMainBedroom) ["Measurement"] { channel="daikin:ac_unit:{{ (ds "configs").things.daikin.main_bedroom.thing_id }}:outdoortemp" }
-Number:Temperature   HVAC_MainBedroom_SetPoint            "Set Point"            (HVAC,Temperatures,HVACMainBedroom) ["SetPoint"]    { channel="daikin:ac_unit:{{ (ds "configs").things.daikin.main_bedroom.thing_id }}:settemp" }
-String               HVAC_MainBedroom_Fan                 "Fan"                  (HVAC,HVACMainBedroom)              ["Control"]     { channel="daikin:ac_unit:{{ (ds "configs").things.daikin.main_bedroom.thing_id }}:fanspeed" }
-String               HVAC_MainBedroom_FanSwing            "Fan Swing"            (HVAC,HVACMainBedroom)              ["Control"]     { channel="daikin:ac_unit:{{ (ds "configs").things.daikin.main_bedroom.thing_id }}:fandir" }
-String               HVAC_MainBedroom_Mode                "Mode"                 (HVAC,HVACMainBedroom)              ["Control"]     { channel="daikin:ac_unit:{{ (ds "configs").things.daikin.main_bedroom.thing_id }}:mode" }
-Switch               HVAC_MainBedroom_Power               "Power"                (HVAC,HVACMainBedroom)              ["Switch"]      { channel="daikin:ac_unit:{{ (ds "configs").things.daikin.main_bedroom.thing_id }}:power" }
-Switch               HVAC_MainBedroom_PowerfulMode        "Powerful Mode"        (HVAC,HVACMainBedroom)              ["Switch"]      { channel="daikin:ac_unit:{{ (ds "configs").things.daikin.main_bedroom.thing_id }}:specialmode-powerful" }
+Number:Dimensionless HVAC_MainBedroom_CompressorFrequency "Compressor Frequency" (HVAC,HVAC_MainBedroom)              ["Measurement"] { channel="daikin:ac_unit:{{ (ds "configs").things.daikin.main_bedroom.thing_id }}:cmpfrequency" }
+Number:Dimensionless HVAC_MainBedroom_IndoorHumidity      "Indoor Humidity"      (HVAC,HVAC_MainBedroom)              ["Measurement"] { channel="daikin:ac_unit:{{ (ds "configs").things.daikin.main_bedroom.thing_id }}:humidity" }
+Number:Temperature   HVAC_MainBedroom_IndoorTemperature   "Indoor Temperature"   (HVAC,Temperatures,HVAC_MainBedroom) ["Measurement"] { channel="daikin:ac_unit:{{ (ds "configs").things.daikin.main_bedroom.thing_id }}:indoortemp" }
+Number:Temperature   HVAC_MainBedroom_OutdoorTemperature  "Outdoor Temperature"  (HVAC,Temperatures,HVAC_MainBedroom) ["Measurement"] { channel="daikin:ac_unit:{{ (ds "configs").things.daikin.main_bedroom.thing_id }}:outdoortemp" }
+Number:Temperature   HVAC_MainBedroom_SetPoint            "Set Point"            (HVAC,Temperatures,HVAC_MainBedroom) ["SetPoint"]    { channel="daikin:ac_unit:{{ (ds "configs").things.daikin.main_bedroom.thing_id }}:settemp" }
+String               HVAC_MainBedroom_Fan                 "Fan"                  (HVAC,HVAC_MainBedroom)              ["Control"]     { channel="daikin:ac_unit:{{ (ds "configs").things.daikin.main_bedroom.thing_id }}:fanspeed" }
+String               HVAC_MainBedroom_FanSwing            "Fan Swing"            (HVAC,HVAC_MainBedroom)              ["Control"]     { channel="daikin:ac_unit:{{ (ds "configs").things.daikin.main_bedroom.thing_id }}:fandir" }
+String               HVAC_MainBedroom_Mode                "Mode"                 (HVAC,HVAC_MainBedroom)              ["Control"]     { channel="daikin:ac_unit:{{ (ds "configs").things.daikin.main_bedroom.thing_id }}:mode" }
+Switch               HVAC_MainBedroom_Power               "Power"                (HVAC,HVAC_MainBedroom)              ["Switch"]      { channel="daikin:ac_unit:{{ (ds "configs").things.daikin.main_bedroom.thing_id }}:power" }
+Switch               HVAC_MainBedroom_PowerfulMode        "Powerful Mode"        (HVAC,HVAC_MainBedroom)              ["Switch"]      { channel="daikin:ac_unit:{{ (ds "configs").things.daikin.main_bedroom.thing_id }}:specialmode-powerful" }

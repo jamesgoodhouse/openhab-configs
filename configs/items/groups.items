@@ -4,26 +4,26 @@ Group Indoor "Indoor" (House) ["Indoor"]
 
 // FLOORS
 // =============================================================================
-Group FloorGround "Ground Floor" <groundfloor> (Indoor) ["GroundFloor"]
-Group FloorFirst  "First Floor"  <firstfloor>  (Indoor) ["FirstFloor"]
-Group FloorSecond "Second Floor"               (Indoor) ["SecondFloor"]
+Group Floor_Ground "Ground Floor" <groundfloor> (Indoor) ["GroundFloor"]
+Group Floor_First  "First Floor"  <firstfloor>  (Indoor) ["FirstFloor"]
+Group Floor_Second "Second Floor"               (Indoor) ["SecondFloor"]
 
 // ROOMS
 // =============================================================================
 // ground floor
-Group RoomGarage "Garage" <garage> (FloorGround) ["Garage"]
+Group Room_Garage "Garage" <garage> (Floor_Ground) ["Garage"]
 
 // first floor
-Group RoomBathroomKitchen "Kitchen Bathroom" <bath>    (FloorFirst) ["Bathroom"]
-Group RoomLiving          "Living Room"                (FloorFirst) ["LivingRoom"]
-Group RoomDining          "Dining Room"                (FloorFirst) ["DiningRoom"]
-Group RoomKitchen         "Kitchen"          <kitchen> (FloorFirst) ["Kitchen"]
+Group Room_Bathroom_Kitchen "Kitchen Bathroom" <bath>    (Floor_First) ["Bathroom"]
+Group Room_Dining           "Dining Room"                (Floor_First) ["DiningRoom"]
+Group Room_Kitchen          "Kitchen"          <kitchen> (Floor_First) ["Kitchen"]
+Group Room_Living           "Living Room"                (Floor_First) ["LivingRoom"]
 
 // second floor
-Group RoomBathroomHall        "Hall Bathroom" <bath>    (FloorSecond)     ["Bathroom"]
-Group RoomMedia               "Media Room"              (FloorSecond)     ["Room"]
-Group RoomBedroomMain         "Main Bedroom"  <bedroom> (FloorSecond)     ["Bedroom"]
-Group RoomBathroomMainBedroom "Bathroom"      <bath>    (RoomBedroomMain) ["Bathroom"]
+Group Room_Bathroom_Hall    "Hall Bathroom" <bath>    (Floor_Second)      ["Bathroom"]
+Group Room_Bedroom_Main     "Main Bedroom"  <bedroom> (Floor_Second)      ["Bedroom"]
+Group Room_Bathroom_Bedroom "Bathroom"      <bath>    (Room_Bedroom_Main) ["Bathroom"]
+Group Room_Media            "Media Room"              (Floor_Second)      ["Room"]
 
 
 
