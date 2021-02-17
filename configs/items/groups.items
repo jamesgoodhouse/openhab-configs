@@ -15,10 +15,11 @@ Group RoomLiving          "Living Room"                (FloorFirst) ["LivingRoom
 Group RoomDining          "Dining Room"                (FloorFirst) ["DiningRoom"]
 Group RoomKitchen         "Kitchen"          <kitchen> (FloorFirst) ["Kitchen"]
 
-Group RoomBathroomBedroom "Bedroom Bathroom" <bath>    (FloorSecond) ["Bathroom"]
 Group RoomBathroomHall    "Hall Bathroom"    <bath>    (FloorSecond) ["Bathroom"]
-Group RoomBedroomMain     "Main Bedroom"     <bedroom> (FloorSecond) ["Bedroom"]
 Group RoomMedia           "Media Room"                 (FloorSecond) ["Room"]
+
+Group RoomBedroomMain         "Main Bedroom" <bedroom> (FloorSecond)     ["Bedroom"]
+Group RoomBathroomMainBedroom "Bathroom"     <bath>    (RoomBedroomMain) ["Bathroom"]
 
 Group Outoor "Outdoor" <garden> (House) ["Outdoor"]
 
