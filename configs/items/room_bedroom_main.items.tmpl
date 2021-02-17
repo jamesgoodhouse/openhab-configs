@@ -6,3 +6,4 @@ String             HVAC_MainBedroom_Fan                "Fan"                 (HV
 String             HVAC_MainBedroom_FanSwing           "Fan Swing"           (HVAC,Room_Bedroom_Main)              { channel="daikin:ac_unit:{{ (ds "configs").things.daikin.main_bedroom.thing_id }}:fandir" }
 String             HVAC_MainBedroom_Mode               "Mode"                (HVAC,Room_Bedroom_Main)              { channel="daikin:ac_unit:{{ (ds "configs").things.daikin.main_bedroom.thing_id }}:mode" }
 Switch             HVAC_MainBedroom_Power              "Power"               (HVAC,Room_Bedroom_Main)              { channel="daikin:ac_unit:{{ (ds "configs").things.daikin.main_bedroom.thing_id }}:power" }
+Switch             HVAC_MainBedroom_PowerfulMode       "Powerful Mode"       (HVAC,Room_Bedroom_Main)              { channel="daikin:ac_unit:{{ (ds "configs").things.daikin.main_bedroom.thing_id }}:specialmode-powerful" }
