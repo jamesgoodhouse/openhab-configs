@@ -4,10 +4,10 @@ url = {{ (ds "configs").settings.persistence.influxdb.url }}
 
 # The name of the database user, e.g. openhab.
 # Defaults to: openhab
-user = {{ env.Getenv "INFLUXDB_USER" }}
+user = {{ env.Getenv "INFLUXDB_OPENHAB_USER" }}
 
 # The password of the database user.
-password = {{ env.Getenv "INFLUXDB_PASSWORD" }}
+password = {{ env.Getenv "INFLUXDB_OPENHAB_PASSWORD" }}
 
 # The name of the database, e.g. openhab.
 # Defaults to: openhab
