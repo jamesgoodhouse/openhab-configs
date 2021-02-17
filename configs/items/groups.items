@@ -8,12 +8,19 @@ Group FloorFirst  "First Floor"  <firstfloor>  (Indoor) ["FirstFloor"]
 Group FloorSecond "Second Floor"               (Indoor) ["SecondFloor"]
 
 // rooms
-Group RoomBedroomMain "Main Bedroom" <bedroom> (FloorSecond) ["Bedroom"]
-Group RoomGarage      "Garage"       <garage>  (FloorBottom) ["Garage"]
-Group RoomGreat       "Great Room"             (FloorMain)   ["Room"]
-Group RoomMedia       "Media Room"             (FloorSecond) ["Room"]
+Group RoomGarage "Garage" <garage> (FloorGround) ["Garage"]
 
-Group Outoor "Outdoor" ["Outdoor"]
+Group RoomBathroomKitchen "Kitchen Bathroom" <bath>    (FloorFirst) ["Bathroom"]
+Group RoomLiving          "Living Room"                (FloorFirst) ["LivingRoom"]
+Group RoomDining          "Dining Room"                (FloorFirst) ["DiningRoom"]
+Group RoomKitchen         "Kitchen"          <kitchen> (FloorFirst) ["Kitchen"]
+
+Group RoomBathroomBedroom "Bedroom Bathroom" <bath>    (FloorSecond) ["Bathroom"]
+Group RoomBathroomHall    "Hall Bathroom"    <bath>    (FloorSecond) ["Bathroom"]
+Group RoomBedroomMain     "Main Bedroom"     <bedroom> (FloorSecond) ["Bedroom"]
+Group RoomMedia           "Media Room"                 (FloorSecond) ["Room"]
+
+Group Outoor "Outdoor" <garden> ["Outdoor"]
 
 Group Doors "Doors" (House)
 
