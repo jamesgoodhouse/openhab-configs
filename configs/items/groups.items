@@ -20,7 +20,7 @@ Group RoomBathroomHall    "Hall Bathroom"    <bath>    (FloorSecond) ["Bathroom"
 Group RoomBedroomMain     "Main Bedroom"     <bedroom> (FloorSecond) ["Bedroom"]
 Group RoomMedia           "Media Room"                 (FloorSecond) ["Room"]
 
-Group Outoor "Outdoor" <garden> ["Outdoor"]
+Group Outoor "Outdoor" <garden> (House) ["Outdoor"]
 
 Group Doors "Doors" (House)
 
