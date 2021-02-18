@@ -1,5 +1,7 @@
 Group House "House" <house> ["House"]
 
+// INDOOR
+// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 Group Indoor "Indoor" (House) ["Indoor"]
 
 // FLOORS
@@ -26,11 +28,9 @@ Group Room_Bedroom_Main     "Main Bedroom"  <bedroom> (Floor_Second)      ["Bedr
 Group Room_Bathroom_Bedroom "Bathroom"      <bath>    (Room_Bedroom_Main) ["Bathroom"]
 Group Room_Media            "Media Room"              (Floor_Second)      ["Room"]
 
-
-
-
-
-Group Outoor "Outdoor" <garden> (House) ["Outdoor"]
+// OUTDOOR
+// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+Group Outdoor "Outdoor" <garden> (House) ["Outdoor"]
 
 
 
