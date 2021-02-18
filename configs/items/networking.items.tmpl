@@ -1,7 +1,7 @@
 Group Internet "Internet" (House) ["NetworkAppliance"]
 
 String                  Speedtest_Running    "Test running ... [%s]"            (Internet)                 { channel="network:speedtest:local:isRunning" }
-Number:Dimensionless    Speedtest_Progress   "Test progress [%d %unit%]"        (Internet) ["Measurement"] { channel="network:speedtest:local:progress" }
+Number:Dimensionless    Speedtest_Progress   "Test progress [%d %unit%]"        (Internet)                 { channel="network:speedtest:local:progress" }
 Number:DataTransferRate Speedtest_ResultDown "Downlink [%.2f %unit%]"           (Internet) ["Measurement"] { channel="network:speedtest:local:rateDown" }
 Number:DataTransferRate Speedtest_ResultUp   "Uplink [%.2f %unit%]"             (Internet) ["Measurement"] { channel="network:speedtest:local:rateUp" }
 DateTime                Speedtest_Start      "Test Start [%1$tH:%1$tM]"  <time> (Internet)                 { channel="network:speedtest:local:testStart" }
