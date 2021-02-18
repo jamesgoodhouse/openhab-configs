@@ -5,19 +5,19 @@ String Device_RaspberryPi_Network_AdapterName        "Adapter name"         <net
 String Device_RaspberryPi_Network_Name               "Name"                 <network>       (Device_RaspberryPi) { channel="systeminfo:computer:rpi:network#networkName" }
 String Device_RaspberryPi_Network_IP                 "IP address"           <network>       (Device_RaspberryPi) { channel="systeminfo:computer:rpi:network#ip" }
 String Device_RaspberryPi_Network_Mac                "Mac address"          <network>       (Device_RaspberryPi) { channel="systeminfo:computer:rpi:network#mac" }
-Number Device_RaspberryPi_Network_DataSent           "Data sent"            <flowpipe>      (Device_RaspberryPi) { channel="systeminfo:computer:rpi:network#dataSent" }
-Number Device_RaspberryPi_Network_DataReceived       "Data received"        <returnpipe>    (Device_RaspberryPi) { channel="systeminfo:computer:rpi:network#dataReceived" }
-Number Device_RaspberryPi_Network_PacketsSent        "Packets sent"         <flowpipe>      (Device_RaspberryPi) { channel="systeminfo:computer:rpi:network#packetsSent" }
-Number Device_RaspberryPi_Network_PacketsReceived    "Packets received"     <returnpipe>    (Device_RaspberryPi) { channel="systeminfo:computer:rpi:network#packetsReceived" }
+Number Device_RaspberryPi_Network_DataSent           "Data sent"            <flowpipe>      (Device_RaspberryPi)  ["Measurement"]  { channel="systeminfo:computer:rpi:network#dataSent" }
+Number Device_RaspberryPi_Network_DataReceived       "Data received"        <returnpipe>    (Device_RaspberryPi)  ["Measurement"]  { channel="systeminfo:computer:rpi:network#dataReceived" }
+Number Device_RaspberryPi_Network_PacketsSent        "Packets sent"         <flowpipe>      (Device_RaspberryPi)  ["Measurement"]  { channel="systeminfo:computer:rpi:network#packetsSent" }
+Number Device_RaspberryPi_Network_PacketsReceived    "Packets received"     <returnpipe>    (Device_RaspberryPi)  ["Measurement"]  { channel="systeminfo:computer:rpi:network#packetsReceived" }
 
 /* CPU information*/
 String Device_RaspberryPi_CPU_Name                   "Name"                 <none>          (Device_RaspberryPi) { channel="systeminfo:computer:rpi:cpu#name" }
 String Device_RaspberryPi_CPU_Description            "Description"          <none>          (Device_RaspberryPi) { channel="systeminfo:computer:rpi:cpu#description" }
-Number Device_RaspberryPi_CPU_Load1                  "Load (1 min)"         <none>          (Device_RaspberryPi) { channel="systeminfo:computer:rpi:cpu#load1" }
-Number Device_RaspberryPi_CPU_Load5                  "Load (5 min)"         <none>          (Device_RaspberryPi) { channel="systeminfo:computer:rpi:cpu#load5" }
-Number Device_RaspberryPi_CPU_Load15                 "Load (15 min)"        <none>          (Device_RaspberryPi) { channel="systeminfo:computer:rpi:cpu#load15" }
-Number Device_RaspberryPi_CPU_Threads                "Threads"              <none>          (Device_RaspberryPi) { channel="systeminfo:computer:rpi:cpu#threads" }
-Number Device_RaspberryPi_CPU_Uptime                 "Uptime"               <time>          (Device_RaspberryPi) { channel="systeminfo:computer:rpi:cpu#uptime" }
+Number Device_RaspberryPi_CPU_Load1                  "Load (1 min)"         <none>          (Device_RaspberryPi)  ["Measurement"]  { channel="systeminfo:computer:rpi:cpu#load1" }
+Number Device_RaspberryPi_CPU_Load5                  "Load (5 min)"         <none>          (Device_RaspberryPi)  ["Measurement"]  { channel="systeminfo:computer:rpi:cpu#load5" }
+Number Device_RaspberryPi_CPU_Load15                 "Load (15 min)"        <none>          (Device_RaspberryPi)  ["Measurement"]  { channel="systeminfo:computer:rpi:cpu#load15" }
+Number Device_RaspberryPi_CPU_Threads                "Threads"              <none>          (Device_RaspberryPi)  ["Measurement"]  { channel="systeminfo:computer:rpi:cpu#threads" }
+Number Device_RaspberryPi_CPU_Uptime                 "Uptime"               <time>          (Device_RaspberryPi)  ["Measurement"]  { channel="systeminfo:computer:rpi:cpu#uptime" }
 
 /* Drive information*/
 String Device_RaspberryPi_Drive_Name                 "Name"                 <none>          (Device_RaspberryPi) { channel="systeminfo:computer:rpi:drive#name" }
@@ -28,38 +28,38 @@ String Device_RaspberryPi_Drive_Serial               "Serial"               <non
 String Device_RaspberryPi_Storage_Name               "Name"                 <none>          (Device_RaspberryPi) { channel="systeminfo:computer:rpi:storage#name" }
 String Device_RaspberryPi_Storage_Type               "Type"                 <none>          (Device_RaspberryPi) { channel="systeminfo:computer:rpi:storage#type" }
 String Device_RaspberryPi_Storage_Description        "Description"          <none>          (Device_RaspberryPi) { channel="systeminfo:computer:rpi:storage#description" }
-Number Device_RaspberryPi_Storage_Available          "Available"            <none>          (Device_RaspberryPi) { channel="systeminfo:computer:rpi:storage#available" }
-Number Device_RaspberryPi_Storage_Used               "Used"                 <none>          (Device_RaspberryPi) { channel="systeminfo:computer:rpi:storage#used" }
-Number Device_RaspberryPi_Storage_Total              "Total"                <none>          (Device_RaspberryPi) { channel="systeminfo:computer:rpi:storage#total" }
-Number Device_RaspberryPi_Storage_Available_Percent  "Available (%)"        <none>          (Device_RaspberryPi) { channel="systeminfo:computer:rpi:storage#availablePercent" }
-Number Device_RaspberryPi_Storage_Used_Percent       "Used (%)"             <none>          (Device_RaspberryPi) { channel="systeminfo:computer:rpi:storage#usedPercent" }
+Number Device_RaspberryPi_Storage_Available          "Available"            <none>          (Device_RaspberryPi)  ["Measurement"]  { channel="systeminfo:computer:rpi:storage#available" }
+Number Device_RaspberryPi_Storage_Used               "Used"                 <none>          (Device_RaspberryPi)  ["Measurement"]  { channel="systeminfo:computer:rpi:storage#used" }
+Number Device_RaspberryPi_Storage_Total              "Total"                <none>          (Device_RaspberryPi)  ["Measurement"]  { channel="systeminfo:computer:rpi:storage#total" }
+Number Device_RaspberryPi_Storage_Available_Percent  "Available (%)"        <none>          (Device_RaspberryPi)  ["Measurement"]  { channel="systeminfo:computer:rpi:storage#availablePercent" }
+Number Device_RaspberryPi_Storage_Used_Percent       "Used (%)"             <none>          (Device_RaspberryPi)  ["Measurement"]  { channel="systeminfo:computer:rpi:storage#usedPercent" }
 
 /* Memory information*/
-Number Device_RaspberryPi_Memory_Available           "Available"            <none>          (Device_RaspberryPi) { channel="systeminfo:computer:rpi:memory#available" }
-Number Device_RaspberryPi_Memory_Used                "Used"                 <none>          (Device_RaspberryPi) { channel="systeminfo:computer:rpi:memory#used" }
-Number Device_RaspberryPi_Memory_Total               "Total"                <none>          (Device_RaspberryPi) { channel="systeminfo:computer:rpi:memory#total" }
-Number Device_RaspberryPi_Memory_Available_Percent   "Available (%)"        <none>          (Device_RaspberryPi) { channel="systeminfo:computer:rpi:memory#availablePercent" }
-Number Device_RaspberryPi_Memory_Used_Percent        "Used (%)"             <none>          (Device_RaspberryPi) { channel="systeminfo:computer:rpi:memory#usedPercent" }
+Number Device_RaspberryPi_Memory_Available           "Available"            <none>          (Device_RaspberryPi)  ["Measurement"]  { channel="systeminfo:computer:rpi:memory#available" }
+Number Device_RaspberryPi_Memory_Used                "Used"                 <none>          (Device_RaspberryPi)  ["Measurement"]  { channel="systeminfo:computer:rpi:memory#used" }
+Number Device_RaspberryPi_Memory_Total               "Total"                <none>          (Device_RaspberryPi)  ["Measurement"]  { channel="systeminfo:computer:rpi:memory#total" }
+Number Device_RaspberryPi_Memory_Available_Percent   "Available (%)"        <none>          (Device_RaspberryPi)  ["Measurement"]  { channel="systeminfo:computer:rpi:memory#availablePercent" }
+Number Device_RaspberryPi_Memory_Used_Percent        "Used (%)"             <none>          (Device_RaspberryPi)  ["Measurement"]  { channel="systeminfo:computer:rpi:memory#usedPercent" }
 
 /* Swap memory information*/
-Number Device_RaspberryPi_Swap_Available             "Available"            <none>          (Device_RaspberryPi) { channel="systeminfo:computer:rpi:swap#available" }
-Number Device_RaspberryPi_Swap_Used                  "Used"                 <none>          (Device_RaspberryPi) { channel="systeminfo:computer:rpi:swap#used" }
-Number Device_RaspberryPi_Swap_Total                 "Total"                <none>          (Device_RaspberryPi) { channel="systeminfo:computer:rpi:swap#total" }
-Number Device_RaspberryPi_Swap_Available_Percent     "Available (%)"        <none>          (Device_RaspberryPi) { channel="systeminfo:computer:rpi:swap#availablePercent" }
-Number Device_RaspberryPi_Swap_Used_Percent          "Used (%)"             <none>          (Device_RaspberryPi) { channel="systeminfo:computer:rpi:swap#usedPercent" }
+Number Device_RaspberryPi_Swap_Available             "Available"            <none>          (Device_RaspberryPi)  ["Measurement"]  { channel="systeminfo:computer:rpi:swap#available" }
+Number Device_RaspberryPi_Swap_Used                  "Used"                 <none>          (Device_RaspberryPi)  ["Measurement"]  { channel="systeminfo:computer:rpi:swap#used" }
+Number Device_RaspberryPi_Swap_Total                 "Total"                <none>          (Device_RaspberryPi)  ["Measurement"]  { channel="systeminfo:computer:rpi:swap#total" }
+Number Device_RaspberryPi_Swap_Available_Percent     "Available (%)"        <none>          (Device_RaspberryPi)  ["Measurement"]  { channel="systeminfo:computer:rpi:swap#availablePercent" }
+Number Device_RaspberryPi_Swap_Used_Percent          "Used (%)"             <none>          (Device_RaspberryPi)  ["Measurement"]  { channel="systeminfo:computer:rpi:swap#usedPercent" }
 
 /* Battery information*/
-String Device_RaspberryPi_Battery_Name               "Name"                 <batterylevel>  (Device_RaspberryPi) { channel="systeminfo:computer:rpi:battery#name" }
-Number Device_RaspberryPi_Battery_RemainingCapacity  "Remaining Capacity"   <batterylevel>  (Device_RaspberryPi) { channel="systeminfo:computer:rpi:battery#remainingCapacity" }
-Number Device_RaspberryPi_Battery_RemainingTime      "Remaining Time"       <batterylevel>  (Device_RaspberryPi) { channel="systeminfo:computer:rpi:battery#remainingTime" }
+String Device_RaspberryPi_Battery_Name               "Name"                 <batterylevel>  (Device_RaspberryPi)  ["Measurement"]  { channel="systeminfo:computer:rpi:battery#name" }
+Number Device_RaspberryPi_Battery_RemainingCapacity  "Remaining Capacity"   <batterylevel>  (Device_RaspberryPi)  ["Measurement"]  { channel="systeminfo:computer:rpi:battery#remainingCapacity" }
+Number Device_RaspberryPi_Battery_RemainingTime      "Remaining Time"       <batterylevel>  (Device_RaspberryPi)  ["Measurement"]  { channel="systeminfo:computer:rpi:battery#remainingTime" }
 
 /* Display information*/
 String Device_RaspberryPi_Display_Description        "Display description"  <screen>        (Device_RaspberryPi) { channel="systeminfo:computer:rpi:display#information" }
 
 /* Sensors information*/
-Number Device_RaspberryPi_Sensor_CPUTemp             "CPU Temperature"      <temperature>   (Device_RaspberryPi) { channel="systeminfo:computer:rpi:sensors#cpuTemp" }
-Number Device_RaspberryPi_Sensor_CPUVoltage          "CPU Voltage"          <energy>        (Device_RaspberryPi) { channel="systeminfo:computer:rpi:sensors#cpuVoltage" }
-Number Device_RaspberryPi_Sensor_FanSpeed            "Fan speed"            <fan>           (Device_RaspberryPi) { channel="systeminfo:computer:rpi:sensors#fanSpeed" }
+Number Device_RaspberryPi_Sensor_CPUTemp             "CPU Temperature"      <temperature>   (Device_RaspberryPi)  ["Measurement"]  { channel="systeminfo:computer:rpi:sensors#cpuTemp" }
+Number Device_RaspberryPi_Sensor_CPUVoltage          "CPU Voltage"          <energy>        (Device_RaspberryPi)  ["Measurement"]  { channel="systeminfo:computer:rpi:sensors#cpuVoltage" }
+Number Device_RaspberryPi_Sensor_FanSpeed            "Fan speed"            <fan>           (Device_RaspberryPi)  ["Measurement"]  { channel="systeminfo:computer:rpi:sensors#fanSpeed" }
 
 /* Process information*/
 Number Device_RaspberryPi_Process_load               "Load"                 <none>          (Device_RaspberryPi) { channel="systeminfo:computer:rpi:process#load" }
