@@ -1,9 +1,11 @@
-String                  Speedtest_Running    "Test running ... [%s]"            (Network) { channel="network:speedtest:local:isRunning" }
-Number:Dimensionless    Speedtest_Progress   "Test progress [%d %unit%]"        (Network) { channel="network:speedtest:local:progress" }
-Number:DataTransferRate Speedtest_ResultDown "Downlink [%.2f %unit%]"           (Network) { channel="network:speedtest:local:rateDown" }
-Number:DataTransferRate Speedtest_ResultUp   "Uplink [%.2f %unit%]"             (Network) { channel="network:speedtest:local:rateUp" }
-DateTime                Speedtest_Start      "Test Start [%1$tH:%1$tM]"  <time> (Network) { channel="network:speedtest:local:testStart" }
-DateTime                Speedtest_LUD        "Timestamp [%1$tH:%1$tM]"   <time> (Network) { channel="network:speedtest:local:testEnd" }
+Group Internet "Internet" (House) ["NetworkAppliance"]
+
+String                  Speedtest_Running    "Test running ... [%s]"            (Internet)                 { channel="network:speedtest:local:isRunning" }
+Number:Dimensionless    Speedtest_Progress   "Test progress [%d %unit%]"        (Internet) ["Measurement"] { channel="network:speedtest:local:progress" }
+Number:DataTransferRate Speedtest_ResultDown "Downlink [%.2f %unit%]"           (Internet) ["Measurement"] { channel="network:speedtest:local:rateDown" }
+Number:DataTransferRate Speedtest_ResultUp   "Uplink [%.2f %unit%]"             (Internet) ["Measurement"] { channel="network:speedtest:local:rateUp" }
+DateTime                Speedtest_Start      "Test Start [%1$tH:%1$tM]"  <time> (Internet)                 { channel="network:speedtest:local:testStart" }
+DateTime                Speedtest_LUD        "Timestamp [%1$tH:%1$tM]"   <time> (Internet)                 { channel="network:speedtest:local:testEnd" }
 
 {{ range $n := (ds "secrets").things.networking -}}
 {{ range $n.items -}}
