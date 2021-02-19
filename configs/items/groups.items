@@ -33,7 +33,7 @@ Group Room_Bedroom_Main     "Main Bedroom"  <bedroom>        (Floor_Second)     
 Group Room_Bathroom_Bedroom "Bathroom"      <bath>           (Room_Bedroom_Main) ["Bathroom"]
 Group Room_Closet_Bedroom   "Closet"                         (Room_Bedroom_Main) ["Room"]
 Group Room_Laundry          "Laundry Room"  <washingmachine> (Floor_Second)      ["LaundryRoom"]
-Group Room_Media            "Media Room"                     (Floor_Second)      ["Room"]
+Group Room_Media            "Media Room"    <microphone>     (Floor_Second)      ["Room"]
 
 // OUTDOOR
 // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
