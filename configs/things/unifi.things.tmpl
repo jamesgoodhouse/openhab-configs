@@ -7,7 +7,7 @@ Bridge unifi:controller:home "UniFi Controller" [
 ] {
 {{- range (ds "configs").things.unifi.wireless_clients }}
   Thing wirelessClient {{ .id }} "{{ .name }}" [
-    cid="{{ with $id := .id }}{{ range (ds "secrets").things.unifi.wireless_clients }}{{ if eq .id $id }}{{ .id }}{{ end }}{{ end }}{{ end }}",
+    cid="{{ with $id := .id }}{{ range (ds "secrets").things.unifi.wireless_clients }}{{ if eq .id $id }}{{ .cid }}{{ end }}{{ end }}{{ end }}",
     site="{{ .site }}",
     considerHome={{ .consider_home }}
   ]
