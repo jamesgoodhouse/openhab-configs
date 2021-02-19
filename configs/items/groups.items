@@ -1,5 +1,10 @@
 Group House "House" <house> ["House"]
 
+Group Batteries    "Batteries"    (House)
+Group Doors        "Doors"        (House)
+Group HVAC         "HVAC"         (House)
+Group Temperatures "Temperatures" (House)
+
 // INDOOR
 // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 Group Indoor "Indoor" (House) ["Indoor"]
@@ -34,18 +39,16 @@ Group Outdoor "Outdoor" <garden> (House) ["Outdoor"]
 
 
 
-Group Doors "Doors"
-Group HVAC "HVAC"
+Group Network "Network" (House) ["NetworkAppliance"]
+
+
 
 
 
 
 
 Group AirQuality   "Air Quality" <flow> (Home)
-Group Batteries    "Batteries" (House)
-Group Temperatures "Temperatures" (House)
 
-Group Network "Network"
 Group Bluetooth "Bluetooth" (Network)
 Group:Switch:OR(ON,OFF) JamesPresence "James Presence" (Network)
 
