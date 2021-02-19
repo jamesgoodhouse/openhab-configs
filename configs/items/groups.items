@@ -28,10 +28,12 @@ Group Room_Kitchen          "Kitchen"          <kitchen> (Floor_First) ["Kitchen
 Group Room_Living           "Living Room"                (Floor_First) ["LivingRoom"]
 
 // second floor
-Group Room_Bathroom_Hall    "Hall Bathroom" <bath>    (Floor_Second)      ["Bathroom"]
-Group Room_Bedroom_Main     "Main Bedroom"  <bedroom> (Floor_Second)      ["Bedroom"]
-Group Room_Bathroom_Bedroom "Bathroom"      <bath>    (Room_Bedroom_Main) ["Bathroom"]
-Group Room_Media            "Media Room"              (Floor_Second)      ["Room"]
+Group Room_Bathroom_Hall    "Hall Bathroom" <bath>           (Floor_Second)      ["Bathroom"]
+Group Room_Bedroom_Main     "Main Bedroom"  <bedroom>        (Floor_Second)      ["Bedroom"]
+Group Room_Bathroom_Bedroom "Bathroom"      <bath>           (Room_Bedroom_Main) ["Bathroom"]
+Group Room_Closet_Bedroom   "Closet"                         (Room_Bedroom_Main) ["Room"]
+Group Room_Laundry          "Laundry Room"  <washingmachine> (Floor_Second)      ["LaundryRoom"]
+Group Room_Media            "Media Room"                     (Floor_Second)      ["Room"]
 
 // OUTDOOR
 // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
