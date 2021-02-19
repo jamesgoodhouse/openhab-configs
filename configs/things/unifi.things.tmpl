@@ -1,0 +1,8 @@
+Bridge unifi:controller:home "UniFi Controller" [
+  host="{{ (ds "configs").things.unifi.host }}",
+  port=443,
+  username="{{ (ds "secrets").things.unifi.username }}",
+  password="{{ (ds "secrets").things.unifi.password }}",
+  refresh=10
+] {
+}
