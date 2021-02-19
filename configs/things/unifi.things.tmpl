@@ -6,7 +6,7 @@ Bridge unifi:controller:home "UniFi Controller" [
   refresh=10
 ] {
   Thing wirelessClient phone_james "James' Phone" [
-    cid="{{ ds "secrets").things.networking.james_iphone_trusted_network.mac_address }}",
+    cid="{{ (ds "secrets").things.networking.james_iphone_trusted_network.mac_address }}",
     site="default",
     considerHome=180
   ]
