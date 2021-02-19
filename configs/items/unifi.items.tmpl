@@ -1,11 +1,13 @@
-Switch   Unifi_Phone_James           "James' Phone [MAP(unifi.map):%s]"            { channel="unifi:wirelessClient:home:phone_james:online" }
-String   Unifi_Phone_James_Site      "James' Phone: Site [%s]"                     { channel="unifi:wirelessClient:home:phone_james:site" }
-String   Unifi_Phone_James_MAC       "James' Phone: MAC [%s]"                      { channel="unifi:wirelessClient:home:phone_james:macAddress" }
-String   Unifi_Phone_James_IP        "James' Phone: IP [%s]"                       { channel="unifi:wirelessClient:home:phone_james:ipAddress" }
-String   Unifi_Phone_James_AP        "James' Phone: AP [%s]"                       { channel="unifi:wirelessClient:home:phone_james:ap" }
-String   Unifi_Phone_James_ESSID     "James' Phone: ESSID [%s]"                    { channel="unifi:wirelessClient:home:phone_james:essid" }
-Number   Unifi_Phone_James_RSSI      "James' Phone: RSSI [%d]"                     { channel="unifi:wirelessClient:home:phone_james:rssi" }
-Number   Unifi_Phone_James_Uptime    "James' Phone: Uptime [%d]"                   { channel="unifi:wirelessClient:home:phone_james:uptime" }
-DateTime Unifi_Phone_James_LastSeen  "James' Phone: Last Seen [%1$tH:%1$tM:%1$tS]" { channel="unifi:wirelessClient:home:phone_james:lastSeen" }
-Switch   Unifi_Phone_James_Blocked   "James' Phone: Blocked"                       { channel="unifi:wirelessClient:home:phone_james:blocked" }
-Switch   Unifi_Phone_James_Reconnect "James' Phone: Reconnect"                     { channel="unifi:wirelessClient:home:phone_james:reconnect" }
+Group UnifiController "Unifi Controller" (Network) ["NetworkAppliance"]
+
+Switch   Unifi_Phone_James           "James' Phone [MAP(unifi.map):%s]"            (UnifiController) ["Switch"]                  { channel="unifi:wirelessClient:home:phone_james:online" }
+String   Unifi_Phone_James_Site      "James' Phone: Site [%s]"                     (UnifiController)                             { channel="unifi:wirelessClient:home:phone_james:site" }
+String   Unifi_Phone_James_MAC       "James' Phone: MAC [%s]"                      (UnifiController)                             { channel="unifi:wirelessClient:home:phone_james:macAddress" }
+String   Unifi_Phone_James_IP        "James' Phone: IP [%s]"                       (UnifiController)                             { channel="unifi:wirelessClient:home:phone_james:ipAddress" }
+String   Unifi_Phone_James_AP        "James' Phone: AP [%s]"                       (UnifiController)                             { channel="unifi:wirelessClient:home:phone_james:ap" }
+String   Unifi_Phone_James_ESSID     "James' Phone: ESSID [%s]"                    (UnifiController)                             { channel="unifi:wirelessClient:home:phone_james:essid" }
+Number   Unifi_Phone_James_RSSI      "James' Phone: RSSI [%d]"                     (UnifiController) ["Measurement"]             { channel="unifi:wirelessClient:home:phone_james:rssi" }
+Number   Unifi_Phone_James_Uptime    "James' Phone: Uptime [%d]"                   (UnifiController) ["Measurement"]             { channel="unifi:wirelessClient:home:phone_james:uptime" }
+DateTime Unifi_Phone_James_LastSeen  "James' Phone: Last Seen [%1$tH:%1$tM:%1$tS]" (UnifiController) ["Measurement","Timestamp"] { channel="unifi:wirelessClient:home:phone_james:lastSeen" }
+Switch   Unifi_Phone_James_Blocked   "James' Phone: Blocked"                       (UnifiController) ["Switch"]                  { channel="unifi:wirelessClient:home:phone_james:blocked" }
+Switch   Unifi_Phone_James_Reconnect "James' Phone: Reconnect"                     (UnifiController) ["Switch"]                  { channel="unifi:wirelessClient:home:phone_james:reconnect" }
