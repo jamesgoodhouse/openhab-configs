@@ -1,6 +1,5 @@
 // general groups
 Group Batteries "Batteries"
-Group Temperatures "Temperatures"
 
 // semantic model groups
 Group House "House" <house> ["House"]
@@ -37,6 +36,7 @@ Group House "House" <house> ["House"]
 
   Group Outdoor "Outdoor" <garden> (House) ["Outdoor"]
     Group AQI_Home "AQI" <colorlight> (Outdoor) ["Sensor"]
+    Group HVAC_OutdoorUnit "Outdoor Unit" <heating> (Outdoor) ["HVAC"]
 
 
 

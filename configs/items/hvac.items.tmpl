@@ -1,10 +1,11 @@
+Number:Temperature HVAC_OutdoorTemperature "Outdoor Temperature" <temperature> (HVAC,HVAC_OutdoorUnit) ["Measurement","Temperature"] { channel="daikin:ac_unit:living_room:outdoortemp" }
+
 {{ range (ds "configs").things.daikin }}
-Number:Temperature HVAC_{{ .name }}_IndoorTemperature  "Indoor Temperature"  <temperature> (HVAC,HVAC_{{ .name }},Temperatures) ["Measurement","Temperature"] { channel="daikin:ac_unit:{{ .thing_id }}:indoortemp" }
-Number:Temperature HVAC_{{ .name }}_OutdoorTemperature "Outdoor Temperature" <temperature> (HVAC,HVAC_{{ .name }},Temperatures) ["Measurement","Temperature"] { channel="daikin:ac_unit:{{ .thing_id }}:outdoortemp" }
-Number:Temperature HVAC_{{ .name }}_SetPoint           "Set Point"           <temperature> (HVAC,HVAC_{{ .name }},Temperatures) ["SetPoint","Temperature"]    { channel="daikin:ac_unit:{{ .thing_id }}:settemp" }
-String             HVAC_{{ .name }}_Fan                "Fan"                 <fan>         (HVAC,HVAC_{{ .name }})              ["Control"]                   { channel="daikin:ac_unit:{{ .thing_id }}:fanspeed" }
-String             HVAC_{{ .name }}_FanSwing           "Fan Swing"           <fan>         (HVAC,HVAC_{{ .name }})              ["Control"]                   { channel="daikin:ac_unit:{{ .thing_id }}:fandir" }
-String             HVAC_{{ .name }}_Mode               "Mode"                <heating>     (HVAC,HVAC_{{ .name }})              ["Control"]                   { channel="daikin:ac_unit:{{ .thing_id }}:mode" }
-Switch             HVAC_{{ .name }}_Power              "Power"               <switch>      (HVAC,HVAC_{{ .name }})              ["Switch"]                    { channel="daikin:ac_unit:{{ .thing_id }}:power" }
-Switch             HVAC_{{ .name }}_PowerfulMode       "Powerful Mode"       <switch>      (HVAC,HVAC_{{ .name }})              ["Switch"]                    { channel="daikin:ac_unit:{{ .thing_id }}:specialmode-powerful" }
+Number:Temperature HVAC_{{ .name }}_IndoorTemperature  "Indoor Temperature"  <temperature> (HVAC,HVAC_{{ .name }}) ["Measurement","Temperature"] { channel="daikin:ac_unit:{{ .thing_id }}:indoortemp" }
+Number:Temperature HVAC_{{ .name }}_SetPoint           "Set Point"           <temperature> (HVAC,HVAC_{{ .name }}) ["SetPoint","Temperature"]    { channel="daikin:ac_unit:{{ .thing_id }}:settemp" }
+String             HVAC_{{ .name }}_Fan                "Fan"                 <fan>         (HVAC,HVAC_{{ .name }}) ["Control"]                   { channel="daikin:ac_unit:{{ .thing_id }}:fanspeed" }
+String             HVAC_{{ .name }}_FanSwing           "Fan Swing"           <fan>         (HVAC,HVAC_{{ .name }}) ["Control"]                   { channel="daikin:ac_unit:{{ .thing_id }}:fandir" }
+String             HVAC_{{ .name }}_Mode               "Mode"                <heating>     (HVAC,HVAC_{{ .name }}) ["Control"]                   { channel="daikin:ac_unit:{{ .thing_id }}:mode" }
+Switch             HVAC_{{ .name }}_Power              "Power"               <switch>      (HVAC,HVAC_{{ .name }}) ["Switch"]                    { channel="daikin:ac_unit:{{ .thing_id }}:power" }
+Switch             HVAC_{{ .name }}_PowerfulMode       "Powerful Mode"       <switch>      (HVAC,HVAC_{{ .name }}) ["Switch"]                    { channel="daikin:ac_unit:{{ .thing_id }}:specialmode-powerful" }
 {{ end }}
