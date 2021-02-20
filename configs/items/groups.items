@@ -40,9 +40,6 @@ Group Room_Media            "Media Room"    <microphone>     (Floor_Second)     
 Group Outdoor "Outdoor" <garden> (House) ["Outdoor"]
 
 
-Group Network "Network" (House) ["Location"]
-
-
 
 
 
