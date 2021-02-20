@@ -2,12 +2,13 @@ Group Network "Network" (House) ["Location"]
 
 Group Network_SpeedTest "Speed Test" (Network) ["NetworkAppliance"]
 
-String                  Speedtest_Running    "Test running ... [%s]"            (Network_Speedtest)                 { channel="network:speedtest:local:isRunning" }
-Number:Dimensionless    Speedtest_Progress   "Test progress [%d %unit%]"        (Network_Speedtest)                 { channel="network:speedtest:local:progress" }
-Number:DataTransferRate Speedtest_ResultDown "Downlink [%.2f %unit%]"           (Network_Speedtest) ["Measurement"] { channel="network:speedtest:local:rateDown" }
-Number:DataTransferRate Speedtest_ResultUp   "Uplink [%.2f %unit%]"             (Network_Speedtest) ["Measurement"] { channel="network:speedtest:local:rateUp" }
-DateTime                Speedtest_Start      "Test Start [%1$tH:%1$tM]"  <time> (Network_Speedtest)                 { channel="network:speedtest:local:testStart" }
-DateTime                Speedtest_LUD        "Timestamp [%1$tH:%1$tM]"   <time> (Network_Speedtest)                 { channel="network:speedtest:local:testEnd" }
+// speed test
+DateTime                Speedtest_LUD        "Timestamp [%1$tH:%1$tM]"   <time> (Network_Speedtest) ["Measurement","Timestamp"] { channel="network:speedtest:local:testEnd" }
+DateTime                Speedtest_Start      "Test Start [%1$tH:%1$tM]"  <time> (Network_Speedtest) ["Measurement","Timestamp"] { channel="network:speedtest:local:testStart" }
+Number:DataTransferRate Speedtest_ResultDown "Downlink [%.2f %unit%]"           (Network_Speedtest) ["Measurement"]             { channel="network:speedtest:local:rateDown" }
+Number:DataTransferRate Speedtest_ResultUp   "Uplink [%.2f %unit%]"             (Network_Speedtest) ["Measurement"]             { channel="network:speedtest:local:rateUp" }
+Number:Dimensionless    Speedtest_Progress   "Test progress [%d %unit%]"        (Network_Speedtest) ["Point"]                   { channel="network:speedtest:local:progress" }
+String                  Speedtest_Running    "Test running ... [%s]"            (Network_Speedtest) ["Point"]                   { channel="network:speedtest:local:isRunning" }
 
 {{ range $n := (ds "secrets").things.networking -}}
 {{ range $n.items -}}
