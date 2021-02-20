@@ -1,6 +1,6 @@
 Group UnifiController "Unifi Controller" (Network) ["NetworkAppliance"]
 
-Group UnifiController_WirelessClient_James "James' Phone" (UnifiController) ["NetworkAppliance"]
+Group UnifiController_WirelessClient_James "James' Phone" (UnifiController) ["Smartphone"]
 
 Switch   UnifiController_WirelessClient_James_Status    "Status [MAP(unifi.map):%s]"    (UnifiController_WirelessClient_James) ["Switch"]                  { channel="unifi:wirelessClient:home:phone_james:online" }
 String   UnifiController_WirelessClient_James_Site      "Site [%s]"                     (UnifiController_WirelessClient_James) ["Point"]                   { channel="unifi:wirelessClient:home:phone_james:site" }
