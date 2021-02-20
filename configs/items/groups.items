@@ -3,8 +3,12 @@ Group House "House" <house> ["House"]
 Group Batteries    "Batteries"    (House)
 Group Doors        "Doors"        (House)
 Group HVAC         "HVAC"         (House)
-Group Network      "Network"      (House) ["Location"]
 Group Temperatures "Temperatures" (House)
+
+Group Network                              "Network"          (House)           ["Location"]
+Group Phone_James                          "James' Phone"     (Network)         ["Smartphone"]
+Group UnifiController                      "Unifi Controller" (Network)         ["NetworkAppliance"]
+Group UnifiController_WirelessClient_James "James' Phone"     (UnifiController) ["Smartphone"]
 
 // INDOOR
 // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
