@@ -1,9 +1,9 @@
 Bridge unifi:controller:home "UniFi Controller" [
   host="{{ (ds "secrets").things.unifi.host }}",
-  port=443,
+  port="{{ (ds "secrets").things.unifi.port }}",
   username="{{ (ds "secrets").things.unifi.username }}",
   password="{{ (ds "secrets").things.unifi.password }}",
-  refresh=10
+  refresh="{{ (ds "configs").things.unifi.refresh_rate }}"
 ] {
 {{- range (ds "configs").things.unifi.wireless_clients }}
   Thing wirelessClient {{ .id }} "{{ .name }}" [

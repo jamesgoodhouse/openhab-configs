@@ -1,4 +1,0 @@
-Thing systeminfo:computer:rpi [
-  interval_high=3,
-  interval_medium=60
-]
