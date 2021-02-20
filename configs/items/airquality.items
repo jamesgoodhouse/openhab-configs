@@ -1,15 +1,15 @@
 Group AQI_Home "AQI" <colorlight> (Outdoor) ["Sensor"]
 
 Number               AQI_Home_Level           "Air Quality Index"                  <flow>        (AQI_Home) ["Measurement"]               { channel="airquality:aqi:home:aqiLevel" }
-String               AQI_Home_Description     "AQI Level [MAP(airquality.map):%s]" <flow>        (AQI_Home)                               { channel="airquality:aqi:home:aqiDescription" }
+String               AQI_Home_Description     "AQI Level [MAP(airquality.map):%s]" <flow>        (AQI_Home) ["Point"]                     { channel="airquality:aqi:home:aqiDescription" }
 Number               AQI_Home_Pm25            "PM\u2082\u2085 Level"               <line>        (AQI_Home) ["Measurement"]               { channel="airquality:aqi:home:pm25" }
 Number               AQI_Home_O3              "O\u2083 Level"                      <line>        (AQI_Home) ["Measurement"]               { channel="airquality:aqi:home:o3" }
 Number               AQI_Home_No2             "NO\u2082 Level"                     <line>        (AQI_Home) ["Measurement"]               { channel="airquality:aqi:home:no2" }
 Number               AQI_Home_Co              "CO Level"                           <line>        (AQI_Home) ["Measurement","CO"]          { channel="airquality:aqi:home:co" }
 Number               AQI_Home_So2             "SO\u2082 Level"                     <line>        (AQI_Home) ["Measurement"]               { channel="airquality:aqi:home:so2" }
-String               AQI_Home_LocationName    "Measuring Location"                 <settings>    (AQI_Home)                               { channel="airquality:aqi:home:locationName" }
-Location             AQI_Home_StationGeo      "Station Location"                   <office>      (AQI_Home)                               { channel="airquality:aqi:home:stationLocation" }
-Number               AQI_Home_StationId       "Station ID"                         <pie>         (AQI_Home)                               { channel="airquality:aqi:home:stationId" }
+String               AQI_Home_LocationName    "Measuring Location"                 <settings>    (AQI_Home) ["Point"]                     { channel="airquality:aqi:home:locationName" }
+Location             AQI_Home_StationGeo      "Station Location"                   <office>      (AQI_Home) ["Point"]                     { channel="airquality:aqi:home:stationLocation" }
+Number               AQI_Home_StationId       "Station ID"                         <pie>         (AQI_Home) ["Point"]                     { channel="airquality:aqi:home:stationId" }
 DateTime             AQI_Home_ObservationTime "Time of observation [%1$tH:%1$tM]"  <clock>       (AQI_Home) ["Measurement","Timestamp"]   { channel="airquality:aqi:home:observationTime" }
 Number:Temperature   AQI_Home_Temperature     "Temperature"                        <temperature> (AQI_Home) ["Measurement","Temperature"] { channel="airquality:aqi:home:temperature" }
 Number:Pressure      AQI_Home_Pressure        "Pressure"                           <pressure>    (AQI_Home) ["Measurement","Pressure"]    { channel="airquality:aqi:home:pressure" }

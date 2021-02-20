@@ -46,7 +46,6 @@ Group Outdoor "Outdoor" <garden> (House) ["Outdoor"]
 
 
 
-Group AirQuality   "Air Quality" <flow> (Home)
 
 Group Bluetooth "Bluetooth" (Network)
 Group:Switch:OR(ON,OFF) JamesPresence "James Presence" (Network)
