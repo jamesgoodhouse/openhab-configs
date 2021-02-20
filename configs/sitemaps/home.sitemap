@@ -3,19 +3,19 @@ sitemap home label="Home" {
     Text label="HVAC" icon="heating" {
       Frame {
         Text label="Great Room" icon="corridor" {
-          Text item=HVAC_GreatRoom_IndoorTemperature label="Temperature [%.0f °F]"
-          Switch item=HVAC_GreatRoom_Power label="Power" icon="switch"
-          Selection item=HVAC_GreatRoom_Mode mappings=["AUTO"="Auto", "DEHUMIDIFIER"="Dehumidifier", "COLD"="Cold", "HEAT"="Heat", "FAN"="Fan"] visibility=[HVAC_GreatRoom_Power==ON]
-          Setpoint item=HVAC_GreatRoom_SetPoint label="Set Point [%.0f °F]" icon="temperature" visibility=[HVAC_GreatRoom_Mode==AUTO, HVAC_GreatRoom_Mode==COLD, HVAC_GreatRoom_Mode==HEAT] minValue=64 maxValue=90 step=1
-          Selection item=HVAC_GreatRoom_Fan visibility=[HVAC_GreatRoom_Power==ON] icon="fan"
+          Text item=HVAC_IndoorUnit_LivingRoom_IndoorTemperature label="Temperature [%.0f °F]"
+          Switch item=HVAC_IndoorUnit_LivingRoom_Power label="Power" icon="switch"
+          Selection item=HVAC_IndoorUnit_LivingRoom_Mode mappings=["AUTO"="Auto", "DEHUMIDIFIER"="Dehumidifier", "COLD"="Cold", "HEAT"="Heat", "FAN"="Fan"] visibility=[HVAC_IndoorUnit_LivingRoom_Power==ON]
+          Setpoint item=HVAC_IndoorUnit_LivingRoom_SetPoint label="Set Point [%.0f °F]" icon="temperature" visibility=[HVAC_IndoorUnit_LivingRoom_Mode==AUTO, HVAC_IndoorUnit_LivingRoom_Mode==COLD, HVAC_IndoorUnit_LivingRoom_Mode==HEAT] minValue=64 maxValue=90 step=1
+          Selection item=HVAC_IndoorUnit_LivingRoom_Fan visibility=[HVAC_IndoorUnit_LivingRoom_Power==ON] icon="fan"
         }
         Text label="Main Bedroom" icon="bedroom" {
-          Text item=HVAC_MainBedroom_IndoorTemperature label="Temperature [%.0f °F]"
-          Switch item=HVAC_MainBedroom_Power label="Power" icon="switch"
-          Switch item=HVAC_MainBedroom_PowerfulMode label="Powerful Mode" icon="switch"
-          Selection item=HVAC_MainBedroom_Mode mappings=["AUTO"="Auto", "DEHUMIDIFIER"="Dehumidifier", "COLD"="Cold", "HEAT"="Heat", "FAN"="Fan"] visibility=[HVAC_MainBedroom_Power==ON]
-          Setpoint item=HVAC_MainBedroom_SetPoint label="Set Point [%.0f °F]" icon="temperature" visibility=[HVAC_MainBedroom_Mode==AUTO, HVAC_MainBedroom_Mode==COLD, HVAC_MainBedroom_Mode==HEAT] minValue=64 maxValue=90 step=1
-          Selection item=HVAC_MainBedroom_Fan visibility=[HVAC_MainBedroom_Power==ON] icon="fan"
+          Text item=HVAC_IndoorUnit_MainBedroom_IndoorTemperature label="Temperature [%.0f °F]"
+          Switch item=HVAC_IndoorUnit_MainBedroom_Power label="Power" icon="switch"
+          Switch item=HVAC_IndoorUnit_MainBedroom_PowerfulMode label="Powerful Mode" icon="switch"
+          Selection item=HVAC_IndoorUnit_MainBedroom_Mode mappings=["AUTO"="Auto", "DEHUMIDIFIER"="Dehumidifier", "COLD"="Cold", "HEAT"="Heat", "FAN"="Fan"] visibility=[HVAC_IndoorUnit_MainBedroom_Power==ON]
+          Setpoint item=HVAC_IndoorUnit_MainBedroom_SetPoint label="Set Point [%.0f °F]" icon="temperature" visibility=[HVAC_IndoorUnit_MainBedroom_Mode==AUTO, HVAC_IndoorUnit_MainBedroom_Mode==COLD, HVAC_IndoorUnit_MainBedroom_Mode==HEAT] minValue=64 maxValue=90 step=1
+          Selection item=HVAC_IndoorUnit_MainBedroom_Fan visibility=[HVAC_IndoorUnit_MainBedroom_Power==ON] icon="fan"
         }
       }
     }
