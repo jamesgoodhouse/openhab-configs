@@ -3,7 +3,11 @@ Group House "House" <house> ["House"]
 Group Batteries    "Batteries"    (House)
 Group Doors        "Doors"        (House)
 Group HVAC         "HVAC"         (House)
+Group Network      "Network"      (House) ["Location"]
 Group Temperatures "Temperatures" (House)
+
+// DEVICES
+Group Phone_James "James' Phone" (Network) ["Smartphone"]
 
 // INDOOR
 // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
