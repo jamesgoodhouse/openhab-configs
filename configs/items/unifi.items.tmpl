@@ -1,0 +1,13 @@
+Group UnifiController "Unifi Controller" (Network) ["NetworkAppliance"]
+
+Switch   Unifi_WirelessClient_James           "Status [MAP(unifi.map):%s]"    (UnifiController) ["Switch"]                  { channel="unifi:wirelessClient:home:phone_james:online" }
+String   Unifi_WirelessClient_James_Site      "Site [%s]"                     (UnifiController) ["Point"]                   { channel="unifi:wirelessClient:home:phone_james:site" }
+String   Unifi_WirelessClient_James_MAC       "MAC Address [%s]"              (UnifiController) ["Point"]                   { channel="unifi:wirelessClient:home:phone_james:macAddress" }
+String   Unifi_WirelessClient_James_IP        "IP Address [%s]"               (UnifiController) ["Point"]                   { channel="unifi:wirelessClient:home:phone_james:ipAddress" }
+String   Unifi_WirelessClient_James_AP        "AP MAC Address [%s]"           (UnifiController) ["Point"]                   { channel="unifi:wirelessClient:home:phone_james:ap" }
+String   Unifi_WirelessClient_James_ESSID     "Network Name (ESSID) [%s]"     (UnifiController) ["Point"]                   { channel="unifi:wirelessClient:home:phone_james:essid" }
+Number   Unifi_WirelessClient_James_RSSI      "RSSI [%d]"                     (UnifiController) ["Measurement"]             { channel="unifi:wirelessClient:home:phone_james:rssi" }
+Number   Unifi_WirelessClient_James_Uptime    "Uptime [%d]"                   (UnifiController) ["Measurement"]             { channel="unifi:wirelessClient:home:phone_james:uptime" }
+DateTime Unifi_WirelessClient_James_LastSeen  "Last Seen [%1$tH:%1$tM:%1$tS]" (UnifiController) ["Measurement","Timestamp"] { channel="unifi:wirelessClient:home:phone_james:lastSeen" }
+Switch   Unifi_WirelessClient_James_Blocked   "Blocked"                       (UnifiController) ["Switch"]                  { channel="unifi:wirelessClient:home:phone_james:blocked" }
+Switch   Unifi_WirelessClient_James_Reconnect "Reconnect"                     (UnifiController) ["Switch"]                  { channel="unifi:wirelessClient:home:phone_james:reconnect" }

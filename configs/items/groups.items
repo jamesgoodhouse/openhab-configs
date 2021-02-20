@@ -6,9 +6,6 @@ Group HVAC         "HVAC"         (House)
 Group Network      "Network"      (House) ["Location"]
 Group Temperatures "Temperatures" (House)
 
-// DEVICES
-Group Phone_James "James' Phone" (Network) ["Smartphone"]
-
 // INDOOR
 // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 Group Indoor "Indoor" (House) ["Indoor"]
