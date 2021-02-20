@@ -1,5 +1,3 @@
-Group AQI_Home "AQI" <colorlight> (Outdoor) ["Sensor"]
-
 Number               AQI_Home_Level           "Air Quality Index"                  <flow>        (AQI_Home) ["Measurement"]               { channel="airquality:aqi:home:aqiLevel" }
 String               AQI_Home_Description     "AQI Level [MAP(airquality.map):%s]" <flow>        (AQI_Home) ["Point"]                     { channel="airquality:aqi:home:aqiDescription" }
 Number               AQI_Home_Pm25            "PM\u2082\u2085 Level"               <line>        (AQI_Home) ["Measurement"]               { channel="airquality:aqi:home:pm25" }

@@ -1,4 +1,0 @@
-Group Door_External_Garage "Garage Door" <garagedoor> (Room_Garage) ["GarageDoor"]
-
-Number:Dimensionless Door_Garage_Battery "Battery [%d %%]" <battery> (Batteries,Door_External_Garage) ["Measurement","Level"] { channel = "zwave:eco_tiltzwave25_00_000:controller:{{ (ds "configs").things.zwave.sensors.garage_door.thing_id }}:battery-level" }
-Contact              Door_Garage_State   "State"                     (Doors,Door_External_Garage)     ["OpenState"]           { channel = "zwave:eco_tiltzwave25_00_000:controller:{{ (ds "configs").things.zwave.sensors.garage_door.thing_id }}:sensor_door" }

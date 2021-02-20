@@ -1,6 +1,3 @@
-Group HVAC_MainBedroom "HVAC" <heating> (Room_Bedroom_Main) ["HVAC"]
-Group HVAC_LivingRoom  "HVAC" <heating> (Room_Living)       ["HVAC"]
-
 {{ range (ds "configs").things.daikin }}
 Number:Temperature HVAC_{{ .name }}_IndoorTemperature  "Indoor Temperature"  <temperature> (HVAC,HVAC_{{ .name }},Temperatures) ["Measurement","Temperature"] { channel="daikin:ac_unit:{{ .thing_id }}:indoortemp" }
 Number:Temperature HVAC_{{ .name }}_OutdoorTemperature "Outdoor Temperature" <temperature> (HVAC,HVAC_{{ .name }},Temperatures) ["Measurement","Temperature"] { channel="daikin:ac_unit:{{ .thing_id }}:outdoortemp" }

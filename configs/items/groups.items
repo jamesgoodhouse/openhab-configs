@@ -12,33 +12,33 @@ Group Indoor "Indoor" (House) ["Indoor"]
 
 // FLOORS
 // =============================================================================
-Group Floor_Ground "Ground Floor" <groundfloor> (Indoor) ["GroundFloor"]
-Group Floor_First  "First Floor"  <firstfloor>  (Indoor) ["FirstFloor"]
-Group Floor_Second "Second Floor"               (Indoor) ["SecondFloor"]
+Group Floor_Ground           "Ground Floor" <groundfloor> (Indoor)        ["GroundFloor"]
+Group Room_Garage            "Garage"       <garage>      (Floor_Ground)  ["Garage"]
+Group Door_External_Garage   "Garage Door"  <garagedoor>  (Room_Garage)   ["GarageDoor"]
+Group Room_Entryway          "Entryway"     <corridor>    (Floor_Ground)  ["Entry"]
+Group Door_External_Entryway "Front Door"   <frontdoor>   (Room_Entryway) ["FrontDoor"]
 
-// ROOMS
-// =============================================================================
-// ground floor
-Group Room_Garage   "Garage"   <garage>   (Floor_Ground) ["Garage"]
-Group Room_Entryway "Entryway" <corridor> (Floor_Ground) ["Entry"]
+Group Floor_First           "First Floor"      <firstfloor>  (Indoor)      ["FirstFloor"]
+Group Room_Bathroom_Kitchen "Kitchen Bathroom" <bath>        (Floor_First) ["Bathroom"]
+Group Room_Dining           "Dining Room"                    (Floor_First) ["DiningRoom"]
+Group Room_Kitchen          "Kitchen"          <kitchen>     (Floor_First) ["Kitchen"]
+Group Room_Living           "Living Room"                    (Floor_First) ["LivingRoom"]
+Group HVAC_LivingRoom       "HVAC"             <heating>     (Room_Living) ["HVAC"]
 
-// first floor
-Group Room_Bathroom_Kitchen "Kitchen Bathroom" <bath>    (Floor_First) ["Bathroom"]
-Group Room_Dining           "Dining Room"                (Floor_First) ["DiningRoom"]
-Group Room_Kitchen          "Kitchen"          <kitchen> (Floor_First) ["Kitchen"]
-Group Room_Living           "Living Room"                (Floor_First) ["LivingRoom"]
-
-// second floor
-Group Room_Bathroom_Hall    "Hall Bathroom" <bath>           (Floor_Second)      ["Bathroom"]
-Group Room_Bedroom_Main     "Main Bedroom"  <bedroom>        (Floor_Second)      ["Bedroom"]
-Group Room_Bathroom_Bedroom "Bathroom"      <bath>           (Room_Bedroom_Main) ["Bathroom"]
-Group Room_Closet_Bedroom   "Closet"                         (Room_Bedroom_Main) ["Room"]
-Group Room_Laundry          "Laundry Room"  <washingmachine> (Floor_Second)      ["LaundryRoom"]
-Group Room_Media            "Media Room"    <microphone>     (Floor_Second)      ["Room"]
+Group Floor_Second          "Second Floor"                   (Indoor)              ["SecondFloor"]
+Group Room_Bathroom_Hall    "Hall Bathroom" <bath>           (Floor_Second)        ["Bathroom"]
+Group Room_Bedroom_Main     "Main Bedroom"  <bedroom>        (Floor_Second)        ["Bedroom"]
+Group HVAC_MainBedroom      "HVAC"          <heating>        (Room_Bedroom_Main)   ["HVAC"]
+Group Room_Bathroom_Bedroom "Bathroom"      <bath>           (Room_Bedroom_Main)   ["Bathroom"]
+Group Room_Closet_Bedroom   "Closet"                         (Room_Bedroom_Main)   ["Room"]
+Group Alarm                 "Alarm"         <alarm>          (Room_Closet_Bedroom) ["AlarmSystem"]
+Group Room_Laundry          "Laundry Room"  <washingmachine> (Floor_Second)        ["LaundryRoom"]
+Group Room_Media            "Media Room"    <microphone>     (Floor_Second)        ["Room"]
 
 // OUTDOOR
 // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-Group Outdoor "Outdoor" <garden> (House) ["Outdoor"]
+Group Outdoor  "Outdoor" <garden>     (House)   ["Outdoor"]
+Group AQI_Home "AQI"     <colorlight> (Outdoor) ["Sensor"]
 
 
 

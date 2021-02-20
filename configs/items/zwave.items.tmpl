@@ -1,0 +1,7 @@
+Group                Sensor_FrontDoor   "Sensor"          (Door_External_Entryway) ["Sensor"]
+Number:Dimensionless Door_Front_Battery "Battery [%d %%]" (Sensor_FrontDoor)       ["Measurement"] { channel = "zwave:eco_dwzwave25_00_000:controller:{{ (ds "configs").things.zwave.sensors.front_door.thing_id }}:battery-level"[profile="transform:MAP", function="binary"] }
+Contact              Door_Front_State   "State"           (Sensor_FrontDoor)       ["OpenState"]   { channel = "zwave:eco_dwzwave25_00_000:controller:{{ (ds "configs").things.zwave.sensors.front_door.thing_id }}:sensor_binary" }
+
+Group                Sensor_Tilt_GarageDoor "Sensor"                    (Door_External_Garage)   ["Sensor"]
+Number:Dimensionless Door_Garage_Battery    "Battery [%d %%]" <battery> (Sensor_Tilt_GarageDoor) ["Measurement","Level"] { channel = "zwave:eco_tiltzwave25_00_000:controller:{{ (ds "configs").things.zwave.sensors.garage_door.thing_id }}:battery-level" }
+Contact              Door_Garage_State      "State"                     (Sensor_Tilt_GarageDoor) ["OpenState"]           { channel = "zwave:eco_tiltzwave25_00_000:controller:{{ (ds "configs").things.zwave.sensors.garage_door.thing_id }}:sensor_door" }
