@@ -1,13 +1,9 @@
-Group UnifiController "Unifi Controller" (Network) ["NetworkAppliance"]
-
-Group UnifiController_WirelessClient_James "James' Phone" (UnifiController) ["Smartphone"]
-
 Switch   UnifiController_WirelessClient_James_Status    "Status [MAP(unifi.map):%s]"    (UnifiController_WirelessClient_James) ["Switch"]                  { channel="unifi:wirelessClient:home:phone_james:online" }
 String   UnifiController_WirelessClient_James_Site      "Site [%s]"                     (UnifiController_WirelessClient_James) ["Point"]                   { channel="unifi:wirelessClient:home:phone_james:site" }
 String   UnifiController_WirelessClient_James_MAC       "MAC Address [%s]"              (UnifiController_WirelessClient_James) ["Point"]                   { channel="unifi:wirelessClient:home:phone_james:macAddress" }
 String   UnifiController_WirelessClient_James_IP        "IP Address [%s]"               (UnifiController_WirelessClient_James) ["Point"]                   { channel="unifi:wirelessClient:home:phone_james:ipAddress" }
 String   UnifiController_WirelessClient_James_AP        "AP MAC Address [%s]"           (UnifiController_WirelessClient_James) ["Point"]                   { channel="unifi:wirelessClient:home:phone_james:ap" }
-String   UnifiController_WirelessClient_James_ESSID     "Network Name (ESSID) [%s]"     (UnifiController_WirelessClient_James) ["Point"]                   { channel="unifi:wirelessClient:home:phone_james:essid" }
+String   UnifiController_WirelessClient_James_ESSID     "Network Name [%s]"             (UnifiController_WirelessClient_James) ["Point"]                   { channel="unifi:wirelessClient:home:phone_james:essid" }
 Number   UnifiController_WirelessClient_James_RSSI      "RSSI [%d]"                     (UnifiController_WirelessClient_James) ["Measurement"]             { channel="unifi:wirelessClient:home:phone_james:rssi" }
 Number   UnifiController_WirelessClient_James_Uptime    "Uptime [%d]"                   (UnifiController_WirelessClient_James) ["Measurement"]             { channel="unifi:wirelessClient:home:phone_james:uptime" }
 DateTime UnifiController_WirelessClient_James_LastSeen  "Last Seen [%1$tH:%1$tM:%1$tS]" (UnifiController_WirelessClient_James) ["Measurement","Timestamp"] { channel="unifi:wirelessClient:home:phone_james:lastSeen" }
