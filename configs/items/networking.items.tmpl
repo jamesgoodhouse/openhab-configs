@@ -15,6 +15,8 @@ DateTime                Speedtest_LUD        "Timestamp [%1$tH:%1$tM]"   <time> 
 {{ end }}
 {{ end -}}
 
+Group Phone_James "James' Phone" (Network) ["Smartphone"]
+
 Switch   Unifi_Phone_James           "James' Phone [MAP(unifi.map):%s]"            (Phone_James) ["Switch"]                  { channel="unifi:wirelessClient:home:phone_james:online" }
 String   Unifi_Phone_James_Site      "James' Phone: Site [%s]"                     (Phone_James)                             { channel="unifi:wirelessClient:home:phone_james:site" }
 String   Unifi_Phone_James_MAC       "James' Phone: MAC [%s]"                      (Phone_James)                             { channel="unifi:wirelessClient:home:phone_james:macAddress" }
