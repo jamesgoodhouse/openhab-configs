@@ -11,7 +11,7 @@ Group House "House" <house> ["House"]
           Group Sensor_Tilt_GarageDoor "Sensor" (Door_External_Garage) ["Sensor"]
       Group Room_Entryway "Entryway" <corridor> (Floor_Ground) ["Entry"]
         Group Door_External_Entryway "Front Door" <frontdoor> (Room_Entryway) ["FrontDoor"]
-          Group Sensor_Magnetic_FrontDoor "Sensor" (Door_External_Entryway) ["Sensor"]
+          Group Sensor_Door_FrontDoor "Sensor" (Door_External_Entryway) ["Sensor"]
 
     Group Floor_First "First Floor" <firstfloor> (Indoor) ["FirstFloor"]
       Group Room_Bathroom_Kitchen "Kitchen Bathroom" <bath> (Floor_First) ["Bathroom"]
