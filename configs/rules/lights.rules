@@ -1,0 +1,13 @@
+rule "Sunset Rule"
+when
+  Channel 'astro:sun:home:set#event' triggered START
+then
+  Plug_Dimmer_LivingRoom_Dimmer.sendCommand(15)
+end
+
+rule "Midnight"
+when
+  Time is midnight
+then
+  Plug_Dimmer_LivingRoom_Dimmer.sendCommand(0)
+end
