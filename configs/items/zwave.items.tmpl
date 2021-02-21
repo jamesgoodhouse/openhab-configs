@@ -5,6 +5,9 @@ Number:Dimensionless Sensor_Tilt_GarageDoor_Battery "Battery [%d %%]" <battery> 
 Contact Sensor_Tilt_GarageDoor_State "State" (Sensor_Tilt_GarageDoor) ["OpenState"] {
   channel = "zwave:{{ (ds "configs").things.zwave.devices.tilt_sensor_garage_door.type_id }}:controller:{{ (ds "configs").things.zwave.devices.tilt_sensor_garage_door.thing_id }}:sensor_door"
 }
+Switch Sensor_Tilt_GarageDoor_TamperAlarm "Tamper Alarm" (Sensor_Tilt_GarageDoor) ["Tampered"] {
+  channel = "zwave:{{ (ds "configs").things.zwave.devices.tilt_sensor_garage_door.type_id }}:controller:{{ (ds "configs").things.zwave.devices.tilt_sensor_garage_door.thing_id }}:alarm_tamper"
+}
 
 // living room plug-in dimmer
 Dimmer Plug_Dimmer_LivingRoom_Dimmer "Dimmer" <slider> (Plug_Dimmer_LivingRoom) ["Control"] {
