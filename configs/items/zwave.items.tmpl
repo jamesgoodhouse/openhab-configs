@@ -10,6 +10,6 @@ Switch Sensor_Tilt_GarageDoor_TamperAlarm "Tamper Alarm" (Sensor_Tilt_GarageDoor
 }
 
 // living room plug-in dimmer
-Dimmer Plug_Dimmer_LivingRoom_Dimmer "Dimmer" <slider> (Plug_Dimmer_LivingRoom) ["Control"] {
+Dimmer Plug_Dimmer_Landing_Dimmer "Dimmer" <slider> (Plug_Dimmer_Landing) ["Control"] {
   channel = "zwave:{{ (ds "configs").things.zwave.devices.plugin_dimmer_living_room.type_id }}:controller:{{ (ds "configs").things.zwave.devices.plugin_dimmer_living_room.thing_id }}:switch_dimmer"
 }
