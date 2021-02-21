@@ -1,6 +1,0 @@
-Number:Dimensionless Sensor_Tilt_GarageDoor_Battery "Battery [%d %%]" <battery> (Sensor_Tilt_GarageDoor) ["Measurement","Level"] {
-  channel = "zwave:eco_tiltzwave25_00_000:controller:{{ (ds "configs").things.zwave.devices.garage_door.thing_id }}:battery-level"
-}
-Contact Sensor_Tilt_GarageDoor_State "State" (Sensor_Tilt_GarageDoor) ["OpenState"] {
-  channel = "zwave:eco_tiltzwave25_00_000:controller:{{ (ds "configs").things.zwave.devices.garage_door.thing_id }}:sensor_door"
-}
