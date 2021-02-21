@@ -2,20 +2,20 @@ rule "Sunset Rule"
 when
   Channel 'astro:sun:home:set#event' triggered START
 then
-  var int timeoutMills = 3 * 600 // 60000 divided by 100 dim levels
-  var int dimLevel = 1
+  var int dimLevel = 5
   var int dimLevelStep = 1
   var int maxDimLevel = 15
+  var int timeoutNanos = 10000000
   var Timer timer = null
 
   if (timer === null) {
-    timer = createTimer(now.plusSeconds(0), [ |   //Starts immediately
+    timer = createTimer(now.plusSeconds(0), [ |
       Plug_Dimmer_Landing_Dimmer.sendCommand(dimLevel)
       if (dimLevel == maxDimLevel) {
         timer = null // cancel timer
       } else {
         dimLevel = dimLevel + dimLevelStep
-        timer.reschedule(now.plusMillis(timeoutMills)) // reschedule timer is 3 * 600 mills
+        timer.reschedule(now.plusNanos(timeoutNanos))
       }
     ])
   }
