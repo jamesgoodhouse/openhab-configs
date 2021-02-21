@@ -3,7 +3,7 @@ when
   Item Sensor_Tilt_GarageDoor_State changed from CLOSED to OPEN
 then
   if (Present_James.state == OFF) {
-    createTimer(now.plusSecond(60), [ |
+    createTimer(now.plusSeconds(60), [ |
       if (Present_James.state == OFF) {
         val telegramAction = getActions("telegram","telegram:telegramBot:boty_mcbotface")
         telegramAction.sendTelegram("⚠️ The garage door has been opened")
