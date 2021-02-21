@@ -29,7 +29,7 @@ Group Indoor "Indoor" ["Indoor"]
     Group Room_Media "Media Room" <microphone> (Floor_Second) ["Room"]
 
 Group Outdoor "Outdoor" <garden> ["Outdoor"]
-  Group AQI_Home "AQI" <colorlight> (Outdoor) ["Sensor"]
+  Group AQI_Home "Air Quality" <colorlight> (Outdoor) ["Sensor"]
   Group HVAC_OutdoorUnit "Condenser" <heating> (Outdoor) ["HVAC"]
 
 
