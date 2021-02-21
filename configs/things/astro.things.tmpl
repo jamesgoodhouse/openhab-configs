@@ -1,0 +1,8 @@
+astro:sun:home  [
+  geolocation="{{ (ds "secrets").home.latitude }},{{ (ds "secrets").home.longitude }},{{ (ds "secrets").home.altitude }}",
+  interval=60
+]
+astro:moon:home  [
+  geolocation="{{ (ds "secrets").home.latitude }},{{ (ds "secrets").home.longitude }},{{ (ds "secrets").home.altitude }}",
+  interval=60
+]
