@@ -1,0 +1,6 @@
+rule "Startup"
+when
+  System started
+then
+  Present.members.forEach[ SwitchItem s | s.sendCommand(OFF) ]
+end
