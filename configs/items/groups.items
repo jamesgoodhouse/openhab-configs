@@ -42,9 +42,8 @@ Group Outdoor "Outdoor" <garden> ["Outdoor"]
 
 
 
-Group Bluetooth "Bluetooth" (Network)
-Group:Switch:OR(ON,OFF) JamesPresence "James Presence" (Network)
+Group:Number:SUM Present
+Group:Switch:AND(ON,OFF) Present_James "James Presence [%s]" <present>
 
-Group Presence "Presence" (Home)
 
-Group:Number:COUNT("True|ON|home") IsHome_James (Presence)
+/* Group:Number:COUNT("True|ON|home") IsHome_James (Presence) */
