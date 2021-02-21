@@ -19,8 +19,6 @@ then
       }
     ])
   }
-
-  #Plug_Dimmer_Landing_Dimmer.sendCommand(15)
 end
 
 rule "Midnight"
