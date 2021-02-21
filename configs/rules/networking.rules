@@ -1,5 +1,0 @@
-rule "Set state of James' Presence"
-when
-  Item JamesPresence changed to ON
-then
-end
