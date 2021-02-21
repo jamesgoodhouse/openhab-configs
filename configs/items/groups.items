@@ -17,6 +17,7 @@ Group Indoor "Indoor" ["Indoor"]
     Group Room_Kitchen "Kitchen" <kitchen> (Floor_First) ["Kitchen"]
     Group Room_Living "Living Room" (Floor_First) ["LivingRoom"]
       Group HVAC_IndoorUnit_LivingRoom "Mini-Split" <heating> (Room_Living) ["HVAC"]
+      Group Plug_Dimmer_LivingRoom "Plug-in Dimmer" <poweroutlet> (Room_Living) ["PowerOutlet"]
 
   Group Floor_Second "Second Floor" (Indoor) ["SecondFloor"]
     Group Room_Bathroom_Hall "Hall Bathroom" <bath> (Floor_Second) ["Bathroom"]
