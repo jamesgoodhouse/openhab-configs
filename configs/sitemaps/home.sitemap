@@ -2,7 +2,7 @@ sitemap home label="Home" {
   Frame {
     Text label="HVAC" icon="heating" {
       Frame {
-        Text label="Great Room" icon="corridor" {
+        Text label="Living Room" icon="corridor" {
           Text item=HVAC_IndoorUnit_LivingRoom_Temperature label="Temperature [%.0f °F]"
           Switch item=HVAC_IndoorUnit_LivingRoom_Power label="Power" icon="switch"
           Switch item=HVAC_IndoorUnit_LivingRoom_PowerfulMode visibility=[HVAC_IndoorUnit_LivingRoom_Power==ON] label="Powerful Mode" icon="switch"
