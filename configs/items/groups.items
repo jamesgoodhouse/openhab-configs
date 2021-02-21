@@ -1,11 +1,8 @@
-// general groups
-Group Batteries "Batteries"
-
 // semantic model groups
 Group Network "Network" ["Location"]
-  Group Phone_James "James' Phone" (Network) ["Smartphone"]
-  Group UnifiController "Unifi Controller" (Network) ["NetworkAppliance"]
-    Group UnifiController_WirelessClient_James "James' Phone" (UnifiController) ["Smartphone"]
+  Group Network_Device_Phone_James "James' Phone" (Network) ["Smartphone"]
+  /* Group UnifiController "Unifi Controller" (Network) ["NetworkAppliance"] */
+  /*   Group UnifiController_WirelessClient_James "James' Phone" (UnifiController) ["Smartphone"] */
 
 Group Indoor "Indoor" ["Indoor"]
   Group Floor_Ground "Ground Floor" <groundfloor> (Indoor) ["GroundFloor"]
