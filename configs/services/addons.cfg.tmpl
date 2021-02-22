@@ -21,7 +21,7 @@ package = {{ (ds "configs").settings.addons.package }}
 #automation =
 
 # A comma-separated list of bindings to install (e.g. "binding = knx,sonos,zwave")
-binding = {{ (ds "configs").settings.addons.binding }}
+binding = {{ join (ds "configs").settings.addons.binding "," }}
 
 # A comma-separated list of miscellaneous services to install (e.g. "misc = openhabcloud")
 misc = {{ (ds "configs").settings.addons.misc }}
@@ -30,7 +30,7 @@ misc = {{ (ds "configs").settings.addons.misc }}
 persistence = {{ (ds "configs").settings.addons.persistence }}
 
 # A comma-separated list of transformation services to install (e.g. "transformation = jsonpath,map")
-transformation = {{ (ds "configs").settings.addons.transformation }}
+transformation = {{ join (ds "configs").settings.addons.transformation "," }}
 
 # A comma-separated list of UIs to install (e.g. "ui = basic,habpanel")
 ui = {{ (ds "configs").settings.addons.ui }}
