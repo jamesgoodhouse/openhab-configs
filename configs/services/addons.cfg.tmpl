@@ -24,16 +24,16 @@ package = {{ (ds "configs").settings.addons.package }}
 binding = {{ join (ds "configs").settings.addons.binding "," }}
 
 # A comma-separated list of miscellaneous services to install (e.g. "misc = openhabcloud")
-misc = {{ (ds "configs").settings.addons.misc }}
+misc = {{ join (ds "configs").settings.addons.misc "," }}
 
 # A comma-separated list of persistence services to install (e.g. "persistence = jpa,rrd4j")
-persistence = {{ (ds "configs").settings.addons.persistence }}
+persistence = {{ join (ds "configs").settings.addons.persistence "," }}
 
 # A comma-separated list of transformation services to install (e.g. "transformation = jsonpath,map")
 transformation = {{ join (ds "configs").settings.addons.transformation "," }}
 
 # A comma-separated list of UIs to install (e.g. "ui = basic,habpanel")
-ui = {{ (ds "configs").settings.addons.ui }}
+ui = {{ join (ds "configs").settings.addons.ui "," }}
 
 # A comma-separated list of voice services to install (e.g. "voice = googletts,marytts")
 #voice =
