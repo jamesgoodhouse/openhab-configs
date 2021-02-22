@@ -10,7 +10,7 @@ then
 
   if (timer === null) {
     timer = createTimer(now.plusSeconds(0), [ |
-      Plug_Dimmer_Landing_Dimmer.sendCommand(dimLevel)
+      Light_Landing_Dimmer.sendCommand(dimLevel)
       if (dimLevel == maxDimLevel) {
         timer = null // cancel timer
       } else {
@@ -25,5 +25,5 @@ rule "Midnight"
 when
   Time is midnight
 then
-  Plug_Dimmer_Landing_Dimmer.sendCommand(0)
+  Light_Landing_Dimmer.sendCommand(0)
 end
