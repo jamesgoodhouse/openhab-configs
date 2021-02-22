@@ -9,11 +9,13 @@ Bridge zwave:serial_zstick:controller "Z-Wave Controller" @ "Living Room" [
   {{- $params := slice }}
   {{- range $i, $e := .parameters }}
     {{- range $k, $v := $e }}
+      {{ $k }}
+      {{ $v }}
       {{- $param := slice (printf "%s=%s" $k $v) }}
       {{- append $params $param }}
     {{- end }}
   {{- end }}
   {{- $ugh := join $params "," }}
-  Thing {{ .type_id }} {{ .thing_id }} "{{ .label }}" @ "{{ .location }}" [ {{ $ugh }} ]
+  Thing {{ .type_id }} {{ .thing_id }} "{{ .label }}" @ "{{ .location }}" [  ]
 {{- end }}
 }
