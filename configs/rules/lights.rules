@@ -2,9 +2,9 @@ rule "Sunset Rule"
 when
   Channel "astro:sun:home:set#event" triggered START
 then
-  var int dimLevel = 5
+  var int dimLevel = 1
   var int dimLevelStep = 1
-  var int maxDimLevel = 15
+  var int maxDimLevel = 8
   var int timeoutNanos = 10000000
   var Timer timer = null
 
