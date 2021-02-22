@@ -1,5 +1,13 @@
 sitemap home label="Home" {
   Frame {
+    Text label="Lights" icon="light" {
+      Frame {
+        Text label="Landing" icon="light" {
+          Switch item=Plug_Dimmer_Landing_Dimmer label="Light"
+          Slider item=Plug_Dimmer_Landing_Dimmer label="Dimmer"
+        }
+      }
+    }
     Text label="HVAC" icon="heating" {
       Frame {
         Text label="Living Room" icon="corridor" {
