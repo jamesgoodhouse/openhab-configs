@@ -5,12 +5,12 @@ Bridge zwave:serial_zstick:controller "Z-Wave Controller" @ "Living Room" [
   heal_enable="true",
   security_networkkey="{{ (ds "secrets").things.zwave.controller.security_network_key }}"
 ] {
-{{- range (ds "configs").things.zwave.devices }}
-{{ $params := slice }}
-{{- range $k, $v := .parameters  }}
-{{ $param := slice (printf "%s=%s" $k $v) }}
-{{ append $params $param }}
-{{ end }}
+{{- range (ds "configs").things.zwave.devices -}}
+{{- $params := slice -}}
+{{- range $k, $v := .parameters -}}
+{{- $param := slice (printf "%s=%s" $k $v) -}}
+{{- append $params $param -}}
+{{- end -}}
   Thing {{ .type_id }} {{ .thing_id }} "{{ .label }}" @ "{{ .location }}" [ {{ join $params "," }} ]
 {{- end }}
 }
