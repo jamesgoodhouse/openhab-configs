@@ -1,4 +1,8 @@
 sitemap home label="Home" {
+  Frame label="Overview" {
+    Text item=Sensor_Tilt_GarageDoor_State label="Garage Door [%s]"
+    Text item=Present_James label="James [MAP(presence.map):%s]"
+  }
   Frame {
     Text label="HVAC" icon="heating" {
       Frame {
