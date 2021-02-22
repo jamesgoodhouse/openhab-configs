@@ -15,6 +15,6 @@ Bridge zwave:serial_zstick:controller "Z-Wave Controller" @ "Living Room" [
     {{- end }}
   {{- end }}
   {{- $ugh := join $params "," }}
-  Thing {{ .type_id }} {{ .thing_id }} "{{ .label }}" @ "{{ .location }}" [  ]
+  Thing {{ .type_id }} {{ .thing_id }} "{{ .label }}" @ "{{ .location }}" [ {{ $ugh }} ]
 {{- end }}
 }
