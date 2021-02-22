@@ -4,7 +4,7 @@ when
 then
   var int dimLevel = 6
   var int dimLevelStep = 1
-  var int maxDimLevel = 8
+  var int maxDimLevel = 10
   var int timeoutNanos = 1000000
   var Timer timer = null
 
