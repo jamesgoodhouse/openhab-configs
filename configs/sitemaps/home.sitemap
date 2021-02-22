@@ -1,9 +1,9 @@
 sitemap home label="Home" {
   Frame label="Overview" {
-    Text item=Sensor_Tilt_GarageDoor_State label="Garage Door [%s]"
-    Text item=Present_James label="James [MAP(presence.map):%s]"
+    Text item=Sensor_Tilt_GarageDoor_State label="Garage Door [%s]" valuecolor=[CLOSED="green",OPEN="red"]
+    Text item=Present_James label="James [MAP(presence.map):%s]" icon=man_3 valuecolor=[ON="green",OFF="blue"]
   }
-  Frame {
+  Frame label="Items" {
     Text label="HVAC" icon="heating" {
       Frame {
         Text label="Living Room" icon="corridor" {
