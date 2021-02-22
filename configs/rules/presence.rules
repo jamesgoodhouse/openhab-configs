@@ -5,3 +5,11 @@ then
   val telegramAction = getActions("telegram","telegram:telegramBot:boty_mcbotface")
   telegramAction.sendTelegram("James is gone methinks")
 end
+
+rule "James Home"
+when
+  Item Present_James changed from OFF to ON
+then
+  val telegramAction = getActions("telegram","telegram:telegramBot:boty_mcbotface")
+  telegramAction.sendTelegram("James is home methinks")
+end
