@@ -8,9 +8,11 @@ Bridge zwave:serial_zstick:controller "Z-Wave Controller" @ "Living Room" [
 {{- range (ds "configs").things.zwave.devices -}}
 {{- $params := slice -}}
 {{- range $k, $v := .parameters -}}
+device: {{ .thing_id }}
 taco [{{ $k }}]
 bell [{{ $v }}]
 {{- $param := slice (printf "%s=%s" $k $v) -}}
+param {{ $param }}
 {{- append $params $param -}}
 {{- end -}}
   {{ join $params "," }}
