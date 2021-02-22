@@ -10,8 +10,8 @@ Bridge zwave:serial_zstick:controller "Z-Wave Controller" @ "Living Room" [
   {{- range $i, $e := .parameters }}
     {{- range $k, $v := $e }}
       {{ $k }}
-      {{ printf "%s" $v }}
-      {{- $param := slice (printf "%s=%s" $k $v) }}
+      {{ print $v }}
+      {{- $param := slice (printf "%s=%v" $k $v) }}
       {{- append $params $param }}
     {{- end }}
   {{- end }}
