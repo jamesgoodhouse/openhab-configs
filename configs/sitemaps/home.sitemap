@@ -1,13 +1,5 @@
 sitemap home label="Home" {
   Frame {
-    Text label="Lights" icon="light" {
-      Frame {
-        Text label="Landing" icon="light" {
-          Switch item=Plug_Dimmer_Landing_Dimmer label="Light"
-          Slider item=Plug_Dimmer_Landing_Dimmer label="Dimmer"
-        }
-      }
-    }
     Text label="HVAC" icon="heating" {
       Frame {
         Text label="Living Room" icon="corridor" {
@@ -27,6 +19,14 @@ sitemap home label="Home" {
           Setpoint item=HVAC_IndoorUnit_MainBedroom_SetPoint label="Set Point [%.0f °F]" icon="temperature" visibility=[HVAC_IndoorUnit_MainBedroom_Mode==AUTO, HVAC_IndoorUnit_MainBedroom_Mode==COLD, HVAC_IndoorUnit_MainBedroom_Mode==HEAT] minValue=64 maxValue=90 step=1
           Selection item=HVAC_IndoorUnit_MainBedroom_Fan visibility=[HVAC_IndoorUnit_MainBedroom_Power==ON] icon="fan"
           Selection item=HVAC_IndoorUnit_MainBedroom_FanSwing visibility=[HVAC_IndoorUnit_MainBedroom_Power==ON] icon="fan"
+        }
+      }
+    }
+    Text label="Lights" icon="light" {
+      Frame {
+        Text label="Landing" icon="light" {
+          Switch item=Plug_Dimmer_Landing_Dimmer label="Light"
+          Slider item=Plug_Dimmer_Landing_Dimmer label="Dimmer"
         }
       }
     }
