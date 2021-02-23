@@ -1,4 +1,4 @@
-Thing airquality:aqi:home "AirQuality" @ "Home" [
+Thing airquality:aqi:home [
   apikey="{{ (ds "secrets").things.airquality.apikey }}",
   stationId={{ (ds "configs").things.airquality.station_id }},
   refresh=60

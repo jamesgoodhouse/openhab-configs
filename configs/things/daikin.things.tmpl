@@ -1,5 +1,5 @@
 {{- range (ds "configs").things.daikin -}}
-Thing daikin:{{ .type_id }}:{{ .thing_id }} [
+  Thing daikin:{{ .type_id }}:{{ .thing_id }} @ "{{ .location }}" [
   host="{{ .host }}"
 ]
 {{ end -}}
