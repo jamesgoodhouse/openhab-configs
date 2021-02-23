@@ -41,9 +41,5 @@ Group Persist "Persist"
 
 
 
-
-Group:Number:SUM Present
-Group:Switch:AND(ON,OFF) Present_James "James Presence [%s]" <present>
-
-
-/* Group:Number:COUNT("True|ON|home") IsHome_James (Presence) */
+Group:Switch:AND(OFF,ON) Present       "Presence [%s]"
+Group:Switch:AND(OFF,ON) Present_James "James Presence [%s]" <present>
