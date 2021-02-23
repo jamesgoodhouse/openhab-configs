@@ -2,7 +2,7 @@ rule "Sunset"
 when
   Channel "astro:sun:home:set#event" triggered START
 then
-  var int dimLevel = 9
+  var int dimLevel = 8
   Plug_Dimmer_Landing_Dimmer.sendCommand(dimLevel)
 end
 
