@@ -1,0 +1,10 @@
+{{- range (ds "secrets").things.network.ping_devices }}
+  {{- $params := slice }}
+  {{- range $i, $e := .parameters }}
+    {{- range $k, $v := $e }}
+      {{- $param := printf "%s=%v" $k $v }}
+      {{- $params = $params | append $param }}
+    {{- end }}
+  {{- end }}
+network:pingdevice:{{ .id }} [ {{ join $params "," }} ]
+{{- end }}
