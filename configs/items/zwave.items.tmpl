@@ -1,15 +1,15 @@
 // garage tilt sensor
-Number:Dimensionless Sensor_Tilt_GarageDoor_Battery "Battery [%d %%]" <battery> (Sensor_Tilt_GarageDoor) ["Measurement","Level"] {
+Number:Dimensionless Sensor_Tilt_GarageDoor_Battery "Battery [%d %%]" <battery> (Sensor_Tilt_GarageDoor,Persist) ["Measurement","Level"] {
   channel = "zwave:{{ (ds "configs").things.zwave.devices.tilt_sensor_garage_door.type_id }}:controller:{{ (ds "configs").things.zwave.devices.tilt_sensor_garage_door.thing_id }}:battery-level"
 }
-Contact Sensor_Tilt_GarageDoor_State "State" (Sensor_Tilt_GarageDoor) ["OpenState"] {
+Contact Sensor_Tilt_GarageDoor_State "State" (Sensor_Tilt_GarageDoor,Persist) ["OpenState"] {
   channel = "zwave:{{ (ds "configs").things.zwave.devices.tilt_sensor_garage_door.type_id }}:controller:{{ (ds "configs").things.zwave.devices.tilt_sensor_garage_door.thing_id }}:sensor_door"
 }
-Switch Sensor_Tilt_GarageDoor_TamperAlarm "Tamper Alarm" (Sensor_Tilt_GarageDoor) ["Tampered"] {
+Switch Sensor_Tilt_GarageDoor_TamperAlarm "Tamper Alarm" (Sensor_Tilt_GarageDoor,Persist) ["Tampered"] {
   channel = "zwave:{{ (ds "configs").things.zwave.devices.tilt_sensor_garage_door.type_id }}:controller:{{ (ds "configs").things.zwave.devices.tilt_sensor_garage_door.thing_id }}:alarm_tamper"
 }
 
 // living room plug-in dimmer
-Dimmer Plug_Dimmer_Landing_Dimmer "Dimmer" <slider> (Plug_Dimmer_Landing) ["Control","Light"] {
+Dimmer Plug_Dimmer_Landing_Dimmer "Dimmer" <slider> (Plug_Dimmer_Landing,Persist) ["Control","Light"] {
   channel = "zwave:{{ (ds "configs").things.zwave.devices.plugin_dimmer_living_room.type_id }}:controller:{{ (ds "configs").things.zwave.devices.plugin_dimmer_living_room.thing_id }}:switch_dimmer"
 }
