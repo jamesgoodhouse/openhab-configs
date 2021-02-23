@@ -1,4 +1,4 @@
-{{- range (ds "secrets").things.network.ping_devices }}
+{{- range (ds "secrets").things.network.ping_devices -}}
   {{- $params := slice }}
   {{- range $i, $e := .parameters }}
     {{- range $k, $v := $e }}
