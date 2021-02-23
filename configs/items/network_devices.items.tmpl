@@ -10,6 +10,6 @@ DateTime UnifiController_WirelessClient_James_LastSeen  "Unifi — Last Seen [%1
 Switch   UnifiController_WirelessClient_James_Blocked   "Unifi — Blocked"                       (Network_Device_Phone_James)                               ["Switch"]                  { channel="unifi:wirelessClient:home:phone_james:blocked" }
 Switch   UnifiController_WirelessClient_James_Reconnect "Unifi — Reconnect"                     (Network_Device_Phone_James)                               ["Switch"]                  { channel="unifi:wirelessClient:home:phone_james:reconnect" }
 
-Switch      Network_PingDevice_Phone_James_Status       "Ping — Status [MAP(unifi.map):%s]"     (Network_Device_Phone_James,Present_James,Present,Persist) ["Switch"]                  { channel="network:pingdevice:phone_james:online" }
-DateTime    Network_PingDevice_Phone_James_LastSeen     "Ping — Last Seen [%1$tH:%1$tM:%1$tS]"  (Network_Device_Phone_James)                               ["Measurement","Timestamp"] { channel="network:pingdevice:phone_james:lastseen" }
-Number:Time Network_PingDevice_Phone_James_ResponseTime "Ping — Response Time [%s]"             (Network_Device_Phone_James)                               ["Measurement"]             { channel="network:pingdevice:phone_james:latency" }
+Switch   Network_PingDevice_Phone_James_Status       "Ping — Status [MAP(unifi.map):%s]"    (Network_Device_Phone_James,Present_James,Present,Persist) ["Switch"]                  { channel="network:pingdevice:phone_james:online" }
+DateTime Network_PingDevice_Phone_James_LastSeen     "Ping — Last Seen [%1$tH:%1$tM:%1$tS]" (Network_Device_Phone_James)                               ["Measurement","Timestamp"] { channel="network:pingdevice:phone_james:lastseen" }
+Number   Network_PingDevice_Phone_James_ResponseTime "Ping — Latency [%s]"                  (Network_Device_Phone_James)                               ["Measurement","Duration"]  { channel="network:pingdevice:phone_james:latency" }
