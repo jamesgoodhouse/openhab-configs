@@ -6,5 +6,5 @@
       {{- $params = $params | append $param }}
     {{- end }}
   {{- end }}
-Thing network:pingdevice:{{ .id }} [ {{ join $params "," }} ]
+Thing network:pingdevice:{{ .id }} "Pingable Network Device — {{ .name }}" [ {{ join $params "," }} ]
 {{- end }}
