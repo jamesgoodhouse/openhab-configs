@@ -1,0 +1,10 @@
+Bridge bluetooth:bluez:hci0 [
+  address="{{ (ds "secrets").things.bluetooth.bridge.mac_address }}",
+  backgroundDiscovery={{ (ds "configs").things.bluetooth.bridge.background_discovery }}
+] {
+{{- range (ds "secrets").things.bluetooth.devices }}
+  Thing bluetooth:beacon:hci0:{{ .id }} (bluetooth:bluez:hci0) [
+    address="{{ .mac_address }}"
+  ]
+{{- end }}
+}
