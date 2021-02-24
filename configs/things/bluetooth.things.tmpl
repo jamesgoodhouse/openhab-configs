@@ -4,7 +4,7 @@ Bridge bluetooth:bluez:hci0 [
 ] {
 {{- range (ds "secrets").things.bluetooth.devices }}
   Thing bluetooth:beacon:hci0:{{ .id }} (bluetooth:bluez:hci0) [
-    address="{{ .mac_address }}"
+    address="{{ .mac_address | strings.ToUpper }}"
   ]
 {{- end }}
 }
