@@ -14,4 +14,4 @@ Switch   Network_PingDevice_Phone_James_Status       "Ping — Status [MAP(unifi
 DateTime Network_PingDevice_Phone_James_LastSeen     "Ping — Last Seen [%1$tH:%1$tM:%1$tS]" (Network_Device_Phone_James)                               ["Measurement","Timestamp"] { channel="network:pingdevice:phone_james:lastseen" }
 Number   Network_PingDevice_Phone_James_ResponseTime "Ping — Latency [%s]"                  (Network_Device_Phone_James)                               ["Measurement","Duration"]  { channel="network:pingdevice:phone_james:latency" }
 
-String Bluetooth_Phone_James_Status "Bluetooth — Status [MAP(unifi.map):%s]" (Network_Device_Phone_James,Present_James,Present,Persist) { channel="mqtt:topic:mosquitto:phone_james:online" }
+Switch Bluetooth_Phone_James_Status "Bluetooth — Status [MAP(unifi.map):%s]" (Network_Device_Phone_James,Present_James,Present,Persist) { channel="mqtt:topic:mosquitto:phone_james:online" }
