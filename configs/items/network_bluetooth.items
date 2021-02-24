@@ -1,2 +1,0 @@
-String Bluetooth_JamesMobile_Confidence "Confidence" (Home,Bluetooth,IsHome_James) { channel="mqtt:topic:mosquitto:james_mobile_bluetooth:confidence" }
-String Bluetooth_JamesMobile_State      "State"      (Home,Bluetooth,IsHome_James) { channel="mqtt:topic:mosquitto:james_mobile_bluetooth:state" }

@@ -1,5 +1,5 @@
 Bridge mqtt:broker:mosquitto [ host="mosquitto.data" ] {
-  Thing topic phone_james {
+  Thing topic phone_james "MQTT Thing — James' Phone" {
     Channels:
       Type string : online "Online" [
         stateTopic="sensor_reporter/phone_james"
