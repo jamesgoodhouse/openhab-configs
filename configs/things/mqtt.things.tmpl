@@ -1,12 +1,8 @@
 Bridge mqtt:broker:mosquitto [ host="mosquitto.data" ] {
-  Thing topic james_mobile_bluetooth "James' Mobile Bluetooth" @ "Home" {
+  Thing topic phone_james {
     Channels:
-      Type string : confidence "Confidence" [
-        stateTopic="home/bluetooth/raspberrypi/james_mobile",
-        transformationPattern="JSONPATH:$.confidence"
-      ]
       Type string : state "State" [
-        stateTopic="home/bluetooth/raspberrypi/james_mobile/device_tracker"
+        stateTopic="sensor_reporter/james_phone"
       ]
   }
 }
