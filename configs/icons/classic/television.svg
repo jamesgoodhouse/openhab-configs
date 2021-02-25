@@ -9,19 +9,19 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xml:space="preserve"
-   viewBox="0 0 83.5 69.699997"
+   viewBox="0 0 85 67.400002"
    y="0px"
    x="0px"
    id="圖層_1"
    version="1.1"
-   width="167"
-   height="139.39999"
+   width="170"
+   height="134.8"
    sodipodi:docname="television.svg"
    inkscape:version="1.0.2 (e86c8708, 2021-01-15)"><metadata
-     id="metadata1826"><rdf:RDF><cc:Work
+     id="metadata2486"><rdf:RDF><cc:Work
          rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
-     id="defs1824" /><sodipodi:namedview
+     id="defs2484" /><sodipodi:namedview
      pagecolor="#ffffff"
      bordercolor="#666666"
      borderopacity="1"
@@ -30,118 +30,108 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1248"
-     inkscape:window-height="923"
-     id="namedview1822"
+     inkscape:window-width="1105"
+     inkscape:window-height="872"
+     id="namedview2482"
      showgrid="false"
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
-     inkscape:zoom="2.5986174"
-     inkscape:cx="45.94898"
-     inkscape:cy="43.577553"
+     inkscape:zoom="3.675"
+     inkscape:cx="85"
+     inkscape:cy="67.400002"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="0"
      inkscape:current-layer="圖層_1" /><g
      class="ldl-scale"
-     id="g1819"
-     transform="translate(-8.25,-15.15)"><g
-   id="g1807"><path
-   d="M 90,51.5 C 90,80.5 80.4,78.2 42.9,78.2 19.3,78.1 10,80.4 10,51.5 10,22.6 19.3,24.9 42.9,24.8 79.7,24.8 90,22.5 90,51.5 Z"
-   stroke-miterlimit="10"
-   stroke-linejoin="round"
-   stroke-linecap="round"
-   stroke-width="3.5"
-   stroke="#333435"
-   fill="#666868"
-   style="fill:#666868;stroke:#333435"
-   id="path1797" />
-<circle
-   r="4"
-   cy="50.299999"
-   cx="78.800003"
-   fill="#333435"
-   style="fill:#333435"
-   id="circle1799" />
-<circle
-   r="4"
-   cy="62.799999"
-   cx="78.800003"
-   fill="#333435"
-   style="fill:#333435"
-   id="circle1801" />
-<line
-   y2="83.099998"
-   x2="27"
-   y1="78.199997"
-   x1="27"
-   stroke-miterlimit="10"
-   stroke-linejoin="round"
-   stroke-linecap="round"
-   stroke-width="3.5"
-   stroke="#333435"
-   fill="none"
-   style="stroke:#333435"
-   id="line1803" />
-<line
-   y2="83.099998"
-   x2="73"
-   y1="78.199997"
-   x1="73"
-   stroke-miterlimit="10"
-   stroke-linejoin="round"
-   stroke-linecap="round"
-   stroke-width="3.5"
-   stroke="#333435"
-   fill="none"
-   style="stroke:#333435"
-   id="line1805" /></g>
+     id="g2479"
+     transform="translate(-7.5,-16.299999)"><g
+   id="g2463"><path
+   d="M 21.7,69.5 H 7.5 V 20 c 0,-2.1 1.7,-3.7 3.7,-3.7 h 10.4 v 53.2 z"
+   fill="#F2F2F3"
+   style="fill:#f2f2f3"
+   id="path2451" />
+<rect
+   height="53.200001"
+   width="14.2"
+   fill="#F5E169"
+   y="16.299999"
+   x="21.700001"
+   style="fill:#f5e169"
+   id="rect2453" />
+<rect
+   height="53.200001"
+   width="14.2"
+   fill="#A0C8D7"
+   y="16.299999"
+   x="35.799999"
+   style="fill:#a0c8d7"
+   id="rect2455" />
+<rect
+   height="53.200001"
+   width="14.2"
+   fill="#ACBD81"
+   y="16.299999"
+   x="50"
+   style="fill:#acbd81"
+   id="rect2457" />
+<rect
+   height="53.200001"
+   width="14.2"
+   fill="#AFA6CD"
+   y="16.299999"
+   x="64.199997"
+   style="fill:#afa6cd"
+   id="rect2459" />
 <path
-   d="M 68.8,51.5 C 68.8,69.8 60.7,71 43.1,71 25.5,71 17.4,69.8 17.4,51.5 17.4,33.2 25.5,32 43.1,32 c 17.6,0 25.7,1.1 25.7,19.5 z"
-   stroke-miterlimit="10"
-   stroke-linejoin="round"
-   stroke-linecap="round"
-   stroke-width="3.5"
-   stroke="#333435"
-   fill="#FFFFFF"
-   style="fill:#ffffff;stroke:#333435"
-   id="path1809" />
+   d="M 92.5,69.5 H 78.3 V 16.3 h 10.4 c 2.1,0 3.7,1.7 3.7,3.7 v 49.5 z"
+   fill="#E15C64"
+   style="fill:#e15c64"
+   id="path2461" /></g>
 <g
-   id="g1815"><line
-   y2="16.9"
-   x2="42.099998"
-   y1="24.700001"
-   x1="50"
-   stroke-miterlimit="10"
-   stroke-linejoin="round"
-   stroke-linecap="round"
-   stroke-width="3.5"
-   stroke="#333435"
-   fill="none"
-   style="stroke:#333435"
-   id="line1811" />
-<line
-   y2="16.9"
-   x2="57.900002"
-   y1="24.700001"
-   x1="50"
-   stroke-miterlimit="10"
-   stroke-linejoin="round"
-   stroke-linecap="round"
-   stroke-width="3.5"
-   stroke="#333435"
-   fill="none"
-   style="stroke:#333435"
-   id="line1813" /></g>
+   id="g2475"><path
+   d="M 24.5,69.5 H 7.5 V 80 c 0,2.1 1.7,3.7 3.7,3.7 h 13.3 z"
+   fill="#333435"
+   style="fill:#333435"
+   id="path2465" />
+<rect
+   height="14.2"
+   width="17"
+   fill="#D2D2D3"
+   y="69.5"
+   x="24.5"
+   style="fill:#d2d2d3"
+   id="rect2467" />
+<rect
+   height="14.2"
+   width="17"
+   fill="#B2B3B4"
+   y="69.5"
+   x="41.5"
+   style="fill:#b2b3b4"
+   id="rect2469" />
+<rect
+   height="14.2"
+   width="17"
+   fill="#666868"
+   y="69.5"
+   x="58.5"
+   style="fill:#666868"
+   id="rect2471" />
+<path
+   d="m 92.5,69.5 h -17 v 14.2 h 13.3 c 2.1,0 3.7,-1.7 3.7,-3.7 z"
+   fill="#333435"
+   style="fill:#333435"
+   id="path2473" /></g>
 <metadata
-   id="metadata1817"><d:name
-   style="animation-play-state:paused">television</d:name>
+   id="metadata2477"><d:name
+   style="animation-play-state:paused">test card</d:name>
 
 
 <d:tags
-   style="animation-play-state:paused">movie,tv,show,video,play,broadcast,living room,watch,on air,crt,program</d:tags>
+   style="animation-play-state:paused">no signal,test card,color,smpte,arib,pal,test pattern,color bars,closedown test,television,tv</d:tags>
 
 
 <d:license
@@ -149,4 +139,4 @@
 
 
 <d:slug
-   style="animation-play-state:paused">jl6svx</d:slug></metadata></g><!-- generated by https://loading.io/ --></svg>
+   style="animation-play-state:paused">j3sdt0</d:slug></metadata></g><!-- generated by https://loading.io/ --></svg>
