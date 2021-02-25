@@ -7,8 +7,8 @@ sitemap home label="Home" {
       Text label="Devices" icon="devices" {
         Text label="James' Phone" icon="phone" {
           Text item=Bluetooth_Phone_James_Status label="Bluetooth Status [%s]" valuecolor=[ON="green",OFF="red"] icon="bluetooth"
-          Text item=Network_PingDevice_Phone_James_Status label="Ping Status [%s]" valuecolor=[ON="green",OFF="red"] icon="qualityofservice"
-          Text item=UnifiController_WirelessClient_James_Status label="UniFi Status [%s]" valuecolor=[ON="green",OFF="red"] icon="qualityofservice"
+          Text item=Network_PingDevice_Phone_James_Status label="Ping Status [%s]" valuecolor=[ON="green",OFF="red"] icon="network"
+          Text item=UnifiController_WirelessClient_James_Status label="UniFi Status [%s]" valuecolor=[ON="green",OFF="red"] icon="unifi"
         }
       }
     }

@@ -1,5 +1,5 @@
 // semantic model groups
-Group Network "Network" ["Location"]
+Group Network "Network" <network> ["Location"]
   Group Network_Device_Phone_James "James' Phone" <phone> (Network) ["Smartphone"]
 
 Group Indoor "Indoor" ["Indoor"]
