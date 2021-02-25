@@ -1,7 +1,7 @@
 Bridge mqtt:broker:mosquitto [
   host="{{ (ds "secrets").things.mqtt.host }}",
-  port=8883,
-  secure=true,
+  port={{ (ds "secrets").things.mqtt.port }},
+  secure={{ (ds "secrets").things.mqtt.secure }},
   username="{{ (ds "secrets").things.mqtt.username }}",
   password="{{ (ds "secrets").things.mqtt.password }}",
   certificatepin=false,
