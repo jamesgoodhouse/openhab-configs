@@ -20,7 +20,7 @@ Group Indoor "Indoor" ["Indoor"]
     Group Room_Landing "Landing" <corridor> (Floor_Second) ["Corridor"]
       Group Plug_Dimmer_Landing "Plug-in Dimmer" <poweroutlet> (Room_Landing) ["PowerOutlet"]
 
-  Group Floor_Third "Second Floor" <floor_3> (Indoor) ["ThirdFloor"]
+  Group Floor_Third "Third Floor" <floor_3> (Indoor) ["ThirdFloor"]
     Group Room_Bathroom_Hall "Hall Bathroom" <bath> (Floor_Third) ["Bathroom"]
     Group Room_Bedroom_Main "Main Bedroom" <bedroom> (Floor_Third) ["Bedroom"]
       Group HVAC_IndoorUnit_MainBedroom "Mini-Split" <heating> (Room_Bedroom_Main) ["HVAC"]
