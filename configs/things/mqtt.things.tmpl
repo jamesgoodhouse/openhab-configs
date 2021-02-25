@@ -1,4 +1,10 @@
-Bridge mqtt:broker:mosquitto [ host="mosquitto.data" ] {
+Bridge mqtt:broker:mosquitto [
+  host="{{ (ds "secrets").things.mqtt.host }}",
+  port=8883,
+  secure=true,
+  username="{{ (ds "secrets").things.mqtt.username }}",
+  password="{{ (ds "secrets").things.mqtt.password }}"
+] {
   Thing topic phone_james "MQTT Thing — James' Phone" {
     Channels:
       Type string : online "Online" [
