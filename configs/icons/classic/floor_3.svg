@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   width="60.926041mm"
+   height="60.926041mm"
+   viewBox="0 0 60.926041 60.926041"
+   version="1.1"
+   id="svg8">
+  <defs
+     id="defs2">
+    <rect
+       x="70.303574"
+       y="127.75595"
+       width="52.160713"
+       height="64.255951"
+       id="rect937" />
+    <rect
+       x="70.303574"
+       y="127.75595"
+       width="52.160713"
+       height="64.255951"
+       id="rect937-2" />
+    <rect
+       x="70.303574"
+       y="127.75595"
+       width="52.160713"
+       height="64.255951"
+       id="rect937-24" />
+  </defs>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     transform="translate(-105.57717,-40.096137)">
+    <g
+       id="g1080">
+      <circle
+         style="fill:#507cff;fill-opacity:1;stroke:#7d9eff;stroke-width:0.926042;stroke-opacity:1"
+         id="path941-9"
+         cx="136.04019"
+         cy="70.559158"
+         r="30" />
+      <text
+         xml:space="preserve"
+         id="text935-7"
+         style="font-style:normal;font-weight:normal;font-size:52.91669999999999874px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect937-2);fill:#ffffff;fill-opacity:1;stroke:#7d9eff;stroke-opacity:1;"
+         transform="translate(50.79004,-87.839616)"><tspan
+           x="70.302734"
+           y="176.03337"><tspan
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:52.9167px;font-family:'Franklin Gothic Medium';-inkscape-font-specification:'Franklin Gothic Medium, ';stroke:#7d9eff;stroke-opacity:1">3</tspan></tspan></text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   width="60.926041mm"
+   height="60.926041mm"
+   viewBox="0 0 60.926041 60.926041"
+   version="1.1"
+   id="svg1171">
+  <defs
+     id="defs1165">
+    <rect
+       x="70.303574"
+       y="127.75595"
+       width="52.160713"
+       height="64.255951"
+       id="rect937" />
+    <rect
+       x="70.303574"
+       y="127.75595"
+       width="52.160713"
+       height="64.255951"
+       id="rect1157" />
+  </defs>
+  <metadata
+     id="metadata1168">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     transform="translate(34.242783,-11.11436)">
+    <g
+       id="g1070"
+       transform="translate(-26.631305,-21.097321)">
+      <circle
+         style="fill:#ff5050;fill-opacity:1;stroke:#ff8888;stroke-width:0.926042;stroke-opacity:0.607843"
+         id="path941"
+         cx="22.851543"
+         cy="62.674702"
+         r="30" />
+      <text
+         xml:space="preserve"
+         id="text935"
+         style="font-style:normal;font-weight:normal;font-size:52.91669999999999874px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect937);fill:#ffffff;fill-opacity:1;stroke:#ff8888;stroke-opacity:0.608871;"
+         transform="translate(-62.721586,-97.040272)"><tspan
+           x="70.302734"
+           y="176.03337"><tspan
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:52.9167px;font-family:'Franklin Gothic Medium';-inkscape-font-specification:'Franklin Gothic Medium, ';fill:#ffffff;fill-opacity:1;stroke:#ff8888;stroke-opacity:0.608871">2</tspan></tspan></text>
+    </g>
+  </g>
+</svg>
