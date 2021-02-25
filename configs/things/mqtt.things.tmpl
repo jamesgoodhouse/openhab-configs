@@ -3,7 +3,9 @@ Bridge mqtt:broker:mosquitto [
   port=8883,
   secure=true,
   username="{{ (ds "secrets").things.mqtt.username }}",
-  password="{{ (ds "secrets").things.mqtt.password }}"
+  password="{{ (ds "secrets").things.mqtt.password }}",
+  certificatepin=false,
+  publickeypin=false
 ] {
   Thing topic phone_james "MQTT Thing — James' Phone" {
     Channels:
