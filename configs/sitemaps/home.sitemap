@@ -24,7 +24,7 @@ sitemap home label="Home" {
           Selection item=HVAC_IndoorUnit_LivingRoom_Fan visibility=[HVAC_IndoorUnit_LivingRoom_Power==ON] icon="fan"
           Selection item=HVAC_IndoorUnit_LivingRoom_FanSwing visibility=[HVAC_IndoorUnit_LivingRoom_Power==ON] icon="fan"
         }
-        Text item=HVAC_IndoorUnit_LivingRoom_Power label="Main Bedroom [%s]" icon="bedroom" {
+        Text item=HVAC_IndoorUnit_MainBedroom_Power label="Main Bedroom [%s]" icon="bedroom" {
           Text item=HVAC_IndoorUnit_MainBedroom_Temperature label="Temperature [%.0f °F]"
           Switch item=HVAC_IndoorUnit_MainBedroom_Power label="Power" icon="switch"
           Switch item=HVAC_IndoorUnit_MainBedroom_PowerfulMode visibility=[HVAC_IndoorUnit_MainBedroom_Power==ON] label="Powerful Mode" icon="switch"
