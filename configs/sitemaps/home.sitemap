@@ -2,9 +2,7 @@ sitemap home label="Home" {
   Frame label="Items" {
     Text label="Overview" icon="zoom" {
       Text item=Door_External_Garage_Sensor_State label="Garage Door [%s]" valuecolor=[CLOSED="green",OPEN="red"]
-      Text item=Present_James label="James [MAP(presence.map):%s]" icon=man_3 valuecolor=[ON="green",OFF="red"]
-
-      Text label="Devices" icon="devices" {
+      Text item=Present_James label="James [MAP(presence.map):%s]" icon=man_3 valuecolor=[ON="green",OFF="red"] {
         Text label="James' Phone" icon="phone" {
           Text item=Bluetooth_Phone_James_Status label="Bluetooth Status [%s]" valuecolor=[ON="green",OFF="red"] icon="bluetooth"
           Text item=Network_PingDevice_Phone_James_Status label="Ping Status [%s]" valuecolor=[ON="green",OFF="red"] icon="network"
