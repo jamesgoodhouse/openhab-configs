@@ -1,0 +1,11 @@
+Thing zigbee:coordinator_ember:stick [
+  zigbee_port="{{ (ds "configs").things.zigbee.coordinator.port }}",
+  zigbee_baud={{ (ds "configs").things.zigbee.coordinator.baud_rate }},
+  zigbee_flowcontrol={{ (ds "configs").things.zigbee.coordinator.flow_control }},
+  zigbee_childtimeout={{ (ds "configs").things.zigbee.coordinator.child_timeout }},
+  zigbee_concentrator={{ (ds "configs").things.zigbee.coordinator.concentrator }},
+  zigbee_meshupdateperiod={{ (ds "configs").things.zigbee.coordinator.mesh_update_period }},
+  zigbee_panid={{ (ds "secrets").things.zigbee.coordinator.pan_id }},
+  zigbee_extendedpanid="{{ (ds "secrets").things.zigbee.coordinator.extended_pan_id }}",
+  zigbee_networkkey="{{ (ds "secrets").things.zigbee.coordinator.network_key }}"
+]
