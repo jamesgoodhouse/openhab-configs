@@ -3,12 +3,12 @@ when
   Channel "astro:sun:home:set#event" triggered START
 then
   var int dimLevel = 8
-  Plug_Dimmer_Landing_Dimmer.sendCommand(dimLevel)
+  Light_Landing_Dimmer.sendCommand(dimLevel)
 end
 
 rule "Midnight"
 when
   Time is midnight
 then
-  Plug_Dimmer_Landing_Dimmer.sendCommand(0)
+  Light_Landing_Dimmer.sendCommand(0)
 end
