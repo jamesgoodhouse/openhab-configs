@@ -1,4 +1,4 @@
-Thing zigbee:coordinator_ember:stick "Zigbee Coordinator" @ "Living Room" [
+Bridge zigbee:coordinator_ember:stick "Zigbee Coordinator" @ "Living Room" [
   zigbee_port="{{ (ds "configs").things.zigbee.coordinator.port }}",
   zigbee_baud={{ (ds "configs").things.zigbee.coordinator.baud_rate }},
   zigbee_flowcontrol={{ (ds "configs").things.zigbee.coordinator.flow_control }},
@@ -8,8 +8,8 @@ Thing zigbee:coordinator_ember:stick "Zigbee Coordinator" @ "Living Room" [
   zigbee_panid={{ (ds "secrets").things.zigbee.coordinator.pan_id }},
   zigbee_extendedpanid="{{ (ds "secrets").things.zigbee.coordinator.extended_pan_id }}",
   zigbee_networkkey="{{ (ds "secrets").things.zigbee.coordinator.network_key }}"
-]
-
-Thing zigbee:device:stick:light_bulb_landing @ "Landing" [
-  zigbee_macaddress="{{ (ds "secrets").things.zigbee.devices.light_bulb_landing.mac_address }}"
-]
+] {
+  Thing device light_bulb_landing @ "Landing" [
+    zigbee_macaddress="{{ (ds "secrets").things.zigbee.devices.light_bulb_landing.mac_address }}"
+  ]
+}
