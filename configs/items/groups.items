@@ -19,7 +19,6 @@ Group Indoor "Indoor" ["Indoor"]
       Group HVAC_IndoorUnit_LivingRoom "Mini-Split" <heating> (Room_Living) ["HVAC"]
       Group Door_External_Deck "Deck Door" <frontdoor> (Room_Living) ["SideDoor"]
     Group Room_Landing "Landing" <corridor> (Floor_Second) ["Corridor"]
-      Group Plug_Dimmer_Landing "Plug-in Dimmer" <poweroutlet> (Room_Landing) ["PowerOutlet"]
 
   Group Floor_Third "Third Floor" <floor_3> (Indoor) ["ThirdFloor"]
     Group Room_Bathroom_Hall "Hall Bathroom" <bath> (Floor_Third) ["Bathroom"]

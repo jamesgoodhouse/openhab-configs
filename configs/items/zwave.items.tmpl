@@ -8,8 +8,3 @@ Contact Door_External_Garage_Rollup_Sensor_State "State" (Door_External_Garage_R
 Switch Sensor_Tilt_GarageDoor_TamperAlarm "Tamper Alarm" <alarm> (Sensor_Tilt_GarageDoor,Persist) ["Tampered"] {
   channel = "zwave:{{ (ds "configs").things.zwave.devices.tilt_sensor_garage_door.type_id }}:controller:{{ (ds "configs").things.zwave.devices.tilt_sensor_garage_door.thing_id }}:alarm_tamper"
 }
-
-// living room plug-in dimmer
-Dimmer Plug_Dimmer_Landing_Dimmer "Dimmer" <slider> (Plug_Dimmer_Landing,Persist) ["Control","Light"] {
-  channel = "zwave:{{ (ds "configs").things.zwave.devices.plugin_dimmer_living_room.type_id }}:controller:{{ (ds "configs").things.zwave.devices.plugin_dimmer_living_room.thing_id }}:switch_dimmer"
-}
