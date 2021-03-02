@@ -9,7 +9,7 @@ Bridge zigbee:coordinator_ember:stick "Zigbee Coordinator" @ "Living Room" [
   zigbee_extendedpanid="{{ (ds "secrets").things.zigbee.coordinator.extended_pan_id }}",
   zigbee_networkkey="{{ (ds "secrets").things.zigbee.coordinator.network_key }}"
 ] {
-  Thing device light_bulb_landing @ "Landing" [
+  Thing device light_bulb_landing "Zigbee Device — Light" @ "Landing" [
     zigbee_macaddress="{{ (ds "secrets").things.zigbee.devices.light_bulb_landing.mac_address }}"
   ]
 }
