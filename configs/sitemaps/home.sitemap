@@ -40,6 +40,10 @@ sitemap home label="Home" {
           Switch item=Light_Landing_Dimmer label="Light"
           Slider item=Light_Landing_Dimmer label="Dimmer"
         }
+        Text label="Living Room" icon="light" {
+          Switch item=Light_Living_Room_Dimmer label="Light"
+          Slider item=Light_Living_Room_Dimmer label="Dimmer"
+        }
       }
     }
   }
