@@ -33,7 +33,7 @@ Bridge mqtt:broker:mosquitto [
   }
   Thing topic konnected "MQTT Thing — Konnected Alarm Panel Pro" {
     Channels:
-      Type string : status "Status" [
+      Type string : online "Online" [
         stateTopic="konnected/status"
       ]
   }
@@ -45,7 +45,7 @@ Bridge mqtt:broker:mosquitto [
   }
   Thing topic sensor_reporter "MQTT Thing — Sensor Reporter" {
     Channels:
-      Type string : status "Status" [
+      Type string : online "Online" [
         stateTopic="sensor_reporter/status"
       ]
   }
