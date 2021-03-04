@@ -7,10 +7,28 @@ Bridge mqtt:broker:mosquitto [
   certificatepin=false,
   publickeypin=false
 ] {
-  Thing topic phone_james "MQTT Thing — James' Phone" {
+  Thing topic mqtt_sensor_front_door {
     Channels:
-      Type string : online "Online" [
-        stateTopic="sensor_reporter/phone_james"
+      Type string : state "State" [
+        stateTopic="konnected/front_door"
+      ]
+  }
+  Thing topic mqtt_sensor_deck_door {
+    Channels:
+      Type string : state "State" [
+        stateTopic="konnected/deck_door"
+      ]
+  }
+  Thing topic mqtt_sensor_garage_entry_door {
+    Channels:
+      Type string : state "State" [
+        stateTopic="konnected/garage_entry_door"
+      ]
+  }
+  Thing topic mqtt_sensor_motion_detector {
+    Channels:
+      Type string : state "State" [
+        stateTopic="konnected/motion_detector"
       ]
   }
 }
