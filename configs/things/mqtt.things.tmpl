@@ -31,4 +31,10 @@ Bridge mqtt:broker:mosquitto [
         stateTopic="konnected/binary_sensor/motion_detector/state"
       ]
   }
+  Thing topic konnected "MQTT Thing — Konnected" {
+    Channels:
+      Type string : status "Status" [
+        stateTopic="konnected/status"
+      ]
+  }
 }
