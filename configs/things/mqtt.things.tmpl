@@ -39,7 +39,7 @@ Bridge mqtt:broker:mosquitto [
   }
   Thing topic phone_james "MQTT Thing — James' Phone" {
     Channels:
-      Type string : state "State" [
+      Type string : online "Online" [
         stateTopic="sensor_reporter/phone_james"
       ]
   }
