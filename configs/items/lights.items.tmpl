@@ -2,6 +2,6 @@ Dimmer Light_Landing_Dimmer "Dimmer" <slider> (Light_Landing,Persist) ["Control"
   channel = "zigbee:device:stick:light_bulb_landing:{{ (ds "secrets").things.zigbee.devices.light_bulb_landing.mac_address }}_1_dimmer"
 }
 
-Dimmer Light_Living_Room "Dimmer" <slider> (Light_Living_Room,Persist) ["Control","Light"] {
+Dimmer Light_Living_Dimmer "Dimmer" <slider> (Light_Living_Room,Persist) ["Control","Light"] {
   channel = "zigbee:device:stick:light_bulb_living_room:{{ (ds "secrets").things.zigbee.devices.light_bulb_living_room.mac_address }}_11_dimmer"
 }
