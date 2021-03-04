@@ -1,0 +1,5 @@
+Switch Sensor_Binary_FrontDoor_State "State" (Door_External_Front,Persist) ["OpenState"] { channel="mqtt:topic:mosquitto:sensor_door_front:state" }
+
+Switch Sensor_Binary_GarageEntryDoor_State "State" (Door_External_GarageEntry,Persist) ["OpenState"] { channel="mqtt:topic:mosquitto:sensor_door_garage_entry:state" }
+
+Switch Sensor_Binary_DeckDoor_State "State" (Door_External_Deck,Persist) ["OpenState"] { channel="mqtt:topic:mosquitto:sensor_door_deck:state" }
