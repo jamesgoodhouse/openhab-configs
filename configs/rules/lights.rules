@@ -4,6 +4,7 @@ when
 then
   var int dimLevel = 8
   Light_Landing_Dimmer.sendCommand(dimLevel)
+  Light_Living_Room_Dimmer.sendCommand(dimLevel)
 end
 
 rule "Midnight"
@@ -11,4 +12,5 @@ when
   Time is midnight
 then
   Light_Landing_Dimmer.sendCommand(0)
+  Light_Living_Room_Dimmer.sendCommand(0)
 end
