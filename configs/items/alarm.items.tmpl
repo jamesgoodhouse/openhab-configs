@@ -1,1 +1,1 @@
-Switch Alarm_Status "Status" (Alarm,Persist) ["Switch"] { channel="mqtt:topic:mosquitto:konnected:online" }
+Switch Alarm_Status "Status [MAP(online.map):%s]" (Alarm,Persist) ["Switch"] { channel="mqtt:topic:mosquitto:konnected:online" }
