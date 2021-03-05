@@ -44,11 +44,11 @@ sitemap home label="Home" {
   }
 
   Text item=Lights label="Lights [MAP(onoff.map):%s] " icon="light" valuecolor=[ON="red",OFF="green"] {
-    Text label="Landing" icon="light" {
+    Text item=Light_Landing_Dimmer label="Landing [%s]" icon="light" {
       Switch item=Light_Landing_Dimmer label="Light"
       Slider item=Light_Landing_Dimmer label="Dimmer"
     }
-    Text label="Living Room" icon="light" {
+    Text item=Light_Living_Room_Dimmer label="Living Room [%s]" icon="light" {
       Switch item=Light_Living_Room_Dimmer label="Light"
       Slider item=Light_Living_Room_Dimmer label="Dimmer"
     }
