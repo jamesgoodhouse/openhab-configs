@@ -39,8 +39,8 @@ Group Outdoor "Outdoor" <garden> ["Outdoor"]
   Group HVAC_OutdoorUnit "Condenser" <heating> (Outdoor) ["HVAC"]
 
 // non-semantic model groups
-Group Doors
-Group Lights
+Group:Switch:AND(CLOSED,OPEN) Doors
+Group:Switch:AND(OFF,ON) Lights
 Group Persist "Persist"
 
 
