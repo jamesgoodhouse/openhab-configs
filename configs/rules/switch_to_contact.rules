@@ -1,0 +1,6 @@
+rule "Convert Front Door Switch to Contact"
+when
+  Item _Sensor_Binary_FrontDoor_State changed
+then
+  Sensor_Binary_FrontDoor_State.postUpdate(if(_Sensor_Binary_FrontDoor_State.state == ON) OPEN else CLOSED)
+end
