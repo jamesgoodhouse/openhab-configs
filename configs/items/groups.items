@@ -1,6 +1,7 @@
 // non-semantic model groups
 Group:Contact:AND(CLOSED,OPEN) Doors
 Group:Dimmer:AND(OFF,ON) Lights
+Group:Switch:AND(OFF,ON) HVAC_Power
 Group Persist "Persist"
 
 
