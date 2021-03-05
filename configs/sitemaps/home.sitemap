@@ -2,6 +2,7 @@ sitemap home label="Home" {
   Frame label="Items" {
     Text label="Overview" icon="zoom" {
       Text item=HVAC_OutdoorUnit_Temperature label="Outdoor Temperature [%.0f °F]" icon="temperature"
+      Text item=Alarm_Status icon="alarm" label="Alarm"
       Text item=Doors icon="door" label="Doors [MAP(door.map):%s]" valuecolor=[CLOSED="green",OPEN="red"] {
         Frame {
           Text item=Sensor_Binary_FrontDoor_State icon="frontdoor" label="Front Door" valuecolor=[CLOSED="green",OPEN="red"]
