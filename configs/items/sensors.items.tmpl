@@ -1,5 +1,6 @@
 // front door
-Switch Sensor_Binary_FrontDoor_State "State [MAP(door.map):%s]" (Door_External_Front,Persist) ["OpenState"] { channel="mqtt:topic:mosquitto:sensor_door_front:state" }
+Switch  _Sensor_Binary_FrontDoor_State "State [MAP(door.map):%s]" { channel="mqtt:topic:mosquitto:sensor_door_front:state" }
+Contact Sensor_Binary_FrontDoor_State  "State [MAP(door.map):%s]" (Door_External_Front,Persist) ["OpenState"]
 
 // garage entry door
 Switch Sensor_Binary_GarageEntryDoor_State "State [MAP(door.map):%s]" (Door_External_GarageEntry,Persist) ["OpenState"] { channel="mqtt:topic:mosquitto:sensor_door_garage_entry:state" }
