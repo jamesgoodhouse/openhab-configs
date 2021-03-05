@@ -38,8 +38,9 @@ Group Outdoor "Outdoor" <garden> ["Outdoor"]
   Group AQI_Home "Air Quality" <colorlight> (Outdoor) ["Sensor"]
   Group HVAC_OutdoorUnit "Condenser" <heating> (Outdoor) ["HVAC"]
 
-
-
+// non-semantic model groups
+Group Doors
+Group Lights
 Group Persist "Persist"
 
 
