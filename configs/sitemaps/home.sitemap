@@ -43,7 +43,7 @@ sitemap home label="Home" {
     }
   }
 
-  Text label="Lights" icon="light" {
+  Text item=Lights label="Lights [MAP(onoff.map):%s] " icon="light" valuecolor=[ON="red",OFF="green"] {
     Text label="Landing" icon="light" {
       Switch item=Light_Landing_Dimmer label="Light"
       Slider item=Light_Landing_Dimmer label="Dimmer"
