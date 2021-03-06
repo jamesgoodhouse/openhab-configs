@@ -20,6 +20,7 @@ Group Indoor "Indoor" ["Indoor"]
       Group Sensor_Motion_Landing "Motion Detector" (Room_Landing) ["MotionDetector"]
     Group Room_Living "Living Room" <couch> (Floor_Second) ["LivingRoom"]
       Group Door_External_Deck "Deck Door" <frontdoor> (Room_Living) ["SideDoor"]
+      Group Fireplace "Fireplace" <fire> (Room_Living) ["Equipment"]
       Group HVAC_IndoorUnit_LivingRoom "Mini-Split" <heating> (Room_Living) ["HVAC"]
       Group Light_Living_Room "Light" <light> (Room_Living) ["Lightbulb"]
 
