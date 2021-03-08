@@ -8,31 +8,33 @@ Bridge mqtt:broker:mosquitto [
   publickeypin=false
 ] {
   // konnected
-  Thing topic konnected "MQTT Thing — Konnected Alarm Panel Pro" {
+  Thing topic konnected "Konnected Alarm Panel Pro" {
     Channels:
       Type string : online "Online" [
         stateTopic="konnected/status"
       ]
   }
-  Thing topic sensor_door_front "MQTT Thing — Front Door Sensor" {
+
+  // sensors
+  Thing topic sensor_door_front "Front Door Sensor" {
     Channels:
       Type string : state "State" [
         stateTopic="konnected/binary_sensor/front_door/state"
       ]
   }
-  Thing topic sensor_door_deck "MQTT Thing — Deck Door Sensor" {
+  Thing topic sensor_door_deck "Deck Door Sensor" {
     Channels:
       Type string : state "State" [
         stateTopic="konnected/binary_sensor/deck_door/state"
       ]
   }
-  Thing topic sensor_door_garage_entry "MQTT Thing — Garage Entry Door Sensor" {
+  Thing topic sensor_door_garage_entry "Garage Entry Door Sensor" {
     Channels:
       Type string : state "State" [
         stateTopic="konnected/binary_sensor/garage_entry_door/state"
       ]
   }
-  Thing topic sensor_motion_detector "MQTT Thing — Motion Detector" {
+  Thing topic sensor_motion_detector "Motion Detector" {
     Channels:
       Type string : state "State" [
         stateTopic="konnected/binary_sensor/motion_detector/state"
@@ -40,13 +42,15 @@ Bridge mqtt:broker:mosquitto [
   }
 
   // sensor reporter
-  Thing topic sensor_reporter "MQTT Thing — Sensor Reporter" {
+  Thing topic sensor_reporter "Sensor Reporter" {
     Channels:
       Type string : online "Online" [
         stateTopic="sensor_reporter/status"
       ]
   }
-  Thing topic phone_james "MQTT Thing — James' Phone" {
+
+  // james' phone
+  Thing topic phone_james "James' Phone" {
     Channels:
       Type string : online "Online" [
         stateTopic="sensor_reporter/phone_james"
@@ -54,17 +58,12 @@ Bridge mqtt:broker:mosquitto [
   }
 
   // fireplace
-  Thing topic fireplace "MQTT Thing — Fireplace" {
+  Thing topic fireplace "Fireplace" {
     Channels:
       Type switch : power "Power" [
         commandTopic="rpi/fireplace/power",
         on="ON",
         off="OFF"
-      ]
-      Type number : set_point "Set Point" [
-        stateTopic="rpi/fireplace/set_point",
-        step="1",
-        unit="°F"
       ]
       Type contact : state "State" [
         stateTopic="rpi/fireplace/state",
