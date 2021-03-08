@@ -1,1 +1,1 @@
-String SensorReporter_Status "Status [MAP(online.map):%s]" (Persist) ["Switch"] { channel="mqtt:topic:mosquitto:sensor_reporter:online" }
+String SensorReporter_Status "Status [%s]" (Persist) ["Switch"] { channel="mqtt:topic:mosquitto:sensor_reporter:online" }

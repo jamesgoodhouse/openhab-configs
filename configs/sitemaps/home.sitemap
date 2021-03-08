@@ -55,6 +55,6 @@ sitemap home label="Home" {
   }
 
   Text label="Miscellaneous" icon="text" {
-    Text item=SensorReporter_Status label="Sensor Reporter [MAP(online.map):%s]" icon="network" valuecolor=[ONLINE="green",OFFLINE="red"]
+    Text item=SensorReporter_Status label="Sensor Reporter [%s]" icon="network" valuecolor=[ONLINE="green",OFFLINE="red"]
   }
 }
