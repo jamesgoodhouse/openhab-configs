@@ -1,5 +1,9 @@
 ON=Online
-OFF=Offline
 online=Online
+ONLINE=Online
+
+OFF=Offline
 offline=Offline
+OFFLINE=Offline
+
 NULL=Offline
