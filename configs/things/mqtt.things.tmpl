@@ -56,11 +56,15 @@ Bridge mqtt:broker:mosquitto [
   // fireplace
   Thing topic fireplace "MQTT Thing — Fireplace" {
     Channels:
-      Type string : state "State" [
-        stateTopic="rpi/fireplace/state"
+      Type switch : state "State" [
+        stateTopic="rpi/fireplace/state",
+        on="ON",
+        off="OFF"
       ]
-      Type string : set_point "Set Point" [
-        stateTopic="rpi/fireplace/set_point"
+      Type number : set_point "Set Point" [
+        stateTopic="rpi/fireplace/set_point",
+        step="1",
+        unit="°F"
       ]
   }
 }
