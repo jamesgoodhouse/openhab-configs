@@ -10,5 +10,6 @@ Switch             HVAC_IndoorUnit_{{ .name }}_Power        "Power"         <swi
 Switch             HVAC_IndoorUnit_{{ .name }}_PowerfulMode "Powerful Mode" <switch>      (HVAC,HVAC_IndoorUnit_{{ .name }})            ["Switch"]                    { channel="daikin:ac_unit:{{ .thing_id }}:specialmode-powerful" }
 {{ end }}
 
-Switch             Fireplace_Power    "Power"     <switch>      (HVAC,Fireplace,Persist) ["Switch"]                 { channel="mqtt:topic:mosquitto:fireplace:state" }
+Contact            Fireplace_Status   "Status"                  (HVAC,Fireplace,Persist)                            { channel="mqtt:topic:mosquitto:fireplace:state" }
 Number:Temperature Fireplace_SetPoint "Set Point" <temperature> (HVAC,Fireplace,Persist) ["SetPoint","Temperature"] { channel="mqtt:topic:mosquitto:fireplace:set_point" }
+Switch             Fireplace_Power    "Power"     <switch>      (HVAC,Fireplace,Persist) ["Switch"]                 { channel="mqtt:topic:mosquitto:fireplace:power" }
