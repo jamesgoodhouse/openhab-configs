@@ -9,6 +9,3 @@ String             HVAC_IndoorUnit_{{ .name }}_Mode         "Mode"          <hea
 Switch             HVAC_IndoorUnit_{{ .name }}_Power        "Power"         <switch>      (HVAC,HVAC_IndoorUnit_{{ .name }},HVAC_Power) ["Switch"]                    { channel="daikin:ac_unit:{{ .thing_id }}:power" }
 Switch             HVAC_IndoorUnit_{{ .name }}_PowerfulMode "Powerful Mode" <switch>      (HVAC,HVAC_IndoorUnit_{{ .name }})            ["Switch"]                    { channel="daikin:ac_unit:{{ .thing_id }}:specialmode-powerful" }
 {{ end }}
-
-Contact Fireplace_Status "Status" <fire>   (HVAC,Fireplace,Persist) ["Control"] { channel="mqtt:topic:mosquitto:fireplace:state" }
-Switch  Fireplace_Power  "Power"  <switch> (HVAC,Fireplace,Persist) ["Switch"]  { channel="mqtt:topic:mosquitto:fireplace:power" }

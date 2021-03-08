@@ -1,0 +1,2 @@
+Contact Fireplace_Status "Status" <fire>   (Fireplace,Persist) ["Control"] { channel="mqtt:topic:mosquitto:fireplace:state" }
+Switch  Fireplace_Power  "Power"  <switch> (Fireplace,Persist) ["Switch"]  { channel="mqtt:topic:mosquitto:fireplace:power" }
