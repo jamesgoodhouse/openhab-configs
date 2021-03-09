@@ -22,8 +22,8 @@ sitemap home label="Home" {
     }
   }
 
-  Text item=HVAC_Power label="HVAC [MAP(onoff.map):%s]" icon="heating" valuecolor=[OFF="green",ON="red"] {
-    Text item=HVAC_IndoorUnit_LivingRoom_Power label="Living Room [MAP(onoff.map):%s]" icon="corridor" valuecolor=[OFF="green",ON="red"] {
+  Text item=HVAC_Power label="HVAC [MAP(onoff.map):%s]" icon="heating" valuecolor=[OFF="green",ON="orange"] {
+    Text item=HVAC_IndoorUnit_LivingRoom_Power label="Living Room [MAP(onoff.map):%s]" icon="corridor" valuecolor=[OFF="green",ON="orange"] {
       Text item=HVAC_IndoorUnit_LivingRoom_Temperature label="Temperature [%.0f °F]"
       Switch item=HVAC_IndoorUnit_LivingRoom_Power label="Power" icon="switch"
       Switch item=HVAC_IndoorUnit_LivingRoom_PowerfulMode visibility=[HVAC_IndoorUnit_LivingRoom_Power==ON] label="Powerful Mode" icon="switch"
@@ -32,7 +32,7 @@ sitemap home label="Home" {
       Selection item=HVAC_IndoorUnit_LivingRoom_Fan visibility=[HVAC_IndoorUnit_LivingRoom_Power==ON] icon="fan"
       Selection item=HVAC_IndoorUnit_LivingRoom_FanSwing visibility=[HVAC_IndoorUnit_LivingRoom_Power==ON] icon="fan"
     }
-    Text item=HVAC_IndoorUnit_MainBedroom_Power label="Main Bedroom [MAP(onoff.map):%s]" icon="bedroom" valuecolor=[OFF="green",ON="red"] {
+    Text item=HVAC_IndoorUnit_MainBedroom_Power label="Main Bedroom [MAP(onoff.map):%s]" icon="bedroom" valuecolor=[OFF="green",ON="orange"] {
       Text item=HVAC_IndoorUnit_MainBedroom_Temperature label="Temperature [%.0f °F]"
       Switch item=HVAC_IndoorUnit_MainBedroom_Power label="Power" icon="switch"
       Switch item=HVAC_IndoorUnit_MainBedroom_PowerfulMode visibility=[HVAC_IndoorUnit_MainBedroom_Power==ON] label="Powerful Mode" icon="switch"
@@ -43,7 +43,7 @@ sitemap home label="Home" {
     }
   }
 
-  Text item=Lights label="Lights [MAP(onoff.map):%s] " icon="light" valuecolor=[ON="red",OFF="green"] {
+  Text item=Lights label="Lights [MAP(onoff.map):%s] " icon="light" valuecolor=[ON="orange",OFF="green"] {
     Text item=Light_Landing_Dimmer label="Landing [%s]" icon="light" {
       Switch item=Light_Landing_Dimmer label="Light"
       Slider item=Light_Landing_Dimmer label="Dimmer"
