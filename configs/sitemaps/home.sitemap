@@ -1,29 +1,29 @@
 sitemap home label="Home" {
   Text item=HVAC_OutdoorUnit_Temperature label="Outdoor Temperature [%.0f °F]" icon="temperature"
 
-  Text item=Alarm_Status icon="alarm" label="Alarm [MAP(online.map):%s]" valuecolor=[OFF="red",ON="green"]
+  Text item=Alarm_Status icon="alarm" label="Alarm [MAP(online.map):%s]" valuecolor=[OFF="red",ON="lime"]
 
-  Text item=Present_James label="James [MAP(presence.map):%s]" icon=man_3 valuecolor=[ON="green",OFF="red"] {
-    Text item=NetworkDeviceOnline_Phone_James label="Phone [MAP(online.map):%s]" icon="phone" valuecolor=[ON="green",OFF="red"] {
-      Text item=Bluetooth_Phone_James_Status label="Bluetooth Status [MAP(online.map):%s]" valuecolor=[ON="green",OFF="red"] icon="bluetooth"
-      Text item=Network_PingDevice_Phone_James_Status label="Ping Status [MAP(online.map):%s]" valuecolor=[ON="green",OFF="red"] icon="network"
-      Text item=UnifiController_WirelessClient_James_Status label="UniFi Status [MAP(online.map):%s]" valuecolor=[ON="green",OFF="red"] icon="unifi"
+  Text item=Present_James label="James [MAP(presence.map):%s]" icon=man_3 valuecolor=[ON="lime",OFF="red"] {
+    Text item=NetworkDeviceOnline_Phone_James label="Phone [MAP(online.map):%s]" icon="phone" valuecolor=[ON="lime",OFF="red"] {
+      Text item=Bluetooth_Phone_James_Status label="Bluetooth Status [MAP(online.map):%s]" valuecolor=[ON="lime",OFF="red"] icon="bluetooth"
+      Text item=Network_PingDevice_Phone_James_Status label="Ping Status [MAP(online.map):%s]" valuecolor=[ON="lime",OFF="red"] icon="network"
+      Text item=UnifiController_WirelessClient_James_Status label="UniFi Status [MAP(online.map):%s]" valuecolor=[ON="lime",OFF="red"] icon="unifi"
     }
   }
 
-  Text item=Doors icon="door" label="Doors [MAP(door.map):%s]" valuecolor=[CLOSED="green",OPEN="red"] {
+  Text item=Doors icon="door" label="Doors [MAP(door.map):%s]" valuecolor=[CLOSED="lime",OPEN="red"] {
     Frame {
-      Text item=Sensor_Binary_FrontDoor_State icon="frontdoor" label="Front Door [MAP(door.map):%s]" valuecolor=[CLOSED="green",OPEN="red"]
-      Text item=Sensor_Binary_GarageEntryDoor_State icon="door" label="Garage Entry Door [MAP(door.map):%s]" valuecolor=[CLOSED="green",OPEN="red"]
-      Text item=Sensor_Binary_DeckDoor_State icon="frontdoor" label="Deck Door [MAP(door.map):%s]" valuecolor=[CLOSED="green",OPEN="red"]
+      Text item=Sensor_Binary_FrontDoor_State icon="frontdoor" label="Front Door [MAP(door.map):%s]" valuecolor=[CLOSED="lime",OPEN="red"]
+      Text item=Sensor_Binary_GarageEntryDoor_State icon="door" label="Garage Entry Door [MAP(door.map):%s]" valuecolor=[CLOSED="lime",OPEN="red"]
+      Text item=Sensor_Binary_DeckDoor_State icon="frontdoor" label="Deck Door [MAP(door.map):%s]" valuecolor=[CLOSED="lime",OPEN="red"]
     }
     Frame label=" " {
-      Text item=Sensor_Tilt_GarageDoor_State icon="garagedoor" label="Garage Door [%s]" valuecolor=[CLOSED="green",OPEN="red"]
+      Text item=Sensor_Tilt_GarageDoor_State icon="garagedoor" label="Garage Door [%s]" valuecolor=[CLOSED="lime",OPEN="red"]
     }
   }
 
-  Text item=HVAC_Power label="HVAC [MAP(onoff.map):%s]" icon="heating" valuecolor=[OFF="green",ON="orange"] {
-    Text item=HVAC_IndoorUnit_LivingRoom_Power label="Living Room [MAP(onoff.map):%s]" icon="corridor" valuecolor=[OFF="green",ON="orange"] {
+  Text item=HVAC_Power label="HVAC [MAP(onoff.map):%s]" icon="heating" valuecolor=[OFF="lime",ON="orange"] {
+    Text item=HVAC_IndoorUnit_LivingRoom_Power label="Living Room [MAP(onoff.map):%s]" icon="corridor" valuecolor=[OFF="lime",ON="orange"] {
       Text item=HVAC_IndoorUnit_LivingRoom_Temperature label="Temperature [%.0f °F]"
       Switch item=HVAC_IndoorUnit_LivingRoom_Power label="Power" icon="switch"
       Switch item=HVAC_IndoorUnit_LivingRoom_PowerfulMode visibility=[HVAC_IndoorUnit_LivingRoom_Power==ON] label="Powerful Mode" icon="switch"
@@ -32,7 +32,7 @@ sitemap home label="Home" {
       Selection item=HVAC_IndoorUnit_LivingRoom_Fan visibility=[HVAC_IndoorUnit_LivingRoom_Power==ON] icon="fan"
       Selection item=HVAC_IndoorUnit_LivingRoom_FanSwing visibility=[HVAC_IndoorUnit_LivingRoom_Power==ON] icon="fan"
     }
-    Text item=HVAC_IndoorUnit_MainBedroom_Power label="Main Bedroom [MAP(onoff.map):%s]" icon="bedroom" valuecolor=[OFF="green",ON="orange"] {
+    Text item=HVAC_IndoorUnit_MainBedroom_Power label="Main Bedroom [MAP(onoff.map):%s]" icon="bedroom" valuecolor=[OFF="lime",ON="orange"] {
       Text item=HVAC_IndoorUnit_MainBedroom_Temperature label="Temperature [%.0f °F]"
       Switch item=HVAC_IndoorUnit_MainBedroom_Power label="Power" icon="switch"
       Switch item=HVAC_IndoorUnit_MainBedroom_PowerfulMode visibility=[HVAC_IndoorUnit_MainBedroom_Power==ON] label="Powerful Mode" icon="switch"
@@ -43,7 +43,7 @@ sitemap home label="Home" {
     }
   }
 
-  Text item=Lights label="Lights [MAP(onoff.map):%s] " icon="light" valuecolor=[ON="orange",OFF="green"] {
+  Text item=Lights label="Lights [MAP(onoff.map):%s] " icon="light" valuecolor=[ON="orange",OFF="lime"] {
     Text item=Light_Landing_Dimmer label="Landing [%s]" icon="light" {
       Switch item=Light_Landing_Dimmer label="Light"
       Slider item=Light_Landing_Dimmer label="Dimmer"
@@ -55,6 +55,6 @@ sitemap home label="Home" {
   }
 
   Text label="Miscellaneous" icon="text" {
-    Text item=SensorReporter_Status label="Sensor Reporter [MAP(sensorreporter.map):%s]" icon="network" valuecolor=[ONLINE="green",OFFLINE="red"]
+    Text item=SensorReporter_Status label="Sensor Reporter [MAP(sensorreporter.map):%s]" icon="network" valuecolor=[ONLINE="lime",OFFLINE="red"]
   }
 }
