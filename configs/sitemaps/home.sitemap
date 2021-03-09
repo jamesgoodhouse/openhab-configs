@@ -13,9 +13,9 @@ sitemap home label="Home" {
 
   Text item=Doors icon="door" label="Doors [MAP(door.map):%s]" valuecolor=[CLOSED="green",OPEN="red"] {
     Frame {
-      Text item=Sensor_Binary_FrontDoor_State icon="frontdoor" label="Front Door" valuecolor=[CLOSED="green",OPEN="red"]
-      Text item=Sensor_Binary_GarageEntryDoor_State icon="door" label="Garage Entry Door" valuecolor=[CLOSED="green",OPEN="red"]
-      Text item=Sensor_Binary_DeckDoor_State icon="frontdoor" label="Deck Door" valuecolor=[CLOSED="green",OPEN="red"]
+      Text item=Sensor_Binary_FrontDoor_State icon="frontdoor" label="Front Door [MAP(door.map):%s]" valuecolor=[CLOSED="green",OPEN="red"]
+      Text item=Sensor_Binary_GarageEntryDoor_State icon="door" label="Garage Entry Door [MAP(door.map):%s]" valuecolor=[CLOSED="green",OPEN="red"]
+      Text item=Sensor_Binary_DeckDoor_State icon="frontdoor" label="Deck Door [MAP(door.map):%s]" valuecolor=[CLOSED="green",OPEN="red"]
     }
     Frame label=" " {
       Text item=Sensor_Tilt_GarageDoor_State icon="garagedoor" label="Garage Door [%s]" valuecolor=[CLOSED="green",OPEN="red"]
