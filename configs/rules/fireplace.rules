@@ -2,10 +2,10 @@ rule "Update Power State"
 when
   Item Fireplace_State changed
 then
-  if (Fireplace_State.state == OFF && Fireplace_Power == ON) {
+  if (Fireplace_State.state == OFF && Fireplace_Power.state == ON) {
     Fireplace_Power.sendCommand(OFF)
   }
-  if (Fireplace_State.state == ON && Fireplace_Power == OFF) {
+  if (Fireplace_State.state == ON && Fireplace_Power.state == OFF) {
     Fireplace_Power.sendCommand(ON)
   }
 end
