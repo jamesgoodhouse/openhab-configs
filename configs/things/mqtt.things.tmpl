@@ -60,6 +60,11 @@ Bridge mqtt:broker:mosquitto [
   // fireplace
   Thing topic fireplace "Fireplace" {
     Channels:
+      Type switch : status "Online" [
+        stateTopic="rpi/fireplace/status",
+        on="ON",
+        off="OFF"
+      ]
       Type switch : power "Power" [
         commandTopic="rpi/fireplace/power",
         on="ON",
