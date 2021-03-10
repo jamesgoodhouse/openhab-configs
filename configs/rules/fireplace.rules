@@ -1,0 +1,11 @@
+rule "Update Power State"
+when
+  Item Fireplace_State changed
+then
+  if (Fireplace_State.state == OFF && Fireplace_Power == ON) {
+    Fireplace_Power.sendCommand(OFF)
+  }
+  if (Fireplace_State.state == ON && Fireplace_Power == OFF) {
+    Fireplace_Power.sendCommand(ON)
+  }
+end
