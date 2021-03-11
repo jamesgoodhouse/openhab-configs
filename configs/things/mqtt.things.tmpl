@@ -61,7 +61,7 @@ Bridge mqtt:broker:mosquitto [
   Thing topic fireplace "Fireplace" {
     Channels:
       Type string : status "Online" [
-        stateTopic="rpi/fireplace/status"
+        stateTopic="rpi/fireplace/status",
         on="ONLINE",
         off="OFFLINE"
       ]
@@ -72,7 +72,7 @@ Bridge mqtt:broker:mosquitto [
         off="OFF"
       ]
       Type contact : state "State" [
-        stateTopic="rpi/fireplace/state"
+        stateTopic="rpi/fireplace/state",
         on="ON",
         off="OFF"
       ]
