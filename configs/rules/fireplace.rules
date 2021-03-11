@@ -1,11 +1,8 @@
 rule "Update Power State"
 when
-  Item Fireplace_State changed
+  Item Fireplace_State changed to CLOSED
 then
-  if (Fireplace_State.state == OFF && Fireplace_Power.state == ON) {
+  if (Fireplace_Power.state == ON) {
     Fireplace_Power.sendCommand(OFF)
-  }
-  if (Fireplace_State.state == ON && Fireplace_Power.state == OFF) {
-    Fireplace_Power.sendCommand(ON)
   }
 end
