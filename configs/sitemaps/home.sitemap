@@ -24,6 +24,7 @@ sitemap home label="Home" {
 
   Text item=Fireplace_State icon="fire" label="Fireplace [MAP(fireplace.map):%s]" valuecolor=[OFF="lime",ON="orange"] {
     Switch item=Fireplace_Power label="Power[]" icon="switch"
+    Setpoint item=Fireplace_SetPoint label="Set Point [%.0f °F]" icon="temperature" minValue=60 maxValue=80 step=1 visibility=[Fireplace_Power==ON]
   }
 
   Text item=HVAC_Power label="HVAC [MAP(onoff.map):%s]" icon="heating" valuecolor=[OFF="lime",ON="orange"] {
