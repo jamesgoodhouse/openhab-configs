@@ -23,7 +23,7 @@ sitemap home label="Home" {
   }
 
   Text item=Fireplace_State icon="fire" label="Fireplace [MAP(fireplace.map):%s]" valuecolor=[CLOSED="lime",OPEN="orange"] {
-    Switch item=Fireplace_Power label="Power" icon="switch"
+    Switch item=Fireplace_Power label="Power[]" icon="switch"
   }
 
   Text item=HVAC_Power label="HVAC [MAP(onoff.map):%s]" icon="heating" valuecolor=[OFF="lime",ON="orange"] {
