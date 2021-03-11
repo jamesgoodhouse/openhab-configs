@@ -1,4 +1,4 @@
-rule "Update Power State"
+rule "Fireplace — Sync Power State"
 when
   Item Fireplace_State changed to CLOSED
 then
