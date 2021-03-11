@@ -22,6 +22,10 @@ sitemap home label="Home" {
     }
   }
 
+  Text item=Fireplace_State icon="fire" label="Fireplace [%s]" valuecolor=[CLOSED="lime",OPEN="orange"] {
+    Switch item=Fireplace_Power label="Power" icon="switch"
+  }
+
   Text item=HVAC_Power label="HVAC [MAP(onoff.map):%s]" icon="heating" valuecolor=[OFF="lime",ON="orange"] {
     Text item=HVAC_IndoorUnit_LivingRoom_Power label="Living Room [MAP(onoff.map):%s]" icon="corridor" valuecolor=[OFF="lime",ON="orange"] {
       Text item=HVAC_IndoorUnit_LivingRoom_Temperature label="Temperature [%.0f °F]"
