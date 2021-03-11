@@ -1,3 +1,3 @@
-String  Fireplace_Status "Status"          (Fireplace,Persist) ["Control"] { channel="mqtt:topic:mosquitto:fireplace:status" }
-Contact Fireplace_State  "State [MAP(fireplace.map):%s]"  <fire>   (Fireplace,Persist) ["Control"] { channel="mqtt:topic:mosquitto:fireplace:state" }
-Switch  Fireplace_Power  "Power"  <switch> (Fireplace,Persist) ["Switch"]  { channel="mqtt:topic:mosquitto:fireplace:power" }
+String Fireplace_Status "Status"                                 (Fireplace,Persist) ["Control"] { channel="mqtt:topic:mosquitto:fireplace:status" }
+Switch Fireplace_State  "State [MAP(fireplace.map):%s]" <fire>   (Fireplace,Persist) ["Control"] { channel="mqtt:topic:mosquitto:fireplace:state" }
+Switch Fireplace_Power  "Power"                         <switch> (Fireplace,Persist) ["Switch"]  { channel="mqtt:topic:mosquitto:fireplace:power" }

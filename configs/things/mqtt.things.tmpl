@@ -71,10 +71,8 @@ Bridge mqtt:broker:mosquitto [
         on="ON",
         off="OFF"
       ]
-      Type contact : state "State" [
-        stateTopic="rpi/fireplace/state",
-        on="ON",
-        off="OFF"
+      Type switch : state "State" [
+        stateTopic="rpi/fireplace/state"
       ]
   }
 }
