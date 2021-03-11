@@ -1,3 +1,4 @@
+// sync power state with what the fireplace is saying
 rule "Fireplace — Sync Power State"
 when
   Item Fireplace_State changed to CLOSED
@@ -7,11 +8,12 @@ then
   }
 end
 
+// ensure it actually was turned on, otherwise set power to OFF
 rule "Fireplace — Check Status After Turning On"
 when
   Item Fireplace_Power changed to ON
 then
-  createTimer(now.plusSeconds(5), [ |
+  createTimer(now.plusSeconds(2), [ |
     if (Fireplace_State.state == CLOSED) {
       Fireplace_Power.sendCommand(OFF)
     }
