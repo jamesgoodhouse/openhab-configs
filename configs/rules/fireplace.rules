@@ -6,3 +6,14 @@ then
     Fireplace_Power.sendCommand(OFF)
   }
 end
+
+rule "Fireplace — Check Status After Turning On"
+when
+  Item Fireplace_Power changed to ON
+then
+  createTimer(now.plusSeconds(5), [ |
+    if (Fireplace_State.state == CLOSED) {
+      Fireplace_Power.sendCommand(OFF)
+    }
+  ])
+end
