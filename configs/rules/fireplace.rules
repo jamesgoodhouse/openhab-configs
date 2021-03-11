@@ -1,7 +1,7 @@
 // sync power state with what the fireplace is saying
 rule "Fireplace — Sync Power State"
 when
-  Item Fireplace_State changed to ON
+  Item Fireplace_State changed to OFF
 then
   if (Fireplace_Power.state == ON) {
     Fireplace_Power.sendCommand(OFF)
