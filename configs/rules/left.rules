@@ -1,0 +1,9 @@
+rule "Garage Door Left Open"
+when
+  Group Present changed to OFF
+then
+  if (Sensor_Tilt_GarageDoor_State == OPEN) {
+    val telegramAction = getActions("telegram","telegram:telegramBot:boty_mcbotface")
+    telegramAction.sendTelegram("⚠️ The garage door was left opened")
+  }
+end
