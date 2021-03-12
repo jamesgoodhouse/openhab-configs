@@ -15,7 +15,7 @@ then
     logInfo("fireplace", "Fireplace — Hysteresis: {}", hysteresis)
     logInfo("fireplace", "Fireplace — Temp:       {}", temp)
 
-    if (temp < (setpoint - hysteresis)) {
+    if (temp <= (setpoint - hysteresis)) {
       logInfo("fireplace", "Fireplace — Turning on fireplace")
       Fireplace_Power.sendCommand(ON)
     } else if (temp >= setpoint) {
