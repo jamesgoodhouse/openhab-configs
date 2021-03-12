@@ -7,10 +7,10 @@ when
 then
   val List<String> openDoors = new ArrayList<String>()
 
-  if (Sensor_Binary_DeckDoor_State.state == OPEN)        openDoors.add("* *Deck Door*")
-  if (Sensor_Binary_FrontDoor_State.state == OPEN)       openDoors.add("* *Front Door*")
-  if (Sensor_Tilt_GarageDoor_State.state == OPEN)        openDoors.add("* *Garage Door*")
-  if (Sensor_Binary_GarageEntryDoor_State.state == OPEN) openDoors.add("* *Garage Entry Door*")
+  if (Sensor_Binary_DeckDoor_State.state == OPEN)        openDoors.add("+ *Deck Door*")
+  if (Sensor_Binary_FrontDoor_State.state == OPEN)       openDoors.add("+ *Front Door*")
+  if (Sensor_Tilt_GarageDoor_State.state == OPEN)        openDoors.add("+ *Garage Door*")
+  if (Sensor_Binary_GarageEntryDoor_State.state == OPEN) openDoors.add("+ *Garage Entry Door*")
 
   if (openDoors.size() > 0) {
     val telegramAction = getActions("telegram","telegram:telegramBot:boty_mcbotface")
