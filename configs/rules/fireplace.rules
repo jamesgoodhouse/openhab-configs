@@ -42,8 +42,12 @@ rule "Fireplace — Check Status After Turning On"
 when
   Item Fireplace_Power changed to ON
 then
+  logInfo("fireplace", "Fireplace — Turning on")
+
   createTimer(now.plusSeconds(2), [ |
     if (Fireplace_State.state == OFF) {
+      logInfo("fireplace", "Fireplace — Failed to turn on")
+
       Fireplace_Power.sendCommand(OFF)
     }
   ])
