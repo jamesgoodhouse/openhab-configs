@@ -21,6 +21,7 @@ Group Indoor "Indoor" ["Indoor"]
     Group Room_Living "Living Room" <couch> (Floor_Second) ["LivingRoom"]
       Group Door_External_Deck "Deck Door" <frontdoor> (Room_Living) ["SideDoor"]
       Group Fireplace "Fireplace" <fire> (Room_Living) ["Equipment"]
+        Group Fireplace_Thermostat "Thermostat" <heating> (Fireplace) ["Equipment"]
       Group HVAC_IndoorUnit_LivingRoom "Indoor Unit" <heating> (Room_Living) ["HVAC"]
       Group Light_Living_Room "Light" <light> (Room_Living) ["Lightbulb"]
 
