@@ -2,7 +2,8 @@ rule "Fireplace — Thermostat"
 when
   Item HVAC_IndoorUnit_LivingRoom_Temperature changed or
   Item Fireplace_Thermostat_Power changed to ON or
-  Item Fireplace_Thermostat_SetPoint changed
+  Item Fireplace_Thermostat_SetPoint changed or
+  Item Fireplace_Thermostat_Hysteresis changed or
 then
   val hysteresis = (Fireplace_Thermostat_Hysteresis.state as QuantityType<Temperature>).intValue
   val setpoint = (Fireplace_Thermostat_SetPoint.state as QuantityType<Temperature>).intValue

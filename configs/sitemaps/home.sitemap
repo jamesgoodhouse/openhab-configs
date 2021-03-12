@@ -26,6 +26,7 @@ sitemap home label="Home" {
     Switch item=Fireplace_Thermostat_Power label="Power[]" icon="switch"
     Setpoint item=Fireplace_Thermostat_SetPoint label="Set Point [%.0f °F]" icon="temperature" minValue=60 maxValue=80 step=1 visibility=[Fireplace_Thermostat_Power==ON]
     Setpoint item=Fireplace_Thermostat_Hysteresis label="Hysteresis [%.0f °F]" icon="temperature" minValue=0 maxValue=5 step=1 visibility=[Fireplace_Thermostat_Power==ON]
+    Text item=Fireplace_State label="State [MAP(fireplace.map):%s]" icon="fire" visibility=[Fireplace_Thermostat_Power==ON]
   }
 
   Text item=HVAC_Power label="HVAC [MAP(onoff.map):%s]" icon="heating" valuecolor=[OFF="lime",ON="orange"] {
