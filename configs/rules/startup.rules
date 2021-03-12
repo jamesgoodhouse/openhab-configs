@@ -9,6 +9,6 @@ then
     Fireplace_Thermostat_SetPoint.postUpdate(60)
   }
   if (Fireplace_Thermostat_Hysteresis.state == NULL) {
-    Fireplace_Thermostat_Hysteresis.postUpdate(3)
+    Fireplace_Thermostat_Hysteresis.postUpdate(2)
   }
 end

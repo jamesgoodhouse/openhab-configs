@@ -1,16 +1,25 @@
 rule "Fireplace — Thermostat"
 when
   Item HVAC_IndoorUnit_LivingRoom_Temperature changed or
-  Item Fireplace_Thermostat_Power changed to ON
+  Item Fireplace_Thermostat_Power changed to ON or
+  Item Fireplace_Thermostat_SetPoint changed
 then
   val hysteresis = (Fireplace_Thermostat_Hysteresis.state as QuantityType<Temperature>).intValue
   val setpoint = (Fireplace_Thermostat_SetPoint.state as QuantityType<Temperature>).intValue
   val temp = (HVAC_IndoorUnit_LivingRoom_Temperature.state as QuantityType<Temperature>).intValue
 
-  if (temp < setpoint - hysteresis) {
+  logDebug("fireplace", "SetPoint: " + setpoint.toString)
+  logDebug("fireplace", "Hysteresis: " + hysteresis.toString)
+  logDebug("fireplace", "Temp: " + temp.toString)
+
+  if (temp < (setpoint - hysteresis)) {
+    logInfo("fireplace", "Turning on fireplace")
     Fireplace_Power.sendCommand(ON)
   } else if (temp >= setpoint) {
+    logInfo("fireplace", "Turning off fireplace")
     Fireplace_Power.sendCommand(OFF)
+  } else {
+    logInfo("fireplace", "Doing nothing")
   }
 end
 
