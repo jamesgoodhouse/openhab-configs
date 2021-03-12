@@ -5,30 +5,31 @@ when
   Item Fireplace_Thermostat_SetPoint changed or
   Item Fireplace_Thermostat_Hysteresis changed
 then
-  val hysteresis = (Fireplace_Thermostat_Hysteresis.state as QuantityType<Temperature>).intValue
-  val setpoint = (Fireplace_Thermostat_SetPoint.state as QuantityType<Temperature>).intValue
-  val temp = (HVAC_IndoorUnit_LivingRoom_Temperature.state as QuantityType<Temperature>).intValue
+  if (Fireplace_Thermostat_Power.state == ON) {
+    val hysteresis = (Fireplace_Thermostat_Hysteresis.state as QuantityType<Temperature>).intValue
+    val setpoint = (Fireplace_Thermostat_SetPoint.state as QuantityType<Temperature>).intValue
+    val temp = (HVAC_IndoorUnit_LivingRoom_Temperature.state as QuantityType<Temperature>).intValue
 
-  logInfo("fireplace", "Fireplace — State:      {}", Fireplace_State.state)
-  logInfo("fireplace", "Fireplace — SetPoint:   {}", setpoint)
-  logInfo("fireplace", "Fireplace — Hysteresis: {}", hysteresis)
-  logInfo("fireplace", "Fireplace — Temp:       {}", temp)
+    logInfo("fireplace", "Fireplace — State:      {}", Fireplace_State.state)
+    logInfo("fireplace", "Fireplace — SetPoint:   {}", setpoint)
+    logInfo("fireplace", "Fireplace — Hysteresis: {}", hysteresis)
+    logInfo("fireplace", "Fireplace — Temp:       {}", temp)
 
-  if (temp < (setpoint - hysteresis)) {
-    logInfo("fireplace", "Fireplace — Turning on fireplace")
-    Fireplace_Power.sendCommand(ON)
-  } else if (temp >= setpoint) {
-    logInfo("fireplace", "Fireplace — Turning off fireplace")
-    Fireplace_Power.sendCommand(OFF)
-  } else {
-    logInfo("fireplace", "Fireplace — Doing nothing")
+    if (temp < (setpoint - hysteresis)) {
+      logInfo("fireplace", "Fireplace — Turning on fireplace")
+      Fireplace_Power.sendCommand(ON)
+    } else if (temp >= setpoint) {
+      logInfo("fireplace", "Fireplace — Turning off fireplace")
+      Fireplace_Power.sendCommand(OFF)
+    } else {
+      logInfo("fireplace", "Fireplace — Doing nothing")
+    }
   }
 end
 
-
-// sync power state with what the fireplace is saying
-rule "Fireplace — Sync Power State"
+rule "Fireplace — Turn Off"
 when
+  Item Fireplace_Thermostat_Power changed to OFF or
   Item Fireplace_State changed to OFF
 then
   if (Fireplace_Power.state == ON) {
