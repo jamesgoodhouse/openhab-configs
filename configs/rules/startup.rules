@@ -3,4 +3,8 @@ when
   System started
 then
   Present.members.forEach[ SwitchItem s | s.sendCommand(OFF) ]
+
+  if (Fireplace_Thermostat_SetPoint.state == NULL) {
+    Fireplace_Thermostat_SetPoint.postUpdate(60)
+  }
 end
