@@ -4,7 +4,11 @@ when
 then
   Present.members.forEach[ SwitchItem s | s.sendCommand(OFF) ]
 
+  // fireplace
   if (Fireplace_Thermostat_SetPoint.state == NULL) {
     Fireplace_Thermostat_SetPoint.postUpdate(60)
+  }
+  if (Fireplace_Thermostat_Hysteresis.state == NULL) {
+    Fireplace_Thermostat_Hysteresis.postUpdate(3)
   }
 end

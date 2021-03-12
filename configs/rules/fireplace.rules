@@ -3,20 +3,15 @@ when
   Item HVAC_IndoorUnit_LivingRoom_Temperature changed or
   Item Fireplace_Thermostat_Power changed to ON
 then
-  setpoint = (Fireplace_Thermostat_SetPoint.state as QuantityType<Temperature>).intValue
-  temp = (HVAC_IndoorUnit_LivingRoom_Temperature.state as QuantityType<Temperature>).intValue
+  val hysteresis = (Fireplace_Thermostat_Hysteresis.state as QuantityType<Temperature>).intValue
+  val setpoint = (Fireplace_Thermostat_SetPoint.state as QuantityType<Temperature>).intValue
+  val temp = (HVAC_IndoorUnit_LivingRoom_Temperature.state as QuantityType<Temperature>).intValue
 
-  setpoint_lower = setpoint - 2
-  setpoint_upper = setpoint
-
-  logInfo("testlog", "Fireplace_Thermostat_SetPoint: " + Fireplace_Thermostat_SetPoint.state.toString)
-  logInfo("testlog", "HVAC_IndoorUnit_LivingRoom_Temperature: " + HVAC_IndoorUnit_LivingRoom_Temperature.state.toString)
-
-  //if (HVAC_IndoorUnit_LivingRoom_Temperature.state < setpoint_lower) {
-  //  Fireplace_Power.sendCommand(ON)
-  //} else if (HVAC_IndoorUnit_LivingRoom_Temperature.state >= setpoint_upper) {
-  //  Fireplace_Power.sendCommand(OFF)
-  //}
+  if (temp < setpoint - hysteresis) {
+    Fireplace_Power.sendCommand(ON)
+  } else if (temp >= setpoint) {
+    Fireplace_Power.sendCommand(OFF)
+  }
 end
 
 
