@@ -3,10 +3,10 @@ when
   Item HVAC_IndoorUnit_LivingRoom_Temperature changed or
   Item Fireplace_Thermostat_Power changed to ON
 then
-  setpoint_lower = Fireplace_SetPoint.state - 2
-  setpoint_upper = Fireplace_SetPoint
+  setpoint_lower = Fireplace_Thermostat_SetPoint.state - 2
+  setpoint_upper = Fireplace_Thermostat_SetPoint
 
-  logInfo("testlog", "Fireplace_SetPoint: " + Fireplace_SetPoint.state.toString)
+  logInfo("testlog", "Fireplace_Thermostat_SetPoint: " + Fireplace_Thermostat_SetPoint.state.toString)
   logInfo("testlog", "HVAC_IndoorUnit_LivingRoom_Temperature: " + HVAC_IndoorUnit_LivingRoom_Temperature.state.toString)
 
   //if (HVAC_IndoorUnit_LivingRoom_Temperature.state < setpoint_lower) {
