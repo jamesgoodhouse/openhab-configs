@@ -15,13 +15,13 @@ then
   logInfo("fireplace", "Fireplace — Temp:       {}", temp)
 
   if (temp < (setpoint - hysteresis)) {
-    logInfo("fireplace", "Turning on fireplace")
+    logInfo("fireplace", "Fireplace — Turning on fireplace")
     Fireplace_Power.sendCommand(ON)
   } else if (temp >= setpoint) {
-    logInfo("fireplace", "Turning off fireplace")
+    logInfo("fireplace", "Fireplace — Turning off fireplace")
     Fireplace_Power.sendCommand(OFF)
   } else {
-    logInfo("fireplace", "Doing nothing")
+    logInfo("fireplace", "Fireplace — Doing nothing")
   }
 end
 
