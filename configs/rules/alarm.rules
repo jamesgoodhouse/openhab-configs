@@ -1,0 +1,15 @@
+rule "Alarm — Offline"
+when
+  Item Alarm_Status changed to OFF
+then
+  val telegramAction = getActions("telegram", "telegram:telegramBot:boty_mcbotface")
+  telegramAction.sendTelegram("⚠️ Alarm is offline")
+end
+
+rule "Alarm — Online"
+when
+  Item Alarm_Status changed to ON
+then
+  val telegramAction = getActions("telegram", "telegram:telegramBot:boty_mcbotface")
+  telegramAction.sendTelegram("⚠️ Alarm is online")
+end
