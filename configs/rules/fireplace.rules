@@ -9,9 +9,10 @@ then
   val setpoint = (Fireplace_Thermostat_SetPoint.state as QuantityType<Temperature>).intValue
   val temp = (HVAC_IndoorUnit_LivingRoom_Temperature.state as QuantityType<Temperature>).intValue
 
-  logInfo("fireplace", "SetPoint: {}", setpoint)
-  logInfo("fireplace", "Hysteresis: {}", hysteresis)
-  logInfo("fireplace", "Temp: {}", temp)
+  logInfo("fireplace", "Fireplace — State:      {}", Fireplace_State.state)
+  logInfo("fireplace", "Fireplace — SetPoint:   {}", setpoint)
+  logInfo("fireplace", "Fireplace — Hysteresis: {}", hysteresis)
+  logInfo("fireplace", "Fireplace — Temp:       {}", temp)
 
   if (temp < (setpoint - hysteresis)) {
     logInfo("fireplace", "Turning on fireplace")
