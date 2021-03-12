@@ -1,3 +1,12 @@
+rule "Fireplace — System Startup"
+when
+  System started
+then
+  if (Fireplace_Thermostat_SetPoint.state == NULL) {
+    Fireplace_Thermostat_SetPoint.postUpdate(60)
+  }
+end
+
 rule "Fireplace — Thermostat"
 when
   Item HVAC_IndoorUnit_LivingRoom_Temperature changed or
