@@ -4,6 +4,16 @@ when
 then
   if (Sensor_Tilt_GarageDoor_State == OPEN) {
     val telegramAction = getActions("telegram","telegram:telegramBot:boty_mcbotface")
-    telegramAction.sendTelegram("⚠️ The garage door was left opened")
+    telegramAction.sendTelegram("⚠️ The garage door was left open")
+  }
+end
+
+rule "Front Door Left Open"
+when
+  Group Present changed to OFF
+then
+  if (Sensor_Binary_FrontDoor_State == OPEN) {
+    val telegramAction = getActions("telegram","telegram:telegramBot:boty_mcbotface")
+    telegramAction.sendTelegram("⚠️ The front door was left open")
   }
 end
