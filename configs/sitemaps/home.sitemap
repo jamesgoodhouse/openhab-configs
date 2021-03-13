@@ -43,6 +43,10 @@ sitemap home label="Home" {
       Setpoint item=HVAC_IndoorUnit_LivingRoom_SetPoint label="Set Point [%.0f °F]" icon="temperature" visibility=[HVAC_IndoorUnit_LivingRoom_Mode==AUTO, HVAC_IndoorUnit_LivingRoom_Mode==COLD, HVAC_IndoorUnit_LivingRoom_Mode==HEAT] minValue=64 maxValue=90 step=1
       Selection item=HVAC_IndoorUnit_LivingRoom_Fan visibility=[HVAC_IndoorUnit_LivingRoom_Power==ON] icon="fan"
       Selection item=HVAC_IndoorUnit_LivingRoom_FanSwing visibility=[HVAC_IndoorUnit_LivingRoom_Power==ON] icon="fan"
+
+      Text icon="settings" label="Settings" {
+        Switch item=HVAC_IndoorUnit_LivingRoom_OffWhenLeaving label="Turn Off When Leaving" icon="switch"
+      }
     }
     Frame label="Main Bedroom" {
       Text item=HVAC_IndoorUnit_MainBedroom_Temperature label="Temperature [%.0f °F]"
@@ -52,6 +56,10 @@ sitemap home label="Home" {
       Setpoint item=HVAC_IndoorUnit_MainBedroom_SetPoint label="Set Point [%.0f °F]" icon="temperature" visibility=[HVAC_IndoorUnit_MainBedroom_Mode==AUTO, HVAC_IndoorUnit_MainBedroom_Mode==COLD, HVAC_IndoorUnit_MainBedroom_Mode==HEAT] minValue=64 maxValue=90 step=1
       Selection item=HVAC_IndoorUnit_MainBedroom_Fan visibility=[HVAC_IndoorUnit_MainBedroom_Power==ON] icon="fan"
       Selection item=HVAC_IndoorUnit_MainBedroom_FanSwing visibility=[HVAC_IndoorUnit_MainBedroom_Power==ON] icon="fan"
+
+      Text icon="settings" label="Settings" {
+        Switch item=HVAC_IndoorUnit_MainBedroom_OffWhenLeaving label="Turn Off When Leaving" icon="switch"
+      }
     }
   }
 
