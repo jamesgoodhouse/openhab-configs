@@ -11,3 +11,17 @@ then
     ])
   }
 end
+
+rule "External Door Opened While Away"
+when
+  Member of DoorsExternal changed from CLOSED to OPEN
+then
+  if (Present.state == OFF) {
+    createTimer(now.plusSeconds(90), [ |
+      if (Present.state == OFF) {
+        val telegramAction = getActions("telegram","telegram:telegramBot:boty_mcbotface")
+        telegramAction.sendTelegram("⚠️ The " + triggeringItem.name + " has been opened")
+      }
+    ])
+  }
+end
