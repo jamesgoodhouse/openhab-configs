@@ -1,3 +1,5 @@
+import java.util.HashMap
+
 rule "Garage door opened while away"
 when
   Item Sensor_Tilt_GarageDoor_State changed from CLOSED to OPEN
@@ -19,8 +21,17 @@ then
   if (Present.state == OFF) {
     createTimer(now.plusSeconds(90), [ |
       if (Present.state == OFF) {
+        val Map<String, String> nameMap = new HashMap<>();
+
+        nameMap.put("Sensor_Binary_DeckDoor_State", "Deck Door")
+        nameMap.put("Sensor_Binary_FrontDoor_State", "Front Door")
+        nameMap.put("Sensor_Binary_GarageEntryDoor_State", "Garage Entry Door")
+        nameMap.put("Sensor_Tilt_GarageDoor_State", "Garage Door")
+
+        val name = nameMap.getOrDefault(triggeringItem.name, "Unknown")
+
         val telegramAction = getActions("telegram","telegram:telegramBot:boty_mcbotface")
-        telegramAction.sendTelegram("⚠️ The " + triggeringItem.name + " has been opened")
+        telegramAction.sendTelegram("⚠️ The " + name + " has been opened")
       }
     ])
   }
