@@ -2,7 +2,7 @@ String Fireplace_Status "Status"                                 (Fireplace,Pers
 Switch Fireplace_State  "State [MAP(fireplace.map):%s]" <fire>   (Fireplace,Persist) ["Control"] { channel="mqtt:topic:mosquitto:fireplace:state" }
 Switch Fireplace_Power  "Power"                         <switch> (Fireplace,Persist) ["Switch"]  { channel="mqtt:topic:mosquitto:fireplace:power" }
 
-Number:Temperature Fireplace_Thermostat_Hysteresis     "Hysteresis" <temperature> (Fireplace_Thermostat,Persist) ["SetPoint","Temperature"]
-Number:Temperature Fireplace_Thermostat_SetPoint       "Set Point"  <temperature> (Fireplace_Thermostat,Persist) ["SetPoint","Temperature"]
-Switch             Fireplace_Thermostat_Power          "Power"      <switch>      (Fireplace_Thermostat,Persist) ["Switch"]
-Switch             Fireplace_Thermostat_OffWhenLeaving "Power"      <switch>      (Fireplace_Thermostat,Persist)
+Number:Temperature Fireplace_Thermostat_Hysteresis     "Hysteresis"            <temperature> (Fireplace_Thermostat,Persist) ["SetPoint","Temperature"]
+Number:Temperature Fireplace_Thermostat_SetPoint       "Set Point"             <temperature> (Fireplace_Thermostat,Persist) ["SetPoint","Temperature"]
+Switch             Fireplace_Thermostat_Power          "Power"                 <switch>      (Fireplace_Thermostat,Persist) ["Switch"]
+Switch             Fireplace_Thermostat_OffWhenLeaving "Turn Off When Leaving" <switch>      (Fireplace_Thermostat,Persist)
