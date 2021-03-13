@@ -21,7 +21,7 @@ then
   if (Present.state == OFF) {
     createTimer(now.plusSeconds(90), [ |
       if (Present.state == OFF) {
-        val Map<String, String> nameMap = new HashMap<>();
+        val Map<String, String> nameMap = new HashMap<>()
 
         nameMap.put("Sensor_Binary_DeckDoor_State", "Deck Door")
         nameMap.put("Sensor_Binary_FrontDoor_State", "Front Door")
