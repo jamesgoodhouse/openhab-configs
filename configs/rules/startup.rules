@@ -7,5 +7,9 @@ then
   // fireplace
   if (Fireplace_Thermostat_SetPoint.state == NULL)       Fireplace_Thermostat_SetPoint.postUpdate(60)
   if (Fireplace_Thermostat_Hysteresis.state == NULL)     Fireplace_Thermostat_Hysteresis.postUpdate(2)
-  if (Fireplace_Thermostat_OffWhenLeaving.state == NULL) Fireplace_Thermostat_OffWhenLeaving.postUpdate(OFF)
+  if (Fireplace_Thermostat_OffWhenLeaving.state == NULL) Fireplace_Thermostat_OffWhenLeaving.postUpdate(ON)
+
+  // hvac
+  if (HVAC_IndoorUnit_LivingRoom_OffWhenLeaving.state == NULL)  HVAC_IndoorUnit_LivingRoom_OffWhenLeaving.postUpdate(ON)
+  if (HVAC_IndoorUnit_MainBedroom_OffWhenLeaving.state == NULL) HVAC_IndoorUnit_MainBedroom_OffWhenLeaving.postUpdate(ON)
 end
