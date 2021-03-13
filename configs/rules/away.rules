@@ -1,5 +1,4 @@
 import java.util.Map
-import java.util.HashMap
 
 rule "External Door Opened While Away"
 when
@@ -19,6 +18,21 @@ then
 
         val telegramAction = getActions("telegram","telegram:telegramBot:boty_mcbotface")
         telegramAction.sendTelegram("⚠️ The " + name + " has been opened")
+      }
+    ])
+  }
+end
+
+
+rule "Motion Detector"
+when
+  Item Sensor_Motion_Landing_State changes to ON
+then
+  if (Present.state == OFF) {
+    createTimer(now.plusSeconds(90), [ |
+      if (Present.state == OFF) {
+        val telegramAction = getActions("telegram","telegram:telegramBot:boty_mcbotface")
+        telegramAction.sendTelegram("⚠️ Motion detected")
       }
     ])
   }
