@@ -30,6 +30,7 @@ sitemap home label="Home" {
 
     Text icon="settings" label="Settings" {
       Setpoint item=Fireplace_Thermostat_Hysteresis label="Hysteresis [%.0f °F]" icon="temperature" minValue=0 maxValue=5 step=1
+      Switch item=Fireplace_Thermostat_OffWhenLeaving label="Turn Off When Leaving" icon="switch"
     }
   }
 
