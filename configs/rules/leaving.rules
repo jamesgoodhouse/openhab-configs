@@ -17,3 +17,18 @@ then
     telegramAction.sendTelegram("⚠️ One or more doors were left open: \n\n*" + String.join("\n", openDoors) + "*")
   }
 end
+
+rule "Turn Off HVAC When Leaving"
+when
+  Item Present changed to OFF
+then
+  if (Fireplace_Thermostat_Power.state == ON && Fireplace_Thermostat_OffWhenLeaving == ON) {
+    Fireplace_Power.sendCommand(OFF)
+  }
+  if (HVAC_IndoorUnit_LivingRoom_Power.state == ON && HVAC_IndoorUnit_LivingRoom_OffWhenLeaving == ON) {
+    HVAC_IndoorUnit_LivingRoom_Power.sendCommand(OFF)
+  }
+  if (HVAC_IndoorUnit_MainBedroom_Power.state == ON && HVAC_IndoorUnit_MainBedroom_OffWhenLeaving == ON) {
+    HVAC_IndoorUnit_MainBedroom_Power.sendCommand(OFF)
+  }
+end
