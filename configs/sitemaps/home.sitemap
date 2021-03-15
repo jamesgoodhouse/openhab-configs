@@ -30,7 +30,7 @@ sitemap home label="Home" {
 
     Text icon="settings" label="Settings" {
       Setpoint item=Fireplace_Thermostat_Hysteresis label="Hysteresis [%.0f °F]" icon="temperature" minValue=0 maxValue=5 step=1
-      Switch item=Fireplace_Thermostat_KeepOnWhenLeaving label="Turn Off When Leaving" icon="switch"
+      Switch item=Fireplace_Thermostat_KeepOnWhenLeaving label="Keep On When Leaving" icon="switch"
     }
   }
 
@@ -45,7 +45,7 @@ sitemap home label="Home" {
       Selection item=HVAC_IndoorUnit_LivingRoom_FanSwing visibility=[HVAC_IndoorUnit_LivingRoom_Power==ON] icon="fan"
 
       Text icon="settings" label="Settings" {
-        Switch item=HVAC_IndoorUnit_LivingRoom_KeepOnWhenLeaving label="Turn Off When Leaving" icon="switch"
+        Switch item=HVAC_IndoorUnit_LivingRoom_KeepOnWhenLeaving label="Keep On When Leaving" icon="switch"
       }
     }
     Frame label="Main Bedroom" {
@@ -58,7 +58,7 @@ sitemap home label="Home" {
       Selection item=HVAC_IndoorUnit_MainBedroom_FanSwing visibility=[HVAC_IndoorUnit_MainBedroom_Power==ON] icon="fan"
 
       Text icon="settings" label="Settings" {
-        Switch item=HVAC_IndoorUnit_MainBedroom_KeepOnWhenLeaving label="Turn Off When Leaving" icon="switch"
+        Switch item=HVAC_IndoorUnit_MainBedroom_KeepOnWhenLeaving label="Keep On When Leaving" icon="switch"
       }
     }
   }
