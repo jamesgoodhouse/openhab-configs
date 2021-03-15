@@ -24,7 +24,7 @@ when
 then
   if (Fireplace_Thermostat_Power.state == ON && Fireplace_Thermostat_KeepOnWhenLeaving.state != ON) {
     logInfo("fireplace", "Fireplace — Turning Off")
-    Fireplace_Power.sendCommand(OFF)
+    Fireplace_Thermostat_Power.sendCommand(OFF)
   }
   if (HVAC_IndoorUnit_LivingRoom_Power.state == ON && HVAC_IndoorUnit_LivingRoom_KeepOnWhenLeaving.state != ON) {
     logInfo("hvac", "Living Room HVAC — Turning Off")
