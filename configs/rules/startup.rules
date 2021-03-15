@@ -14,5 +14,9 @@ then
     // hvac
     if (HVAC_IndoorUnit_LivingRoom_KeepOnWhenLeaving.state == NULL)  HVAC_IndoorUnit_LivingRoom_KeepOnWhenLeaving.postUpdate(OFF)
     if (HVAC_IndoorUnit_MainBedroom_KeepOnWhenLeaving.state == NULL) HVAC_IndoorUnit_MainBedroom_KeepOnWhenLeaving.postUpdate(OFF)
+
+    // lighting
+    if (Light_Landing_AutomationDimmerValue.state == NULL)    Light_Landing_AutomationDimValue.postUpdate(1)
+    if (Light_LivingRoom_AutomationDimmerValue.state == NULL) Light_LivingRoom_AutomationDimValue.postUpdate(1)
   ])
 end

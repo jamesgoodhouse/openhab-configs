@@ -23,7 +23,7 @@ Group Indoor "Indoor" ["Indoor"]
       Group Fireplace "Fireplace" <fire> (Room_Living) ["Equipment"]
         Group Fireplace_Thermostat "Thermostat" <heating> (Fireplace) ["Equipment"]
       Group HVAC_IndoorUnit_LivingRoom "Indoor Unit" <heating> (Room_Living) ["HVAC"]
-      Group Light_Living_Room "Light" <light> (Room_Living) ["Lightbulb"]
+      Group Light_LivingRoom "Light" <light> (Room_Living) ["Lightbulb"]
 
   Group Floor_Third "Third Floor" <floor_3> (Indoor) ["ThirdFloor"]
     Group Room_Bathroom_Hall "Hall Bathroom" <bath> (Floor_Third) ["Bathroom"]

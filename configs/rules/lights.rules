@@ -1,16 +1,18 @@
-rule "Sunset"
+rule "Lights — Turn on at Sunset"
 when
   Channel "astro:sun:home:set#event" triggered START
 then
-  var int dimLevel = 1
-  Light_Landing_Dimmer.sendCommand(dimLevel)
-  Light_Living_Room_Dimmer.sendCommand(dimLevel)
+  val dimLevelLanding = Light_Landing_AutomationDimmerValue.state
+  Light_Landing_Dimmer.sendCommand(dimLevelLanding)
+
+  val dimLevelLivingRoom = Light_LivingRoom_AutomationDimmerValue.state
+  Light_LivingRoom_Dimmer.sendCommand(dimLevelLivingRoom)
 end
 
-rule "Midnight"
+rule "Lights — Turn off at Midnight"
 when
   Time is midnight
 then
   Light_Landing_Dimmer.sendCommand(0)
-  Light_Living_Room_Dimmer.sendCommand(0)
+  Light_LivingRoom_Dimmer.sendCommand(0)
 end

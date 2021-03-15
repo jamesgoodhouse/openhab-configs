@@ -67,10 +67,18 @@ sitemap home label="Home" {
     Frame label="Landing" {
       Switch item=Light_Landing_Dimmer label="Light"
       Slider item=Light_Landing_Dimmer label="Dimmer"
+
+      Text icon="settings" label="Settings" {
+        Setpoint item=Light_Landing_AutomationDimmerValue label="Dimmer Value for Automation" minValue=0 maxValue=100 step=1
+      }
     }
     Frame label="Living Room" {
-      Switch item=Light_Living_Room_Dimmer label="Light"
-      Slider item=Light_Living_Room_Dimmer label="Dimmer"
+      Switch item=Light_LivingRoom_Dimmer label="Light"
+      Slider item=Light_LivingRoom_Dimmer label="Dimmer"
+
+      Text icon="settings" label="Settings" {
+        Setpoint item=Light_LivingRoom_AutomationDimmerValue label="Dimmer Value for Automation" minValue=0 maxValue=100 step=1
+      }
     }
   }
 
