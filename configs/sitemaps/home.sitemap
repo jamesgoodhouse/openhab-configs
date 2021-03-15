@@ -75,7 +75,7 @@ sitemap home label="Home" {
   }
 
   Text label="Miscellaneous" icon="text" {
-    Text item=Fireplace_Controller_Status label="Fireplace Controller" icon="fire" valuecolor=[ONLINE="lime",OFFLINE="red"]
+    Text item=Fireplace_Controller_Status label="Fireplace Controller [MAP(online.map):%s]" icon="fire" valuecolor=[ONLINE="lime",OFFLINE="red"]
     Text item=SensorReporter_Status label="Sensor Reporter [MAP(sensorreporter.map):%s]" icon="network" valuecolor=[ONLINE="lime",OFFLINE="red"]
   }
 }
