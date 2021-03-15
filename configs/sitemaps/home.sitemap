@@ -40,7 +40,7 @@ sitemap home label="Home" {
       Switch item=HVAC_IndoorUnit_LivingRoom_Power label="Power" icon="switch"
       Switch item=HVAC_IndoorUnit_LivingRoom_PowerfulMode visibility=[HVAC_IndoorUnit_LivingRoom_Power==ON] label="Powerful Mode" icon="switch"
       Selection item=HVAC_IndoorUnit_LivingRoom_Mode mappings=["AUTO"="Auto", "DEHUMIDIFIER"="Dehumidifier", "COLD"="Cold", "HEAT"="Heat", "FAN"="Fan"] visibility=[HVAC_IndoorUnit_LivingRoom_Power==ON]
-      Setpoint item=HVAC_IndoorUnit_LivingRoom_SetPoint label="Set Point [%.0f °F]" icon="temperature" visibility=[HVAC_IndoorUnit_LivingRoom_Mode==AUTO, HVAC_IndoorUnit_LivingRoom_Mode==COLD, HVAC_IndoorUnit_LivingRoom_Mode==HEAT] minValue=64 maxValue=90 step=1
+      Setpoint item=HVAC_IndoorUnit_LivingRoom_SetPoint label="Set Point [%.0f °F]" icon="temperature" visibility=[HVAC_IndoorUnit_LivingRoom_Mode==AUTO, HVAC_IndoorUnit_LivingRoom_Mode==COLD, HVAC_IndoorUnit_LivingRoom_Mode==HEAT] minValue=60 maxValue=80 step=1
       Selection item=HVAC_IndoorUnit_LivingRoom_Fan visibility=[HVAC_IndoorUnit_LivingRoom_Power==ON] icon="fan"
       Selection item=HVAC_IndoorUnit_LivingRoom_FanSwing visibility=[HVAC_IndoorUnit_LivingRoom_Power==ON] icon="fan"
 
@@ -53,7 +53,7 @@ sitemap home label="Home" {
       Switch item=HVAC_IndoorUnit_MainBedroom_Power label="Power" icon="switch"
       Switch item=HVAC_IndoorUnit_MainBedroom_PowerfulMode visibility=[HVAC_IndoorUnit_MainBedroom_Power==ON] label="Powerful Mode" icon="switch"
       Selection item=HVAC_IndoorUnit_MainBedroom_Mode mappings=["AUTO"="Auto", "DEHUMIDIFIER"="Dehumidifier", "COLD"="Cold", "HEAT"="Heat", "FAN"="Fan"] visibility=[HVAC_IndoorUnit_MainBedroom_Power==ON]
-      Setpoint item=HVAC_IndoorUnit_MainBedroom_SetPoint label="Set Point [%.0f °F]" icon="temperature" visibility=[HVAC_IndoorUnit_MainBedroom_Mode==AUTO, HVAC_IndoorUnit_MainBedroom_Mode==COLD, HVAC_IndoorUnit_MainBedroom_Mode==HEAT] minValue=64 maxValue=90 step=1
+      Setpoint item=HVAC_IndoorUnit_MainBedroom_SetPoint label="Set Point [%.0f °F]" icon="temperature" visibility=[HVAC_IndoorUnit_MainBedroom_Mode==AUTO, HVAC_IndoorUnit_MainBedroom_Mode==COLD, HVAC_IndoorUnit_MainBedroom_Mode==HEAT] minValue=60 maxValue=80 step=1
       Selection item=HVAC_IndoorUnit_MainBedroom_Fan visibility=[HVAC_IndoorUnit_MainBedroom_Power==ON] icon="fan"
       Selection item=HVAC_IndoorUnit_MainBedroom_FanSwing visibility=[HVAC_IndoorUnit_MainBedroom_Power==ON] icon="fan"
 
