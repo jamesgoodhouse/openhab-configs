@@ -52,3 +52,19 @@ then
     }
   ])
 end
+
+rule "Fireplace Controller — Offline"
+when
+  Item Fireplace_Controller_Status changed to OFFLINE
+then
+  val telegramAction = getActions("telegram", "telegram:telegramBot:boty_mcbotface")
+  telegramAction.sendTelegram("⚠️ Fireplace Controller is offline")
+end
+
+rule "Fireplace Controller — Online"
+when
+  Item Fireplace_Controller_Status changed to ONLINE
+then
+  val telegramAction = getActions("telegram", "telegram:telegramBot:boty_mcbotface")
+  telegramAction.sendTelegram("✅ Fireplace Controller is online")
+end
