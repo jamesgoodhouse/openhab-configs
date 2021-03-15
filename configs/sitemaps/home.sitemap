@@ -23,8 +23,8 @@ sitemap home label="Home" {
   }
 
   Text item=Fireplace_Thermostat_Power icon="fire" label="Fireplace [MAP(fireplace.map):%s]" valuecolor=[OFF="lime",ON="orange"] {
-    Text item=HVAC_IndoorUnit_LivingRoom_Temperature label="Temperature [%.0f °F]"
     Switch item=Fireplace_Thermostat_Power label="Power[]" icon="switch"
+    Text item=HVAC_IndoorUnit_LivingRoom_Temperature label="Temperature [%.0f °F]"
     Text item=Fireplace_State label="Fireplace [MAP(fireplace.map):%s]" icon="fire" visibility=[Fireplace_Thermostat_Power==ON]
     Setpoint item=Fireplace_Thermostat_SetPoint label="Set Point [%.0f °F]" icon="temperature" minValue=60 maxValue=80 step=1 visibility=[Fireplace_Thermostat_Power==ON]
 
@@ -36,8 +36,8 @@ sitemap home label="Home" {
 
   Text item=HVAC_Power label="HVAC [MAP(onoff.map):%s]" icon="heating" valuecolor=[OFF="lime",ON="orange"] {
     Frame label="Living Room" {
-      Text item=HVAC_IndoorUnit_LivingRoom_Temperature label="Temperature [%.0f °F]"
       Switch item=HVAC_IndoorUnit_LivingRoom_Power label="Power" icon="switch"
+      Text item=HVAC_IndoorUnit_LivingRoom_Temperature label="Temperature [%.0f °F]"
       Switch item=HVAC_IndoorUnit_LivingRoom_PowerfulMode visibility=[HVAC_IndoorUnit_LivingRoom_Power==ON] label="Powerful Mode" icon="switch"
       Selection item=HVAC_IndoorUnit_LivingRoom_Mode mappings=["AUTO"="Auto", "DEHUMIDIFIER"="Dehumidifier", "COLD"="Cold", "HEAT"="Heat", "FAN"="Fan"] visibility=[HVAC_IndoorUnit_LivingRoom_Power==ON]
       Setpoint item=HVAC_IndoorUnit_LivingRoom_SetPoint label="Set Point [%.0f °F]" icon="temperature" visibility=[HVAC_IndoorUnit_LivingRoom_Mode==AUTO, HVAC_IndoorUnit_LivingRoom_Mode==COLD, HVAC_IndoorUnit_LivingRoom_Mode==HEAT] minValue=60 maxValue=80 step=1
@@ -49,8 +49,8 @@ sitemap home label="Home" {
       }
     }
     Frame label="Main Bedroom" {
-      Text item=HVAC_IndoorUnit_MainBedroom_Temperature label="Temperature [%.0f °F]"
       Switch item=HVAC_IndoorUnit_MainBedroom_Power label="Power" icon="switch"
+      Text item=HVAC_IndoorUnit_MainBedroom_Temperature label="Temperature [%.0f °F]"
       Switch item=HVAC_IndoorUnit_MainBedroom_PowerfulMode visibility=[HVAC_IndoorUnit_MainBedroom_Power==ON] label="Powerful Mode" icon="switch"
       Selection item=HVAC_IndoorUnit_MainBedroom_Mode mappings=["AUTO"="Auto", "DEHUMIDIFIER"="Dehumidifier", "COLD"="Cold", "HEAT"="Heat", "FAN"="Fan"] visibility=[HVAC_IndoorUnit_MainBedroom_Power==ON]
       Setpoint item=HVAC_IndoorUnit_MainBedroom_SetPoint label="Set Point [%.0f °F]" icon="temperature" visibility=[HVAC_IndoorUnit_MainBedroom_Mode==AUTO, HVAC_IndoorUnit_MainBedroom_Mode==COLD, HVAC_IndoorUnit_MainBedroom_Mode==HEAT] minValue=60 maxValue=80 step=1
@@ -64,11 +64,11 @@ sitemap home label="Home" {
   }
 
   Text item=Lights label="Lights [MAP(onoff.map):%s] " icon="light" valuecolor=[ON="orange",OFF="lime"] {
-    Text item=Light_Landing_Dimmer label="Landing [%s]" icon="light" {
+    Frame label="Landing" {
       Switch item=Light_Landing_Dimmer label="Light"
       Slider item=Light_Landing_Dimmer label="Dimmer"
     }
-    Text item=Light_Living_Room_Dimmer label="Living Room [%s]" icon="light" {
+    Frame label="Living Room" {
       Switch item=Light_Living_Room_Dimmer label="Light"
       Slider item=Light_Living_Room_Dimmer label="Dimmer"
     }
