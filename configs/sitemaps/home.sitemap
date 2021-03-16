@@ -80,7 +80,7 @@ sitemap home label="Home" {
     }
   }
 
-  Text label="Miscellaneous" icon="text" {
+  Text label="Statuses" icon="text" {
     Text item=Alarm_Status icon="alarm" label="Alarm [MAP(online.map):%s]" valuecolor=[OFF="red",ON="lime"]
     Text item=Fireplace_Controller_Status label="Fireplace Controller [MAP(online.map):%s]" icon="fire" valuecolor=[ONLINE="lime",OFFLINE="red"]
     Text item=SensorReporter_Status label="Sensor Reporter [MAP(sensorreporter.map):%s]" icon="network" valuecolor=[ONLINE="lime",OFFLINE="red"]
