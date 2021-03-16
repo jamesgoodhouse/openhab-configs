@@ -1,8 +1,6 @@
 sitemap home label="Home" {
   Text item=HVAC_OutdoorUnit_Temperature label="Outdoor Temperature [%.0f °F]" icon="temperature"
 
-  Text item=Alarm_Status icon="alarm" label="Alarm [MAP(online.map):%s]" valuecolor=[OFF="red",ON="lime"]
-
   Text item=Present_James label="James [MAP(presence.map):%s]" icon=man_3 valuecolor=[ON="lime",OFF="orange"] {
     Text item=NetworkDeviceOnline_Phone_James label="Phone [MAP(online.map):%s]" icon="phone" valuecolor=[ON="lime",OFF="orange"] {
       Text item=Bluetooth_Phone_James_Status label="Bluetooth Status [MAP(online.map):%s]" valuecolor=[ON="lime",OFF="orange"] icon="bluetooth"
@@ -83,6 +81,7 @@ sitemap home label="Home" {
   }
 
   Text label="Miscellaneous" icon="text" {
+    Text item=Alarm_Status icon="alarm" label="Alarm [MAP(online.map):%s]" valuecolor=[OFF="red",ON="lime"]
     Text item=Fireplace_Controller_Status label="Fireplace Controller [MAP(online.map):%s]" icon="fire" valuecolor=[ONLINE="lime",OFFLINE="red"]
     Text item=SensorReporter_Status label="Sensor Reporter [MAP(sensorreporter.map):%s]" icon="network" valuecolor=[ONLINE="lime",OFFLINE="red"]
   }
