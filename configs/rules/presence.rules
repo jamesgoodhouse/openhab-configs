@@ -13,10 +13,10 @@ then
   PresentWithDelayTimer_30 = createTimer(now.plusSeconds(30), [ |
     if (Present.state == OFF) PresentWithDelay_30.postUpdate(OFF)
   ])
-  PresentWithDelayTimer_60 = createTimer(now.plusSeconds(30), [ |
+  PresentWithDelayTimer_60 = createTimer(now.plusSeconds(60), [ |
     if (Present.state == OFF) PresentWithDelay_60.postUpdate(OFF)
   ])
-  PresentWithDelayTimer_90 = createTimer(now.plusSeconds(30), [ |
+  PresentWithDelayTimer_90 = createTimer(now.plusSeconds(90), [ |
     if (Present.state == OFF) PresentWithDelay_90.postUpdate(OFF)
   ])
 end
