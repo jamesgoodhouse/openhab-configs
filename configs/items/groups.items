@@ -9,6 +9,5 @@ Group Persist "Persist"
 
 
 Group:Switch:AND(OFF,ON) Present "Present [%s]"
-Group PresentWithDelay "Present With Delay [%s]"
 Group:Switch:AND(OFF,ON) Present_James "James Presence [%s]" <present>
 Group:Switch:AND(OFF,ON) NetworkDeviceOnline_Phone_James
