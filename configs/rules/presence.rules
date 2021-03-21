@@ -1,8 +1,12 @@
+var Timer PresentWithDelayTimer
+
 rule "Presence Delay — Leaving"
 when
   Item Present changed to OFF
 then
-  createTimer(now.plusSeconds(30), [ |
+  if (PresentWithDelayTimer !== null) PresentWithDelayTimer.cancel()
+
+  PresentWithDelayTimer = createTimer(now.plusSeconds(30), [ |
     if (Present.state == OFF) {
       PresentWithDelay.postUpdate(OFF)
     }
@@ -13,6 +17,8 @@ rule "Presence Delay — Return"
 when
   Item Present changed to ON
 then
+  if (PresentWithDelayTimer !== null) PresentWithDelayTimer.cancel()
+
   PresentWithDelay.postUpdate(ON)
 end
 
