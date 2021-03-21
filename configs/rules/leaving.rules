@@ -3,13 +3,13 @@ import java.util.List
 
 rule "Doors Left Open"
 when
-  Item Present changed to OFF
+  Item PresentWithDelay_30 changed to OFF
 then
   val List<String> openDoors = new ArrayList<String>()
 
-  if (Sensor_Binary_DeckDoor_State.state == OPEN)        openDoors.add("Deck Door")
-  if (Sensor_Binary_FrontDoor_State.state == OPEN)       openDoors.add("Front Door")
-  if (Sensor_Tilt_GarageDoor_State.state == OPEN)        openDoors.add("Garage Door")
+  if (Sensor_Binary_DeckDoor_State.state        == OPEN) openDoors.add("Deck Door")
+  if (Sensor_Binary_FrontDoor_State.state       == OPEN) openDoors.add("Front Door")
+  if (Sensor_Tilt_GarageDoor_State.state        == OPEN) openDoors.add("Garage Door")
   if (Sensor_Binary_GarageEntryDoor_State.state == OPEN) openDoors.add("Garage Entry Door")
 
   if (openDoors.size() > 0) {
@@ -20,7 +20,7 @@ end
 
 rule "Turn Off HVAC When Leaving"
 when
-  Item Present changed to OFF
+  Item PresentWithDelay_30 changed to OFF
 then
   if (Fireplace_Thermostat_Power.state == ON && Fireplace_Thermostat_KeepOnWhenLeaving.state != ON) {
     logInfo("fireplace", "Fireplace — Turning Off")
