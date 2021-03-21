@@ -1,3 +1,21 @@
+rule "Presence Delay — Leaving"
+when
+  Item Present changed to OFF
+then
+  createTimer(now.plusSeconds(30), [ |
+    if (Present.state == OFF) {
+      PresentWithDelay.postUpdate(OFF)
+    }
+  ])
+end
+
+rule "Presence Delay — Return"
+when
+  Item Present changed to ON
+then
+  PresentWithDelay.postUpdate(ON)
+end
+
 rule "James Gone"
 when
   Item Present_James changed from ON to OFF
