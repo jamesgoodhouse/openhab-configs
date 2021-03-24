@@ -17,7 +17,16 @@ then
   Light_LivingRoom_Dimmer.sendCommand(0)
 end
 
-rule "Garage Lights"
+var Timer GarageLightsTimer
+
+rule "Garage Lights — Cancel Auto Off Timer"
+when
+  Item Light_Garage_Switch changed from ON to OFF
+then
+  if (GarageLightsTimer !== null) GarageLightsTimer.cancel()
+end
+
+rule "Garage Lights — Turn On When Door Opens (Auto Off)"
 when
   Item Sensor_Tilt_GarageDoor_State changed from CLOSED to OPEN or
   Item Sensor_Binary_GarageEntryDoor_State changed from CLOSED to OPEN
@@ -25,7 +34,7 @@ then
   if (Light_Garage_Switch.state == OFF) {
     Light_Garage_Switch.sendCommand(ON)
 
-    createTimer(now.plusSeconds(300), [ |
+    GarageLightsTimer = createTimer(now.plusSeconds(300), [ |
       if (Light_Garage_Switch.state == ON) Light_Garage_Switch.sendCommand(OFF)
     ])
   }
