@@ -16,3 +16,17 @@ then
   Light_Landing_Dimmer.sendCommand(0)
   Light_LivingRoom_Dimmer.sendCommand(0)
 end
+
+rule "Garage Lights"
+when
+  Item Sensor_Tilt_GarageDoor_State changed from CLOSED to OPEN or
+  Item Sensor_Binary_GarageEntryDoor_State changed from CLOSED to OPEN
+then
+  if (Light_Garage_Switch.state == OFF) {
+    Light_Garage_Switch.sendCommand(ON)
+
+    createTimer(now.plusSeconds(300), [ |
+      if (Light_Garage_Switch.state == ON) Light_Garage_Switch.sendCommand(OFF)
+    ])
+  }
+end
