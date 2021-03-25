@@ -62,24 +62,26 @@ sitemap home label="Home" {
   }
 
   Text item=Lights label="Lights [MAP(onoff.map):%s] " icon="light" valuecolor=[ON="orange",OFF="lime"] {
-    Switch item=Light_Garage_Switch label="Garage"
-    Switch item=Light_Landing_Dimmer label="Landing"
-    Switch item=Light_LivingRoom_Dimmer label="Living Room"
+    Switch item=Light_Garage_Switch label="Garage" icon="light"
+    Switch item=Light_Landing_Dimmer label="Landing" icon="light"
+    Switch item=Light_LivingRoom_Dimmer label="Living Room" icon="light"
 
-    Frame label="Landing" {
-      Switch item=Light_Landing_Dimmer label="Light"
-      Slider item=Light_Landing_Dimmer label="Dimmer"
+    Frame label="Settings" icon="settings" {
+      Frame label="Landing" {
+        Switch item=Light_Landing_Dimmer label="Light"
+        Slider item=Light_Landing_Dimmer label="Dimmer"
 
-      Text icon="settings" label="Settings" {
-        Setpoint item=Light_Landing_AutomationDimmerValue label="Automation Dimmer Value [%s]" icon="settings" minValue=1 maxValue=100 step=1
+        Text icon="settings" label="Settings" {
+          Setpoint item=Light_Landing_AutomationDimmerValue label="Automation Dimmer Value [%s]" icon="settings" minValue=1 maxValue=100 step=1
+        }
       }
-    }
-    Frame label="Living Room" {
-      Switch item=Light_LivingRoom_Dimmer label="Light"
-      Slider item=Light_LivingRoom_Dimmer label="Dimmer"
+      Frame label="Living Room" {
+        Switch item=Light_LivingRoom_Dimmer label="Light"
+        Slider item=Light_LivingRoom_Dimmer label="Dimmer"
 
-      Text icon="settings" label="Settings" {
-        Setpoint item=Light_LivingRoom_AutomationDimmerValue label="Automation Dimmer Value [%s]" icon="settings" minValue=1 maxValue=100 step=1
+        Text icon="settings" label="Settings" {
+          Setpoint item=Light_LivingRoom_AutomationDimmerValue label="Automation Dimmer Value [%s]" icon="settings" minValue=1 maxValue=100 step=1
+        }
       }
     }
   }
