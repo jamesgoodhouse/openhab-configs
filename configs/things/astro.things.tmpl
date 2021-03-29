@@ -6,3 +6,11 @@ astro:moon:home  [
   geolocation="{{ (ds "secrets").home.latitude }},{{ (ds "secrets").home.longitude }},{{ (ds "secrets").home.altitude }}",
   interval=60
 ]
+
+astro:sun:home_set_with_offset [
+  geolocation="{{ (ds "secrets").home.latitude }},{{ (ds "secrets").home.longitude }},{{ (ds "secrets").home.altitude }}",
+  interval=60
+] {
+  Channels:
+    Type rangeEvent : set#event [ offset=-30 ]
+}

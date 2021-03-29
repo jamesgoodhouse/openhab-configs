@@ -1,6 +1,6 @@
 rule "Lights — Turn on at Sunset"
 when
-  Channel "astro:sun:home:set#event" triggered START
+  Channel "astro:sun:home_set_with_offset:set#event" triggered START
 then
   val dimLevelLanding = (Light_Landing_AutomationDimmerValue.state as Number).intValue
   Light_Landing_Dimmer.sendCommand(dimLevelLanding)
