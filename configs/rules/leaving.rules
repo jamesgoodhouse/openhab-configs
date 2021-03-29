@@ -5,6 +5,8 @@ rule "Leaving"
 when
   Item PresentWithDelay_30 changed to OFF
 then
+  val telegramAction = getActions("telegram","telegram:telegramBot:boty_mcbotface")
+
   // CHECK FOR OPEN DOORS ------------------------------------------------------
   val List<String> openDoors = new ArrayList<String>()
 
@@ -14,7 +16,6 @@ then
   if (Sensor_Binary_GarageEntryDoor_State.state == OPEN) openDoors.add("Garage Entry Door")
 
   if (openDoors.size() > 0) {
-    val telegramAction = getActions("telegram","telegram:telegramBot:boty_mcbotface")
     telegramAction.sendTelegram("⚠️ One or more doors were left open: \n\n*" + String.join("\n", openDoors) + "*")
   }
 
