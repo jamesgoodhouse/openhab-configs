@@ -1,7 +1,7 @@
 import java.util.ArrayList
 import java.util.List
 
-rule "Doors Left Open"
+rule "Check Doors When Leaving"
 when
   Item PresentWithDelay_30 changed to OFF
 then
@@ -34,4 +34,11 @@ then
     logInfo("hvac", "Main Bedroom HVAC — Turning Off")
     HVAC_IndoorUnit_MainBedroom_Power.sendCommand(OFF)
   }
+end
+
+rule "Turn Off Lights When Leaving"
+when
+  Item PresentWithDelay_30 changed to OFF
+then
+  if (Light_Garage_Switch.state == ON) Light_Garage_Switch.sendCommand(OFF)
 end
