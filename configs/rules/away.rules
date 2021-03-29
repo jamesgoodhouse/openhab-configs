@@ -28,6 +28,8 @@ rule "Motion Detector"
 when
   Item Sensor_Motion_Landing_State changed to ON
 then
-  val telegramAction = getActions("telegram","telegram:telegramBot:boty_mcbotface")
-  telegramAction.sendTelegram("⚠️ Motion detected")
+  if (Present.state == OFF) {
+    val telegramAction = getActions("telegram","telegram:telegramBot:boty_mcbotface")
+    telegramAction.sendTelegram("⚠️ Motion detected")
+  }
 end
