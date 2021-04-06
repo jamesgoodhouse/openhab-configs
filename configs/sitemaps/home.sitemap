@@ -1,5 +1,5 @@
 sitemap home label="Home" {
-  Text item=HVAC_OutdoorUnit_Temperature label="Outdoor Temperature [%.0f °F]" icon="temperature" valuecolor=[>=95="red", >=85="orange", >=75="yellow", >=65="#1ac731", >=50="#186ded", >=40="teal"]
+  Text item=HVAC_OutdoorUnit_Temperature label="Outdoor Temperature [%.0f °F]" icon="temperature" valuecolor=[>=95="#e61c2c", >=85="orange", >=75="yellow", >=65="#1ac731", >=50="#186ded", >=40="teal"]
 
   Text item=Present_James label="James [MAP(presence.map):%s]" icon=man_3 valuecolor=[ON="#1ac731",OFF="orange"] {
     Text item=NetworkDeviceOnline_Phone_James label="Phone [MAP(online.map):%s]" icon="phone" valuecolor=[ON="#1ac731",OFF="orange"] {
@@ -87,8 +87,8 @@ sitemap home label="Home" {
   }
 
   Text label="Statuses" icon="text" {
-    Text item=Alarm_Status icon="alarm" label="Alarm [MAP(online.map):%s]" valuecolor=[OFF="red",ON="#1ac731"]
-    Text item=Fireplace_Controller_Status label="Fireplace Controller [MAP(online.map):%s]" icon="fire" valuecolor=[ONLINE="#1ac731",OFFLINE="red"]
-    Text item=SensorReporter_Status label="Sensor Reporter [MAP(sensorreporter.map):%s]" icon="network" valuecolor=[ONLINE="#1ac731",OFFLINE="red"]
+    Text item=Alarm_Status icon="alarm" label="Alarm [MAP(online.map):%s]" valuecolor=[OFF="#e61c2c",ON="#1ac731"]
+    Text item=Fireplace_Controller_Status label="Fireplace Controller [MAP(online.map):%s]" icon="fire" valuecolor=[ONLINE="#1ac731",OFFLINE="#e61c2c"]
+    Text item=SensorReporter_Status label="Sensor Reporter [MAP(sensorreporter.map):%s]" icon="network" valuecolor=[ONLINE="#1ac731",OFFLINE="#e61c2c"]
   }
 }
