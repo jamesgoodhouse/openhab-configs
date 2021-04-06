@@ -1,5 +1,5 @@
 sitemap home label="Home" {
-  Text item=HVAC_OutdoorUnit_Temperature label="Outdoor Temperature [%.0f °F]" icon="temperature" valuecolor=[>=95="red", >=85="orange", >=75="yellow", >=65="green", >=50="blue", >=40="teal"]
+  Text item=HVAC_OutdoorUnit_Temperature label="Outdoor Temperature [%.0f °F]" icon="temperature" valuecolor=[>=95="red", >=85="orange", >=75="yellow", >=65="green", >=50="#186ded", >=40="teal"]
 
   Text item=Present_James label="James [MAP(presence.map):%s]" icon=man_3 valuecolor=[ON="lime",OFF="orange"] {
     Text item=NetworkDeviceOnline_Phone_James label="Phone [MAP(online.map):%s]" icon="phone" valuecolor=[ON="lime",OFF="orange"] {
