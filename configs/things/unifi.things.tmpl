@@ -1,6 +1,7 @@
 Bridge unifi:controller:home "UniFi Controller" [
   host="{{ (ds "secrets").things.unifi.host }}",
   port="{{ (ds "secrets").things.unifi.port }}",
+  unifios=false,
   username="{{ (ds "secrets").things.unifi.username }}",
   password="{{ (ds "secrets").things.unifi.password }}",
   refresh="{{ (ds "configs").things.unifi.refresh_rate }}"
