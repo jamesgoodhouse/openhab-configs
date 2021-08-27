@@ -2,4 +2,4 @@
 
 #  The persistence service to use if no other is specified.
 #
-org.openhab.persistence:default=influxdb
+org.openhab.persistence:default = {{ (ds "configs").settings.persistence.default }}
