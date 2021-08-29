@@ -20,6 +20,7 @@ then
 
           val name = nameMap.getOrDefault(triggeringItem.name, "Unknown")
 
+          logInfo("notification", "Sending Telgram notification")
           telegramAction.sendTelegram("⚠️ The " + name + " has been opened")
         }
       }

@@ -7,6 +7,7 @@ then
   if (Present.state == OFF) {
     createTimer(now.plusSeconds(30), [ |
       if (Present.state == OFF && Rule_NotifyWhenMotionDetectedWhileAway == ON) {
+        logInfo("notification", "Sending Telgram notification")
         telegramAction.sendTelegram("⚠️ Motion detected")
       }
     ])
