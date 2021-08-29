@@ -1,6 +1,6 @@
-var Timer GarageLightsTimer
+// var Timer GarageLightsTimer
 
-rule "Garage Lights — Turn On When Door Opens (Auto Off)"
+rule "Garage Lights — Turn On When Garage Door Opens"
 when
   Item Sensor_Tilt_GarageDoor_State changed from CLOSED to OPEN
 then
@@ -14,9 +14,9 @@ then
   }
 end
 
-rule "Garage Lights — Cancel Auto Off Timer"
-when
-  Item Light_Garage_Switch changed from ON to OFF
-then
-  if (GarageLightsTimer !== null) GarageLightsTimer.cancel()
-end
+// rule "Garage Lights — Cancel Auto Off Timer"
+// when
+//   Item Light_Garage_Switch changed from ON to OFF
+// then
+//   if (GarageLightsTimer !== null) GarageLightsTimer.cancel()
+// end

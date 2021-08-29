@@ -6,7 +6,9 @@ when
 then
   if (Present.state == OFF) {
     createTimer(now.plusSeconds(30), [ |
-      telegramAction.sendTelegram("⚠️ Motion detected")
+      if (Present.state == OFF) {
+        telegramAction.sendTelegram("⚠️ Motion detected")
+      }
     ])
   }
 end
