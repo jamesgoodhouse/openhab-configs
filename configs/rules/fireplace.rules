@@ -34,9 +34,7 @@ when
   Item Fireplace_Thermostat_Power changed to OFF or
   Item Fireplace_State changed to OFF
 then
-  if (Fireplace_Power.state == ON) {
-    Fireplace_Power.sendCommand(OFF)
-  }
+  if (Fireplace_Power.state == ON) Fireplace_Power.sendCommand(OFF)
 end
 
 // ensure it actually was turned on, otherwise set power to OFF
