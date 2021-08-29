@@ -94,6 +94,7 @@ sitemap home label="Home" {
 
   Text label="Rules" {
     Switch item=Rule_NotifyWhenExternalDoorOpenedWhileAway label="Notify When External Door Opened While Away"
+    Switch item=Rule_NotifyWhenMotionDetectedWhileAway
     Switch item=Rule_TurnOnGarageLightWhenAwayAndGarageDoorOpens label="Turn On Garage Light When Away and Garage Door Opens"
   }
 }

@@ -1,2 +1,3 @@
 Switch Rule_NotifyWhenExternalDoorOpenedWhileAway       "Notify When External Door Opened While Away"
+Switch Rule_NotifyWhenMotionDetectedWhileAway           "Notify When Motion Detected While Away"
 Switch Rule_TurnOnGarageLightWhenAwayAndGarageDoorOpens "Turn On Garage Light When Away and Garage Door Opens"
