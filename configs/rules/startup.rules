@@ -21,5 +21,9 @@ then
 
     // misc
     if (ExternalDoorOpenedSinceHome.state == NULL) ExternalDoorOpenedSinceHome.postUpdate(ON)
+
+    // rules
+    if (Rule_NotifyWhenMotionDetectedWhileAway.state           == NULL) Rule_NotifyWhenMotionDetectedWhileAway.postUpdate(ON)
+    if (Rule_TurnOnGarageLightWhenAwayAndGarageDoorOpens.state == NULL) Rule_TurnOnGarageLightWhenAwayAndGarageDoorOpens.postUpdate(ON)
   ])
 end

@@ -10,22 +10,22 @@ then
   if (Present.state == OFF) {
     createTimer(now.plusSeconds(60), [ |
       if (Present.state == OFF) {
-        val Map<String, String> nameMap = newHashMap
+        if (Rule_NotifyWhenExternalDoorOpenedWhileAway.state == ON) {
+          val Map<String, String> nameMap = newHashMap
 
-        nameMap.put("Sensor_Binary_DeckDoor_State", "Deck Door")
-        nameMap.put("Sensor_Binary_FrontDoor_State", "Front Door")
-        nameMap.put("Sensor_Binary_GarageEntryDoor_State", "Garage Entry Door")
-        nameMap.put("Sensor_Tilt_GarageDoor_State", "Garage Door")
+          nameMap.put("Sensor_Binary_DeckDoor_State", "Deck Door")
+          nameMap.put("Sensor_Binary_FrontDoor_State", "Front Door")
+          nameMap.put("Sensor_Binary_GarageEntryDoor_State", "Garage Entry Door")
+          nameMap.put("Sensor_Tilt_GarageDoor_State", "Garage Door")
 
-        val name = nameMap.getOrDefault(triggeringItem.name, "Unknown")
+          val name = nameMap.getOrDefault(triggeringItem.name, "Unknown")
 
-        telegramAction.sendTelegram("⚠️ The " + name + " has been opened")
+          telegramAction.sendTelegram("⚠️ The " + name + " has been opened")
+        }
       }
     ])
   }
 
   // External Door Opened While Home
-  if (Present.state == ON) {
-    if (ExternalDoorOpenedSinceHome.state == OFF) ExternalDoorOpenedSinceHome.postUpdate(ON)
-  }
+  if (Present.state == ON && ExternalDoorOpenedSinceHome.state == OFF) ExternalDoorOpenedSinceHome.postUpdate(ON)
 end
