@@ -18,5 +18,8 @@ then
     // lighting
     if (Light_Landing_AutomationDimmerValue.state    == NULL) Light_Landing_AutomationDimmerValue.postUpdate(1)
     if (Light_LivingRoom_AutomationDimmerValue.state == NULL) Light_LivingRoom_AutomationDimmerValue.postUpdate(1)
+
+    // misc
+    if (ExternalDoorOpenedSinceHome.state == NULL) ExternalDoorOpenedSinceHome.postUpdate(ON)
   ])
 end

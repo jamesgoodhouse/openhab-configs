@@ -4,12 +4,13 @@ rule "Garage Lights — Turn On When Door Opens (Auto Off)"
 when
   Item Sensor_Tilt_GarageDoor_State changed from CLOSED to OPEN
 then
-  if (Light_Garage_Switch.state == OFF && Present.state == OFF) {
+  if (Light_Garage_Switch.state == OFF && ExternalDoorOpenedSinceHome.state == OFF) {
     Light_Garage_Switch.sendCommand(ON)
 
-    GarageLightsTimer = createTimer(now.plusSeconds(300), [ |
-      if (Light_Garage_Switch.state == ON) Light_Garage_Switch.sendCommand(OFF)
-    ])
+    // turn off after set time
+    // GarageLightsTimer = createTimer(now.plusSeconds(300), [ |
+    //   if (Light_Garage_Switch.state == ON) Light_Garage_Switch.sendCommand(OFF)
+    // ])
   }
 end
 
