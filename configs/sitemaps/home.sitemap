@@ -68,7 +68,7 @@ sitemap home label="Home" {
 
     Text label="Settings" icon="settings" {
       Frame label="Garage" {
-        Switch item=Rule_TurnOnGarageLightWhenAwayAndGarageDoorOpens
+        Switch item=Rule_TurnOnGarageLightWhenAwayAndGarageDoorOpens label="Turn On When Away and Garge Door Opens"
       }
       Frame label="Landing" {
         Slider item=Light_Landing_Dimmer label="Dimmer"
