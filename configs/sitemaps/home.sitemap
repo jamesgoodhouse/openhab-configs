@@ -93,6 +93,11 @@ sitemap home label="Home" {
   }
 
   Text label="Rules" {
+    Frame label="HVAC" {
+      Switch item=Fireplace_Thermostat_KeepOnWhenLeaving label="Keep Fireplace On When Leaving"
+      Switch item=HVAC_IndoorUnit_LivingRoom_KeepOnWhenLeaving label="Keep Living Room HVAC On When Leaving"
+      Switch item=HVAC_IndoorUnit_MainBedroom_KeepOnWhenLeaving label="Keep Main Bedroom HVAC On When Leaving"
+    }
     Frame label="Lighting" {
       Switch item=Rule_TurnOnGarageLightWhenAwayAndGarageDoorOpens
     }
