@@ -1,6 +1,6 @@
 Bridge zwave:serial_zstick:controller "Z-Wave Controller" @ "Living Room" [
   controller_master=true,
-  inclusion_mode: 0,
+  inclusion_mode=0,
   port="{{ (ds "configs").things.zwave.controller.port }}",
   security_networkkey="{{ (ds "secrets").things.zwave.controller.security_network_key }}"
 ] {
