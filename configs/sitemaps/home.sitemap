@@ -92,7 +92,7 @@ sitemap home label="Home" {
     Text item=SensorReporter_Status label="Sensor Reporter [MAP(sensorreporter.map):%s]" icon="network" valuecolor=[ONLINE="#1ac731",OFFLINE="#e61c2c"]
   }
 
-  Text label="Rules" icon="checklist" {
+  Text label="Rules" icon="checkbox" {
     Frame label="HVAC" {
       Switch item=Fireplace_Thermostat_KeepOnWhenLeaving label="Keep Fireplace On When Leaving"
       Switch item=HVAC_IndoorUnit_LivingRoom_KeepOnWhenLeaving label="Keep Living Room HVAC On When Leaving"
