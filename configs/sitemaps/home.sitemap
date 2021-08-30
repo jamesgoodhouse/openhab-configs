@@ -16,7 +16,8 @@ sitemap home label="Home" {
       Text item=Sensor_Binary_DeckDoor_State icon="frontdoor" label="Deck Door [MAP(door.map):%s]" valuecolor=[CLOSED="#1ac731",OPEN="orange"]
     }
     Frame label=" " {
-      Text item=Sensor_Tilt_GarageDoor_State icon="garagedoor" label="Garage Door [%s]" valuecolor=[CLOSED="#1ac731",OPEN="orange"]
+      Text item=Sensor_GarageDoor_State icon="garagedoor" label="Garage Door [%s]" valuecolor=[CLOSED="#1ac731",OPEN="orange"]
+      Text item=Sensor_Tilt_GarageDoor_State icon="garagedoor" label="Garage Door (Tilt Sensor) [%s]" valuecolor=[CLOSED="#1ac731",OPEN="orange"]
     }
   }
 
