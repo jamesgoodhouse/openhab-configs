@@ -23,3 +23,14 @@ Contact Sensor_Tilt_GarageDoor_State "State" (Door_External_Garage_Rollup,Persis
 Switch Sensor_Tilt_GarageDoor_TamperAlarm "Tamper Alarm" <alarm> (Sensor_Tilt_GarageDoor,Persist) ["Tampered"] {
   channel = "zwave:{{ (ds "configs").things.zwave.devices.tilt_sensor_garage_door.type_id }}:controller:{{ (ds "configs").things.zwave.devices.tilt_sensor_garage_door.thing_id }}:alarm_tamper"
 }
+
+// garage tilt sensor
+Number:Dimensionless Sensor_GarageDoor_Battery "Battery [%d %%]" <battery> (Sensor_GarageDoor,Persist) ["Battery"] {
+  channel = "zwave:{{ (ds "configs").things.zwave.devices.sensor_garage_door.type_id }}:controller:{{ (ds "configs").things.zwave.devices.sensor_garage_door.thing_id }}:battery-level"
+}
+Contact Sensor_GarageDoor_State "State" (Door_External_Garage_Rollup,Persist,Doors,DoorsExternal) ["OpenState"] {
+  channel = "zwave:{{ (ds "configs").things.zwave.devices.sensor_garage_door.type_id }}:controller:{{ (ds "configs").things.zwave.devices.sensor_garage_door.thing_id }}:sensor_door"
+}
+Switch Sensor_GarageDoor_TamperAlarm "Tamper Alarm" <alarm> (Sensor_GarageDoor,Persist) ["Tampered"] {
+  channel = "zwave:{{ (ds "configs").things.zwave.devices.sensor_garage_door.type_id }}:controller:{{ (ds "configs").things.zwave.devices.sensor_garage_door.thing_id }}:alarm_tamper"
+}
