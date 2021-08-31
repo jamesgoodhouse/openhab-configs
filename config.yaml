@@ -84,6 +84,19 @@ things:
       flow_control: 2 # software (XOn/XOff)
       mesh_update_period: 86400
       port: /dev/ttyUSB1
+    devices:
+      switch_garage_door:
+        label: Switch
+        location: Garage
+        thing_id: switch_garage_door
+      light_bulb_landing:
+        label: Light Bulb
+        location: Landing
+        thing_id: light_bulb_landing
+      light_bulb_living_room:
+        label: Light Bulb
+        location: Living Room
+        thing_id: light_bulb_living_room:
   zwave:
     controller:
       port: /dev/ttyUSB0

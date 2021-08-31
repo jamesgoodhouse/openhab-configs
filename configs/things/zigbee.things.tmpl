@@ -9,10 +9,12 @@ Bridge zigbee:coordinator_ember:stick "Zigbee Coordinator" @ "Living Room" [
   zigbee_extendedpanid="{{ (ds "configs").things.zigbee.coordinator.extended_pan_id }}",
   zigbee_networkkey="{{ (ds "configs").things.zigbee.coordinator.network_key }}"
 ] {
-  Thing device light_bulb_landing "Zigbee Device — Light Bulb" @ "Landing" [
-    zigbee_macaddress="{{ (ds "configs").things.zigbee.devices.light_bulb_landing.mac_address | strings.ToUpper }}"
-  ]
-  Thing device light_bulb_living_room "Zigbee Device — Light Bulb" @ "Living Room" [
-    zigbee_macaddress="{{ (ds "configs").things.zigbee.devices.light_bulb_living_room.mac_address | strings.ToUpper }}"
-  ]
+{{- range (ds "configs").things.zigbee.devices }}
+  {{- $params := slice }}
+  {{- range $k, $v := .parameters }}
+    {{- $param := printf "%s=%v" $k $v }}
+    {{- $params = $params | append $param }}
+  {{- end }}
+  Thing device {{ .thing_id }} "Z-Wave Device — {{ .label }}" @ "{{ .location }}" [ {{ join $params "," }} ]
+{{- end }}
 }
