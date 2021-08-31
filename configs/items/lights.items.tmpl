@@ -1,10 +1,10 @@
 Dimmer Light_Landing_Dimmer "Dimmer" <slider> (Light_Landing,Persist,Lights) ["Control","Light"] {
-  channel = "zigbee:device:stick:light_bulb_landing:{{ (ds "configs").things.zigbee.devices.light_bulb_landing.mac_address | strings.ToUpper }}_11_dimmer"
+  channel = "zigbee:device:stick:light_bulb_landing:{{ (ds "configs").things.zigbee.devices.light_bulb_landing.parameters.mac_address | strings.ToUpper }}_11_dimmer"
 }
 Number:Dimensionless Light_Landing_AutomationDimmerValue "Dimmer Value Used in Automation"
 
 Dimmer Light_LivingRoom_Dimmer "Dimmer" <slider> (Light_LivingRoom,Persist,Lights) ["Control","Light"] {
-  channel = "zigbee:device:stick:light_bulb_living_room:{{ (ds "configs").things.zigbee.devices.light_bulb_living_room.mac_address | strings.ToUpper }}_11_dimmer"
+  channel = "zigbee:device:stick:light_bulb_living_room:{{ (ds "configs").things.zigbee.devices.light_bulb_living_room.parameters.mac_address | strings.ToUpper }}_11_dimmer"
 }
 Number:Dimensionless Light_LivingRoom_AutomationDimmerValue "Dimmer Value Used in Automation"
 
