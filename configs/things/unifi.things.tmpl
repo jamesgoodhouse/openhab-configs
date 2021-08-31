@@ -1,14 +1,14 @@
 Bridge unifi:controller:home "UniFi Controller" [
-  host="{{ (ds "secrets").things.unifi.host }}",
-  port="{{ (ds "secrets").things.unifi.port }}",
+  host="{{ (ds "configs").things.unifi.host }}",
+  port="{{ (ds "configs").things.unifi.port }}",
   unifios=false,
-  username="{{ (ds "secrets").things.unifi.username }}",
-  password="{{ (ds "secrets").things.unifi.password }}",
+  username="{{ (ds "configs").things.unifi.username }}",
+  password="{{ (ds "configs").things.unifi.password }}",
   refresh="{{ (ds "configs").things.unifi.refresh_rate }}"
 ] {
 {{- range (ds "configs").things.unifi.wireless_clients }}
   Thing wirelessClient {{ .id }} "UniFi Wireless Client — {{ .name }}" [
-    cid="{{ with $id := .id }}{{ range (ds "secrets").things.unifi.wireless_clients }}{{ if eq .id $id }}{{ .cid | strings.ToLower }}{{ end }}{{ end }}{{ end }}",
+    cid="{{ with $id := .id }}{{ range (ds "configs").things.unifi.wireless_clients }}{{ if eq .id $id }}{{ .cid | strings.ToLower }}{{ end }}{{ end }}{{ end }}",
     site="{{ .site }}",
     considerHome={{ .consider_home }}
   ]

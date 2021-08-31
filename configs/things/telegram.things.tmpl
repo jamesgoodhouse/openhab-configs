@@ -1,5 +1,5 @@
 Thing telegram:telegramBot:boty_mcbotface [
-  chatIds="{{ (ds "secrets").things.telegram.boty_mcbotface.chat_id }}",
-  botToken="{{ (ds "secrets").things.telegram.boty_mcbotface.token }}",
+  chatIds="{{ (ds "configs").things.telegram.boty_mcbotface.chat_id }}",
+  botToken="{{ (ds "configs").things.telegram.boty_mcbotface.token }}",
   parseMode="Markdown"
 ]

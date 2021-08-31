@@ -1,14 +1,14 @@
 astro:sun:home  [
-  geolocation="{{ (ds "secrets").home.latitude }},{{ (ds "secrets").home.longitude }},{{ (ds "secrets").home.altitude }}",
+  geolocation="{{ (ds "configs").settings.i18n.latitude }},{{ (ds "configs").settings.i18n.longitude }},{{ (ds "configs").settings.i18n.altitude }}",
   interval=60
 ]
 astro:moon:home  [
-  geolocation="{{ (ds "secrets").home.latitude }},{{ (ds "secrets").home.longitude }},{{ (ds "secrets").home.altitude }}",
+  geolocation="{{ (ds "configs").settings.i18n.latitude }},{{ (ds "configs").settings.i18n.longitude }},{{ (ds "configs").settings.i18n.altitude }}",
   interval=60
 ]
 
 astro:sun:home_set_with_offset [
-  geolocation="{{ (ds "secrets").home.latitude }},{{ (ds "secrets").home.longitude }},{{ (ds "secrets").home.altitude }}",
+  geolocation="{{ (ds "configs").settings.i18n.latitude }},{{ (ds "configs").settings.i18n.longitude }},{{ (ds "configs").settings.i18n.altitude }}",
   interval=60
 ] {
   Channels:

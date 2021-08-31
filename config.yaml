@@ -35,6 +35,7 @@ settings:
     region: US
     timezone: US/Pacific
     measurement_system: US
+
 things:
   airquality:
     station_id: 86
@@ -51,13 +52,30 @@ things:
       name: MainBedroom
       host: main-bedroom.hvac.home.goodhouse.io
       location: Main Bedroom
+  mqtt:
+    port: 1883
+    secure: 'false'
+  network:
+    ping_devices:
+      phone_james:
+        id: phone_james
+        name: James' Phone
+        parameters:
+          retry: 3
+          timeout: 5000
+          refreshInterval: 30000
+  roku:
+    port: 8060
+    refresh: 10
   unifi:
+    port: 443
     refresh_rate: 10
     wireless_clients:
-    - id: phone_james
-      name: James' Phone
-      consider_home: 60
-      site: default
+      phone_james:
+        id: phone_james
+        name: James' Phone
+        consider_home: 60
+        site: default
   zigbee:
     coordinator:
       baud_rate: 57600
@@ -76,11 +94,11 @@ things:
         location: Garage
         type_id: eco_dwzwave25_00_000
         parameters:
-        - node_id: 2
+          node_id: 2
       tilt_sensor_garage_door:
         thing_id: tilt_sensor_garage_door
         label: Tilt Sensor
         location: Garage
         type_id: eco_tiltzwave25_00_000
         parameters:
-        - node_id: 3
+          node_id: 3

@@ -5,14 +5,14 @@ Bridge zigbee:coordinator_ember:stick "Zigbee Coordinator" @ "Living Room" [
   zigbee_childtimeout={{ (ds "configs").things.zigbee.coordinator.child_timeout }},
   zigbee_concentrator={{ (ds "configs").things.zigbee.coordinator.concentrator }},
   zigbee_meshupdateperiod={{ (ds "configs").things.zigbee.coordinator.mesh_update_period }},
-  zigbee_panid={{ (ds "secrets").things.zigbee.coordinator.pan_id }},
-  zigbee_extendedpanid="{{ (ds "secrets").things.zigbee.coordinator.extended_pan_id }}",
-  zigbee_networkkey="{{ (ds "secrets").things.zigbee.coordinator.network_key }}"
+  zigbee_panid={{ (ds "configs").things.zigbee.coordinator.pan_id }},
+  zigbee_extendedpanid="{{ (ds "configs").things.zigbee.coordinator.extended_pan_id }}",
+  zigbee_networkkey="{{ (ds "configs").things.zigbee.coordinator.network_key }}"
 ] {
   Thing device light_bulb_landing "Zigbee Device — Light Bulb" @ "Landing" [
-    zigbee_macaddress="{{ (ds "secrets").things.zigbee.devices.light_bulb_landing.mac_address | strings.ToUpper }}"
+    zigbee_macaddress="{{ (ds "configs").things.zigbee.devices.light_bulb_landing.mac_address | strings.ToUpper }}"
   ]
   Thing device light_bulb_living_room "Zigbee Device — Light Bulb" @ "Living Room" [
-    zigbee_macaddress="{{ (ds "secrets").things.zigbee.devices.light_bulb_living_room.mac_address | strings.ToUpper }}"
+    zigbee_macaddress="{{ (ds "configs").things.zigbee.devices.light_bulb_living_room.mac_address | strings.ToUpper }}"
   ]
 }

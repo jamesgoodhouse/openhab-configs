@@ -1,4 +1,4 @@
 Thing konnected:pro-module:generic "Konnected Alarm Panel" @ "Main Bedroom Closet" [
-  ipAddress="{{ (ds "secrets").things.konnected.alarm_panel.host }}",
-  macAddress="{{ (ds "secrets").things.konnected.alarm_panel.mac_address }}"
+  ipAddress="{{ (ds "configs").things.konnected.alarm_panel.host }}",
+  macAddress="{{ (ds "configs").things.konnected.alarm_panel.mac_address }}"
 ]
