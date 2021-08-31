@@ -15,6 +15,6 @@ Bridge zigbee:coordinator_ember:stick "Zigbee Coordinator" @ "Living Room" [
     {{- $param := printf "%s=%v" $k $v }}
     {{- $params = $params | append $param }}
   {{- end }}
-  Thing device {{ .thing_id }} "Z-Wave Device — {{ .label }}" @ "{{ .location }}" [ {{ join $params "," }} ]
+  Thing device {{ .thing_id }} "Zigbee Device — {{ .label }}" @ "{{ .location }}" [ {{ join $params "," }} ]
 {{- end }}
 }
