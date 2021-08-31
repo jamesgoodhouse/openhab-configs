@@ -1,0 +1,86 @@
+settings:
+  addons:
+    package: minimal
+    binding:
+    - airquality
+    - astro
+    - daikin
+    - mqtt
+    - network
+    - telegram
+    - tplinksmarthome
+    - unifi
+    - zigbee
+    - zwave
+    misc: []
+    persistence: []
+    # - influxdb
+    transformation:
+    - jsonpath
+    - map
+    ui:
+    - basic
+  ephemeris:
+    country: us
+    region: or
+    dayset:
+      trash: Friday
+  persistence:
+    default: rrdj4
+    influxdb:
+      db: openhab
+      url: http://influxdb.data:8086
+  i18n:
+    language: en
+    region: US
+    timezone: US/Pacific
+    measurement_system: US
+things:
+  airquality:
+    station_id: 86
+  daikin:
+    living_room:
+      thing_id: living_room
+      type_id: ac_unit
+      name: LivingRoom
+      host: great-room.hvac.home.goodhouse.io
+      location: Living Room
+    main_bedroom:
+      thing_id: main_bedroom
+      type_id: ac_unit
+      name: MainBedroom
+      host: main-bedroom.hvac.home.goodhouse.io
+      location: Main Bedroom
+  unifi:
+    refresh_rate: 10
+    wireless_clients:
+    - id: phone_james
+      name: James' Phone
+      consider_home: 60
+      site: default
+  zigbee:
+    coordinator:
+      baud_rate: 57600
+      child_timeout: 86400
+      concentrator: 1
+      flow_control: 2 # software (XOn/XOff)
+      mesh_update_period: 86400
+      port: /dev/ttyUSB1
+  zwave:
+    controller:
+      port: /dev/ttyUSB0
+    devices:
+      sensor_garage_door:
+        thing_id: sensor_garage_door
+        label: Sensor
+        location: Garage
+        type_id: eco_dwzwave25_00_000
+        parameters:
+        - node_id: 2
+      tilt_sensor_garage_door:
+        thing_id: tilt_sensor_garage_door
+        label: Tilt Sensor
+        location: Garage
+        type_id: eco_tiltzwave25_00_000
+        parameters:
+        - node_id: 3
