@@ -17,7 +17,7 @@ Switch Sensor_Motion_Landing_State "State" (Sensor_Motion_Landing,Persist) ["Sta
 Number:Dimensionless Sensor_Tilt_GarageDoor_Battery "Battery [%d %%]" <battery> (Sensor_Tilt_GarageDoor,Persist) ["Battery"] {
   channel = "zwave:{{ (ds "configs").things.zwave.devices.tilt_sensor_garage_door.type_id }}:controller:{{ (ds "configs").things.zwave.devices.tilt_sensor_garage_door.thing_id }}:battery-level"
 }
-Contact Sensor_Tilt_GarageDoor_State "State" (Door_External_Garage_Rollup,Persist,Doors,DoorsExternal) ["OpenState"] {
+Contact Sensor_Tilt_GarageDoor_State "State" (Door_External_Garage_Rollup,Persist,Doors,DoorsExternal,DoorGarage) ["OpenState"] {
   channel = "zwave:{{ (ds "configs").things.zwave.devices.tilt_sensor_garage_door.type_id }}:controller:{{ (ds "configs").things.zwave.devices.tilt_sensor_garage_door.thing_id }}:sensor_door"
 }
 Switch Sensor_Tilt_GarageDoor_TamperAlarm "Tamper Alarm" <alarm> (Sensor_Tilt_GarageDoor,Persist) ["Tampered"] {
@@ -28,7 +28,7 @@ Switch Sensor_Tilt_GarageDoor_TamperAlarm "Tamper Alarm" <alarm> (Sensor_Tilt_Ga
 Number:Dimensionless Sensor_GarageDoor_Battery "Battery [%d %%]" <battery> (Sensor_GarageDoor,Persist) ["Battery"] {
   channel = "zwave:{{ (ds "configs").things.zwave.devices.sensor_garage_door.type_id }}:controller:{{ (ds "configs").things.zwave.devices.sensor_garage_door.thing_id }}:battery-level"
 }
-Contact Sensor_GarageDoor_State "State" (Door_External_Garage_Rollup,Persist,Doors,DoorsExternal) ["OpenState"] {
+Contact Sensor_GarageDoor_State "State" (Door_External_Garage_Rollup,Persist,Doors,DoorsExternal,DoorGarage) ["OpenState"] {
   channel = "zwave:{{ (ds "configs").things.zwave.devices.sensor_garage_door.type_id }}:controller:{{ (ds "configs").things.zwave.devices.sensor_garage_door.thing_id }}:sensor_door"
 }
 Switch Sensor_GarageDoor_TamperAlarm "Tamper Alarm" <alarm> (Sensor_GarageDoor,Persist) ["Tampered"] {

@@ -1,4 +1,5 @@
 // non-semantic model groups
+Group:Contact:AND(CLOSED,OPEN) DoorGarage
 Group:Contact:AND(CLOSED,OPEN) Doors
 Group:Contact:AND(CLOSED,OPEN) DoorsExternal
 Group:Switch:AND(OFF,ON) Lights
