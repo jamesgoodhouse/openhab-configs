@@ -17,7 +17,9 @@ sitemap home label="Home" {
     }
     Frame label=" " {
       Text item=DoorGarage icon="garagedoor" label="Garage Door [MAP(door.map):%s]" valuecolor=[CLOSED="#1ac731",OPEN="orange"] {
-        Switch item=Opener_GarageDoor_Switch icon="switch"
+        Frame label="Sensors" {
+          Switch item=Opener_GarageDoor_Switch label="Garage Door Opener" icon="switch"
+        }
 
         Frame label="Sensors" {
           Text item=Sensor_GarageDoor_State icon="garagedoor" label="Contact Sensor [%s]" valuecolor=[CLOSED="#1ac731",OPEN="orange"]
