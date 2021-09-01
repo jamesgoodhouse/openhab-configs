@@ -1,0 +1,1 @@
+Here are my openHAB configs. I've opted to share them to help others build out their home automation. These configs are built using [openhab-configs-builder](https://github.com/jamesgoodhouse/openhab-configs-builder).
