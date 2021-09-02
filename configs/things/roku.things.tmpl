@@ -1,0 +1,5 @@
+roku:roku_player:media_room "Roku Streaming Stick+" @ "Media Room" [
+  hostName="{{ (ds "configs").things.roku.host }}",
+  refresh={{ (ds "configs").things.roku.refresh }},
+  port={{ (ds "configs").things.roku.port }}
+]

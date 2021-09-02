@@ -7,6 +7,7 @@ settings:
     - daikin
     - mqtt
     - network
+    - roku
     - telegram
     - tplinksmarthome
     - unifi
