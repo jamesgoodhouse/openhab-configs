@@ -24,7 +24,7 @@ Switch Sensor_Tilt_GarageDoor_TamperAlarm "Tamper Alarm" <alarm> (Sensor_Tilt_Ga
   channel = "zwave:{{ (ds "configs").things.zwave.devices.tilt_sensor_garage_door.type_id }}:controller:{{ (ds "configs").things.zwave.devices.tilt_sensor_garage_door.thing_id }}:alarm_tamper"
 }
 
-// garage tilt sensor
+// garage sensor
 Number:Dimensionless Sensor_GarageDoor_Battery "Battery [%d %%]" <battery> (Sensor_GarageDoor,Persist) ["Battery"] {
   channel = "zwave:{{ (ds "configs").things.zwave.devices.sensor_garage_door.type_id }}:controller:{{ (ds "configs").things.zwave.devices.sensor_garage_door.thing_id }}:battery-level"
 }
