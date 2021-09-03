@@ -1,5 +1,3 @@
-val telegramAction = getActions("telegram","telegram:telegramBot:boty_mcbotface")
-
 rule "Motion Detector"
 when
   Item Sensor_Motion_Landing_State changed to ON
@@ -8,6 +6,7 @@ then
     createTimer(now.plusSeconds(30), [ |
       if (Present.state == OFF && Rule_NotifyWhenMotionDetectedWhileAway.state == ON) {
         logInfo("notification", "Sending Telegram notification")
+        val telegramAction = getActions("telegram","telegram:telegramBot:boty_mcbotface")
         telegramAction.sendTelegram("⚠️ Motion detected")
       }
     ])
