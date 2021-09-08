@@ -1,7 +1,6 @@
 // non-semantic model groups
 Group:Contact:AND(CLOSED,OPEN) Doors
 Group:Contact:AND(CLOSED,OPEN) ExternalDoors
-Group:Contact:AND(CLOSED,OPEN) DoorGarage (DoorsExternal)
 Group:Switch:AND(OFF,ON) HVAC_Power
 Group Persist "Persist"
 
