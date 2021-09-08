@@ -18,7 +18,7 @@ sitemap home label="Home" {
     Frame label=" " {
       Text item=DoorRollupGarage icon="garagedoor" label="Garage Door [MAP(door.map):%s]" valuecolor=[CLOSED="#1ac731",OPEN="orange"] {
         Frame label="Opener" {
-          Switch item=GarageRollupDoor_Opener label="Garage Door Opener" icon="switch"
+          Switch item=GarageRollupDoor_Switch label="Garage Door Opener" icon="switch"
         }
 
         Frame label="Sensors" {

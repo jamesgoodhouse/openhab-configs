@@ -26,6 +26,6 @@ Group:Contact:AND(CLOSED,OPEN) GarageRollupDoor_State "State" (GarageRollupDoor)
 Switch GarageOverheadLights_Switch "Switch" (GarageOverheadLights,Persist) ["Switch","Light"] { channel="tplinksmarthome:hs200:garage:switch" }
 
 // garage door opener
-Switch GarageRollupDoor_Opener "Switch" (GarageRollupDoor,Persist) ["Control"] {
+Switch GarageRollupDoor_Switch "Switch" (GarageRollupDoor,Persist) ["Control"] {
   channel = "zigbee:device:stick:switch_garage_door:{{ (ds "configs").things.zigbee.devices.switch_garage_door.parameters.zigbee_macaddress | strings.ReplaceAll "\"" "" }}_1_switch"
 }
