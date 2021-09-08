@@ -2,7 +2,7 @@ import java.util.Map
 
 rule "External Door Opened"
 when
-  Member of ExternalDoors changed from CLOSED to OPEN
+  Member of ExternalDoorStates changed from CLOSED to OPEN
 then
   // External Door Opened While Away
   if (Present.state == OFF) {

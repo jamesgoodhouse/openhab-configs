@@ -9,7 +9,7 @@ sitemap home label="Home" {
     }
   }
 
-  Text item=Doors icon="door" label="Doors [MAP(door.map):%s]" valuecolor=[CLOSED="#1ac731",OPEN="orange"] {
+  Text item=DoorStates icon="door" label="Doors [MAP(door.map):%s]" valuecolor=[CLOSED="#1ac731",OPEN="orange"] {
     Frame {
       Text item=FrontDoor_State icon="frontdoor" label="Front Door [MAP(door.map):%s]" valuecolor=[CLOSED="#1ac731",OPEN="orange"]
       Text item=GaragePersonDoor_State icon="door" label="Garage Entry Door [MAP(door.map):%s]" valuecolor=[CLOSED="#1ac731",OPEN="orange"]
