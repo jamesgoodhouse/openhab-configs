@@ -11,12 +11,12 @@ sitemap home label="Home" {
 
   Text item=Doors icon="door" label="Doors [MAP(door.map):%s]" valuecolor=[CLOSED="#1ac731",OPEN="orange"] {
     Frame {
-      Text item=FrontDoor icon="frontdoor" label="Front Door [MAP(door.map):%s]" valuecolor=[CLOSED="#1ac731",OPEN="orange"]
-      Text item=GaragePersonDoor icon="door" label="Garage Entry Door [MAP(door.map):%s]" valuecolor=[CLOSED="#1ac731",OPEN="orange"]
-      Text item=DeckDoor icon="frontdoor" label="Deck Door [MAP(door.map):%s]" valuecolor=[CLOSED="#1ac731",OPEN="orange"]
+      Text item=FrontDoor_State icon="frontdoor" label="Front Door [MAP(door.map):%s]" valuecolor=[CLOSED="#1ac731",OPEN="orange"]
+      Text item=GaragePersonDoor_State icon="door" label="Garage Entry Door [MAP(door.map):%s]" valuecolor=[CLOSED="#1ac731",OPEN="orange"]
+      Text item=DeckDoor_State icon="frontdoor" label="Deck Door [MAP(door.map):%s]" valuecolor=[CLOSED="#1ac731",OPEN="orange"]
     }
     Frame label=" " {
-      Text item=DoorRollupGarage icon="garagedoor" label="Garage Door [MAP(door.map):%s]" valuecolor=[CLOSED="#1ac731",OPEN="orange"] {
+      Text item=GarageRollupDoor_State icon="garagedoor" label="Garage Door [MAP(door.map):%s]" valuecolor=[CLOSED="#1ac731",OPEN="orange"] {
         Frame label="Opener" {
           Switch item=GarageRollupDoor_Switch label="Garage Door Opener" icon="switch"
         }
