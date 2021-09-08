@@ -1,9 +1,11 @@
+{{- $landingLightbulbMacAddress := (ds "configs").things.zigbee.devices.light_bulb_landing.parameters.zigbee_macaddress | strings.ReplaceAll "\"" "" -}}
 Dimmer LandingLightbulb_Dimmer "Dimmer" <slider> (LandingLightbulb,Persist) ["Control","Light"] {
-  channel = "zigbee:device:stick:light_bulb_landing:{{ (ds "configs").things.zigbee.devices.light_bulb_landing.parameters.zigbee_macaddress | strings.ReplaceAll "\"" "" }}_11_dimmer"
+  channel = "zigbee:device:stick:light_bulb_landing:{{ $landingLightbulbMacAddress }}_11_dimmer"
 }
 Number:Dimensionless LandingLightbulb_AutomationDimmerValue "Dimmer Value Used in Automation"
 
+{{ $livingRoomLightbulbMacAddress := (ds "configs").things.zigbee.devices.light_bulb_living_room.parameters.zigbee_macaddress | strings.ReplaceAll "\"" "" -}}
 Dimmer LivingRoomLightbulb_Dimmer "Dimmer" <slider> (LivingRoomLightbulb,Persist) ["Control","Light"] {
-  channel = "zigbee:device:stick:light_bulb_living_room:{{ (ds "configs").things.zigbee.devices.light_bulb_living_room.parameters.zigbee_macaddress | strings.ReplaceAll "\"" "" }}_11_dimmer"
+  channel = "zigbee:device:stick:light_bulb_living_room:{{ $livingRoomLightbulbMacAddress }}_11_dimmer"
 }
 Number:Dimensionless LivingRoomLightbulb_AutomationDimmerValue "Dimmer Value Used in Automation"
