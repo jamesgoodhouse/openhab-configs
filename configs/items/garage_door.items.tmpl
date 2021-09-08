@@ -1,3 +1,0 @@
-Switch Opener_GarageDoor_Switch "Switch" (Door_External_Garage_Rollup,Persist) ["Control"] {
-  channel = "zigbee:device:stick:switch_garage_door:{{ (ds "configs").things.zigbee.devices.switch_garage_door.parameters.zigbee_macaddress | strings.ReplaceAll "\"" "" }}_1_switch"
-}

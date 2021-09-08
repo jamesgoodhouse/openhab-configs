@@ -1,9 +1,9 @@
-String Fireplace_Controller_Status "Status" (Fireplace,Persist) ["Control"] { channel="mqtt:topic:mosquitto:fireplace:status" }
+String             Fireplace_Controller_Status           "Status"                                      (Fireplace,Persist)                      ["Control"] { channel="mqtt:topic:mosquitto:fireplace:status" }
 
-Switch Fireplace_State "State [MAP(fireplace.map):%s]" <fire>   (Fireplace,Persist) ["Control"] { channel="mqtt:topic:mosquitto:fireplace:state" }
-Switch Fireplace_Power "Power"                         <switch> (Fireplace,Persist) ["Switch"]  { channel="mqtt:topic:mosquitto:fireplace:power" }
+Switch             Fireplace_State                       "State [MAP(fireplace.map):%s]" <fire>        (Fireplace,Persist)                      ["Control"] { channel="mqtt:topic:mosquitto:fireplace:state" }
+Switch             Fireplace_Power                       "Power"                         <switch>      (Fireplace,Persist)                      ["Switch"]  { channel="mqtt:topic:mosquitto:fireplace:power" }
 
-Number:Temperature Fireplace_Thermostat_Hysteresis        "Hysteresis"           <temperature> (Fireplace_Thermostat,Persist)            ["SetPoint","Temperature"]
-Number:Temperature Fireplace_Thermostat_SetPoint          "Set Point"            <temperature> (Fireplace_Thermostat,Persist)            ["SetPoint","Temperature"]
-Switch             Fireplace_Thermostat_Power             "Power"                <switch>      (Fireplace_Thermostat,HVAC_Power,Persist) ["Switch"]
-Switch             Fireplace_Thermostat_KeepOnWhenLeaving "Keep On When Leaving" <switch>      (Fireplace_Thermostat,Persist)
+Number:Temperature FireplaceThermostat_Hysteresis        "Hysteresis"                    <temperature> (FireplaceThermostat,Persist)            ["SetPoint","Temperature"]
+Number:Temperature FireplaceThermostat_SetPoint          "Set Point"                     <temperature> (FireplaceThermostat,Persist)            ["SetPoint","Temperature"]
+Switch             FireplaceThermostat_Power             "Power"                         <switch>      (FireplaceThermostat,HVAC_Power,Persist) ["Switch"]
+Switch             FireplaceThermostat_KeepOnWhenLeaving "Keep On When Leaving"          <switch>      (FireplaceThermostat,Persist)

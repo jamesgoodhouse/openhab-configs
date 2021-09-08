@@ -1,91 +1,91 @@
 sitemap home label="Home" {
-  Text item=HVAC_OutdoorUnit_Temperature label="Outdoor Temperature [%.0f °F]" icon="temperature" valuecolor=[>=95="#e61c2c", >=85="orange", >=75="yellow", >=65="#1ac731", >=50="#186ded", >=40="teal"]
+  Text item=OutdoorHVACUnit_Temperature label="Outdoor Temperature [%.0f °F]" icon="temperature" valuecolor=[>=95="#e61c2c", >=85="orange", >=75="yellow", >=65="#1ac731", >=50="#186ded", >=40="teal"]
 
-  Text item=Present_James label="James [MAP(presence.map):%s]" icon=man_3 valuecolor=[ON="#1ac731",OFF="orange"] {
-    Text item=NetworkDeviceOnline_Phone_James label="Phone [MAP(online.map):%s]" icon="phone" valuecolor=[ON="#1ac731",OFF="orange"] {
-      Text item=Bluetooth_Phone_James_Status label="Bluetooth Status [MAP(online.map):%s]" valuecolor=[ON="#1ac731",OFF="orange"] icon="bluetooth"
-      Text item=Network_PingDevice_Phone_James_Status label="Ping Status [MAP(online.map):%s]" valuecolor=[ON="#1ac731",OFF="orange"] icon="network"
-      Text item=UnifiController_WirelessClient_James_Status label="UniFi Status [MAP(online.map):%s]" valuecolor=[ON="#1ac731",OFF="orange"] icon="unifi"
+  Text item=JamesPresent label="James [MAP(presence.map):%s]" icon=man_3 valuecolor=[ON="#1ac731",OFF="orange"] {
+    Text item=JamesPhoneOnline label="Phone [MAP(online.map):%s]" icon="phone" valuecolor=[ON="#1ac731",OFF="orange"] {
+      Text item=JamesPhone_Bluetooth_Status label="Bluetooth Status [MAP(online.map):%s]" valuecolor=[ON="#1ac731",OFF="orange"] icon="bluetooth"
+      Text item=JamesPhone_Network_PingDevice_Status label="Ping Status [MAP(online.map):%s]" valuecolor=[ON="#1ac731",OFF="orange"] icon="network"
+      Text item=JamesPhone_UnifiController_Status label="UniFi Status [MAP(online.map):%s]" valuecolor=[ON="#1ac731",OFF="orange"] icon="unifi"
     }
   }
 
   Text item=Doors icon="door" label="Doors [MAP(door.map):%s]" valuecolor=[CLOSED="#1ac731",OPEN="orange"] {
     Frame {
-      Text item=Sensor_Binary_FrontDoor_State icon="frontdoor" label="Front Door [MAP(door.map):%s]" valuecolor=[CLOSED="#1ac731",OPEN="orange"]
-      Text item=Sensor_Binary_GarageEntryDoor_State icon="door" label="Garage Entry Door [MAP(door.map):%s]" valuecolor=[CLOSED="#1ac731",OPEN="orange"]
-      Text item=Sensor_Binary_DeckDoor_State icon="frontdoor" label="Deck Door [MAP(door.map):%s]" valuecolor=[CLOSED="#1ac731",OPEN="orange"]
+      Text item=FrontDoor icon="frontdoor" label="Front Door [MAP(door.map):%s]" valuecolor=[CLOSED="#1ac731",OPEN="orange"]
+      Text item=GaragePersonDoor icon="door" label="Garage Entry Door [MAP(door.map):%s]" valuecolor=[CLOSED="#1ac731",OPEN="orange"]
+      Text item=DeckDoor icon="frontdoor" label="Deck Door [MAP(door.map):%s]" valuecolor=[CLOSED="#1ac731",OPEN="orange"]
     }
     Frame label=" " {
-      Text item=DoorGarage icon="garagedoor" label="Garage Door [MAP(door.map):%s]" valuecolor=[CLOSED="#1ac731",OPEN="orange"] {
+      Text item=DoorRollupGarage icon="garagedoor" label="Garage Door [MAP(door.map):%s]" valuecolor=[CLOSED="#1ac731",OPEN="orange"] {
         Frame label="Opener" {
-          Switch item=Opener_GarageDoor_Switch label="Garage Door Opener" icon="switch"
+          Switch item=GarageRollupDoor_Opener label="Garage Door Opener" icon="switch"
         }
 
         Frame label="Sensors" {
-          Text item=Sensor_GarageDoor_State icon="garagedoor" label="Contact Sensor [%s]" valuecolor=[CLOSED="#1ac731",OPEN="orange"]
-          Text item=Sensor_Tilt_GarageDoor_State icon="garagedoor" label="Tilt Sensor [%s]" valuecolor=[CLOSED="#1ac731",OPEN="orange"]
+          Text item=GarageRollupDoorContactSensor_State icon="garagedoor" label="Contact Sensor [%s]" valuecolor=[CLOSED="#1ac731",OPEN="orange"]
+          Text item=GarageRollupDoorTiltSensor_State icon="garagedoor" label="Tilt Sensor [%s]" valuecolor=[CLOSED="#1ac731",OPEN="orange"]
         }
       }
     }
   }
 
-  Text item=Fireplace_Thermostat_Power icon="fire" label="Fireplace [MAP(fireplace.map):%s]" valuecolor=[OFF="#1ac731",ON="orange"] {
-    Switch item=Fireplace_Thermostat_Power label="Power[]" icon="switch"
-    Text item=HVAC_IndoorUnit_LivingRoom_Temperature label="Temperature [%.0f °F]"
+  Text item=FireplaceThermostat_Power icon="fire" label="Fireplace [MAP(fireplace.map):%s]" valuecolor=[OFF="#1ac731",ON="orange"] {
+    Switch item=FireplaceThermostat_Power label="Power[]" icon="switch"
+    Text item=LivingRoomHVAC_Temperature label="Temperature [%.0f °F]"
     Text item=Fireplace_State label="Fireplace [MAP(fireplace.map):%s]" icon="fire" visibility=[Fireplace_Thermostat_Power==ON]
-    Setpoint item=Fireplace_Thermostat_SetPoint label="Set Point [%.0f °F]" icon="temperature" minValue=60 maxValue=80 step=1 visibility=[Fireplace_Thermostat_Power==ON]
+    Setpoint item=FireplaceThermostat_SetPoint label="Set Point [%.0f °F]" icon="temperature" minValue=60 maxValue=80 step=1 visibility=[Fireplace_Thermostat_Power==ON]
 
     Text icon="settings" label="Settings" {
-      Setpoint item=Fireplace_Thermostat_Hysteresis label="Hysteresis [%.0f °F]" icon="temperature" minValue=0 maxValue=5 step=1
-      Switch item=Fireplace_Thermostat_KeepOnWhenLeaving label="Keep On When Leaving" icon="switch"
+      Setpoint item=FireplaceThermostat_Hysteresis label="Hysteresis [%.0f °F]" icon="temperature" minValue=0 maxValue=5 step=1
+      Switch item=FireplaceThermostat_KeepOnWhenLeaving label="Keep On When Leaving" icon="switch"
     }
   }
 
   Text item=HVAC_Power label="HVAC [MAP(onoff.map):%s]" icon="heating" valuecolor=[OFF="#1ac731",ON="orange"] {
     Frame label="Living Room" {
-      Switch item=HVAC_IndoorUnit_LivingRoom_Power label="Power" icon="switch"
-      Text item=HVAC_IndoorUnit_LivingRoom_Temperature label="Temperature [%.0f °F]"
-      Switch item=HVAC_IndoorUnit_LivingRoom_PowerfulMode visibility=[HVAC_IndoorUnit_LivingRoom_Power==ON] label="Powerful Mode" icon="switch"
-      Selection item=HVAC_IndoorUnit_LivingRoom_Mode mappings=["AUTO"="Auto", "DEHUMIDIFIER"="Dehumidifier", "COLD"="Cold", "HEAT"="Heat", "FAN"="Fan"] visibility=[HVAC_IndoorUnit_LivingRoom_Power==ON]
-      Setpoint item=HVAC_IndoorUnit_LivingRoom_SetPoint label="Set Point [%.0f °F]" icon="temperature" visibility=[HVAC_IndoorUnit_LivingRoom_Mode==AUTO, HVAC_IndoorUnit_LivingRoom_Mode==COLD, HVAC_IndoorUnit_LivingRoom_Mode==HEAT] minValue=60 maxValue=80 step=1
-      Selection item=HVAC_IndoorUnit_LivingRoom_Fan visibility=[HVAC_IndoorUnit_LivingRoom_Power==ON] icon="fan"
-      Selection item=HVAC_IndoorUnit_LivingRoom_FanSwing visibility=[HVAC_IndoorUnit_LivingRoom_Power==ON] icon="fan"
+      Switch item=LivingRoomHVAC_Power label="Power" icon="switch"
+      Text item=LivingRoomHVAC_Temperature label="Temperature [%.0f °F]"
+      Switch item=LivingRoomHVAC_PowerfulMode visibility=[LivingRoomHVAC_Power==ON] label="Powerful Mode" icon="switch"
+      Selection item=LivingRoomHVAC_Mode mappings=["AUTO"="Auto", "DEHUMIDIFIER"="Dehumidifier", "COLD"="Cold", "HEAT"="Heat", "FAN"="Fan"] visibility=[LivingRoomHVAC_Power==ON]
+      Setpoint item=LivingRoomHVAC_SetPoint label="Set Point [%.0f °F]" icon="temperature" visibility=[LivingRoomHVAC_Mode==AUTO, LivingRoomHVAC_Mode==COLD, LivingRoomHVAC_Mode==HEAT] minValue=60 maxValue=80 step=1
+      Selection item=LivingRoomHVAC_Fan visibility=[LivingRoomHVAC_Power==ON] icon="fan"
+      Selection item=LivingRoomHVAC_FanSwing visibility=[LivingRoomHVAC_Power==ON] icon="fan"
 
       Text icon="settings" label="Settings" {
-        Switch item=HVAC_IndoorUnit_LivingRoom_KeepOnWhenLeaving label="Keep On When Leaving" icon="switch"
+        Switch item=LivingRoomHVAC_KeepOnWhenLeaving label="Keep On When Leaving" icon="switch"
       }
     }
     Frame label="Main Bedroom" {
-      Switch item=HVAC_IndoorUnit_MainBedroom_Power label="Power" icon="switch"
-      Text item=HVAC_IndoorUnit_MainBedroom_Temperature label="Temperature [%.0f °F]"
-      Switch item=HVAC_IndoorUnit_MainBedroom_PowerfulMode visibility=[HVAC_IndoorUnit_MainBedroom_Power==ON] label="Powerful Mode" icon="switch"
-      Selection item=HVAC_IndoorUnit_MainBedroom_Mode mappings=["AUTO"="Auto", "DEHUMIDIFIER"="Dehumidifier", "COLD"="Cold", "HEAT"="Heat", "FAN"="Fan"] visibility=[HVAC_IndoorUnit_MainBedroom_Power==ON]
-      Setpoint item=HVAC_IndoorUnit_MainBedroom_SetPoint label="Set Point [%.0f °F]" icon="temperature" visibility=[HVAC_IndoorUnit_MainBedroom_Mode==AUTO, HVAC_IndoorUnit_MainBedroom_Mode==COLD, HVAC_IndoorUnit_MainBedroom_Mode==HEAT] minValue=60 maxValue=80 step=1
-      Selection item=HVAC_IndoorUnit_MainBedroom_Fan visibility=[HVAC_IndoorUnit_MainBedroom_Power==ON] icon="fan"
-      Selection item=HVAC_IndoorUnit_MainBedroom_FanSwing visibility=[HVAC_IndoorUnit_MainBedroom_Power==ON] icon="fan"
+      Switch item=MainBedroomHVAC_Power label="Power" icon="switch"
+      Text item=MainBedroomHVAC_Temperature label="Temperature [%.0f °F]"
+      Switch item=MainBedroomHVAC_PowerfulMode visibility=[MainBedroomHVAC_Power==ON] label="Powerful Mode" icon="switch"
+      Selection item=MainBedroomHVAC_Mode mappings=["AUTO"="Auto", "DEHUMIDIFIER"="Dehumidifier", "COLD"="Cold", "HEAT"="Heat", "FAN"="Fan"] visibility=[MainBedroomHVAC_Power==ON]
+      Setpoint item=MainBedroomHVAC_SetPoint label="Set Point [%.0f °F]" icon="temperature" visibility=[MainBedroomHVAC_Mode==AUTO, MainBedroomHVAC_Mode==COLD, MainBedroomHVAC_Mode==HEAT] minValue=60 maxValue=80 step=1
+      Selection item=MainBedroomHVAC_Fan visibility=[MainBedroomHVAC_Power==ON] icon="fan"
+      Selection item=MainBedroomHVAC_FanSwing visibility=[MainBedroomHVAC_Power==ON] icon="fan"
 
       Text icon="settings" label="Settings" {
-        Switch item=HVAC_IndoorUnit_MainBedroom_KeepOnWhenLeaving label="Keep On When Leaving" icon="switch"
+        Switch item=MainBedroomHVAC_KeepOnWhenLeaving label="Keep On When Leaving" icon="switch"
       }
     }
   }
 
   Text item=Lights label="Lights [MAP(onoff.map):%s]" icon="light" valuecolor=[ON="orange",OFF="#1ac731"] {
-    Switch item=Light_Garage_Switch label="Garage" icon="light"
-    Switch item=Light_Landing_Dimmer label="Landing" icon="light"
-    Switch item=Light_LivingRoom_Dimmer label="Living Room" icon="light"
+    Switch item=GarageOverheadLights_Switch label="Garage" icon="light"
+    Switch item=LandingLightbulb_Dimmer label="Landing" icon="light"
+    Switch item=LivingRoomLightbulb_Dimmer label="Living Room" icon="light"
 
     Text label="Settings" icon="settings" {
       Frame label="Garage" {
         Switch item=Rule_TurnOnGarageLightWhenAwayAndGarageDoorOpens label="Turn On When Away and Garge Door Opens"
       }
       Frame label="Landing" {
-        Slider item=Light_Landing_Dimmer label="Dimmer"
-        Setpoint item=Light_Landing_AutomationDimmerValue label="Automation Dimmer Value [%s]" icon="settings" minValue=1 maxValue=100 step=1
+        Slider item=LandingLightbulb_Dimmer label="Dimmer"
+        Setpoint item=LandingLightbulb_AutomationDimmerValue label="Automation Dimmer Value [%s]" icon="settings" minValue=1 maxValue=100 step=1
       }
       Frame label="Living Room" {
-        Slider item=Light_LivingRoom_Dimmer label="Dimmer"
-        Setpoint item=Light_LivingRoom_AutomationDimmerValue label="Automation Dimmer Value [%s]" icon="settings" minValue=1 maxValue=100 step=1
+        Slider item=LivingRoomLightbulb_Dimmer label="Dimmer"
+        Setpoint item=LivingRoomLightbulb_AutomationDimmerValue label="Automation Dimmer Value [%s]" icon="settings" minValue=1 maxValue=100 step=1
       }
     }
   }
@@ -98,9 +98,9 @@ sitemap home label="Home" {
 
   Text label="Rules" icon="checklist" {
     Frame label="HVAC" {
-      Switch item=Fireplace_Thermostat_KeepOnWhenLeaving label="Keep Fireplace On When Leaving"
-      Switch item=HVAC_IndoorUnit_LivingRoom_KeepOnWhenLeaving label="Keep Living Room HVAC On When Leaving"
-      Switch item=HVAC_IndoorUnit_MainBedroom_KeepOnWhenLeaving label="Keep Main Bedroom HVAC On When Leaving"
+      Switch item=FireplaceThermostat_KeepOnWhenLeaving label="Keep Fireplace On When Leaving"
+      Switch item=LivingRoomHVAC_KeepOnWhenLeaving label="Keep Living Room HVAC On When Leaving"
+      Switch item=MainBedroomHVAC_KeepOnWhenLeaving label="Keep Main Bedroom HVAC On When Leaving"
     }
     Frame label="Lighting" {
       Switch item=Rule_TurnOnGarageLightWhenAwayAndGarageDoorOpens

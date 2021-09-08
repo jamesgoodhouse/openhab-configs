@@ -6,18 +6,18 @@ then
 
   createTimer(now.plusSeconds(30), [|
     // fireplace
-    if (Fireplace_Thermostat_SetPoint.state          == NULL) Fireplace_Thermostat_SetPoint.postUpdate(60)
-    if (Fireplace_Thermostat_Hysteresis.state        == NULL) Fireplace_Thermostat_Hysteresis.postUpdate(2)
-    if (Fireplace_Thermostat_Power.state             == NULL) Fireplace_Thermostat_Power.postUpdate(OFF)
-    if (Fireplace_Thermostat_KeepOnWhenLeaving.state == NULL) Fireplace_Thermostat_KeepOnWhenLeaving.postUpdate(OFF)
+    if (FireplaceThermostat_SetPoint.state          == NULL) FireplaceThermostat_SetPoint.postUpdate(60)
+    if (FireplaceThermostat_Hysteresis.state        == NULL) FireplaceThermostat_Hysteresis.postUpdate(2)
+    if (FireplaceThermostat_Power.state             == NULL) FireplaceThermostat_Power.postUpdate(OFF)
+    if (FireplaceThermostat_KeepOnWhenLeaving.state == NULL) FireplaceThermostat_KeepOnWhenLeaving.postUpdate(OFF)
 
     // hvac
-    if (HVAC_IndoorUnit_LivingRoom_KeepOnWhenLeaving.state  == NULL) HVAC_IndoorUnit_LivingRoom_KeepOnWhenLeaving.postUpdate(OFF)
-    if (HVAC_IndoorUnit_MainBedroom_KeepOnWhenLeaving.state == NULL) HVAC_IndoorUnit_MainBedroom_KeepOnWhenLeaving.postUpdate(OFF)
+    if (LivingRoomHVAC_KeepOnWhenLeaving.state  == NULL) LivingRoomHVAC_KeepOnWhenLeaving.postUpdate(OFF)
+    if (MainBedroomHVAC_KeepOnWhenLeaving.state == NULL) MainBedroomHVAC_KeepOnWhenLeaving.postUpdate(OFF)
 
     // lighting
-    if (Light_Landing_AutomationDimmerValue.state    == NULL) Light_Landing_AutomationDimmerValue.postUpdate(1)
-    if (Light_LivingRoom_AutomationDimmerValue.state == NULL) Light_LivingRoom_AutomationDimmerValue.postUpdate(1)
+    if (LandingLightbulb_AutomationDimmerValue.state    == NULL) LandingLightbulb_AutomationDimmerValue.postUpdate(1)
+    if (LivingRoomLightbulb_AutomationDimmerValue.state == NULL) LivingRoomLightbulb_AutomationDimmerValue.postUpdate(1)
 
     // misc
     if (ExternalDoorOpenedSinceHome.state == NULL) ExternalDoorOpenedSinceHome.postUpdate(ON)
