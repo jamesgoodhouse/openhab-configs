@@ -20,7 +20,7 @@ Switch GarageRollupDoorTiltSensor_TamperAlarm "Tamper Alarm" <alarm> (GarageRoll
   channel = "zwave:{{ (ds "configs").things.zwave.devices.tilt_sensor_garage_door.type_id }}:controller:{{ (ds "configs").things.zwave.devices.tilt_sensor_garage_door.thing_id }}:alarm_tamper"
 }
 
-Group:Contact:AND(CLOSED,OPEN) GarageRollupDoor_State (GarageRollupDoor) ["OpenState"]
+Group:Contact:AND(CLOSED,OPEN) GarageRollupDoor_State "State" (GarageRollupDoor) ["OpenState"]
 
 // overhead lights
 Switch GarageOverheadLights_Switch "Switch" (GarageOverheadLights,Persist) ["Switch","Light"] { channel="tplinksmarthome:hs200:garage:switch" }
