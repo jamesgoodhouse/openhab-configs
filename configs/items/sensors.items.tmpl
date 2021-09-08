@@ -1,13 +1,13 @@
 // front door
-Switch FrontDoorContactSensor_State (FrontDoorContactSensor) { channel="mqtt:topic:mosquitto:sensor_door_front:state" }
+Switch FrontDoorContactSensor_State (FrontDoorContactSensor) ["Status"] { channel="mqtt:topic:mosquitto:sensor_door_front:state" }
 Contact FrontDoor_State "State" (FrontDoor,Persist) ["OpenState"]
 
 // garage entry door
-Switch GaragePersonDoorContactSensor_State (GaragePersonDoorContactSensor) { channel="mqtt:topic:mosquitto:sensor_door_garage_entry:state" }
+Switch GaragePersonDoorContactSensor_State (GaragePersonDoorContactSensor) ["Status"] { channel="mqtt:topic:mosquitto:sensor_door_garage_entry:state" }
 Contact GaragePersonDoor_State "State" (GaragePersonDoor,Persist) ["OpenState"]
 
 // deck door
-Switch DeckDoorContactSensor_State (DeckDoorContactSensor) { channel="mqtt:topic:mosquitto:sensor_door_deck:state" }
+Switch DeckDoorContactSensor_State (DeckDoorContactSensor) ["Status"] { channel="mqtt:topic:mosquitto:sensor_door_deck:state" }
 Contact DeckDoor_State "State" (DeckDoor,Persist) ["OpenState"]
 
 // motion detector
