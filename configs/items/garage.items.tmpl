@@ -1,23 +1,27 @@
+{{- $garageDoorSensorTypeID := (ds "configs").things.zwave.devices.sensor_garage_door.type_id -}}
+{{- $garageDoorSensorThingID := (ds "configs").things.zwave.devices.sensor_garage_door.thing_id -}}
 // garage door contact sensor
 Number:Dimensionless GarageRollupDoorContactSensor_Battery "Battery [%d %%]" <battery> (GarageRollupDoorContactSensor,Persist) ["Battery"] {
-  channel = "zwave:{{ (ds "configs").things.zwave.devices.sensor_garage_door.type_id }}:controller:{{ (ds "configs").things.zwave.devices.sensor_garage_door.thing_id }}:battery-level"
+  channel = "zwave:{{ $garageDoorSensorTypeID }}:controller:{{ $garageDoorSensorThingID }}:battery-level"
 }
 Contact GarageRollupDoorContactSensor_State "State" (GarageRollupDoorContactSensor,GarageRollupDoor_State,Persist) ["OpenState"] {
-  channel = "zwave:{{ (ds "configs").things.zwave.devices.sensor_garage_door.type_id }}:controller:{{ (ds "configs").things.zwave.devices.sensor_garage_door.thing_id }}:sensor_door"
+  channel = "zwave:{{ $garageDoorSensorTypeID }}:controller:{{ $garageDoorSensorThingID }}:sensor_door"
 }
 Switch GarageRollupDoorContactSensor_TamperAlarm "Tamper Alarm" <alarm> (GarageRollupDoorContactSensor,Persist) ["Tampered"] {
-  channel = "zwave:{{ (ds "configs").things.zwave.devices.sensor_garage_door.type_id }}:controller:{{ (ds "configs").things.zwave.devices.sensor_garage_door.thing_id }}:alarm_tamper"
+  channel = "zwave:{{ $garageDoorSensorTypeID }}:controller:{{ $garageDoorSensorThingID }}:alarm_tamper"
 }
 
+{{- $garageDoorTiltSensorTypeID := (ds "configs").things.zwave.devices.tilt_sensor_garage_door.type_id -}}
+{{- $garageDoorTiltSensorThingID := (ds "configs").things.zwave.devices.tilt_sensor_garage_door.thing_id -}}
 // garage door tilt sensor
 Number:Dimensionless GarageRollupDoorTiltSensor_Battery "Battery [%d %%]" <battery> (GarageRollupDoorTiltSensor,Persist) ["Battery"] {
-  channel = "zwave:{{ (ds "configs").things.zwave.devices.tilt_sensor_garage_door.type_id }}:controller:{{ (ds "configs").things.zwave.devices.tilt_sensor_garage_door.thing_id }}:battery-level"
+  channel = "zwave:{{ $garageDoorTiltSensorTypeID }}:controller:{{ $garageDoorTiltSensorThingID }}:battery-level"
 }
 Contact GarageRollupDoorTiltSensor_State "State" (GarageRollupDoorTiltSensor,GarageRollupDoor_State,Persist) ["OpenState"] {
-  channel = "zwave:{{ (ds "configs").things.zwave.devices.tilt_sensor_garage_door.type_id }}:controller:{{ (ds "configs").things.zwave.devices.tilt_sensor_garage_door.thing_id }}:sensor_door"
+  channel = "zwave:{{ $garageDoorTiltSensorTypeID }}:controller:{{ $garageDoorTiltSensorThingID }}:sensor_door"
 }
 Switch GarageRollupDoorTiltSensor_TamperAlarm "Tamper Alarm" <alarm> (GarageRollupDoorTiltSensor,Persist) ["Tampered"] {
-  channel = "zwave:{{ (ds "configs").things.zwave.devices.tilt_sensor_garage_door.type_id }}:controller:{{ (ds "configs").things.zwave.devices.tilt_sensor_garage_door.thing_id }}:alarm_tamper"
+  channel = "zwave:{{ $garageDoorTiltSensorTypeID }}:controller:{{ $garageDoorTiltSensorThingID }}:alarm_tamper"
 }
 
 Group:Contact:AND(CLOSED,OPEN) GarageRollupDoor_State "State" (GarageRollupDoor,ExternalDoorStates) ["OpenState"]
@@ -25,7 +29,8 @@ Group:Contact:AND(CLOSED,OPEN) GarageRollupDoor_State "State" (GarageRollupDoor,
 // overhead lights
 Switch GarageOverheadLights_Switch "Switch" (GarageOverheadLights,Persist) ["Switch","Light"] { channel="tplinksmarthome:hs200:garage:switch" }
 
+{{ $garageDoorSwitchMacAddress := (ds "configs").things.zigbee.devices.switch_garage_door.parameters.zigbee_macaddress | strings.ReplaceAll "\"" "" -}}
 // garage door opener
 Switch GarageRollupDoor_Switch "Switch" (GarageRollupDoor,Persist) ["Control"] {
-  channel = "zigbee:device:stick:switch_garage_door:{{ (ds "configs").things.zigbee.devices.switch_garage_door.parameters.zigbee_macaddress | strings.ReplaceAll "\"" "" }}_1_switch"
+  channel = "zigbee:device:stick:switch_garage_door:{{ $garageDoorSwitchMacAddress }}_1_switch"
 }
