@@ -29,7 +29,7 @@ Switch GarageRollupDoorTiltSensor_TamperAlarm "Tamper Alarm" <alarm> (GarageRoll
 Group:Contact:AND(CLOSED,OPEN) GarageRollupDoor_State "State" (GarageRollupDoor,ExternalDoorStates) ["OpenState"]
 
 // overhead lights
-Switch GarageOverheadLights_Switch "Switch" (GarageOverheadLights,Persist) ["Switch","Light"] { channel="tplinksmarthome:hs200:garage:switch" }
+Switch GarageOverheadLights_Switch "Switch" (GarageOverheadLights,LightStates,Persist) ["Switch","Light"] { channel="tplinksmarthome:hs200:garage:switch" }
 
 {{ $garageDoorSwitchMacAddress := (ds "configs").things.zigbee.devices.switch_garage_door.parameters.zigbee_macaddress | strings.ReplaceAll "\"" "" -}}
 // garage door opener

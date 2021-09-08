@@ -70,7 +70,7 @@ sitemap home label="Home" {
     }
   }
 
-  Text item=Lights label="Lights [MAP(onoff.map):%s]" icon="light" valuecolor=[ON="orange",OFF="#1ac731"] {
+  Text item=LightStates label="Lights [MAP(onoff.map):%s]" icon="light" valuecolor=[ON="orange",OFF="#1ac731"] {
     Switch item=GarageOverheadLights_Switch label="Garage" icon="light"
     Switch item=LandingLightbulb_Dimmer label="Landing" icon="light"
     Switch item=LivingRoomLightbulb_Dimmer label="Living Room" icon="light"
