@@ -8,10 +8,9 @@ then
   // CHECK FOR OPEN DOORS ------------------------------------------------------
   val List<String> openDoors = new ArrayList<String>()
 
-  if (Sensor_Binary_DeckDoor_State.state        == OPEN) openDoors.add("Deck Door")
-  if (Sensor_Binary_FrontDoor_State.state       == OPEN) openDoors.add("Front Door")
-  if (Sensor_Tilt_GarageDoor_State.state        == OPEN) openDoors.add("Garage Door")
-  if (Sensor_Binary_GarageEntryDoor_State.state == OPEN) openDoors.add("Garage Entry Door")
+  if (DeckDoor.state   == OPEN) openDoors.add("Deck Door")
+  if (FrontDoor.state  == OPEN) openDoors.add("Front Door")
+  if (GarageDoor.state == OPEN) openDoors.add("Garage Door")
 
   if (openDoors.size() > 0) {
     val telegramAction = getActions("telegram","telegram:telegramBot:boty_mcbotface")
@@ -19,19 +18,19 @@ then
   }
 
   // TURN OFF HVAC -------------------------------------------------------------
-  if (Fireplace_Thermostat_Power.state == ON && Fireplace_Thermostat_KeepOnWhenLeaving.state != ON) {
+  if (FireplaceThermostat_Power.state == ON && FireplaceThermostat_KeepOnWhenLeaving.state != ON) {
     logInfo("fireplace", "Fireplace — Turning Off")
-    Fireplace_Thermostat_Power.sendCommand(OFF)
+    FireplaceThermostat_Power.sendCommand(OFF)
   }
-  if (HVAC_IndoorUnit_LivingRoom_Power.state == ON && HVAC_IndoorUnit_LivingRoom_KeepOnWhenLeaving.state != ON) {
+  if (LivingRoomHVAC_Power.state == ON && LivingRoomHVAC_KeepOnWhenLeaving.state != ON) {
     logInfo("hvac", "Living Room HVAC — Turning Off")
-    HVAC_IndoorUnit_LivingRoom_Power.sendCommand(OFF)
+    LivingRoomHVAC_Power.sendCommand(OFF)
   }
-  if (HVAC_IndoorUnit_MainBedroom_Power.state == ON && HVAC_IndoorUnit_MainBedroom_KeepOnWhenLeaving.state != ON) {
+  if (MainBedroomHVAC_Power.state == ON && MainBedroomHVAC_KeepOnWhenLeaving.state != ON) {
     logInfo("hvac", "Main Bedroom HVAC — Turning Off")
-    HVAC_IndoorUnit_MainBedroom_Power.sendCommand(OFF)
+    MainBedroomHVAC_Power.sendCommand(OFF)
   }
 
   // TURN OFF LIGHTS -----------------------------------------------------------
-  if (Light_Garage_Switch.state == ON) Light_Garage_Switch.sendCommand(OFF)
+  if (GarageOverheadLights_Switch.state == ON) GarageOverheadLights.sendCommand(OFF)
 end

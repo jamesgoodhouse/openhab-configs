@@ -1,20 +1,20 @@
 rule "Convert Front Door Switch to Contact"
 when
-  Item _Sensor_Binary_FrontDoor_State changed
+  Item FrontDoorContactSensor_State changed
 then
-  Sensor_Binary_FrontDoor_State.postUpdate(if(_Sensor_Binary_FrontDoor_State.state == ON) OPEN else CLOSED)
+  FrontDoor_State.postUpdate(if(FrontDoorContactSensor_State.state == ON) OPEN else CLOSED)
 end
 
 rule "Convert Deck Door Switch to Contact"
 when
-  Item _Sensor_Binary_DeckDoor_State changed
+  Item DeckDoorContactSensor_State changed
 then
-  Sensor_Binary_DeckDoor_State.postUpdate(if(_Sensor_Binary_DeckDoor_State.state == ON) OPEN else CLOSED)
+  DeckDoor_State.postUpdate(if(DeckDoorContactSensor_State.state == ON) OPEN else CLOSED)
 end
 
 rule "Convert Garage Entry Door Switch to Contact"
 when
-  Item _Sensor_Binary_GarageEntryDoor_State changed
+  Item GaragePersonDoorContactSensor_State changed
 then
-  Sensor_Binary_GarageEntryDoor_State.postUpdate(if(_Sensor_Binary_GarageEntryDoor_State.state == ON) OPEN else CLOSED)
+  GaragePersonDoor_State.postUpdate(if(GaragePersonDoorContactSensor_State.state == ON) OPEN else CLOSED)
 end

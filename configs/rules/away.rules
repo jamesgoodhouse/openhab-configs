@@ -1,6 +1,6 @@
 rule "Motion Detector"
 when
-  Item Sensor_Motion_Landing_State changed to ON
+  Item LandingMotionSensor_State changed to ON
 then
   if (Present.state == OFF) {
     createTimer(now.plusSeconds(30), [ |

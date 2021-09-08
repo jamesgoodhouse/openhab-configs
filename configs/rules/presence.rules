@@ -2,14 +2,14 @@ var Timer PresentWithDelayTimer_30
 var Timer PresentWithDelayTimer_60
 var Timer PresentWithDelayTimer_90
 
-rule "Presence — Leaving"
+rule "Presence — Leaving"
 when
   Item Present changed to OFF
 then
   ExternalDoorOpenedSinceHome.postUpdate(OFF)
 end
 
-rule "Presence Delay — Leaving"
+rule "Presence Delay — Leaving"
 when
   Item Present changed to OFF
 then
@@ -28,7 +28,7 @@ then
   ])
 end
 
-rule "Presence Delay — Return"
+rule "Presence Delay — Return"
 when
   Item Present changed to ON
 then
