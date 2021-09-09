@@ -22,9 +22,7 @@ Group Indoor                            "Indoor"                                
    Group GarageOverheadLights           "Overhead Lights"    <light>            (Garage)            ["Lightbulb"]
   Group Entryway                        "Entryway"           <corridor>         (GroundFloor)       ["Entry"]
    Group FrontDoor                      "Front Door"         <frontdoor>        (Entryway)          ["FrontDoor"]
-    Group FrontDoorContactSensor        "Contact Sensor"     <sensor>           (FrontDoor)         ["Sensor"]
    Group GaragePersonDoor               "Garage Person Door" <door>             (Entryway)          ["InnerDoor"]
-    Group GaragePersonDoorContactSensor "Contact Sensor"     <sensor>           (GaragePersonDoor)  ["Sensor"]
 
  Group SecondFloor                      "Second Floor"      <floor_2>           (Indoor)            ["SecondFloor"]
   Group KitchenBathroom                 "Kitchen Bathroom"  <bath>              (SecondFloor)       ["Bathroom"]
@@ -35,7 +33,6 @@ Group Indoor                            "Indoor"                                
    Group LandingMotionSensor            "Motion Detector"                       (Landing)           ["MotionDetector"]
   Group LivingRoom                      "Living Room"       <couch>             (SecondFloor)       ["LivingRoom"]
    Group DeckDoor                       "Deck Door"         <frontdoor>         (LivingRoom)        ["SideDoor"]
-    Group DeckDoorContactSensor         "Contact Sensor"    <sensor>            (DeckDoor)          ["Sensor"]
    Group Fireplace                      "Fireplace"         <fire>              (LivingRoom)        ["Equipment"]
     Group FireplaceThermostat           "Thermostat"        <heating>           (Fireplace)         ["Equipment"]
    Group LivingRoomHVAC                 "HVAC"              <heating>           (LivingRoom)        ["HVAC"]
