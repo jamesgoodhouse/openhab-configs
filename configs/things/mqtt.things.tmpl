@@ -18,26 +18,26 @@ Bridge mqtt:broker:mosquitto [
   // sensors
   Thing topic sensor_door_front "Front Door Sensor" {
     Channels:
-      Type string : state "State" [
-        stateTopic="konnected/binary_sensor/front_door/state"
+      Type contact : state "State" [
+        stateTopic="konnected/sensor/front_door/state"
       ]
   }
   Thing topic sensor_door_deck "Deck Door Sensor" {
     Channels:
-      Type string : state "State" [
+      Type contact : state "State" [
         stateTopic="konnected/sensor/deck_door/state"
       ]
   }
   Thing topic sensor_door_garage_entry "Garage Entry Door Sensor" {
     Channels:
-      Type string : state "State" [
+      Type contact : state "State" [
         stateTopic="konnected/sensor/garage_entry_door/state"
       ]
   }
   Thing topic sensor_motion_detector "Motion Detector" {
     Channels:
       Type string : state "State" [
-        stateTopic="konnected/sensor/motion_detector/state"
+        stateTopic="konnected/binary_sensor/motion_detector/state"
       ]
   }
 
