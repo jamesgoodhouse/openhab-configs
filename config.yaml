@@ -13,7 +13,8 @@ settings:
     - unifi
     - zigbee
     - zwave
-    misc: []
+    misc:
+    - metrics
     persistence: []
     # - influxdb
     transformation:
