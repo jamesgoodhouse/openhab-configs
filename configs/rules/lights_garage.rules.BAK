@@ -2,7 +2,7 @@ var Timer GarageLightsTimer
 
 rule "Garage Lights — Turn On When Garage Door Opens"
 when
-  Item GarageRollupDoor changed from CLOSED to OPEN
+  Item GarageRollupDoor_State changed from CLOSED to OPEN
 then
   if (GarageOverheadLights_Switch.state == OFF && ExternalDoorOpenedSinceHome.state == OFF && Rule_TurnOnGarageLightWhenAwayAndGarageDoorOpens.state == ON) {
     GarageOverheadLights_Switch.sendCommand(ON)

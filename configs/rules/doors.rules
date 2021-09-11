@@ -1,5 +1,7 @@
 import java.util.Map
 
+var Timer GarageLightsTimer
+
 rule "External Door Opened"
 when
   Member of ExternalDoorStates changed from CLOSED to OPEN
@@ -26,6 +28,27 @@ then
     ])
   }
 
-  // External Door Opened While Home
+  if (triggeringItem.name == "GarageRollupDoor_State") {
+    if (GarageOverheadLights_Switch.state == OFF && ExternalDoorOpenedSinceHome.state == OFF && Rule_TurnOnGarageLightWhenAwayAndGarageDoorOpens.state == ON) {
+      GarageOverheadLights_Switch.sendCommand(ON)
+    }
+
+    // turn off after set time if not home yet
+    GarageLightsTimer = createTimer(now.plusSeconds(300), [ |
+      if (GarageOverheadLights_Switch.state == ON && ExternalDoorOpenedSinceHome.state == OFF) {
+        GarageOverheadLights_Switch.sendCommand(OFF)
+      }
+    ])
+  }
+
+  // set ExternalDoorOpenedSinceHome to true if home when an external door has been opened
   if (Present.state == ON && ExternalDoorOpenedSinceHome.state == OFF) ExternalDoorOpenedSinceHome.postUpdate(ON)
+end
+
+
+rule "Garage Lights — Cancel Auto Off Timer"
+when
+  Item GarageOverheadLights_Switch changed from ON to OFF
+then
+  if (GarageLightsTimer !== null) GarageLightsTimer.cancel()
 end
