@@ -11,10 +11,10 @@ then
         if (Rule_NotifyWhenExternalDoorOpenedWhileAway.state == ON) {
           val Map<String, String> nameMap = newHashMap
 
-          nameMap.put("DeckDoor", "Deck Door")
-          nameMap.put("FrontDoor", "Front Door")
-          nameMap.put("GaragePersonDoor", "Garage Person Door")
-          nameMap.put("GarageRollupDoor", "Garage Rollup Door")
+          nameMap.put("DeckDoor_State", "Deck Door")
+          nameMap.put("FrontDoor_State", "Front Door")
+          nameMap.put("GaragePersonDoor_State", "Garage Person Door")
+          nameMap.put("GarageRollupDoor_State", "Garage Rollup Door")
 
           val name = nameMap.getOrDefault(triggeringItem.name, "Unknown")
 
