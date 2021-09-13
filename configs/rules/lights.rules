@@ -1,18 +1,34 @@
-rule "Lights — Turn on at Sunset"
+rule "Mood Lights — Turn On at Sunset"
 when
   Channel "astro:sun:home_set_with_offset:set#event" triggered START
 then
-  val dimLevelLanding = (LandingLightbulb_AutomationDimmerValue.state as Number).intValue
-  LandingLightbulb_Dimmer.sendCommand(dimLevelLanding)
+  if (Present.state == ON) {
+    val dimLevelLanding = (LandingLightbulb_AutomationDimmerValue.state as Number).intValue
+    LandingLightbulb_Dimmer.sendCommand(dimLevelLanding)
 
-  val dimLevelLivingRoom = (LivingRoomLightbulb_AutomationDimmerValue.state as Number).intValue
-  LivingRoomLightbulb_Dimmer.sendCommand(dimLevelLivingRoom)
+    val dimLevelLivingRoom = (LivingRoomLightbulb_AutomationDimmerValue.state as Number).intValue
+    LivingRoomLightbulb_Dimmer.sendCommand(dimLevelLivingRoom)
+  }
 end
 
-rule "Lights — Turn off at Midnight"
+rule "Mood Lights — Turn Off at Midnight"
 when
   Time is midnight
 then
   LandingLightbulb_Dimmer.sendCommand(0)
   LivingRoomLightbulb_Dimmer.sendCommand(0)
+end
+
+rule "Mood Lights — Turn On When Home"
+when
+  Item Present changed to ON
+then
+  val timeNow = new DateTimeType(now.toString)
+  if ((timeNow.isAfter(SunsetTimeWithOffset) || timeNow.isEqual(SunsetTimeWithOffset)) && timeNow.isBefore(midnight)) {
+    val dimLevelLanding = (LandingLightbulb_AutomationDimmerValue.state as Number).intValue
+    LandingLightbulb_Dimmer.sendCommand(dimLevelLanding)
+
+    val dimLevelLivingRoom = (LivingRoomLightbulb_AutomationDimmerValue.state as Number).intValue
+    LivingRoomLightbulb_Dimmer.sendCommand(dimLevelLivingRoom)
+  }
 end

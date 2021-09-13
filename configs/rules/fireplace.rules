@@ -1,4 +1,4 @@
-rule "Fireplace — Thermostat"
+rule "Fireplace — Thermostat"
 when
   Item FireplaceThermostat_Power      changed to ON or
   Item FireplaceThermostat_SetPoint   changed       or
