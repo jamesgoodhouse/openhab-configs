@@ -24,7 +24,7 @@ when
   Item Present changed to ON
 then
   val timeNow = new DateTimeType(now.toString)
-  if ((timeNow.isAfter(SunsetTimeWithOffset) || timeNow.isEqual(SunsetTimeWithOffset)) && timeNow.isBefore(midnight)) {
+  if ((timeNow.isAfter(SunsetTimeWithOffset) || timeNow.isEqual(SunsetTimeWithOffset)) && (now.getHour() < 24)) {
     val dimLevelLanding = (LandingLightbulb_AutomationDimmerValue.state as Number).intValue
     LandingLightbulb_Dimmer.sendCommand(dimLevelLanding)
 
