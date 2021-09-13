@@ -1,0 +1,1 @@
+DateTime Sunset_Time "Sunset [%1$tH:%1$tM]" { channel="astro:sun:home_set_with_offset:set#start" }
