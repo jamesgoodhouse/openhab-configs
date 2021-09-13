@@ -34,4 +34,6 @@ then
 
   // TURN OFF LIGHTS -----------------------------------------------------------
   if (GarageOverheadLights_Switch.state == ON) GarageOverheadLights.sendCommand(OFF)
+  if (LandingLightbulb_Dimmer.state     !=  0) LandingLightbulb_Dimmer.sendCommand(0)
+  if (LivingRoomLightbulb_Dimmer.state  !=  0) LivingRoomLightbulb_Dimmer.sendCommand(0)
 end
