@@ -3,6 +3,8 @@ when
   Channel "astro:sun:home_set_with_offset:set#event" triggered START
 then
   if (Present.state == ON) {
+    logInfo("lights", "Mood Lights — Turning on at Sunset")
+
     val dimLevelLanding = (LandingLightbulb_AutomationDimmerValue.state as Number).intValue
     LandingLightbulb_Dimmer.sendCommand(dimLevelLanding)
 
@@ -15,6 +17,8 @@ rule "Mood Lights — Turn Off at Midnight"
 when
   Time is midnight
 then
+  logInfo("lights", "Mood Lights — Turning Off")
+
   LandingLightbulb_Dimmer.sendCommand(0)
   LivingRoomLightbulb_Dimmer.sendCommand(0)
 end
