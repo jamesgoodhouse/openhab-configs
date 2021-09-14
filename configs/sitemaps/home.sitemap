@@ -82,10 +82,12 @@ sitemap home label="Home" {
       Frame label="Landing" {
         Slider item=LandingLightbulb_Dimmer label="Dimmer"
         Setpoint item=LandingLightbulb_AutomationDimmerValue label="Automation Dimmer Value [%s]" icon="settings" minValue=1 maxValue=100 step=1
+        Switch item=Rule_TurnOffLandingLightbulbWhenLeaving
       }
       Frame label="Living Room" {
         Slider item=LivingRoomLightbulb_Dimmer label="Dimmer"
         Setpoint item=LivingRoomLightbulb_AutomationDimmerValue label="Automation Dimmer Value [%s]" icon="settings" minValue=1 maxValue=100 step=1
+        Switch item=Rule_TurnOffLivingRoomLightbulbWhenLeaving
       }
     }
   }

@@ -37,11 +37,11 @@ then
     logInfo("lights", "Garage Overhead Lights — Turning Off")
     GarageOverheadLights.sendCommand(OFF)
   }
-  if (LandingLightbulb_Dimmer.state !=  0) {
+  if (LandingLightbulb_Dimmer.state != 0 && Rule_TurnOffLandingLightbulbWhenLeaving.state == ON) {
     logInfo("lights", "Landing Lightbulb — Turning Off")
     LandingLightbulb_Dimmer.sendCommand(0)
   }
-  if (LivingRoomLightbulb_Dimmer.state !=  0) {
+  if (LivingRoomLightbulb_Dimmer.state != 0 && Rule_TurnOffLivingRoomLightbulbWhenLeaving.state == ON) {
     logInfo("lights", "Living Room Lightbulb — Turning Off")
     LivingRoomLightbulb_Dimmer.sendCommand(0)
   }
