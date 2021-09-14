@@ -71,23 +71,23 @@ sitemap home label="Home" {
   }
 
   Text item=LightStates label="Lights [MAP(onoff.map):%s]" icon="light" valuecolor=[ON="orange",OFF="#1ac731"] {
-    Switch item=GarageOverheadLights_Switch label="Garage" icon="light"
-    Switch item=LandingLightbulb_Dimmer label="Landing" icon="light"
-    Switch item=LivingRoomLightbulb_Dimmer label="Living Room" icon="light"
+    Switch item=GarageOverheadLights_Switch label="Garage Overhead Lights" icon="light"
+    Switch item=LandingLightbulb_Dimmer label="Landing Mood Light" icon="light"
+    Switch item=LivingRoomLightbulb_Dimmer label="Living Room Mood Light" icon="light"
 
     Text label="Settings" icon="settings" {
-      Frame label="Garage" {
+      Frame label="Garage Overhead Lights" {
         Switch item=Rule_TurnOnGarageLightWhenAwayAndGarageDoorOpens label="Turn On When Away and Garge Door Opens"
       }
-      Frame label="Landing" {
+      Frame label="Landing Mood Light" {
         Slider item=LandingLightbulb_Dimmer label="Dimmer"
         Setpoint item=LandingLightbulb_AutomationDimmerValue label="Automation Dimmer Value [%s]" icon="settings" minValue=1 maxValue=100 step=1
-        Switch item=Rule_TurnOffLandingLightbulbWhenLeaving
+        Switch item=Rule_TurnOffLandingLightbulbWhenLeaving label="Turn Off When Leaving"
       }
-      Frame label="Living Room" {
+      Frame label="Living Room Mood Light" {
         Slider item=LivingRoomLightbulb_Dimmer label="Dimmer"
         Setpoint item=LivingRoomLightbulb_AutomationDimmerValue label="Automation Dimmer Value [%s]" icon="settings" minValue=1 maxValue=100 step=1
-        Switch item=Rule_TurnOffLivingRoomLightbulbWhenLeaving
+        Switch item=Rule_TurnOffLivingRoomLightbulbWhenLeaving label="Turn Off When Leaving"
       }
     }
   }
