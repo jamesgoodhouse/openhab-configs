@@ -23,9 +23,11 @@ rule "Mood Lights — Turn On When Home"
 when
   Item Present changed to ON
 then
-  val timeNow = DateTimeType().zonedDateTime
-  val sunsetTimeWithOffset = (SunsetTimeWithOffset.state as DateTimeType).getZonedDateTime()
-  if (timeNow.isEqual(sunsetTimeWithOffset) || (timeNow.isAfter(sunsetTimeWithOffset))) {
+  val sunsetTimeWithOffset = SunsetTimeWithOffset.getStateAs(DateTimeType).zonedDateTime
+
+  if (now.isEqual(sunsetTimeWithOffset) || (now.isAfter(sunsetTimeWithOffset))) {
+    logInfo("lights", "Mood Lights — Turning Back On")
+
     val dimLevelLanding = (LandingLightbulb_AutomationDimmerValue.state as Number).intValue
     LandingLightbulb_Dimmer.sendCommand(dimLevelLanding)
 
