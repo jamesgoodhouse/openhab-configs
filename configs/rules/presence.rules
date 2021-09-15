@@ -7,12 +7,7 @@ when
   Item Present changed to OFF
 then
   ExternalDoorOpenedSinceHome.postUpdate(OFF)
-end
 
-rule "Presence Delay — Leaving"
-when
-  Item Present changed to OFF
-then
   if (PresentWithDelayTimer_30 !== null) PresentWithDelayTimer_30.cancel()
   if (PresentWithDelayTimer_60 !== null) PresentWithDelayTimer_60.cancel()
   if (PresentWithDelayTimer_90 !== null) PresentWithDelayTimer_90.cancel()
@@ -28,7 +23,7 @@ then
   ])
 end
 
-rule "Presence Delay — Return"
+rule "Presence — Returning"
 when
   Item Present changed to ON
 then
@@ -39,4 +34,20 @@ then
   PresentWithDelay_30.postUpdate(ON)
   PresentWithDelay_60.postUpdate(ON)
   PresentWithDelay_90.postUpdate(ON)
+end
+
+rule "Presence (James) — Leaving"
+when
+  Item JamesPresent changed to OFF
+then
+  JamesPresent_LeftAt.postUpdate(now)
+  JamesPresent_ReturnedtAt.postUpdate(NULL)
+end
+
+rule "Presence (James) — Returning"
+when
+  Item JamesPresent changed to ON
+then
+  JamesPresent_LeftAt.postUpdate(NULL)
+  JamesPresent_ReturnedtAt.postUpdate(now)
 end

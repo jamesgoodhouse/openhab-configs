@@ -1,5 +1,7 @@
 Group:Switch:AND(OFF,ON) Present "Present [%s]"
 Group:Switch:AND(OFF,ON) JamesPresent "James Presence [%s]" <present>
+DateTime JamesPresent_LeftAt "Left At [%1$tH:%1$tM:%1$tS]" ["Timestamp"]
+DateTime JamesPresent_ReturnedAt "Returned At [%1$tH:%1$tM:%1$tS]" ["Timestamp"]
 
 Switch PresentWithDelay_30 "Present With Delay (30s) [%s]"
 Switch PresentWithDelay_60 "Present With Delay (60s) [%s]"
