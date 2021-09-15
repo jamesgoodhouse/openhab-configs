@@ -2,7 +2,7 @@ rule "Reboot openHAB"
 when
   Item SystemReboot changed to ON
 then
-  createTimer(now.plusMillis(200), [ |
+  createTimer(now.plusNanos(250000000), [|
     SystemReboot.sendCommand(OFF)
     logInfo("system", "Rebooting openHAB")
     executeCommandLine("reboot")
