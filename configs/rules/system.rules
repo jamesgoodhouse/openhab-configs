@@ -5,6 +5,6 @@ then
   createTimer(now.plusNanos(250000000), [|
     SystemReboot.sendCommand(OFF)
     logInfo("system", "Rebooting openHAB")
-    executeCommandLine("reboot")
+    executeCommandLine("/openhab/runtime/bin/stop")
   ])
 end
