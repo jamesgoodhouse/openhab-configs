@@ -1,13 +1,7 @@
 // non-semantic model groups
-Group:Contact:AND(CLOSED,OPEN) DoorStates
-Group:Contact:AND(CLOSED,OPEN) ExternalDoorStates (DoorStates)
-Group:Switch:AND(OFF,ON) LightStates
-Group:Switch:AND(OFF,ON) HVAC_Power
 Group Persist "Persist"
 
-
 Group:Switch:AND(OFF,ON) JamesPhoneOnline
-
 
 // semantic model groups
 Group Network                           "Network"            <network>                              ["Location"]

@@ -120,7 +120,10 @@ sitemap home label="Home" {
       Switch item=LivingRoomHVAC_KeepOnWhenLeaving label="Keep Living Room HVAC On When Leaving"
       Switch item=MainBedroomHVAC_KeepOnWhenLeaving label="Keep Main Bedroom HVAC On When Leaving"
     }
+
     Frame label="Lighting" {
+      Switch item=Rule_TurnOffLandingLightbulbWhenLeaving
+      Switch item=Rule_TurnOffLivingRoomLightbulbWhenLeaving
       Switch item=Rule_TurnOnGarageLightWhenAwayAndGarageDoorOpens
     }
 

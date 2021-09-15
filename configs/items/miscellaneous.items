@@ -1,3 +1,8 @@
 String SensorReporter_Status "Status [MAP(sensorreporter.map):%s]" (Persist) {
   channel="mqtt:topic:mosquitto:sensor_reporter:online"
 }
+
+// motion detector
+Switch LandingMotionSensor_State "State" (LandingMotionSensor) ["Status"] {
+  channel="mqtt:topic:mosquitto:sensor_motion_detector:state"
+}

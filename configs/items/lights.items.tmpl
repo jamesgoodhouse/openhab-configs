@@ -1,3 +1,5 @@
+Group:Switch:AND(OFF,ON) LightStates
+
 {{- $landingLightbulbMacAddress := (ds "configs").things.zigbee.devices.light_bulb_landing.parameters.zigbee_macaddress | strings.ReplaceAll "\"" "" -}}
 Dimmer LandingLightbulb_Dimmer "Dimmer" <slider> (LandingLightbulb,LightStates,Persist) ["Control","Light"] {
   channel = "zigbee:device:stick:light_bulb_landing:{{ $landingLightbulbMacAddress }}_11_dimmer"
@@ -9,3 +11,7 @@ Dimmer LivingRoomLightbulb_Dimmer "Dimmer" <slider> (LivingRoomLightbulb,LightSt
   channel = "zigbee:device:stick:light_bulb_living_room:{{ $livingRoomLightbulbMacAddress }}_11_dimmer"
 }
 Number:Dimensionless LivingRoomLightbulb_AutomationDimmerValue "Dimmer Value Used in Automation"
+
+Switch GarageOverheadLights_Switch "Switch" (GarageOverheadLights,LightStates,Persist) ["Switch","Light"] {
+  channel="tplinksmarthome:hs200:garage:switch"
+}

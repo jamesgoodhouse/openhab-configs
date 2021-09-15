@@ -1,3 +1,5 @@
+Group:Switch:AND(OFF,ON) HVAC_Power
+
 Number:Temperature OutdoorHVACUnit_Temperature "Temperature" <temperature> (OutdoorHVACUnit) ["Measurement","Temperature"] { channel="daikin:ac_unit:living_room:outdoortemp" }
 
 {{ range (ds "configs").things.daikin }}

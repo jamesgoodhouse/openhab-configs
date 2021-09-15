@@ -1,3 +1,7 @@
+Group:Contact:AND(CLOSED,OPEN) DoorStates
+Group:Contact:AND(CLOSED,OPEN) ExternalDoorStates (DoorStates)
+Switch ExternalDoorOpenedSinceHome
+
 {{- $garageDoorSensorTypeID := (ds "configs").things.zwave.devices.sensor_garage_door.type_id -}}
 {{- $garageDoorSensorThingID := (ds "configs").things.zwave.devices.sensor_garage_door.thing_id -}}
 {{- $garageDoorSensorChannelPrefix := printf "zwave:%s:controller:%s" $garageDoorSensorTypeID $garageDoorSensorThingID -}}
@@ -27,14 +31,32 @@ Switch GarageRollupDoorTiltSensor_TamperAlarm "Tamper Alarm" <alarm> (GarageRoll
 }
 
 Group:Contact:AND(CLOSED,OPEN) GarageRollupDoor_State "State" (GarageRollupDoor,ExternalDoorStates) ["OpenState"]
-DateTime GarageRollupDoor_LastClosedAt
-DateTime GarageRollupDoor_LastOpenAt
-
-// overhead lights
-Switch GarageOverheadLights_Switch "Switch" (GarageOverheadLights,LightStates,Persist) ["Switch","Light"] { channel="tplinksmarthome:hs200:garage:switch" }
+DateTime GarageRollupDoor_LastClosedAt (Persist)
+DateTime GarageRollupDoor_LastOpenAt (Persist)
 
 {{ $garageDoorSwitchMacAddress := (ds "configs").things.zigbee.devices.switch_garage_door.parameters.zigbee_macaddress | strings.ReplaceAll "\"" "" -}}
 // garage door opener
 Switch GarageRollupDoor_Switch "Switch" (GarageRollupDoor,Persist) ["Control"] {
   channel = "zigbee:device:stick:switch_garage_door:{{ $garageDoorSwitchMacAddress }}_1_switch"
 }
+
+// front door
+Contact FrontDoor_State "State" (FrontDoor,ExternalDoorStates) ["OpenState"] {
+  channel="mqtt:topic:mosquitto:sensor_door_front:state"
+}
+DateTime FrontDoor_LastClosedAt (Persist)
+DateTime FrontDoor_LastOpenAt (Persist)
+
+// garage entry door
+Contact GaragePersonDoor_State "State" (GaragePersonDoor,ExternalDoorStates) ["OpenState"] {
+  channel="mqtt:topic:mosquitto:sensor_door_garage_entry:state"
+}
+DateTime GaragePersonDoor_LastClosedAt (Persist)
+DateTime GaragePersonDoor_LastOpenAt (Persist)
+
+// deck door
+Contact DeckDoor_State "State" (DeckDoor,ExternalDoorStates) ["OpenState"] {
+  channel="mqtt:topic:mosquitto:sensor_door_deck:state"
+}
+DateTime DeckDoor_LastClosedAt (Persist)
+DateTime DeckDoor_LastOpenAt (Persist)
