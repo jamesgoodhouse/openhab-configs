@@ -40,7 +40,7 @@ rule "Presence (James) — Leaving"
 when
   Item JamesPresent changed to OFF
 then
-  JamesPresent_LeftAt.postUpdate(now)
+  JamesPresent_LeftAt.postUpdate(new DateTimeType(now))
   JamesPresent_ReturnedAt.postUpdate(NULL)
 end
 
@@ -49,5 +49,5 @@ when
   Item JamesPresent changed to ON
 then
   JamesPresent_LeftAt.postUpdate(NULL)
-  JamesPresent_ReturnedAt.postUpdate(now)
+  JamesPresent_ReturnedAt.postUpdate(new DateTimeType(now))
 end
