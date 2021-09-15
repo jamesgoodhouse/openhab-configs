@@ -27,6 +27,8 @@ Switch GarageRollupDoorTiltSensor_TamperAlarm "Tamper Alarm" <alarm> (GarageRoll
 }
 
 Group:Contact:AND(CLOSED,OPEN) GarageRollupDoor_State "State" (GarageRollupDoor,ExternalDoorStates) ["OpenState"]
+DateTime GarageRollupDoor_LastClosedAt
+DateTime GarageRollupDoor_LastOpenAt
 
 // overhead lights
 Switch GarageOverheadLights_Switch "Switch" (GarageOverheadLights,LightStates,Persist) ["Switch","Light"] { channel="tplinksmarthome:hs200:garage:switch" }

@@ -26,6 +26,15 @@ then
     ])
   }
 
+  postUpdate(triggeringItem.name.replace("State", "LastOpenAt"), new DateTimeType(now))
+
   // set ExternalDoorOpenedSinceHome to true if home when an external door has been opened
   if (Present.state == ON && ExternalDoorOpenedSinceHome.state == OFF) ExternalDoorOpenedSinceHome.postUpdate(ON)
+end
+
+rule "External Door Opened"
+when
+  Member of ExternalDoorStates changed from OPEN to CLOSED
+then
+  postUpdate(triggeringItem.name.replace("State", "LastClosedAt"), new DateTimeType(now))
 end
