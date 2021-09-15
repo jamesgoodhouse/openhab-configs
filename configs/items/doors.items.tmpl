@@ -2,7 +2,7 @@ Group:Contact:AND(CLOSED,OPEN) DoorStates
 Group:Contact:AND(CLOSED,OPEN) ExternalDoorStates (DoorStates)
 Switch ExternalDoorOpenedSinceHome
 
-{{- $garageDoorSensorTypeID := (ds "configs").things.zwave.devices.sensor_garage_door.type_id -}}
+{{ $garageDoorSensorTypeID := (ds "configs").things.zwave.devices.sensor_garage_door.type_id -}}
 {{- $garageDoorSensorThingID := (ds "configs").things.zwave.devices.sensor_garage_door.thing_id -}}
 {{- $garageDoorSensorChannelPrefix := printf "zwave:%s:controller:%s" $garageDoorSensorTypeID $garageDoorSensorThingID -}}
 // garage door contact sensor
