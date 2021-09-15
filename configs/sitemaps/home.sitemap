@@ -14,16 +14,16 @@ sitemap home label="Home" {
   Text item=DoorStates icon="door" label="Doors [MAP(door.map):%s]" valuecolor=[CLOSED="#1ac731",OPEN="orange"] {
     Frame {
       Text item=FrontDoor_State icon="frontdoor" label="Front Door [MAP(door.map):%s]" valuecolor=[CLOSED="#1ac731",OPEN="orange"] {
-        Text item=FrontDoor_LastOpenAt icon=time
-        Text item=FrontDoor_LastClosedAt icon=time
+        Text item=FrontDoor_LastOpenAt icon=time label="Last Opened"
+        Text item=FrontDoor_LastClosedAt icon=time label="Last Closed"
       }
       Text item=GaragePersonDoor_State icon="door" label="Garage Entry Door [MAP(door.map):%s]" valuecolor=[CLOSED="#1ac731",OPEN="orange"] {
-        Text item=GaragePersonDoorDoor_LastOpenAt icon=time
-        Text item=GaragePersonDoorDoor_LastClosedAt icon=time
+        Text item=GaragePersonDoor_LastOpenAt icon=time label="Last Opened"
+        Text item=GaragePersonDoor_LastClosedAt icon=time label="Last Closed"
       }
       Text item=DeckDoor_State icon="frontdoor" label="Deck Door [MAP(door.map):%s]" valuecolor=[CLOSED="#1ac731",OPEN="orange"] {
-        Text item=DeckDoor_LastOpenAt icon=time
-        Text item=DeckDoor_LastClosedAt icon=time
+        Text item=DeckDoor_LastOpenAt icon=time label="Last Opened"
+        Text item=DeckDoor_LastClosedAt icon=time label="Last Closed"
       }
     }
     Frame label=" " {
@@ -38,8 +38,8 @@ sitemap home label="Home" {
         }
 
         Frame label="Metadata" {
-          Text item=GaragePersonDoorDoor_LastOpenAt icon=time
-          Text item=GaragePersonDoorDoor_LastClosedAt icon=time
+          Text item=GarageRollupDoor_LastOpenAt icon=time label="Last Opened"
+          Text item=GarageRollupDoor_LastClosedAt icon=time label="Last Closed"
         }
       }
     }
