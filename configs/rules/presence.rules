@@ -40,14 +40,14 @@ rule "Presence (James) — Leaving"
 when
   Item JamesPresent changed to OFF
 then
-  JamesPresent_LeftAt.postUpdate(new DateTimeType(now))
-  JamesPresent_ReturnedAt.postUpdate(NULL)
+  JamesPresent_LeftReturnedAt.setLabel("Left At [%1$tH:%1$tM:%1$tS]")
+  JamesPresent_LeftReturnedAt.postUpdate(new DateTimeType(now))
 end
 
 rule "Presence (James) — Returning"
 when
   Item JamesPresent changed to ON
 then
-  JamesPresent_LeftAt.postUpdate(NULL)
-  JamesPresent_ReturnedAt.postUpdate(new DateTimeType(now))
+  JamesPresent_LeftReturnedAt.setLabel("Returned At [%1$tH:%1$tM:%1$tS]")
+  JamesPresent_LeftReturnedAt.postUpdate(new DateTimeType(now))
 end
