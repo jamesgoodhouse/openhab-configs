@@ -6,3 +6,5 @@ String SensorReporter_Status "Status [MAP(sensorreporter.map):%s]" (Persist) {
 Switch LandingMotionSensor_State "State" (LandingMotionSensor) ["Status"] {
   channel="mqtt:topic:mosquitto:sensor_motion_detector:state"
 }
+
+Switch SystemReboot "Reboot" <switch> { autoupdate="false" }

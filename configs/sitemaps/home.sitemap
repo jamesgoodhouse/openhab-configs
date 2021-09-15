@@ -132,4 +132,8 @@ sitemap home label="Home" {
       Switch item=Rule_NotifyWhenMotionDetectedWhileAway
     }
   }
+
+  Text label="System" {
+    Switch item=SystemReboot
+  }
 }
