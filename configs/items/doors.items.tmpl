@@ -31,8 +31,8 @@ Switch GarageRollupDoorTiltSensor_TamperAlarm "Tamper Alarm" <alarm> (GarageRoll
 }
 
 Group:Contact:AND(CLOSED,OPEN) GarageRollupDoor_State "State" (GarageRollupDoor,ExternalDoorStates) ["OpenState"]
-DateTime GarageRollupDoor_LastClosedAt (Persist)
-DateTime GarageRollupDoor_LastOpenAt (Persist)
+DateTime GarageRollupDoor_LastClosedAt (Persist) ["Timestamp"]
+DateTime GarageRollupDoor_LastOpenAt (Persist) ["Timestamp"]
 
 {{ $garageDoorSwitchMacAddress := (ds "configs").things.zigbee.devices.switch_garage_door.parameters.zigbee_macaddress | strings.ReplaceAll "\"" "" -}}
 // garage door opener
@@ -44,19 +44,19 @@ Switch GarageRollupDoor_Switch "Switch" (GarageRollupDoor,Persist) ["Control"] {
 Contact FrontDoor_State "State" (FrontDoor,ExternalDoorStates) ["OpenState"] {
   channel="mqtt:topic:mosquitto:sensor_door_front:state"
 }
-DateTime FrontDoor_LastClosedAt (Persist)
-DateTime FrontDoor_LastOpenAt (Persist)
+DateTime FrontDoor_LastClosedAt (Persist) ["Timestamp"]
+DateTime FrontDoor_LastOpenAt (Persist) ["Timestamp"]
 
 // garage entry door
 Contact GaragePersonDoor_State "State" (GaragePersonDoor,ExternalDoorStates) ["OpenState"] {
   channel="mqtt:topic:mosquitto:sensor_door_garage_entry:state"
 }
-DateTime GaragePersonDoor_LastClosedAt (Persist)
-DateTime GaragePersonDoor_LastOpenAt (Persist)
+DateTime GaragePersonDoor_LastClosedAt (Persist) ["Timestamp"]
+DateTime GaragePersonDoor_LastOpenAt (Persist) ["Timestamp"]
 
 // deck door
 Contact DeckDoor_State "State" (DeckDoor,ExternalDoorStates) ["OpenState"] {
   channel="mqtt:topic:mosquitto:sensor_door_deck:state"
 }
-DateTime DeckDoor_LastClosedAt (Persist)
-DateTime DeckDoor_LastOpenAt (Persist)
+DateTime DeckDoor_LastClosedAt (Persist) ["Timestamp"]
+DateTime DeckDoor_LastOpenAt (Persist) ["Timestamp"]
