@@ -2,6 +2,8 @@ sitemap home label="Home" {
   Text item=OutdoorHVACUnit_Temperature label="Outdoor Temperature [%.0f °F]" icon="temperature" valuecolor=[>=95="#e61c2c", >=85="orange", >=75="yellow", >=65="#1ac731", >=50="#186ded", >=40="teal"]
 
   Text item=JamesPresent label="James [MAP(presence.map):%s]" icon=man_3 valuecolor=[ON="#1ac731",OFF="orange"] {
+    Text item=JamesPresent_LeftReturnedAt
+
     Text item=JamesPhoneOnline label="Phone [MAP(online.map):%s]" icon="phone" valuecolor=[ON="#1ac731",OFF="orange"] {
       Text item=JamesPhone_Bluetooth_Status label="Bluetooth Status [MAP(online.map):%s]" valuecolor=[ON="#1ac731",OFF="orange"] icon="bluetooth"
       Text item=JamesPhone_Network_PingDevice_Status label="Ping Status [MAP(online.map):%s]" valuecolor=[ON="#1ac731",OFF="orange"] icon="network"
