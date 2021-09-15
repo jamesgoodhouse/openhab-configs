@@ -1,6 +1,6 @@
 Group:Switch:AND(OFF,ON) LightStates
 
-{{- $landingLightbulbMacAddress := (ds "configs").things.zigbee.devices.light_bulb_landing.parameters.zigbee_macaddress | strings.ReplaceAll "\"" "" -}}
+{{ $landingLightbulbMacAddress := (ds "configs").things.zigbee.devices.light_bulb_landing.parameters.zigbee_macaddress | strings.ReplaceAll "\"" "" -}}
 Dimmer LandingLightbulb_Dimmer "Dimmer" <slider> (LandingLightbulb,LightStates,Persist) ["Control","Light"] {
   channel = "zigbee:device:stick:light_bulb_landing:{{ $landingLightbulbMacAddress }}_11_dimmer"
 }
