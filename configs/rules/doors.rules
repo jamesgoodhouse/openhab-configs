@@ -32,7 +32,7 @@ then
   if (Present.state == ON && ExternalDoorOpenedSinceHome.state == OFF) ExternalDoorOpenedSinceHome.postUpdate(ON)
 end
 
-rule "External Door Opened"
+rule "External Door Closed"
 when
   Member of ExternalDoorStates changed from OPEN to CLOSED
 then
