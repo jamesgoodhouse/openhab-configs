@@ -108,32 +108,35 @@ sitemap home label="Home" {
     }
   }
 
-  Text label="Statuses" icon="info" {
-    Text item=Alarm_Status icon="alarm" label="Alarm [MAP(online.map):%s]" valuecolor=[OFF="#e61c2c",ON="#1ac731"]
-    Text item=Fireplace_Controller_Status label="Fireplace Controller [MAP(online.map):%s]" icon="fire" valuecolor=[ONLINE="#1ac731",OFFLINE="#e61c2c"]
-    Text item=SensorReporter_Status label="Sensor Reporter [MAP(sensorreporter.map):%s]" icon="network" valuecolor=[ONLINE="#1ac731",OFFLINE="#e61c2c"]
-  }
-
-  Text label="Rules" icon="checklist" {
-    Frame label="HVAC" {
-      Switch item=FireplaceThermostat_KeepOnWhenLeaving label="Keep Fireplace On When Leaving"
-      Switch item=LivingRoomHVAC_KeepOnWhenLeaving label="Keep Living Room HVAC On When Leaving"
-      Switch item=MainBedroomHVAC_KeepOnWhenLeaving label="Keep Main Bedroom HVAC On When Leaving"
-    }
-
-    Frame label="Lighting" {
-      Switch item=Rule_TurnOffLandingLightbulbWhenLeaving
-      Switch item=Rule_TurnOffLivingRoomLightbulbWhenLeaving
-      Switch item=Rule_TurnOnGarageLightWhenAwayAndGarageDoorOpens
-    }
-
-    Frame label="Notifications" {
-      Switch item=Rule_NotifyWhenExternalDoorOpenedWhileAway
-      Switch item=Rule_NotifyWhenMotionDetectedWhileAway
-    }
-  }
 
   Text label="System" {
-    Switch item=SystemReboot
+    Frame label="Controls" icon="switch" {
+      Switch item=SystemReboot
+    }
+
+    Frame label="Rules" icon="checklist" {
+      Frame label="HVAC" {
+        Switch item=FireplaceThermostat_KeepOnWhenLeaving label="Keep Fireplace On When Leaving"
+        Switch item=LivingRoomHVAC_KeepOnWhenLeaving label="Keep Living Room HVAC On When Leaving"
+        Switch item=MainBedroomHVAC_KeepOnWhenLeaving label="Keep Main Bedroom HVAC On When Leaving"
+      }
+
+      Frame label="Lighting" {
+        Switch item=Rule_TurnOffLandingLightbulbWhenLeaving
+        Switch item=Rule_TurnOffLivingRoomLightbulbWhenLeaving
+        Switch item=Rule_TurnOnGarageLightWhenAwayAndGarageDoorOpens
+      }
+
+      Frame label="Notifications" {
+        Switch item=Rule_NotifyWhenExternalDoorOpenedWhileAway
+        Switch item=Rule_NotifyWhenMotionDetectedWhileAway
+      }
+    }
+
+    Text label="Statuses" icon="info" {
+      Text item=Alarm_Status icon="alarm" label="Alarm [MAP(online.map):%s]" valuecolor=[OFF="#e61c2c",ON="#1ac731"]
+      Text item=Fireplace_Controller_Status label="Fireplace Controller [MAP(online.map):%s]" icon="fire" valuecolor=[ONLINE="#1ac731",OFFLINE="#e61c2c"]
+      Text item=SensorReporter_Status label="Sensor Reporter [MAP(sensorreporter.map):%s]" icon="network" valuecolor=[ONLINE="#1ac731",OFFLINE="#e61c2c"]
+    }
   }
 }
