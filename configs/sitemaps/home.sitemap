@@ -109,7 +109,7 @@ sitemap home label="Home" {
   }
 
 
-  Text label="System" {
+  Text label="System" icon="screen" {
     Text label="Controls" icon="switch" {
       Switch item=SystemReboot
     }
