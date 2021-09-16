@@ -110,11 +110,11 @@ sitemap home label="Home" {
 
 
   Text label="System" {
-    Frame label="Controls" icon="switch" {
+    Text label="Controls" icon="switch" {
       Switch item=SystemReboot
     }
 
-    Frame label="Rules" icon="checklist" {
+    Text label="Rules" icon="checklist" {
       Frame label="HVAC" {
         Switch item=FireplaceThermostat_KeepOnWhenLeaving label="Keep Fireplace On When Leaving"
         Switch item=LivingRoomHVAC_KeepOnWhenLeaving label="Keep Living Room HVAC On When Leaving"
