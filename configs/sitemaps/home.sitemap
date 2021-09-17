@@ -43,6 +43,12 @@ sitemap home label="Home" {
         }
       }
     }
+
+    Frame label=" " {
+      Text label="Debug" icon="settings" {
+        Text item=ExternalDoorOpenedSinceHome label="External Door Opened Since Home"
+      }
+    }
   }
 
   Text item=FireplaceThermostat_Power icon="fire" label="Fireplace [MAP(fireplace.map):%s]" valuecolor=[OFF="#1ac731",ON="orange"] {
