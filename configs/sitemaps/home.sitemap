@@ -46,7 +46,7 @@ sitemap home label="Home" {
 
     Frame label=" " {
       Text label="Debug" icon="settings" {
-        Text item=ExternalDoorOpenedSinceHome label="External Door Opened Since Home"
+        Text item=ExternalDoorOpenedSinceHome label="External Door Opened Since Home []"
       }
     }
   }
