@@ -12,4 +12,4 @@ Switch   JamesPhone_Bluetooth_Status    "Bluetooth — Status [MAP(online.map):%
 DateTime JamesPhone_Bluetooth_OnlineAt  "Bluetooth — Online At [%1$tH:%1$tM:%1$tS]"  <bluetooth> (JamesPhone,Persist)                                       ["Measurement","Timestamp"]
 DateTime JamesPhone_Bluetooth_OfflineAt "Bluetooth — Offline At [%1$tH:%1$tM:%1$tS]" <bluetooth> (JamesPhone,Persist)                                       ["Measurement","Timestamp"]
 
-Switch JamesKeychain_Status "Keychain — Status [MAP(online.map):%s]" <keyring> ["Switch"] { channel="mqtt:topic:mosquitto:keychain:online" }
+Switch JamesKeychain_Status "Keychain — Status [MAP(online.map):%s]" <keyring> ["Switch"] (JamesPresent,Present) { channel="mqtt:topic:mosquitto:keychain:online" }
