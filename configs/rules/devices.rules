@@ -39,3 +39,17 @@ when
 then
   JamesPhone_Network_PingDevice_OnlineAt.postUpdate(new DateTimeType(now))
 end
+
+rule "Device — Keychain (Offline)"
+when
+  Item JamesKeychain_Status changed to OFF
+then
+  JamesKeychain_OfflineAt.postUpdate(new DateTimeType(now))
+end
+
+rule "Device — Keychain (Online)"
+when
+  Item JamesKeychain_Status changed to ON
+then
+  JamesKeychain_OnlineAt.postUpdate(new DateTimeType(now))
+end

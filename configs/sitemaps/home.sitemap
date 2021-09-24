@@ -4,7 +4,10 @@ sitemap home label="Home" {
   Text item=JamesPresent label="James [MAP(presence.map):%s]" icon=man_3 valuecolor=[ON="#1ac731",OFF="orange"] {
     Text item=JamesPresent_LeftReturnedAt icon=time
 
-    Text item=JamesKeychain_Status label="Keychain [MAP(online.map):%s]" icon="keyring" valuecolor=[ON="#1ac731",OFF="orange"]
+    Text item=JamesKeychain_Status label="Keychain [MAP(online.map):%s]" icon="keyring" valuecolor=[ON="#1ac731",OFF="orange"] {
+      Text item=JamesKeyChain_OnlineAt icon=time label="Online At"
+      Text item=JamesKeyChain_OfflineAt icon=time label="Offline At"
+    }
 
     Text item=JamesPhoneOnline label="Phone [MAP(online.map):%s]" icon="phone" valuecolor=[ON="#1ac731",OFF="orange"] {
       Text item=JamesPhone_Bluetooth_Status label="Bluetooth Status [MAP(online.map):%s]" valuecolor=[ON="#1ac731",OFF="orange"] icon="bluetooth" {
