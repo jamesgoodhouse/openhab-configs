@@ -11,3 +11,5 @@ DateTime JamesPhone_Network_PingDevice_OfflineAt "Ping — Offline At [%1$tH:%1$
 Switch   JamesPhone_Bluetooth_Status    "Bluetooth — Status [MAP(online.map):%s]"    <bluetooth> (JamesPhone,JamesPresent,Present,Persist,JamesPhoneOnline) ["Switch"]                  { channel="mqtt:topic:mosquitto:phone_james:online" }
 DateTime JamesPhone_Bluetooth_OnlineAt  "Bluetooth — Online At [%1$tH:%1$tM:%1$tS]"  <bluetooth> (JamesPhone,Persist)                                       ["Measurement","Timestamp"]
 DateTime JamesPhone_Bluetooth_OfflineAt "Bluetooth — Offline At [%1$tH:%1$tM:%1$tS]" <bluetooth> (JamesPhone,Persist)                                       ["Measurement","Timestamp"]
+
+Switch JamesKeychain_Status "Keychain — Status [MAP(online.map):%s]" <keyring> ["Switch"] { channel="mqtt:topic:mosquitto:keychain:online" }

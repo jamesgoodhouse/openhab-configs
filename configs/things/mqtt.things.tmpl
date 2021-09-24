@@ -57,6 +57,14 @@ Bridge mqtt:broker:mosquitto [
       ]
   }
 
+  // james' keychain
+  Thing topic keychain "James' Keychain" {
+    Channels:
+      Type string : online "Online" [
+        stateTopic="sensor_reporter/keychain"
+      ]
+  }
+
   // fireplace
   Thing topic fireplace "Fireplace" {
     Channels:
