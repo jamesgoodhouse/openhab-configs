@@ -7,7 +7,7 @@ sitemap home label="Home" {
     Text item=JamesKeychain_Status label="Keychain [MAP(online.map):%s]" icon="keyring" valuecolor=[ON="#1ac731",OFF="orange"] {
       Text item=JamesKeychain_OnlineAt icon=time label="Online At"
       Text item=JamesKeychain_OfflineAt icon=time label="Offline At"
-      Text item=JamesKeychain_UseForPresence icon=switch label="Use For Presence [%s]"
+      Switch item=JamesKeychain_UseForPresence icon=switch label="Use For Presence [%s]"
     }
 
     Text item=JamesPhoneOnline label="Phone [MAP(online.map):%s]" icon="phone" valuecolor=[ON="#1ac731",OFF="orange"] {
