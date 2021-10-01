@@ -5,3 +5,5 @@ DateTime JamesPresent_LeftReturnedAt (Persist) ["Timestamp"]
 Switch PresentWithDelay_30 "Present With Delay (30s) [%s]"
 Switch PresentWithDelay_60 "Present With Delay (60s) [%s]"
 Switch PresentWithDelay_90 "Present With Delay (90s) [%s]"
+
+Switch ManualPresence (Present)
