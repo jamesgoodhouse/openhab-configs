@@ -15,8 +15,8 @@ settings:
     - zwave
     misc:
     - metrics
-    persistence: []
-    # - influxdb
+    persistence:
+    - rrd4j
     transformation:
     - jsonpath
     - map
