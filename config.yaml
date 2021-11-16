@@ -28,7 +28,7 @@ settings:
     dayset:
       trash: Friday
   persistence:
-    default: rrdj4
+    default: rrd4j
     influxdb:
       db: openhab
       url: http://influxdb.data:8086
