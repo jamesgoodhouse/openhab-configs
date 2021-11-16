@@ -1,9 +1,11 @@
 Strategies {
-  everyMinute: "0 * * * * ?"
-  everyHour:   "0 0 * * * ?"
-  everyDay:    "0 0 0 * * ?"
+  everyMinute : "0 * * * * ?"
+  everyHour   : "0 0 * * * ?"
+  everyDay    : "0 0 0 * * ?"
+
+  default = everyChange
 }
 
 Items {
-  Persist*: strategy = everyChange, restoreOnStartup
+  Persist* : strategy = everyChange, restoreOnStartup
 }
