@@ -30,7 +30,7 @@ Switch GarageRollupDoorTiltSensor_TamperAlarm "Tamper Alarm" <alarm> (GarageRoll
   channel = "{{ $garageDoorTiltSensorChannelPrefix }}:alarm_tamper"
 }
 
-Group:Contact:AND(CLOSED,OPEN) GarageRollupDoor_State "State" (GarageRollupDoor,ExternalDoorStates) ["OpenState"]
+Group:Contact:AND(CLOSED,OPEN) GarageRollupDoor_State "State" (GarageRollupDoor,Persist,ExternalDoorStates) ["OpenState"]
 DateTime GarageRollupDoor_LastClosedAt (Persist) ["Timestamp"]
 DateTime GarageRollupDoor_LastOpenAt (Persist) ["Timestamp"]
 
