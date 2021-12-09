@@ -18,8 +18,8 @@ Switch   JamesPhone_Bluetooth_UseForPresence "Bluetooth — Use For Presence [%s
 DateTime JamesPhone_Bluetooth_OnlineAt       "Bluetooth — Online At [%1$tH:%1$tM:%1$tS]"     <bluetooth> (JamesPhone,Persist)                  ["Measurement","Timestamp"]
 DateTime JamesPhone_Bluetooth_OfflineAt      "Bluetooth — Offline At [%1$tH:%1$tM:%1$tS]"    <bluetooth> (JamesPhone,Persist)                  ["Measurement","Timestamp"]
 
-Switch   JamesKeychain_Status         "Keychain — Status [MAP(online.map):%s]"       <keyring> (Present,JamesPresent,JamesKeychain)                       ["Switch"]                  { channel="mqtt:topic:mosquitto:keychain:online" }
-Switch   JamesKeychain_ProxyStatus    "Keychain — Proxy Status [MAP(online.map):%s]" <keyring> (JamesKeychain,JamesPresent,Present)  ["Switch"]
-Switch   JamesKeychain_UseForPresence "Keychain — Use For Presence [%s]"             <keyring> (JamesKeychain)                       ["Switch"]
-DateTime JamesKeychain_OnlineAt       "Keychain — Online At [%1$tH:%1$tM:%1$tS]"     <keyring> (JamesKeychain,Persist)               ["Measurement","Timestamp"]
-DateTime JamesKeychain_OfflineAt      "Keychain — Offline At [%1$tH:%1$tM:%1$tS]"    <keyring> (JamesKeychain,Persist)               ["Measurement","Timestamp"]
+Switch   JamesKeychain_Status         "Keychain — Status [MAP(online.map):%s]"       <keyring> (Present,JamesKeychain) ["Switch"]                  { channel="mqtt:topic:mosquitto:keychain:online" }
+Switch   JamesKeychain_ProxyStatus    "Keychain — Proxy Status [MAP(online.map):%s]" <keyring> (JamesKeychain)         ["Switch"]
+Switch   JamesKeychain_UseForPresence "Keychain — Use For Presence [%s]"             <keyring> (JamesKeychain)         ["Switch"]
+DateTime JamesKeychain_OnlineAt       "Keychain — Online At [%1$tH:%1$tM:%1$tS]"     <keyring> (JamesKeychain,Persist) ["Measurement","Timestamp"]
+DateTime JamesKeychain_OfflineAt      "Keychain — Offline At [%1$tH:%1$tM:%1$tS]"    <keyring> (JamesKeychain,Persist) ["Measurement","Timestamp"]
