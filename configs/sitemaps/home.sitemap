@@ -5,12 +5,6 @@ sitemap home label="Home" {
     Text item=JamesPresent_LeftReturnedAt icon=time
     Switch item=ManualPresence
 
-    Text item=JamesKeychain_Status label="Keychain [MAP(online.map):%s]" icon="keyring" valuecolor=[ON="#1ac731",OFF="orange"] {
-      Text item=JamesKeychain_OnlineAt icon=time label="Online At"
-      Text item=JamesKeychain_OfflineAt icon=time label="Offline At"
-      Switch item=JamesKeychain_UseForPresence icon=switch label="Use For Presence [%s]"
-    }
-
     Text item=JamesPhoneOnline label="Phone [MAP(online.map):%s]" icon="phone" valuecolor=[ON="#1ac731",OFF="orange"] {
       Text item=JamesPhone_Bluetooth_Status label="Bluetooth Status [MAP(online.map):%s]" valuecolor=[ON="#1ac731",OFF="orange"] icon="bluetooth" {
         Text item=JamesPhone_Bluetooth_OnlineAt icon=time label="Online At"

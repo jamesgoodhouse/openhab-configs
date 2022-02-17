@@ -5,7 +5,6 @@ Group:Switch:AND(OFF,ON) JamesPhoneOnline
 
 // semantic model groups
 Group Network                           "Network"            <network>                              ["Location"]
-  Group JamesKeychain                   "James' Keychain"    <keyring>          (Network)           ["Equipment"]
   Group JamesPhone                      "James' Phone"       <phone>            (Network)           ["Smartphone"]
 
 Group Indoor                            "Indoor"                                                    ["Indoor"]
