@@ -83,4 +83,12 @@ Bridge mqtt:broker:hivemq [
   secure={{ (ds "configs").things.mqtt.hivemq.secure }},
   username="{{ (ds "configs").things.mqtt.hivemq.username }}",
   password="{{ (ds "configs").things.mqtt.hivemq.password }}"
-] { }
+] {
+  Thing topic phone_james "James' Phone" {
+    Channels:
+      Type string : regions "Regions" [
+        stateTopic="owntracks/james_phone",
+        transformationPattern="JSONPATH:$.inregions"
+      ]
+  }
+}
