@@ -86,9 +86,8 @@ Bridge mqtt:broker:hivemq [
 ] {
   Thing topic phone_james "James' Phone" {
     Channels:
-      Type string : regions "Regions" [
-        stateTopic="owntracks/james_phone",
-        transformationPattern="JSONPATH:$.inregions"
+      Type string : raw_json "Raw JSON" [
+        stateTopic="owntracks/james_phone"
       ]
   }
 }
