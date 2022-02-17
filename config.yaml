@@ -55,8 +55,11 @@ things:
       host: main-bedroom.hvac.home.goodhouse.io
       location: Main Bedroom
   mqtt:
-    port: 1883
-    secure: 'false'
+    hivemq:
+      port: 8883
+    mosquitto:
+      port: 1883
+      secure: 'false'
   network:
     ping_devices:
       phone_james:

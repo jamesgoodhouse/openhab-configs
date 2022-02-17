@@ -1,9 +1,9 @@
 Bridge mqtt:broker:mosquitto [
-  host="{{ (ds "configs").things.mqtt.host }}",
-  port={{ (ds "configs").things.mqtt.port }},
-  secure={{ (ds "configs").things.mqtt.secure }},
-  username="{{ (ds "configs").things.mqtt.username }}",
-  password="{{ (ds "configs").things.mqtt.password }}",
+  host="{{ (ds "configs").things.mqtt.mosquitto.host }}",
+  port={{ (ds "configs").things.mqtt.mosquitto.port }},
+  secure={{ (ds "configs").things.mqtt.mosquitto.secure }},
+  username="{{ (ds "configs").things.mqtt.mosquitto.username }}",
+  password="{{ (ds "configs").things.mqtt.mosquitto.password }}",
   certificatepin=false,
   publickeypin=false
 ] {
@@ -84,3 +84,11 @@ Bridge mqtt:broker:mosquitto [
       ]
   }
 }
+
+Bridge mqtt:broker:hivemq [
+  host="{{ (ds "configs").things.mqtt.hivemq.host }}",
+  port={{ (ds "configs").things.mqtt.hivemq.port }},
+  secure={{ (ds "configs").things.mqtt.hivemq.secure }},
+  username="{{ (ds "configs").things.mqtt.hivemq.username }}",
+  password="{{ (ds "configs").things.mqtt.hivemq.password }}"
+] { }
