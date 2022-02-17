@@ -57,6 +57,7 @@ things:
   mqtt:
     hivemq:
       port: 8883
+      secure: 'true'
     mosquitto:
       port: 1883
       secure: 'false'
