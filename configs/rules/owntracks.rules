@@ -8,6 +8,7 @@ when
 then
   val String json = (JamesPhone_Owntracks_RawJSON.state as StringType).toString
   val String type = transform("JSONPATH", "$._type", json)
+
   if (type == "location") {
     var homeRegionFound = false
     var isHome = "OFF"
@@ -34,5 +35,7 @@ then
     }
 
     JamesPhone_InHomeRegion.postUpdate(isHome)
+  } else if (type == "lwt") {
+    JamesPhone_InHomeRegion.postUpdate(OFF)
   }
 end
