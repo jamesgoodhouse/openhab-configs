@@ -13,6 +13,7 @@ then
     var homeRegionFound = false
     var isHome = "OFF"
     val List<String> keys = transform("JSONPATH", "$.keys()", json).replaceAll("\\[", "").replaceAll("\\]", "").split(", ")
+    val String tst = transform("JSONPATH", "$.tst", json)
 
     if (keys.contains("inregions")) {
       val String regions = transform("JSONPATH", "$.inregions", json)
@@ -34,6 +35,7 @@ then
       }
     }
 
+    JamesPhone_Owntracks_LastSeen.postUpdate(new DateTimeType(tst))
     JamesPhone_Owntracks_InHomeRegion.postUpdate(isHome)
   } else if (type == "lwt") {
     logInfo("owntracks", "Owntracks lost connection to MQTT broker")
