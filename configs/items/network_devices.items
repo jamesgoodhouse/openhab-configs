@@ -1,18 +1,18 @@
-Switch   JamesPhone_UnifiController_Status         "Unifi — Status [MAP(online.map):%s]"       <unifi> (JamesPhone,Persist,JamesPhoneOnline) ["Switch"]                  { channel="unifi:wirelessClient:home:phone_james:online" }
+Switch   JamesPhone_UnifiController_Status         "Unifi — Status [MAP(online.map):%s]"       <unifi> (JamesPresent,Present,JamesPhone,Persist,JamesPhoneOnline) ["Switch"]                  { channel="unifi:wirelessClient:home:phone_james:online" }
 Switch   JamesPhone_UnifiController_ProxyStatus    "Unifi — Proxy Status [MAP(online.map):%s]" <unifi> (JamesPhone,JamesPresent,Present)     ["Switch"]
 Switch   JamesPhone_UnifiController_UseForPresence "Unifi — Use For Presence [%s]"             <unifi> (JamesPhone)                          ["Switch"]
 DateTime JamesPhone_UnifiController_LastSeen       "Unifi — Last Seen [%1$tH:%1$tM:%1$tS]"     <unifi> (JamesPhone,Persist)                  ["Measurement","Timestamp"] { channel="unifi:wirelessClient:home:phone_james:lastSeen" }
 DateTime JamesPhone_UnifiController_OnlineAt       "Unifi — Online At [%1$tH:%1$tM:%1$tS]"     <unifi> (JamesPhone,Persist)                  ["Measurement","Timestamp"]
 DateTime JamesPhone_UnifiController_OfflineAt      "Unifi — Offline At [%1$tH:%1$tM:%1$tS]"    <unifi> (JamesPhone,Persist)                  ["Measurement","Timestamp"]
 
-Switch   JamesPhone_Network_PingDevice_Status         "Ping — Status [MAP(online.map):%s]"       <network> (JamesPhone,Persist,JamesPhoneOnline) ["Switch"]                  { channel="network:pingdevice:phone_james:online" }
+Switch   JamesPhone_Network_PingDevice_Status         "Ping — Status [MAP(online.map):%s]"       <network> (JamesPresent,Present,JamesPhone,Persist,JamesPhoneOnline) ["Switch"]                  { channel="network:pingdevice:phone_james:online" }
 Switch   JamesPhone_Network_PingDevice_ProxyStatus    "Ping — Proxy Status [MAP(online.map):%s]" <network> (JamesPhone,JamesPresent,Present)     ["Switch"]
 Switch   JamesPhone_Network_PingDevice_UseForPresence "Ping — Use For Presence [%s]"             <network> (JamesPhone)                          ["Switch"]
 DateTime JamesPhone_Network_PingDevice_LastSeen       "Ping — Last Seen [%1$tH:%1$tM:%1$tS]"     <network> (JamesPhone)                          ["Measurement","Timestamp"] { channel="network:pingdevice:phone_james:lastseen" }
 DateTime JamesPhone_Network_PingDevice_OnlineAt       "Ping — Online At [%1$tH:%1$tM:%1$tS]"     <network> (JamesPhone)                          ["Measurement","Timestamp"]
 DateTime JamesPhone_Network_PingDevice_OfflineAt      "Ping — Offline At [%1$tH:%1$tM:%1$tS]"    <network> (JamesPhone)                          ["Measurement","Timestamp"]
 
-Switch   JamesPhone_Bluetooth_Status         "Bluetooth — Status [MAP(online.map):%s]"       <bluetooth> (JamesPhone,Persist,JamesPhoneOnline) ["Switch"]                  { channel="mqtt:topic:mosquitto:phone_james:online" }
+Switch   JamesPhone_Bluetooth_Status         "Bluetooth — Status [MAP(online.map):%s]"       <bluetooth> (JamesPresent,Present,JamesPhone,Persist,JamesPhoneOnline) ["Switch"]                  { channel="mqtt:topic:mosquitto:phone_james:online" }
 Switch   JamesPhone_Bluetooth_ProxyStatus    "Bluetooth — Proxy Status [MAP(online.map):%s]" <bluetooth> (JamesPhone,JamesPresent,Present)     ["Switch"]
 Switch   JamesPhone_Bluetooth_UseForPresence "Bluetooth — Use For Presence [%s]"             <bluetooth> (JamesPhone)                          ["Switch"]
 DateTime JamesPhone_Bluetooth_OnlineAt       "Bluetooth — Online At [%1$tH:%1$tM:%1$tS]"     <bluetooth> (JamesPhone,Persist)                  ["Measurement","Timestamp"]
