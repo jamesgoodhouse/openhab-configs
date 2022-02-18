@@ -16,7 +16,7 @@ then
 
     if (keys.contains("inregions")) {
       val String regions = transform("JSONPATH", "$.inregions", json)
-      JamesPhone_Regions.postUpdate(regions)
+      JamesPhone_Owntracks_Regions.postUpdate(regions)
 
       val Number numRegions = Integer::parseInt(transform("JSONPATH", "$.inregions.length()", json))
       logDebug("owntracks", "Number of Regions: {}", numRegions)
@@ -34,8 +34,8 @@ then
       }
     }
 
-    JamesPhone_InHomeRegion.postUpdate(isHome)
+    JamesPhone_Owntracks_InHomeRegion.postUpdate(isHome)
   } else if (type == "lwt") {
-    JamesPhone_InHomeRegion.postUpdate(OFF)
+    JamesPhone_Owntracks_InHomeRegion.postUpdate(OFF)
   }
 end

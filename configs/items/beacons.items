@@ -1,3 +1,3 @@
-String JamesPhone_Owntracks_RawJSON "Owntracks Raw JSON"                                                   { channel="mqtt:topic:hivemq:phone_james:raw_json" }
-String JamesPhone_Regions           "James Regions"
-Switch JamesPhone_InHomeRegion      "James Phone at Home [%s]" <present> (Present,JamesPresent) ["Switch"]
+String JamesPhone_Owntracks_RawJSON      "Owntracks Raw JSON"                                                   { channel="mqtt:topic:hivemq:phone_james:raw_json" }
+String JamesPhone_Owntracks_Regions      "James Owntracks Regions"
+Switch JamesPhone_Owntracks_InHomeRegion "James Phone at Home [%s]" <present> (Present,JamesPresent) ["Switch"]
