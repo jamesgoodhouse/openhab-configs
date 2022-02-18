@@ -1,4 +1,4 @@
-var Timer GarageLightsTimer
+// var Timer GarageLightsTimer
 
 rule "Garage Lights — Turn On When Garage Door Opens"
 when
@@ -9,16 +9,16 @@ then
   }
 
   // turn off after set time if not home yet
-  GarageLightsTimer = createTimer(now.plusSeconds(300), [ |
-    if (GarageOverheadLights_Switch.state == ON && ExternalDoorOpenedSinceHome.state == OFF) {
-      GarageOverheadLights_Switch.sendCommand(OFF)
-    }
-  ])
+  // GarageLightsTimer = createTimer(now.plusSeconds(300), [ |
+  //   if (GarageOverheadLights_Switch.state == ON && ExternalDoorOpenedSinceHome.state == OFF) {
+  //     GarageOverheadLights_Switch.sendCommand(OFF)
+  //   }
+  // ])
 end
 
-rule "Garage Lights — Cancel Auto Off Timer"
-when
-  Item GarageOverheadLights_Switch changed from ON to OFF
-then
-  if (GarageLightsTimer !== null) GarageLightsTimer.cancel()
-end
+// rule "Garage Lights — Cancel Auto Off Timer"
+// when
+//   Item GarageOverheadLights_Switch changed from ON to OFF
+// then
+//   if (GarageLightsTimer !== null) GarageLightsTimer.cancel()
+// end
