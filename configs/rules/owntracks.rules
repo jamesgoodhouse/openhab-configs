@@ -1,6 +1,6 @@
 import java.util.List
 
-val List<String> homeRegions = newArrayList("ESP32-Beacon2", "Keychain2")
+val List<String> homeRegions = newArrayList("ESP32-Beacon", "Keychain")
 
 rule "Owntracks Raw JSON Changed"
 when
@@ -16,17 +16,19 @@ then
     logDebug("owntracks", "Number of Regions: {}", numRegions)
 
     var i = 0
-    var String region = ""
+    var region = ""
     var isHome = "OFF"
+    var homeRegionFound = false
 
-    while (i < numRegions) {
+    while (i < numRegions && !homeRegionFound) {
       region = transform("JSONPATH", "$.inregions.[" + i + "]", json)
       if (homeRegions.contains(region)) {
         isHome = "ON"
+        homeRegionFound = true
       }
       i++
     }
 
-    JamesPhone_IsHome.postUpdate(isHome)
+    JamesPhone_InHomeRegion.postUpdate(isHome)
   }
 end
