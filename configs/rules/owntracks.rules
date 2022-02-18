@@ -1,0 +1,13 @@
+rule "Owntracks Raw JSON Changed"
+when
+  Item JamesPhone_Owntracks_RawJSON changed
+then
+  val String json = (JamesPhone_Owntracks_RawJSON.state as StringType).toString
+  val String type = transform("JSONPATH", "$._type", json)
+  if (type == "location") {
+    val String regions = transform("JSONPATH", "$.inregions", json)
+
+    JamesPhone_AtHome.postUpdate(regions)
+    # JamesPhone_AtHome.postUpdate(ON)
+  }
+end

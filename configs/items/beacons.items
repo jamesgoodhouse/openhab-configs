@@ -1,1 +1,4 @@
 String JamesPhone_Owntracks_RawJSON "Owntracks Raw JSON" { channel="mqtt:topic:hivemq:phone_james:raw_json" }
+
+Switch JamesPhone_AtHome "James Phone at Home [%s]" <present> ["Switch"]
+String JamesPhone_Regions "James Regions"
