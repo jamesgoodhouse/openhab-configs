@@ -36,6 +36,7 @@ then
 
     JamesPhone_Owntracks_InHomeRegion.postUpdate(isHome)
   } else if (type == "lwt") {
+    logInfo("owntracks", "Owntracks lost connection to MQTT broker")
     JamesPhone_Owntracks_InHomeRegion.postUpdate(OFF)
   }
 end
