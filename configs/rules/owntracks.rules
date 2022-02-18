@@ -1,3 +1,7 @@
+import java.util.List
+
+val List<String> homeRegions = newArrayList("ESP32-Beacon2", "Keychain2")
+
 rule "Owntracks Raw JSON Changed"
 when
   Item JamesPhone_Owntracks_RawJSON changed
@@ -6,7 +10,23 @@ then
   val String type = transform("JSONPATH", "$._type", json)
   if (type == "location") {
     val String regions = transform("JSONPATH", "$.inregions", json)
-
     JamesPhone_Regions.postUpdate(regions)
+
+    val Number numRegions = Integer::parseInt(transform("JSONPATH", "$.inregions.length()", json))
+    logDebug("owntracks", "Number of Regions: {}", numRegions)
+
+    var i = 0
+    var String region = ""
+    var isHome = "OFF"
+
+    while (i < numRegions) {
+      region = transform("JSONPATH", "$.inregions.[" + i + "]", json)
+      if (homeRegions.contains(region)) {
+        isHome = "ON"
+      }
+      i++
+    }
+
+    JamesPhone_IsHome.postUpdate(isHome)
   }
 end
