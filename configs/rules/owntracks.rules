@@ -9,24 +9,28 @@ then
   val String json = (JamesPhone_Owntracks_RawJSON.state as StringType).toString
   val String type = transform("JSONPATH", "$._type", json)
   if (type == "location") {
-    val String regions = transform("JSONPATH", "$.inregions", json)
-    JamesPhone_Regions.postUpdate(regions)
-
-    val Number numRegions = Integer::parseInt(transform("JSONPATH", "$.inregions.length()", json))
-    logDebug("owntracks", "Number of Regions: {}", numRegions)
-
-    var i = 0
-    var region = ""
-    var isHome = "OFF"
     var homeRegionFound = false
+    var isHome = "OFF"
+    val List<String> keys = transform("JSONPATH", "$.keys()", json).replaceAll("\\[", "").replaceAll("\\]", "").split(", ")
 
-    while (i < numRegions && !homeRegionFound) {
-      region = transform("JSONPATH", "$.inregions.[" + i + "]", json)
-      if (homeRegions.contains(region)) {
-        isHome = "ON"
-        homeRegionFound = true
+    if (keys.contains("inregions")) {
+      val String regions = transform("JSONPATH", "$.inregions", json)
+      JamesPhone_Regions.postUpdate(regions)
+
+      val Number numRegions = Integer::parseInt(transform("JSONPATH", "$.inregions.length()", json))
+      logDebug("owntracks", "Number of Regions: {}", numRegions)
+
+      var i = 0
+      var region = ""
+
+      while (i < numRegions && !homeRegionFound) {
+        region = transform("JSONPATH", "$.inregions.[" + i + "]", json)
+        if (homeRegions.contains(region)) {
+          isHome = "ON"
+          homeRegionFound = true
+        }
+        i++
       }
-      i++
     }
 
     JamesPhone_InHomeRegion.postUpdate(isHome)
