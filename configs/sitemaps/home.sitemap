@@ -155,7 +155,7 @@ sitemap home label="Home" {
     Text label="Statuses" icon="info" {
       Text item=Alarm_Status icon="alarm" label="Alarm [MAP(online.map):%s]" valuecolor=[OFF="#e61c2c",ON="#1ac731"]
       Text item=Fireplace_Controller_Status label="Fireplace Controller [MAP(online.map):%s]" icon="fire" valuecolor=[ONLINE="#1ac731",OFFLINE="#e61c2c"]
-      Text item=SensorReporter_Status label="Sensor Reporter [MAP(sensorreporter.map):%s]" icon="network" valuecolor=[ONLINE="#1ac731",OFFLINE="#e61c2c"]
+      // Text item=SensorReporter_Status label="Sensor Reporter [MAP(sensorreporter.map):%s]" icon="network" valuecolor=[ONLINE="#1ac731",OFFLINE="#e61c2c"]
     }
   }
 }

@@ -12,8 +12,8 @@ DateTime JamesPhone_Network_PingDevice_LastSeen       "Ping — Last Seen [%1$tH
 DateTime JamesPhone_Network_PingDevice_OnlineAt       "Ping — Online At [%1$tH:%1$tM:%1$tS]"     <network> (JamesPhone)                          ["Measurement","Timestamp"]
 DateTime JamesPhone_Network_PingDevice_OfflineAt      "Ping — Offline At [%1$tH:%1$tM:%1$tS]"    <network> (JamesPhone)                          ["Measurement","Timestamp"]
 
-Switch   JamesPhone_Bluetooth_Status         "Bluetooth — Status [MAP(online.map):%s]"       <bluetooth> (JamesPresent,Present,JamesPhone,Persist,JamesPhoneOnline) ["Switch"]                  { channel="mqtt:topic:mosquitto:phone_james:online" }
-Switch   JamesPhone_Bluetooth_ProxyStatus    "Bluetooth — Proxy Status [MAP(online.map):%s]" <bluetooth> (JamesPhone,JamesPresent,Present)     ["Switch"]
-Switch   JamesPhone_Bluetooth_UseForPresence "Bluetooth — Use For Presence [%s]"             <bluetooth> (JamesPhone)                          ["Switch"]
-DateTime JamesPhone_Bluetooth_OnlineAt       "Bluetooth — Online At [%1$tH:%1$tM:%1$tS]"     <bluetooth> (JamesPhone,Persist)                  ["Measurement","Timestamp"]
-DateTime JamesPhone_Bluetooth_OfflineAt      "Bluetooth — Offline At [%1$tH:%1$tM:%1$tS]"    <bluetooth> (JamesPhone,Persist)                  ["Measurement","Timestamp"]
+// Switch   JamesPhone_Bluetooth_Status         "Bluetooth — Status [MAP(online.map):%s]"       <bluetooth> (JamesPresent,Present,JamesPhone,Persist,JamesPhoneOnline) ["Switch"]                  { channel="mqtt:topic:mosquitto:phone_james:online" }
+// Switch   JamesPhone_Bluetooth_ProxyStatus    "Bluetooth — Proxy Status [MAP(online.map):%s]" <bluetooth> (JamesPhone,JamesPresent,Present)     ["Switch"]
+// Switch   JamesPhone_Bluetooth_UseForPresence "Bluetooth — Use For Presence [%s]"             <bluetooth> (JamesPhone)                          ["Switch"]
+// DateTime JamesPhone_Bluetooth_OnlineAt       "Bluetooth — Online At [%1$tH:%1$tM:%1$tS]"     <bluetooth> (JamesPhone,Persist)                  ["Measurement","Timestamp"]
+// DateTime JamesPhone_Bluetooth_OfflineAt      "Bluetooth — Offline At [%1$tH:%1$tM:%1$tS]"    <bluetooth> (JamesPhone,Persist)                  ["Measurement","Timestamp"]
