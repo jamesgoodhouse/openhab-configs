@@ -3,24 +3,20 @@ sitemap home label="Home" {
 
   Text item=JamesPresent label="James [MAP(presence.map):%s]" icon=man_3 valuecolor=[ON="#1ac731",OFF="orange"] {
     Text item=JamesPresent_LeftReturnedAt icon=time
-    Switch item=ManualPresence
 
     Text item=JamesPhoneOnline label="Phone [MAP(online.map):%s]" icon="phone" valuecolor=[ON="#1ac731",OFF="orange"] {
       // Text item=JamesPhone_Bluetooth_Status label="Bluetooth Status [MAP(online.map):%s]" valuecolor=[ON="#1ac731",OFF="orange"] icon="bluetooth" {
       //   Text item=JamesPhone_Bluetooth_OnlineAt icon=time label="Online At"
       //   Text item=JamesPhone_Bluetooth_OfflineAt icon=time label="Offline At"
-      //   Switch item=JamesPhone_Bluetooth_UseForPresence label="Use For Presence [%s]" icon="switch"
       // }
       Text item=JamesPhone_Owntracks_InHomeRegion label="Owntracks" valuecolor=[ON="#1ac731",OFF="orange"] icon="bluetooth"
       Text item=JamesPhone_Network_PingDevice_Status label="Ping Status [MAP(online.map):%s]" valuecolor=[ON="#1ac731",OFF="orange"] icon="network" {
         Text item=JamesPhone_Network_PingDevice_OnlineAt icon=time label="Online At"
         Text item=JamesPhone_Network_PingDevice_OfflineAt icon=time label="Offline At"
-        Switch item=JamesPhone_Network_PingDevice_UseForPresence label="Use For Presence [%s]" icon="switch"
       }
       Text item=JamesPhone_UnifiController_Status label="UniFi Status [MAP(online.map):%s]" valuecolor=[ON="#1ac731",OFF="orange"] icon="unifi" {
         Text item=JamesPhone_UnifiController_OnlineAt icon=time label="Online At"
         Text item=JamesPhone_UnifiController_OfflineAt icon=time label="Offline At"
-        Switch item=JamesPhone_UnifiController_UseForPresence label="Use For Presence [%s]" icon="switch"
       }
     }
   }
