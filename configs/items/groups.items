@@ -3,12 +3,9 @@ Group Persist "Persist"
 
 Group:Switch:AND(OFF,ON) JamesPhoneOnline
 
-Group People "People"
-  Group James (People)
-    Group JamesPhone                      "James' Phone"       <phone>            (James)           ["Smartphone"]
-
 // semantic model groups
 Group Network                           "Network"            <network>                              ["Location"]
+  Group JamesPhone                      "James' Phone"       <phone>            (Network)           ["Smartphone"]
 
 Group Indoor                            "Indoor"                                                    ["Indoor"]
  Group GroundFloor                      "Ground Floor"       <floor_g>          (Indoor)            ["GroundFloor"]
