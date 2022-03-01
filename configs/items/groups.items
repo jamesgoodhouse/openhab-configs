@@ -44,5 +44,4 @@ Group Indoor                            "Indoor"                                
   Group MediaRoom                       "Media Room"        <television>        (ThirdFloor)        ["Room"]
 
 Group Outdoor                           "Outdoor"           <garden>                                ["Outdoor"]
- Group AQI                              "Air Quality"       <colorlight>        (Outdoor)           ["Sensor"]
  Group OutdoorHVACUnit                  "Outdoor HVAC Unit" <heating>           (Outdoor)           ["HVAC"]
