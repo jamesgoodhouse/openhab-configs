@@ -1,4 +1,5 @@
 import java.util.List
+import java.util.HashMap
 import java.util.Map
 
 val List<String> homeRegions = newArrayList("ESP32-Beacon", "Keychain")
