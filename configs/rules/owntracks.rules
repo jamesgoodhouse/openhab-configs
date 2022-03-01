@@ -1,6 +1,12 @@
 import java.util.List
 
 val List<String> homeRegions = newArrayList("ESP32-Beacon", "Keychain")
+val Map<String, String> regionToItemMap = newHashMap(
+  "ESP32-Beacon" -> "JamesPhone_Owntracks_Beacon_Kitchen"
+)
+val Map<String, String> beaconStates = newHashMap(
+  "JamesPhone_Owntracks_Beacon_Kitchen" -> "OFF"
+)
 
 rule "Owntracks Raw JSON Changed"
 when
@@ -10,7 +16,6 @@ then
   val String type = transform("JSONPATH", "$._type", json)
 
   if (type == "location") {
-    var homeRegionFound = false
     var isHome = "OFF"
     val List<String> keys = transform("JSONPATH", "$.keys()", json).replaceAll("\\[", "").replaceAll("\\]", "").split(", ")
     val String tst = transform("JSONPATH", "$.tst", json)
@@ -25,14 +30,23 @@ then
       var i = 0
       var region = ""
 
-      while (i < numRegions && !homeRegionFound) {
+      while (i < numRegions) {
         region = transform("JSONPATH", "$.inregions.[" + i + "]", json)
+
         if (homeRegions.contains(region)) {
           isHome = "ON"
-          homeRegionFound = true
         }
+
+        // set item state for region to ON for known regions
+        if (regionToItemMap.containsKey(region)) {
+          val regionItemName = regionToItemMap.get(region)
+          beaconStates.put(regionItemName, "ON")
+        }
+
         i++
       }
+
+      //postUpdate(MyItem, <new_state>)
     }
 
     JamesPhone_Owntracks_LastSeen.postUpdate(new DateTimeType(tst))
