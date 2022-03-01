@@ -47,7 +47,7 @@ then
         i++
       }
 
-      //postUpdate(MyItem, <new_state>)
+      beaconStates.forEach[item, state | postUpdate(item, state)]
     }
 
     JamesPhone_Owntracks_LastSeen.postUpdate(new DateTimeType(tst))
