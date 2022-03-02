@@ -1,7 +1,6 @@
 import java.util.List
 import java.util.Map
 
-val List<String> homeRegions = newArrayList("ESP32-Beacon", "Keychain")
 val Map<String, String> regionToItemMap = newHashMap(
   "ESP32-Beacon" -> "JamesPhone_Owntracks_Beacon_Kitchen"
 )
@@ -17,7 +16,6 @@ then
   val String type = transform("JSONPATH", "$._type", json)
 
   if (type == "location") {
-    var isHome = "OFF"
     val List<String> keys = transform("JSONPATH", "$.keys()", json).replaceAll("\\[", "").replaceAll("\\]", "").split(", ")
     val String tst = transform("JSONPATH", "$.tst", json)
 
@@ -33,10 +31,6 @@ then
 
       while (i < numRegions) {
         region = transform("JSONPATH", "$.inregions.[" + i + "]", json)
-
-        if (homeRegions.contains(region)) {
-          isHome = "ON"
-        }
 
         // set item state for region to ON for known regions
         if (regionToItemMap.containsKey(region)) {
@@ -54,9 +48,10 @@ then
     }
 
     JamesPhone_Owntracks_LastSeen.postUpdate(new DateTimeType(tst))
-    JamesPhone_Owntracks_InHomeRegion.postUpdate(isHome)
   } else if (type == "lwt") {
     logInfo("owntracks", "Owntracks lost connection to MQTT broker")
-    JamesPhone_Owntracks_InHomeRegion.postUpdate(OFF)
+    beaconStates.forEach[item, state |
+      postUpdate(item, "OFF")
+    ]
   }
 end
