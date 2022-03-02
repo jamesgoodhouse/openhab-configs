@@ -4,5 +4,5 @@ Switch   JamesPhone_Owntracks_InHomeRegion             "Owntracks — In Home Re
 DateTime JamesPhone_Owntracks_LastSeen                 "Owntracks — Last Seen [%1$tH:%1$tM:%1$tS]" (JamesPhone)                      ["Timestamp"]
 
 Switch   JamesPhone_Owntracks_Beacon_Kitchen           "Owntracks — Kitchen Beacon"                (JamesPhone,JamesPresent,Persist) ["Switch"]
-DateTime JamesPhone_Owntracks_Beacon_Kitchen_OnlineAt  "Owntracks — Online At [%1$tb %1$te %1$tH:%1$tM:%1$tS]"  (JamesPhone,Persist) ["Measurement","Timestamp"]
-DateTime JamesPhone_Owntracks_Beacon_Kitchen_OfflineAt "Owntracks — Offline At [%1$tb %1$te %1$tH:%1$tM:%1$tS]" (JamesPhone,Persist) ["Measurement","Timestamp"]
+DateTime JamesPhone_Owntracks_Beacon_Kitchen_OnlineAt  "Owntracks — Kitchen Beacon Online At [%1$tb %1$te %1$tH:%1$tM:%1$tS]"  (JamesPhone,Persist) ["Measurement","Timestamp"]
+DateTime JamesPhone_Owntracks_Beacon_Kitchen_OfflineAt "Owntracks — Kitchen Beacon Offline At [%1$tb %1$te %1$tH:%1$tM:%1$tS]" (JamesPhone,Persist) ["Measurement","Timestamp"]
