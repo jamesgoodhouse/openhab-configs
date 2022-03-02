@@ -2,4 +2,4 @@ String   JamesPhone_Owntracks_RawJSON        "Owntracks — Raw JSON"           
 String   JamesPhone_Owntracks_Regions        "Owntracks — Regions"                       (JamesPhone)
 Switch   JamesPhone_Owntracks_InHomeRegion   "Owntracks — In Home Region [%s]" <present> (Present,JamesPresent,JamesPhone) ["Switch"]
 DateTime JamesPhone_Owntracks_LastSeen       "Owntracks — Last Seen [%1$tH:%1$tM:%1$tS]" (JamesPhone)                      ["Timestamp"]
-Switch   JamesPhone_Owntracks_Beacon_Kitchen "Owntracks — Kitchen Beacon"                (JamesPhone,Persit)               ["Switch"]
+Switch   JamesPhone_Owntracks_Beacon_Kitchen "Owntracks — Kitchen Beacon"                (JamesPhone,Persist)              ["Switch"]
