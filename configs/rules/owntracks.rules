@@ -13,6 +13,7 @@ then
   val String type = transform("JSONPATH", "$._type", json)
 
   if (type == "location") {
+    var inHomeRegion = "OFF"
     val List<String> keys = transform("JSONPATH", "$.keys()", json).replaceAll("\\[", "").replaceAll("\\]", "").split(", ")
     val String tst = transform("JSONPATH", "$.tst", json)
 
@@ -35,6 +36,7 @@ then
 
         // set item state for region to ON for known regions
         if (regionToItemMap.containsKey(region)) {
+          inHomeRegion = "ON"
           val regionItemName = regionToItemMap.get(region)
           beaconStates.put(regionItemName, "ON")
         }
@@ -56,8 +58,10 @@ then
     }
 
     JamesPhone_Owntracks_LastSeen.postUpdate(new DateTimeType(tst))
+    JamesPhone_Owntracks_InHomeRegion.postUpdate(inHomeRegion)
   } else if (type == "lwt") {
     logInfo("owntracks", "Owntracks lost connection to MQTT broker")
+    JamesPhone_Owntracks_InHomeRegion.postUpdate("OFF")
     beaconStates.forEach[String item, String state |
       postUpdate(item, "OFF")
       postUpdate(item + "_OfflineAt", new DateTimeType(now).toString)
