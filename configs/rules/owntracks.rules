@@ -48,9 +48,9 @@ then
         postUpdate(item, state)
 
         if (state == "ON") {
-          postUpdate(item + "_OnlineAt", new DateTimeType(now))
+          postUpdate(item + "_OnlineAt", new DateTimeType(now).toString)
         } else {
-          postUpdate(item + "_OfflineAt", new DateTimeType(now))
+          postUpdate(item + "_OfflineAt", new DateTimeType(now).toString)
         }
       ]
     }
@@ -60,7 +60,7 @@ then
     logInfo("owntracks", "Owntracks lost connection to MQTT broker")
     beaconStates.forEach[item, state |
       postUpdate(item, "OFF")
-      postUpdate(item + "_OfflineAt", new DateTimeType(now))
+      postUpdate(item + "_OfflineAt", new DateTimeType(now).toString)
     ]
   }
 end
