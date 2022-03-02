@@ -10,7 +10,7 @@ sitemap home label="Home" {
       //   Text item=JamesPhone_Bluetooth_OfflineAt icon=time label="Offline At"
       // }
       Text item=JamesPhone_Owntracks_InHomeRegion label="Beacons" valuecolor=[ON="#1ac731",OFF="orange"] icon="bluetooth" {
-        Text item=JamesPhone_Owntracks_Beacon_Kitchen label="Kitchen" valuecolor=[ON="#1ac731",OFF="orange"]
+        Text item=JamesPhone_Owntracks_Beacon_Kitchen label="Kitchen [%s]" valuecolor=[ON="#1ac731",OFF="orange"]
       }
       Text item=JamesPhone_Network_PingDevice_Status label="Ping Status [MAP(online.map):%s]" valuecolor=[ON="#1ac731",OFF="orange"] icon="network" {
         Text item=JamesPhone_Network_PingDevice_OnlineAt icon=time label="Online At"
