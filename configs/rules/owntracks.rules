@@ -47,7 +47,10 @@ then
         i++
       }
 
-      beaconStates.forEach[item, state | postUpdate(item, state)]
+      beaconStates.forEach[item, state |
+        logInfo("owntracks", "setting item {} to {}", item, state)
+        postUpdate(item, state)
+      ]
     }
 
     JamesPhone_Owntracks_LastSeen.postUpdate(new DateTimeType(tst))
