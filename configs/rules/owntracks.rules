@@ -16,12 +16,11 @@ then
     var inHomeRegion = "OFF"
     val List<String> keys = transform("JSONPATH", "$.keys()", json).replaceAll("\\[", "").replaceAll("\\]", "").split(", ")
     val String tst = transform("JSONPATH", "$.tst", json)
+    var Map<String, String> beaconStates = newHashMap(
+      "JamesPhone_Owntracks_Beacon_Kitchen" -> "OFF"
+    )
 
     if (keys.contains("inregions")) {
-      var Map<String, String> beaconStates = newHashMap(
-        "JamesPhone_Owntracks_Beacon_Kitchen" -> "OFF"
-      )
-
       val String regions = transform("JSONPATH", "$.inregions", json)
       JamesPhone_Owntracks_Regions.postUpdate(regions)
 
