@@ -1,6 +1,6 @@
 String   JamesPhone_Owntracks_RawJSON                  "Owntracks — Raw JSON"                      (JamesPhone)                                    { channel="mqtt:topic:hivemq:phone_james:raw_json" }
 String   JamesPhone_Owntracks_Regions                  "Owntracks — Regions"                       (JamesPhone)
-Switch   JamesPhone_Owntracks_InHomeRegion             "Owntracks — In Home Region [%s]" <present> (Present,JamesPhone)              ["Switch"]
+Switch   JamesPhone_Owntracks_InHomeRegion             "Owntracks — In Home Region [%s]" <present> (JamesPresent,JamesPhone)              ["Switch"]
 DateTime JamesPhone_Owntracks_LastSeen                 "Owntracks — Last Seen [%1$tH:%1$tM:%1$tS]" (JamesPhone)                      ["Timestamp"]
 
 Switch   JamesPhone_Owntracks_Beacon_Kitchen           "Owntracks — Kitchen Beacon"                (JamesPhone,JamesPresent,Persist) ["Switch"]
