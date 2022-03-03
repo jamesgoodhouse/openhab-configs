@@ -1,8 +1,9 @@
-String   JamesPhone_Owntracks_RawJSON                  "Owntracks — Raw JSON"                      (JamesPhone)                                    { channel="mqtt:topic:hivemq:phone_james:raw_json" }
-String   JamesPhone_Owntracks_Regions                  "Owntracks — Regions"                       (JamesPhone)
-Switch   JamesPhone_Owntracks_InHomeRegion             "Owntracks — In Home Region [%s]" <present> (JamesPresent,JamesPhone)              ["Switch"]
-DateTime JamesPhone_Owntracks_LastSeen                 "Owntracks — Last Seen [%1$tH:%1$tM:%1$tS]" (JamesPhone)                      ["Timestamp"]
+String   JamesPhone_Owntracks_RawJSON  "Owntracks — Raw JSON"                      (JamesPhone,Persist) { channel="mqtt:topic:hivemq:phone_james:raw_json" }
+String   JamesPhone_Owntracks_Regions  "Owntracks — Regions"                       (JamesPhone,Persist)
+DateTime JamesPhone_Owntracks_LastSeen "Owntracks — Last Seen [%1$tH:%1$tM:%1$tS]" (JamesPhone,Persist) ["Timestamp"]
 
-Switch   JamesPhone_Owntracks_Beacon_Kitchen           "Owntracks — Kitchen Beacon"                (JamesPhone,JamesPresent,Persist) ["Switch"]
+Group:Switch:AND(OFF,ON) JamesPhone_Owntracks_HomeBeacons "Owntracks — In Home Region [%s]" <present> (JamesPresent,JamesPhone,Persist)
+
+Switch   JamesPhone_Owntracks_Beacon_Kitchen           "Owntracks — Kitchen Beacon"                                            (JamesPhone,JamesPhone_Owntracks_HomeBeacons,Persist) ["Switch"]
 DateTime JamesPhone_Owntracks_Beacon_Kitchen_OnlineAt  "Owntracks — Kitchen Beacon Online At [%1$tb %1$te %1$tH:%1$tM:%1$tS]"  (JamesPhone,Persist) ["Measurement","Timestamp"]
 DateTime JamesPhone_Owntracks_Beacon_Kitchen_OfflineAt "Owntracks — Kitchen Beacon Offline At [%1$tb %1$te %1$tH:%1$tM:%1$tS]" (JamesPhone,Persist) ["Measurement","Timestamp"]
