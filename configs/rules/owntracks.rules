@@ -57,10 +57,10 @@ then
     }
 
     JamesPhone_Owntracks_LastSeen.postUpdate(new DateTimeType(tst))
-    JamesPhone_Owntracks_InHomeRegion.postUpdate(inHomeRegion)
+    JamesPhone_Owntracks_HomeBeacons.postUpdate(inHomeRegion)
   } else if (type == "lwt") {
     logInfo("owntracks", "Owntracks lost connection to MQTT broker")
-    JamesPhone_Owntracks_InHomeRegion.postUpdate("OFF")
+    JamesPhone_Owntracks_HomeBeacons.postUpdate("OFF")
     beaconStates.forEach[String item, String state |
       postUpdate(item, "OFF")
       postUpdate(item + "_OfflineAt", new DateTimeType(now).toString)
