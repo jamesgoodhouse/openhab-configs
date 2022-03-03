@@ -42,6 +42,8 @@ then
 
         i++
       }
+    } else {
+      JamesPhone_Owntracks_Regions.postUpdate(NULL)
     }
 
     beaconStates.forEach[String item, String state |
