@@ -7,3 +7,7 @@ Group:Switch:AND(OFF,ON) JamesPhone_Owntracks_HomeBeacons "Owntracks — In Home
 Switch   JamesPhone_Owntracks_Beacon_Kitchen           "Owntracks — Kitchen Beacon"                                            (JamesPhone,JamesPhone_Owntracks_HomeBeacons,Persist) ["Switch"]
 DateTime JamesPhone_Owntracks_Beacon_Kitchen_OnlineAt  "Owntracks — Kitchen Beacon Online At [%1$tb %1$te %1$tH:%1$tM:%1$tS]"  (JamesPhone,Persist) ["Measurement","Timestamp"]
 DateTime JamesPhone_Owntracks_Beacon_Kitchen_OfflineAt "Owntracks — Kitchen Beacon Offline At [%1$tb %1$te %1$tH:%1$tM:%1$tS]" (JamesPhone,Persist) ["Measurement","Timestamp"]
+
+Switch   JamesPhone_Owntracks_Beacon_Garage           "Owntracks — Garage Beacon"                                            (JamesPhone,JamesPhone_Owntracks_HomeBeacons,Persist) ["Switch"]
+DateTime JamesPhone_Owntracks_Beacon_Garage_OnlineAt  "Owntracks — Garage Beacon Online At [%1$tb %1$te %1$tH:%1$tM:%1$tS]"  (JamesPhone,Persist) ["Measurement","Timestamp"]
+DateTime JamesPhone_Owntracks_Beacon_Garage_OfflineAt "Owntracks — Garage Beacon Offline At [%1$tb %1$te %1$tH:%1$tM:%1$tS]" (JamesPhone,Persist) ["Measurement","Timestamp"]

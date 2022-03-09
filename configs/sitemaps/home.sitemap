@@ -10,6 +10,10 @@ sitemap home label="Home" {
       //   Text item=JamesPhone_Bluetooth_OfflineAt icon=time label="Offline At"
       // }
       Text item=JamesPhone_Owntracks_HomeBeacons label="Beacons [MAP(beacon.map):%s]" valuecolor=[ON="#1ac731",OFF="orange"] icon="bluetooth" {
+        Text item=JamesPhone_Owntracks_Beacon_Garage label="Garage [MAP(beacon.map):%s]" valuecolor=[ON="#1ac731",OFF="orange"] {
+          Text item=JamesPhone_Owntracks_Beacon_Garage_OnlineAt label="Found At"
+          Text item=JamesPhone_Owntracks_Beacon_Garage_OfflineAt label="Lost At"
+        }
         Text item=JamesPhone_Owntracks_Beacon_Kitchen label="Kitchen [MAP(beacon.map):%s]" valuecolor=[ON="#1ac731",OFF="orange"] {
           Text item=JamesPhone_Owntracks_Beacon_Kitchen_OnlineAt label="Found At"
           Text item=JamesPhone_Owntracks_Beacon_Kitchen_OfflineAt label="Lost At"
