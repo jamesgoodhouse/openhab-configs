@@ -76,12 +76,14 @@ rule "Home Beacon(s) changed state"
 when
   Member of JamesPhone_Owntracks_HomeBeacons changed
 then
-  val List<String> homeBeacons = new ArrayList<String>(
+  val List<String> homeBeacons = newArrayList(
     "JamesPhone_Owntracks_Beacon_Garage",
     "JamesPhone_Owntracks_Beacon_Kitchen"
   )
 
-  if (homeBeacons.contains(triggeringItem.name)) {
+  if (triggeringItem === null) {
+    logError("owntracks", "triggeringItem is null")
+  } else if (homeBeacons.contains(triggeringItem.name)) {
     if (triggeringItem.state == ON) {
       postUpdate(triggeringItem.name + "_OnlineAt", new DateTimeType(now).toString)
     } else if (triggeringItem.state == OFF) {
