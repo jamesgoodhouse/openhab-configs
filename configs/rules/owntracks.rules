@@ -73,6 +73,7 @@ then
 end
 
 rule "Home Beacon(s) changed state"
+when
   Member of JamesPhone_Owntracks_HomeBeacons changed
 then
   val List<String> homeBeacons = new ArrayList<String>(
