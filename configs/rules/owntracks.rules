@@ -53,11 +53,11 @@ then
 
       postUpdate(item, state)
 
-      if (state == "ON") {
-        postUpdate(item + "_OnlineAt", new DateTimeType(now).toString)
-      } else {
-        postUpdate(item + "_OfflineAt", new DateTimeType(now).toString)
-      }
+      // if (state == "ON") {
+      //   postUpdate(item + "_OnlineAt", new DateTimeType(now).toString)
+      // } else {
+      //   postUpdate(item + "_OfflineAt", new DateTimeType(now).toString)
+      // }
     ]
 
     JamesPhone_Owntracks_LastSeen.postUpdate(new DateTimeType(tst))
@@ -67,7 +67,24 @@ then
     JamesPhone_Owntracks_HomeBeacons.postUpdate("OFF")
     beaconStates.forEach[String item, String state |
       postUpdate(item, "OFF")
-      postUpdate(item + "_OfflineAt", new DateTimeType(now).toString)
+      // postUpdate(item + "_OfflineAt", new DateTimeType(now).toString)
     ]
+  }
+end
+
+rule "Home Beacon(s) changed state"
+  Member of JamesPhone_Owntracks_HomeBeacons changed
+then
+  val List<String> homeBeacons = new ArrayList<String>(
+    "JamesPhone_Owntracks_Beacon_Garage",
+    "JamesPhone_Owntracks_Beacon_Kitchen"
+  )
+
+  if (homeBeacons.contains(triggeringItem.name as String) {
+    if (triggeringItem.state == ON) {
+      postUpdate(triggeringItem.name + "_OnlineAt", new DateTimeType(now).toString)
+    } else if (triggeringItem.state == OFF) {
+      postUpdate(triggeringItem.name + "_OfflineAt", new DateTimeType(now).toString)
+    }
   }
 end
