@@ -81,6 +81,8 @@ Bridge mqtt:broker:hivemq [
   host="{{ (ds "configs").things.mqtt.hivemq.host }}",
   port={{ (ds "configs").things.mqtt.hivemq.port }},
   secure={{ (ds "configs").things.mqtt.hivemq.secure }},
+  publickeypin=true=false,
+  certificatepin=true,
   username="{{ (ds "configs").things.mqtt.hivemq.username }}",
   password="{{ (ds "configs").things.mqtt.hivemq.password }}"
 ] {
