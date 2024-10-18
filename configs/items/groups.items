@@ -41,7 +41,7 @@ Group Indoor                            "Indoor"                                
     Group Alarm                         "Alarm"             <alarm>             (MainBedroomCloset) ["AlarmSystem"]
   Group Hallway                         "Hallway"           <corridor>          (ThirdFloor)        ["Corridor"]
   Group LaundryCloset                   "Laundry Closet"    <washingmachine>    (ThirdFloor)        ["LaundryRoom"]
-  Group MediaRoom                       "Media Room"        <television>        (ThirdFloor)        ["Room"]
+  Group Office                          "Office"            <office>            (ThirdFloor)        ["Room"]
 
 Group Outdoor                           "Outdoor"           <garden>                                ["Outdoor"]
  Group OutdoorHVACUnit                  "Outdoor HVAC Unit" <heating>           (Outdoor)           ["HVAC"]
