@@ -59,8 +59,8 @@ things:
       port: 8883
       secure: 'true'
     mosquitto:
-      port: 1883
-      secure: 'false'
+      port: 8883
+      secure: 'true'
   network:
     ping_devices:
       phone_james:
