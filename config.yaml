@@ -103,6 +103,10 @@ things:
         label: Light Bulb
         location: Living Room
         thing_id: light_bulb_living_room
+      light_bulb_landing_upstairs:
+        label: Light Bulb
+        location: Hallway
+        thing_id: light_bulb_landing_upstairs
   zwave:
     controller:
       port: /dev/ttyUSB0
