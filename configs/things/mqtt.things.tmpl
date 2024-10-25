@@ -67,20 +67,3 @@ Bridge mqtt:broker:mosquitto [
       ]
   }
 }
-
-// Bridge mqtt:broker:hivemq [
-//   host="{{ (ds "configs").things.mqtt.hivemq.host }}",
-//   port={{ (ds "configs").things.mqtt.hivemq.port }},
-//   secure={{ (ds "configs").things.mqtt.hivemq.secure }},
-//   publickeypin=false,
-//   certificatepin=false,
-//   username="{{ (ds "configs").things.mqtt.hivemq.username }}",
-//   password="{{ (ds "configs").things.mqtt.hivemq.password }}"
-// ] {
-//   Thing topic phone_james "James' Phone" {
-//     Channels:
-//       Type string : raw_json "Raw JSON" [
-//         stateTopic="owntracks/james_phone"
-//       ]
-//   }
-// }
