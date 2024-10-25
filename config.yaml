@@ -55,9 +55,9 @@ things:
       host: main-bedroom.hvac.home.goodhouse.io
       location: Main Bedroom
   mqtt:
-    hivemq:
-      port: 8883
-      secure: 'true'
+    # hivemq:
+    #   port: 8883
+    #   secure: 'true'
     mosquitto:
       port: 8883
       secure: 'true'

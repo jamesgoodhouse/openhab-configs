@@ -41,55 +41,46 @@ Bridge mqtt:broker:mosquitto [
       ]
   }
 
-  // sensor reporter
-// Thing topic sensor_reporter "Sensor Reporter" {
-//   Channels:
-//     Type string : online "Online" [
-//       stateTopic="sensor_reporter/status"
-//     ]
-// }
-
-  // james' phone
-// Thing topic phone_james "James' Phone" {
-//   Channels:
-//     Type string : online "Online" [
-//       stateTopic="sensor_reporter/phone_james"
-//     ]
-// }
-
   // fireplace
-  Thing topic fireplace "Fireplace" {
-    Channels:
-      Type string : status "Online" [
-        stateTopic="rpi/fireplace/status",
-        on="ONLINE",
-        off="OFFLINE"
-      ]
-      Type switch : power "Power" [
-        commandTopic="rpi/fireplace/power",
-        retained=true,
-        on="ON",
-        off="OFF"
-      ]
-      Type switch : state "State" [
-        stateTopic="rpi/fireplace/state"
-      ]
-  }
-}
+  // Thing topic fireplace "Fireplace" {
+  //   Channels:
+  //     Type string : status "Online" [
+  //       stateTopic="rpi/fireplace/status",
+  //       on="ONLINE",
+  //       off="OFFLINE"
+  //     ]
+  //     Type switch : power "Power" [
+  //       commandTopic="rpi/fireplace/power",
+  //       retained=true,
+  //       on="ON",
+  //       off="OFF"
+  //     ]
+  //     Type switch : state "State" [
+  //       stateTopic="rpi/fireplace/state"
+  //     ]
+  // }
 
-Bridge mqtt:broker:hivemq [
-  host="{{ (ds "configs").things.mqtt.hivemq.host }}",
-  port={{ (ds "configs").things.mqtt.hivemq.port }},
-  secure={{ (ds "configs").things.mqtt.hivemq.secure }},
-  publickeypin=false,
-  certificatepin=false,
-  username="{{ (ds "configs").things.mqtt.hivemq.username }}",
-  password="{{ (ds "configs").things.mqtt.hivemq.password }}"
-] {
   Thing topic phone_james "James' Phone" {
     Channels:
       Type string : raw_json "Raw JSON" [
-        stateTopic="owntracks/james_phone"
+        stateTopic="owntracks/james/phone"
       ]
   }
 }
+
+// Bridge mqtt:broker:hivemq [
+//   host="{{ (ds "configs").things.mqtt.hivemq.host }}",
+//   port={{ (ds "configs").things.mqtt.hivemq.port }},
+//   secure={{ (ds "configs").things.mqtt.hivemq.secure }},
+//   publickeypin=false,
+//   certificatepin=false,
+//   username="{{ (ds "configs").things.mqtt.hivemq.username }}",
+//   password="{{ (ds "configs").things.mqtt.hivemq.password }}"
+// ] {
+//   Thing topic phone_james "James' Phone" {
+//     Channels:
+//       Type string : raw_json "Raw JSON" [
+//         stateTopic="owntracks/james_phone"
+//       ]
+//   }
+// }
