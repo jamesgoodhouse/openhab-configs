@@ -7,7 +7,6 @@ settings:
     - daikin
     - mqtt
     - network
-    - roku
     - telegram
     - tplinksmarthome
     - unifi
@@ -70,9 +69,6 @@ things:
           retry: 3
           timeout: 5000
           refreshInterval: 30000
-  roku:
-    port: 8060
-    refresh: 10
   unifi:
     port: 443
     refresh_rate: 10

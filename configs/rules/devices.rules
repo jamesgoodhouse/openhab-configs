@@ -12,20 +12,6 @@ then
   JamesPhone_UnifiController_OnlineAt.postUpdate(new DateTimeType(now))
 end
 
-rule "Device — Bluetooth (Offline)"
-when
-  Item JamesPhone_Bluetooth_Status changed to OFF
-then
-  JamesPhone_Bluetooth_OfflineAt.postUpdate(new DateTimeType(now))
-end
-
-rule "Device — Bluetooth (Online)"
-when
-  Item JamesPhone_Bluetooth_Status changed to ON
-then
-  JamesPhone_Bluetooth_OnlineAt.postUpdate(new DateTimeType(now))
-end
-
 rule "Device — Network (Offline)"
 when
   Item JamesPhone_Network_PingDevice_Status changed to OFF
