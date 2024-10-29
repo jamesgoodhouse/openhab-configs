@@ -2,8 +2,8 @@ import java.util.List
 import java.util.Map
 
 val Map<String, String> regionToItemMap = newHashMap(
-  "Garage" -> "JamesPhone_Owntracks_Region_Garage",
-  "Kitchen" -> "JamesPhone_Owntracks_Region_Kitchen"
+  "-Garage" -> "JamesPhone_Owntracks_Region_Garage",
+  "-Kitchen" -> "JamesPhone_Owntracks_Region_Kitchen"
 )
 
 rule "Owntracks Raw JSON Changed"
