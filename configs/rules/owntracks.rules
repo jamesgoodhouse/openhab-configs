@@ -2,8 +2,8 @@ import java.util.List
 import java.util.Map
 
 val Map<String, String> regionToItemMap = newHashMap(
-  "Garage" -> "JamesPhone_Owntracks_Beacon_Garage",
-  "Kitchen" -> "JamesPhone_Owntracks_Beacon_Kitchen"
+  "Garage" -> "JamesPhone_Owntracks_Region_Garage",
+  "Kitchen" -> "JamesPhone_Owntracks_Region_Kitchen"
 )
 
 rule "Owntracks Raw JSON Changed"
@@ -18,8 +18,8 @@ then
     val List<String> keys = transform("JSONPATH", "$.keys()", json).replaceAll("\\[", "").replaceAll("\\]", "").split(", ")
     val String tst = transform("JSONPATH", "$.tst", json)
     var Map<String, String> beaconStates = newHashMap(
-      "JamesPhone_Owntracks_Beacon_Garage" -> "OFF",
-      "JamesPhone_Owntracks_Beacon_Kitchen" -> "OFF"
+      "JamesPhone_Owntracks_Region_Garage" -> "OFF",
+      "JamesPhone_Owntracks_Region_Kitchen" -> "OFF"
     )
 
     if (keys.contains("inregions")) {
@@ -58,10 +58,10 @@ then
     ]
 
     JamesPhone_Owntracks_LastSeen.postUpdate(new DateTimeType(tst))
-    JamesPhone_Owntracks_HomeBeacons.postUpdate(inHomeRegion)
+    JamesPhone_Owntracks_InHomeRegion.postUpdate(inHomeRegion)
   } else if (type == "lwt") {
     logInfo("owntracks", "Owntracks lost connection to MQTT broker")
-    JamesPhone_Owntracks_HomeBeacons.postUpdate("OFF")
+    JamesPhone_Owntracks_InHomeRegion.postUpdate("OFF")
     beaconStates.forEach[String item, String state |
       postUpdate(item, "OFF")
     ]
@@ -70,11 +70,11 @@ end
 
 rule "Home Beacon(s) changed state"
 when
-  Member of JamesPhone_Owntracks_HomeBeacons changed
+  Member of JamesPhone_Owntracks_InHomeRegion changed
 then
   val List<String> homeBeacons = newArrayList(
-    "JamesPhone_Owntracks_Beacon_Garage",
-    "JamesPhone_Owntracks_Beacon_Kitchen"
+    "JamesPhone_Owntracks_Region_Garage",
+    "JamesPhone_Owntracks_Region_Kitchen"
   )
 
   if (triggeringItem === null) {
