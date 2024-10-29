@@ -35,6 +35,10 @@ then
       while (i < numRegions) {
         region = transform("JSONPATH", "$.inregions.[" + i + "]", json)
 
+        if (region.toLowerCase().contains("home")) {
+          inHomeRegion = "ON"
+        }
+
         // set item state for region to ON for known regions
         if (regionToItemMap.containsKey(region)) {
           inHomeRegion = "ON"
