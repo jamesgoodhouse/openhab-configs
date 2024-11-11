@@ -7,3 +7,5 @@ Switch   JamesPhone_Network_PingDevice_Status    "Ping — Status [MAP(online.ma
 DateTime JamesPhone_Network_PingDevice_LastSeen  "Ping — Last Seen [%1$tb %1$te %1$tH:%1$tM:%1$tS]"   <network> (JamesPhone)                                       ["Measurement","Timestamp"] { channel="network:pingdevice:phone_james:lastseen" }
 DateTime JamesPhone_Network_PingDevice_OnlineAt  "Ping — Online At [%1$tb %1$te %1$tH:%1$tM:%1$tS]"   <network> (JamesPhone)                                       ["Measurement","Timestamp"]
 DateTime JamesPhone_Network_PingDevice_OfflineAt "Ping — Offline At [%1$tb %1$te %1$tH:%1$tM:%1$tS]"  <network> (JamesPhone)                                       ["Measurement","Timestamp"]
+
+Switch   JamesPhone_iOS_Status                   "iOS — Status [MAP(online.map):%s]"                  <network> (JamesPresent,JamesPhone,Persist,JamesPhoneOnline) ["Switch"]
