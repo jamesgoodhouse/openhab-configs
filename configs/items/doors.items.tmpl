@@ -6,15 +6,15 @@ Switch ExternalDoorOpenedSinceHome
 {{- $garageDoorSensorThingID := (ds "configs").things.zwave.devices.sensor_garage_door.thing_id -}}
 {{- $garageDoorSensorChannelPrefix := printf "zwave:%s:controller:%s" $garageDoorSensorTypeID $garageDoorSensorThingID -}}
 // garage door contact sensor
-Number:Dimensionless GarageRollupDoorContactSensor_Battery "Battery [%d %%]" <battery> (GarageRollupDoorContactSensor,Persist) ["Battery"] {
-  channel = "{{ $garageDoorSensorChannelPrefix }}:battery-level"
-}
-Contact GarageRollupDoorContactSensor_State "State" (GarageRollupDoorContactSensor,GarageRollupDoor_State,Persist) ["OpenState"] {
-  channel = "{{ $garageDoorSensorChannelPrefix }}:sensor_door"
-}
-Switch GarageRollupDoorContactSensor_TamperAlarm "Tamper Alarm" <alarm> (GarageRollupDoorContactSensor,Persist) ["Tampered"] {
-  channel = "{{ $garageDoorSensorChannelPrefix }}:alarm_tamper"
-}
+// Number:Dimensionless GarageRollupDoorContactSensor_Battery "Battery [%d %%]" <battery> (GarageRollupDoorContactSensor,Persist) ["Battery"] {
+//   channel = "{{ $garageDoorSensorChannelPrefix }}:battery-level"
+// }
+// Contact GarageRollupDoorContactSensor_State "State" (GarageRollupDoorContactSensor,GarageRollupDoor_State,Persist) ["OpenState"] {
+//   channel = "{{ $garageDoorSensorChannelPrefix }}:sensor_door"
+// }
+// Switch GarageRollupDoorContactSensor_TamperAlarm "Tamper Alarm" <alarm> (GarageRollupDoorContactSensor,Persist) ["Tampered"] {
+//   channel = "{{ $garageDoorSensorChannelPrefix }}:alarm_tamper"
+// }
 
 {{ $garageDoorTiltSensorTypeID := (ds "configs").things.zwave.devices.tilt_sensor_garage_door.type_id -}}
 {{- $garageDoorTiltSensorThingID := (ds "configs").things.zwave.devices.tilt_sensor_garage_door.thing_id -}}
