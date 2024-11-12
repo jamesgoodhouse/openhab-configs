@@ -40,6 +40,11 @@ Switch GarageRollupDoor_Switch "Switch" (GarageRollupDoor,Persist) ["Control"] {
   channel = "zigbee:device:stick:switch_garage_door:{{ $garageDoorSwitchMacAddress }}_1_switch"
 }
 
+Number GarageRollupDoor_Shelly_AutoOnTimer  "Auto On Timer"  { channel="shelly:shellyplus1:garage_door:relay#autoOn" }
+Number GarageRollupDoor_Shelly_AutoOffTimer "Auto Off Timer" { channel="shelly:shellyplus1:garage_door:relay#autoOff" }
+Switch GarageRollupDoor_Shelly_Relay        "Relay"          { channel="shelly:shellyplus1:garage_door:relay#output" }
+Switch GarageRollupDoor_Shelly_Input        "Input"          { channel="shelly:shellyplus1:garage_door:relay#input" }
+
 // front door
 Contact FrontDoor_State "State" (FrontDoor,ExternalDoorStates) ["OpenState"] {
   channel="mqtt:topic:mosquitto:sensor_door_front:state"
