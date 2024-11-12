@@ -1,2 +1,2 @@
-Number:Illuminance VirtualIlluminance          "Virtual Illuminance"          <sun_clouds> (Outdoor)
-Number:Illuminance VirtualIlluminance_Weighted "Weighted Virtual Illuminance" <sun_clouds> (Outdoor)
+Number:Illuminance VirtualIlluminance          "Virtual Illuminance"          <sun_clouds> (Persist)
+Number:Illuminance VirtualIlluminance_Weighted "Weighted Virtual Illuminance" <sun_clouds> (Persist)
