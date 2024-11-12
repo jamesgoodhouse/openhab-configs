@@ -10,6 +10,9 @@ then
 
     val dimLevelLivingRoom = (LivingRoomLightbulb_AutomationDimmerValue.state as Number).intValue
     LivingRoomLightbulb_Dimmer.sendCommand(dimLevelLivingRoom)
+
+    val dimLevelUpstairsLanding = (LandingUpstairsLightbulb_AutomationDimmerValue.state as Number).intValue
+    LandingUpstairsLightbulb_Dimmer.sendCommand(dimLevelUpstairsLanding)
   }
 end
 
@@ -21,6 +24,7 @@ then
 
   LandingLightbulb_Dimmer.sendCommand(0)
   LivingRoomLightbulb_Dimmer.sendCommand(0)
+  LandingUpstairsLightbulb_Dimmer.sendCommand(0)
 end
 
 rule "Mood Lights — Turn On When Home"
@@ -37,5 +41,8 @@ then
 
     val dimLevelLivingRoom = (LivingRoomLightbulb_AutomationDimmerValue.state as Number).intValue
     LivingRoomLightbulb_Dimmer.sendCommand(dimLevelLivingRoom)
+
+    val dimLevelUpstairsLanding = (LandingUpstairsLightbulb_AutomationDimmerValue.state as Number).intValue
+    LandingUpstairsLightbulb_Dimmer.sendCommand(dimLevelUpstairsLanding)
   }
 end

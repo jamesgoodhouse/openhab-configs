@@ -45,4 +45,8 @@ then
     logInfo("lights", "Living Room Lightbulb — Turning Off")
     LivingRoomLightbulb_Dimmer.sendCommand(0)
   }
+  if (LandingUpstairsLightbulb_Dimmer.state != 0 && Rule_TurnOffUpstairsLandingLightbulbWhenLeaving.state == ON) {
+    logInfo("lights", "Upstairs Landing Lightbulb — Turning Off")
+    LandingUpstairsLightbulb_Dimmer.sendCommand(0)
+  }
 end

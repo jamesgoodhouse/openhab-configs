@@ -27,6 +27,7 @@ then
     if (Rule_NotifyWhenMotionDetectedWhileAway.state           == NULL) Rule_NotifyWhenMotionDetectedWhileAway.postUpdate(ON)
     if (Rule_TurnOffLandingLightbulbWhenLeaving.state          == NULL) Rule_TurnOffLandingLightbulbWhenLeaving.postUpdate(ON)
     if (Rule_TurnOffLivingRoomLightbulbWhenLeaving.state       == NULL) Rule_TurnOffLivingRoomLightbulbWhenLeaving.postUpdate(ON)
+    if (Rule_TurnOffUpstairsLandingLightbulbWhenLeaving.state  == NULL) Rule_TurnOffUpstairsLandingLightbulbWhenLeaving.postUpdate(ON)
     if (Rule_TurnOnGarageLightWhenAwayAndGarageDoorOpens.state == NULL) Rule_TurnOnGarageLightWhenAwayAndGarageDoorOpens.postUpdate(ON)
   ])
 end
