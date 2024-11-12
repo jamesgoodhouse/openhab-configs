@@ -15,10 +15,6 @@ then
     if (LivingRoomHVAC_KeepOnWhenLeaving.state  == NULL) LivingRoomHVAC_KeepOnWhenLeaving.postUpdate(OFF)
     if (MainBedroomHVAC_KeepOnWhenLeaving.state == NULL) MainBedroomHVAC_KeepOnWhenLeaving.postUpdate(OFF)
 
-    // lighting
-    if (LandingLightbulb_AutomationDimmerValue.state    == NULL) LandingLightbulb_AutomationDimmerValue.postUpdate(1)
-    if (LivingRoomLightbulb_AutomationDimmerValue.state == NULL) LivingRoomLightbulb_AutomationDimmerValue.postUpdate(1)
-
     // misc
     if (ExternalDoorOpenedSinceHome.state == NULL) ExternalDoorOpenedSinceHome.postUpdate(ON)
 

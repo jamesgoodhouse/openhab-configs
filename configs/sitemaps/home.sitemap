@@ -111,7 +111,7 @@ sitemap home label="Home" {
     Switch item=GarageOverheadLights_Switch label="Garage Overhead Lights" icon="light"
     Switch item=LandingLightbulb_Dimmer label="Landing Mood Light" icon="light"
     Switch item=LivingRoomLightbulb_Dimmer label="Living Room Mood Light" icon="light"
-    Switch item=LandingUpstairsLightbulb_Dimmer label="Upstairs Landding Mood Light" icon="light"
+    Switch item=LandingUpstairsLightbulb_Dimmer label="Upstairs Landing Mood Light" icon="light"
 
     Text label="Settings" icon="settings" {
       Frame label="Garage Overhead Lights" {
@@ -119,17 +119,14 @@ sitemap home label="Home" {
       }
       Frame label="Landing Mood Light" {
         Slider item=LandingLightbulb_Dimmer label="Dimmer"
-        Setpoint item=LandingLightbulb_AutomationDimmerValue label="Automation Dimmer Value [%s]" icon="settings" minValue=1 maxValue=100 step=1
         Switch item=Rule_TurnOffLandingLightbulbWhenLeaving label="Turn Off When Leaving"
       }
       Frame label="Living Room Mood Light" {
         Slider item=LivingRoomLightbulb_Dimmer label="Dimmer"
-        Setpoint item=LivingRoomLightbulb_AutomationDimmerValue label="Automation Dimmer Value [%s]" icon="settings" minValue=1 maxValue=100 step=1
         Switch item=Rule_TurnOffLivingRoomLightbulbWhenLeaving label="Turn Off When Leaving"
       }
       Frame label="Upstairs Landing Mood Light" {
         Slider item=LandingUpstairsLightbulb_Dimmer label="Dimmer"
-        Setpoint item=LandingUpstairsLightbulb_AutomationDimmerValue label="Automation Dimmer Value [%s]" icon="settings" minValue=1 maxValue=100 step=1
         Switch item=Rule_TurnOffUpstairsLandingLightbulbWhenLeaving label="Turn Off When Leaving"
       }
     }

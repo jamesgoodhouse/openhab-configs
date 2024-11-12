@@ -4,19 +4,16 @@ Group:Switch:AND(OFF,ON) LightStates
 Dimmer LandingLightbulb_Dimmer "Dimmer" <slider> (LandingLightbulb,LightStates,Persist) ["Control","Light"] {
   channel = "zigbee:device:stick:light_bulb_landing:{{ $landingLightbulbMacAddress }}_11_dimmer"
 }
-Number:Dimensionless LandingLightbulb_AutomationDimmerValue "Dimmer Value Used in Automation"
 
 {{ $upstairsLandingLightbulbMacAddress := (ds "configs").things.zigbee.devices.light_bulb_landing_upstairs.parameters.zigbee_macaddress | strings.ReplaceAll "\"" "" -}}
 Dimmer LandingUpstairsLightbulb_Dimmer "Dimmer" <slider> (LandingUpstairsLightbulb,LightStates,Persist) ["Control","Light"] {
   channel = "zigbee:device:stick:light_bulb_landing_upstairs:{{ $upstairsLandingLightbulbMacAddress }}_11_dimmer"
 }
-Number:Dimensionless LandingUpstairsLightbulb_AutomationDimmerValue "Dimmer Value Used in Automation"
 
 {{ $livingRoomLightbulbMacAddress := (ds "configs").things.zigbee.devices.light_bulb_living_room.parameters.zigbee_macaddress | strings.ReplaceAll "\"" "" -}}
 Dimmer LivingRoomLightbulb_Dimmer "Dimmer" <slider> (LivingRoomLightbulb,LightStates,Persist) ["Control","Light"] {
   channel = "zigbee:device:stick:light_bulb_living_room:{{ $livingRoomLightbulbMacAddress }}_11_dimmer"
 }
-Number:Dimensionless LivingRoomLightbulb_AutomationDimmerValue "Dimmer Value Used in Automation"
 
 Switch GarageOverheadLights_Switch "Switch" (GarageOverheadLights,LightStates,Persist) ["Switch","Light"] {
   channel="tplinksmarthome:hs200:garage:switch"
