@@ -3,6 +3,7 @@ settings:
     package: minimal
     automation:
     - jsscripting
+    - marketplace:147023 # virtual solar light sensor (https://github.com/mherwege/openhab-rule-templates/tree/main/virtualLightSensor)
     binding:
     - airquality
     - astro
