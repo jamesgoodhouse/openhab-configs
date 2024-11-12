@@ -1,1 +1,3 @@
-DateTime SunsetTimeWithOffset "Sunset [%1$tH:%1$tM]" { channel="astro:sun:home_set_with_offset:set#start" }
+DateTime         SunsetTimeWithOffset "Sunset [%1$tH:%1$tM]"            { channel="astro:sun:home_set_with_offset:set#start" }
+Number:Intensity Total_Radiation      "Radiation [%.2f %unit%]"         { channel="astro:sun:home:radiation#total" }
+Number:Intensity Diffuse_Radiation    "Diffuse Radiation [%.2f %unit%]" { channel="astro:sun:home:radiation#diffuse" }
