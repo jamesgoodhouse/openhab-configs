@@ -18,7 +18,7 @@ package = {{ (ds "configs").settings.addons.package }}
 #remote = true
 
 # A comma-separated list of automation services to install (e.g. "automation = groovyscripting")
-#automation =
+automation = {{ join (ds "configs").settings.addons.automation "," }}
 
 # A comma-separated list of bindings to install (e.g. "binding = knx,sonos,zwave")
 binding = {{ join (ds "configs").settings.addons.binding "," }}

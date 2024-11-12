@@ -1,6 +1,8 @@
 settings:
   addons:
     package: minimal
+    automation:
+    - jsscripting
     binding:
     - airquality
     - astro
