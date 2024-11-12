@@ -71,6 +71,8 @@ things:
           retry: 3
           timeout: 5000
           refreshInterval: 30000
+  synop:
+    station_id: 72698
   unifi:
     port: 443
     refresh_rate: 10
