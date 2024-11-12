@@ -3,7 +3,7 @@ settings:
     package: minimal
     automation:
     - jsscripting
-    
+
     - 147023 # virtual solar light sensor (https://github.com/mherwege/openhab-rule-templates/tree/main/virtualLightSensor)
     binding:
     - airquality
