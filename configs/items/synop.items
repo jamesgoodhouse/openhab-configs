@@ -1,1 +1,1 @@
-Number Synop_Octa "Octa [%d]/8" { channel = "synopanalyzer:synopanalyzer:trappes:octa"}
+Number Synop_Octa "Octa [%d]/8" { channel = "synopanalyzer:synopanalyzer:pdx:octa"}
