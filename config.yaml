@@ -7,6 +7,7 @@ settings:
     - daikin
     - mqtt
     - network
+    - synopanalyzer
     - telegram
     - tplinksmarthome
     - unifi
