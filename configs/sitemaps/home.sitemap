@@ -28,6 +28,22 @@ sitemap home label="Home" {
 
   Text item=DoorStates icon="door" label="Doors [MAP(door.map):%s]" valuecolor=[CLOSED="#1ac731",OPEN="orange"] {
     Frame {
+      Switch item=GarageRollupDoor_Switch label="Garage Door Opener" icon="switch"
+
+      Text label="Info" icon="settings" {
+        Frame label="Sensors" {
+          Text item=GarageRollupDoorContactSensor_State icon="garagedoor" label="Contact Sensor [%s]" valuecolor=[CLOSED="#1ac731",OPEN="orange"]
+          Text item=GarageRollupDoorTiltSensor_State icon="garagedoor" label="Tilt Sensor [%s]" valuecolor=[CLOSED="#1ac731",OPEN="orange"]
+        }
+
+        Frame label="Metadata" {
+          Text item=GarageRollupDoor_LastOpenAt icon=time label="Last Opened"
+          Text item=GarageRollupDoor_LastClosedAt icon=time label="Last Closed"
+        }
+      }
+    }
+
+    Frame label=" " {
       Text item=FrontDoor_State icon="frontdoor" label="Front Door [MAP(door.map):%s]" valuecolor=[CLOSED="#1ac731",OPEN="orange"] {
         Text item=FrontDoor_LastOpenAt icon=time label="Last Opened"
         Text item=FrontDoor_LastClosedAt icon=time label="Last Closed"
@@ -39,23 +55,6 @@ sitemap home label="Home" {
       Text item=DeckDoor_State icon="frontdoor" label="Deck Door [MAP(door.map):%s]" valuecolor=[CLOSED="#1ac731",OPEN="orange"] {
         Text item=DeckDoor_LastOpenAt icon=time label="Last Opened"
         Text item=DeckDoor_LastClosedAt icon=time label="Last Closed"
-      }
-    }
-    Frame label=" " {
-      Text item=GarageRollupDoor_State icon="garagedoor" label="Garage Door [MAP(door.map):%s]" valuecolor=[CLOSED="#1ac731",OPEN="orange"] {
-        Frame label="Opener" {
-          Switch item=GarageRollupDoor_Switch label="Garage Door Opener" icon="switch"
-        }
-
-        Frame label="Sensors" {
-          Text item=GarageRollupDoorContactSensor_State icon="garagedoor" label="Contact Sensor [%s]" valuecolor=[CLOSED="#1ac731",OPEN="orange"]
-          Text item=GarageRollupDoorTiltSensor_State icon="garagedoor" label="Tilt Sensor [%s]" valuecolor=[CLOSED="#1ac731",OPEN="orange"]
-        }
-
-        Frame label="Metadata" {
-          Text item=GarageRollupDoor_LastOpenAt icon=time label="Last Opened"
-          Text item=GarageRollupDoor_LastClosedAt icon=time label="Last Closed"
-        }
       }
     }
 
