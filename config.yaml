@@ -93,10 +93,6 @@ things:
       mesh_update_period: 86400
       port: /dev/ttyUSB1
     devices:
-      switch_garage_door:
-        label: Switch
-        location: Garage
-        thing_id: switch_garage_door
       light_bulb_landing:
         label: Light Bulb
         location: Landing

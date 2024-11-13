@@ -1,5 +1,5 @@
 Thing shelly:shellyplus1:garage_door "Shelly 1 Plus" @ "Garage" [
-    deviceIp="172.31.3.203",
-    userId="admin",
-    password="qZ39z96MmzchDtG4MbykonoMmRYhVHvo"
+    deviceIp="{{ (ds "configs").things.shelly.garage_door.device_ip }}",
+    userId="{{ (ds "configs").things.shelly.garage_door.user_id }}",
+    password="{{ (ds "configs").things.shelly.garage_door.password }}"
 ]

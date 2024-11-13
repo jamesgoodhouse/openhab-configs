@@ -33,13 +33,6 @@ Switch GarageRollupDoorTiltSensor_TamperAlarm "Tamper Alarm" <alarm> (GarageRoll
 Group:Contact:AND(CLOSED,OPEN) GarageRollupDoor_State "State" (GarageRollupDoor,Persist,ExternalDoorStates) ["OpenState"]
 DateTime GarageRollupDoor_LastClosedAt (GarageRollupDoor,Persist) ["Timestamp"]
 DateTime GarageRollupDoor_LastOpenAt (GarageRollupDoor,Persist) ["Timestamp"]
-
-// {{ $garageDoorSwitchMacAddress := (ds "configs").things.zigbee.devices.switch_garage_door.parameters.zigbee_macaddress | strings.ReplaceAll "\"" "" -}}
-// // garage door opener
-// Switch GarageRollupDoor_Switch "Switch" (GarageRollupDoor,Persist) ["Control"] {
-//   channel = "zigbee:device:stick:switch_garage_door:{{ $garageDoorSwitchMacAddress }}_1_switch"
-// }
-
 Switch GarageRollupDoor_Switch "Relay" (GarageRollupDoor,Persist) ["Control"] { channel="shelly:shellyplus1:garage_door:relay#output" }
 
 // front door
