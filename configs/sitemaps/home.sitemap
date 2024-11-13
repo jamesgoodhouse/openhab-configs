@@ -82,11 +82,10 @@ sitemap home label="Home" {
       Switch item=LivingRoomHVAC_Power label="Power" icon="switch"
       Text item=LivingRoomHVAC_Temperature label="Temperature [%.0f °F]"
       Selection item=LivingRoomHVAC_Mode mappings=["AUTO"="Auto", "DEHUMIDIFIER"="Dehumidifier", "COLD"="Cold", "HEAT"="Heat", "FAN"="Fan"] visibility=[LivingRoomHVAC_Power==ON]
+      Selection item=LivingRoomHVAC_SpecialMode visibility=[LivingRoomHVAC_Power==ON] icon="flow" mappings=["ECO"="Eco", "POWERFUL"="Powerful", "NORMAL"="Normal"] label="Special Mode"
       Setpoint item=LivingRoomHVAC_SetPoint label="Set Point [%.0f °F]" icon="temperature" visibility=[LivingRoomHVAC_Mode==AUTO, LivingRoomHVAC_Mode==COLD, LivingRoomHVAC_Mode==HEAT] minValue=50 maxValue=80 step=1
       Selection item=LivingRoomHVAC_Fan visibility=[LivingRoomHVAC_Power==ON] icon="fan"
       Selection item=LivingRoomHVAC_FanSwing visibility=[LivingRoomHVAC_Power==ON] icon="fan"
-      Selection item=LivingRoomHVAC_SpecialMode visibility=[LivingRoomHVAC_Power==ON] icon="fan" mappings=["ECO"="Eco", "POWERFUL"="Powerful", "NORMAL"="Normal"]
-
 
       Text icon="settings" label="Settings" {
         Switch item=LivingRoomHVAC_KeepOnWhenLeaving label="Keep On When Leaving" icon="switch"
@@ -96,10 +95,10 @@ sitemap home label="Home" {
       Switch item=MainBedroomHVAC_Power label="Power" icon="switch"
       Text item=MainBedroomHVAC_Temperature label="Temperature [%.0f °F]"
       Selection item=MainBedroomHVAC_Mode mappings=["AUTO"="Auto", "DEHUMIDIFIER"="Dehumidifier", "COLD"="Cold", "HEAT"="Heat", "FAN"="Fan"] visibility=[MainBedroomHVAC_Power==ON]
+      Selection item=MainBedroomHVAC_SpecialMode visibility=[MainBedroomHVAC_Power==ON] icon="flow" mappings=["ECO"="Eco", "POWERFUL"="Powerful", "NORMAL"="Normal"] label="Special Mode"
       Setpoint item=MainBedroomHVAC_SetPoint label="Set Point [%.0f °F]" icon="temperature" visibility=[MainBedroomHVAC_Mode==AUTO, MainBedroomHVAC_Mode==COLD, MainBedroomHVAC_Mode==HEAT] minValue=50 maxValue=80 step=1
       Selection item=MainBedroomHVAC_Fan visibility=[MainBedroomHVAC_Power==ON] icon="fan"
       Selection item=MainBedroomHVAC_FanSwing visibility=[MainBedroomHVAC_Power==ON] icon="fan"
-      Selection item=MainBedroomHVAC_SpecialMode visibility=[MainBedroomHVAC_Power==ON] icon="fan" mappings=["ECO"="Eco", "POWERFUL"="Powerful", "NORMAL"="Normal"]
 
       Text icon="settings" label="Settings" {
         Switch item=MainBedroomHVAC_KeepOnWhenLeaving label="Keep On When Leaving" icon="switch"
