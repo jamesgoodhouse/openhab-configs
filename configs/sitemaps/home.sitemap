@@ -30,7 +30,7 @@ sitemap home label="Home" {
     Frame {
       Switch item=GarageRollupDoor_Switch label="Garage Door Opener" icon="switch"
 
-      Text label="Info" icon="settings" {
+      Text item=GarageRollupDoor_State icon="settings" label="Info [MAP(door.map):%s]" valuecolor=[CLOSED="#1ac731",OPEN="orange"] {
         Frame label="Sensors" {
           Text item=GarageRollupDoorContactSensor_State icon="garagedoor" label="Contact Sensor [%s]" valuecolor=[CLOSED="#1ac731",OPEN="orange"]
           Text item=GarageRollupDoorTiltSensor_State icon="garagedoor" label="Tilt Sensor [%s]" valuecolor=[CLOSED="#1ac731",OPEN="orange"]
