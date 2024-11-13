@@ -1,1 +1,1 @@
-Number Synop_Octa "Octa [%d]/8" { channel = "synopanalyzer:synopanalyzer:pdx:octa"}
+Number Synop_Octa "Cloud Cover (Okta) [%d]/8" { channel = "synopanalyzer:synopanalyzer:pdx:octa"}
