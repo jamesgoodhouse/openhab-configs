@@ -9,6 +9,6 @@ String             {{ .name }}HVAC_Fan               "Fan"                  <fan
 String             {{ .name }}HVAC_FanSwing          "Fan Swing"            <fan>         ({{ .name }}HVAC)            ["Control"]                   { channel="daikin:ac_unit:{{ .thing_id }}:fandir" }
 String             {{ .name }}HVAC_Mode              "Mode"                 <heating>     ({{ .name }}HVAC)            ["Control"]                   { channel="daikin:ac_unit:{{ .thing_id }}:mode" }
 Switch             {{ .name }}HVAC_Power             "Power"                <switch>      ({{ .name }}HVAC,HVAC_Power) ["Switch"]                    { channel="daikin:ac_unit:{{ .thing_id }}:power" }
-Switch             {{ .name }}HVAC_PowerfulMode      "Powerful Mode"        <switch>      ({{ .name }}HVAC)            ["Switch"]                    { channel="daikin:ac_unit:{{ .thing_id }}:specialmode-powerful" }
 Switch             {{ .name }}HVAC_KeepOnWhenLeaving "Keep On When Leaving" <switch>      ({{ .name }}HVAC)
+String             {{ .name }}HVAC_SpecialMode       "SpecialMode"                        ({{ .name }}HVAC)                                          { channel="daikin:ac_unit:{{ .thing_id }}:specialmode" }
 {{ end }}
