@@ -10,5 +10,5 @@ String             {{ .name }}HVAC_FanSwing          "Fan Swing"            <fan
 String             {{ .name }}HVAC_Mode              "Mode"                 <heating>     ({{ .name }}HVAC)            ["Control"]                   { channel="daikin:ac_unit:{{ .thing_id }}:mode" }
 Switch             {{ .name }}HVAC_Power             "Power"                <switch>      ({{ .name }}HVAC,HVAC_Power) ["Switch"]                    { channel="daikin:ac_unit:{{ .thing_id }}:power" }
 Switch             {{ .name }}HVAC_KeepOnWhenLeaving "Keep On When Leaving" <switch>      ({{ .name }}HVAC)
-String             {{ .name }}HVAC_SpecialMode       "SpecialMode"                        ({{ .name }}HVAC)                                          { channel="daikin:ac_unit:{{ .thing_id }}:specialmode" }
+String             {{ .name }}HVAC_SpecialMode       "SpecialMode"          <flow>        ({{ .name }}HVAC)            ["Control"]                   { channel="daikin:ac_unit:{{ .thing_id }}:specialmode" }
 {{ end }}
