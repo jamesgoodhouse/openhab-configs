@@ -34,16 +34,13 @@ Group:Contact:AND(CLOSED,OPEN) GarageRollupDoor_State "State" (GarageRollupDoor,
 DateTime GarageRollupDoor_LastClosedAt (GarageRollupDoor,Persist) ["Timestamp"]
 DateTime GarageRollupDoor_LastOpenAt (GarageRollupDoor,Persist) ["Timestamp"]
 
-{{ $garageDoorSwitchMacAddress := (ds "configs").things.zigbee.devices.switch_garage_door.parameters.zigbee_macaddress | strings.ReplaceAll "\"" "" -}}
-// garage door opener
-Switch GarageRollupDoor_Switch "Switch" (GarageRollupDoor,Persist) ["Control"] {
-  channel = "zigbee:device:stick:switch_garage_door:{{ $garageDoorSwitchMacAddress }}_1_switch"
-}
+// {{ $garageDoorSwitchMacAddress := (ds "configs").things.zigbee.devices.switch_garage_door.parameters.zigbee_macaddress | strings.ReplaceAll "\"" "" -}}
+// // garage door opener
+// Switch GarageRollupDoor_Switch "Switch" (GarageRollupDoor,Persist) ["Control"] {
+//   channel = "zigbee:device:stick:switch_garage_door:{{ $garageDoorSwitchMacAddress }}_1_switch"
+// }
 
-Number GarageRollupDoor_Shelly_AutoOnTimer  "Auto On Timer"  { channel="shelly:shellyplus1:garage_door:relay#autoOn" }
-Number GarageRollupDoor_Shelly_AutoOffTimer "Auto Off Timer" { channel="shelly:shellyplus1:garage_door:relay#autoOff" }
-Switch GarageRollupDoor_Shelly_Relay        "Relay"          { channel="shelly:shellyplus1:garage_door:relay#output" }
-Switch GarageRollupDoor_Shelly_Input        "Input"          { channel="shelly:shellyplus1:garage_door:relay#input" }
+Switch GarageRollupDoor_Switch "Relay" (GarageRollupDoor,Persist) ["Control"] { channel="shelly:shellyplus1:garage_door:relay#output" }
 
 // front door
 Contact FrontDoor_State "State" (FrontDoor,ExternalDoorStates) ["OpenState"] {
